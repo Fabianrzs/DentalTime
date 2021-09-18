@@ -1,0 +1,16 @@
+<div id="logreg-forms">
+    <form action="/signup/">        
+        <h1 class="h3 mb-3 font-weight-normal" style="text-align: center"> REGISTER</h1>    
+        <input type="text" id="user-name" class="form-control" placeholder="Username" required="" autofocus="">
+        <input type="email" id="user-email" class="form-control" placeholder="Email address" required autofocus="">
+        <input type="password" id="user-pass" class="form-control" placeholder="Password" required autofocus="">
+        <input type="password" id="user-repeatpass" class="form-control" placeholder="Repeat Password" required autofocus="">
+    
+        <div [routerLink = "['link-active']"]>
+            <button class="btn btn-primary btn-block" type="submit" [routerLink]="['/home']"><i class="fas fa-user-plus"></i> Sign Up</button>
+            <a [routerLink]="['/register']" id="cancel_signup"><i class="fas fa-angle-left"></i> Back</a>
+        </div>
+
+    </form>
+    <br>
+</div>

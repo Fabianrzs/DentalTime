@@ -9,7 +9,9 @@ import { NavMenuComponent } from './nav-menu/nav-menu.component';
 import { HomeComponent } from './home/home.component';
 import { FooterComponent } from './footer/footer.component';
 import { TitleComponent } from './title/title.component';
-import { BodyComponent } from './body/body.component';
+import { LoginUserComponent } from './User/login-user/login-user.component';
+import { RegisterUserComponent } from './User/register-user/register-user.component';
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,8 @@ import { BodyComponent } from './body/body.component';
     HomeComponent,
     FooterComponent,
     TitleComponent,
-    BodyComponent,
+    LoginUserComponent,
+    RegisterUserComponent,
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -26,7 +29,8 @@ import { BodyComponent } from './body/body.component';
     FormsModule,
     RouterModule.forRoot([
       { path: '', component: HomeComponent, pathMatch: 'full' },
-    ])
+    ]),
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
