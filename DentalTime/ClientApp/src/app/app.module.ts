@@ -8,7 +8,6 @@ import { AppComponent } from './app.component';
 import { NavMenuComponent } from './nav-menu/nav-menu.component';
 import { HomeComponent } from './home/home.component';
 import { FooterComponent } from './footer/footer.component';
-import { TitleComponent } from './title/title.component';
 import { LoginUserComponent } from './User/login-user/login-user.component';
 import { RegisterUserComponent } from './User/register-user/register-user.component';
 import { AppRoutingModule } from './app-routing.module';
@@ -19,7 +18,6 @@ import { AppRoutingModule } from './app-routing.module';
     NavMenuComponent,
     HomeComponent,
     FooterComponent,
-    TitleComponent,
     LoginUserComponent,
     RegisterUserComponent,
   ],
