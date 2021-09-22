@@ -1,19 +1,30 @@
 <header class="p-3 mb-2 bg-info text-dark">
-  <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+  <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light border-bottom box-shadow mb-3">
     <div class="container p-3 mb-2 bg-info text-dark">
-      <a class="navbar-brand text-light" [routerLink]="['/']">DentalTime</a>
+      <h2 class="text-light">DentalTime</h2>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse"
         aria-label="Toggle navigation" [attr.aria-expanded]="isExpanded" (click)="toggle()">
         <span class="navbar-toggler-icon"></span>
       </button>
+      
       <div class="navbar-collapse collapse d-sm-inline-flex justify-content-end" [ngClass]="{ show: isExpanded }">
         <ul class="navbar-nav flex-grow">
           <li class="nav-item" [routerLinkActive]="['link-active']" [routerLinkActiveOptions]="{ exact: true }">
-            <a class="nav-link text-light" [routerLink]="['/']">Home</a>
+            <a class="nav-link text-light" [routerLink]="['/home']">Home</a>
+          </li>
+
+          <li class="nav-item dropdown" [routerLinkActive]="['link-active']" [routerLinkActiveOptions]="{ exact: true }">
+            <a class="text-light nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"
+              aria-expanded="false" aria-label="Basic outlined example">Usuario</a>
+            <ul class="text-center dropdown-menu " aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item btn btn-primary btn-outline-primary " [routerLink]="['/registroUsuario']">Registrar</a></li>
+              <li><a class="dropdown-item btn btn-primary btn-outline-primary " [routerLink]="['/consultaUsuario']">Consultar</a></li>
+            </ul>
           </li>
 
           <li class="nav-item dropdown ">
-            <a class="text-light nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">Usuario</a>
+            <a class="text-light nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"
+              aria-expanded="false">Agenda</a>
             <ul class="text-center dropdown-menu" aria-labelledby="navbarDropdown">
               <li><a class="dropdown-item" href="#">Registrar</a></li>
               <li><a class="dropdown-item" href="#">Consultar</a></li>
@@ -21,15 +32,8 @@
           </li>
 
           <li class="nav-item dropdown ">
-            <a class="text-light nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">Agenda</a>
-            <ul class="text-center dropdown-menu" aria-labelledby="navbarDropdown">
-              <li><a class="dropdown-item" href="#">Registrar</a></li>
-              <li><a class="dropdown-item" href="#">Consultar</a></li>
-            </ul>
-          </li>
-
-          <li class="nav-item dropdown ">
-            <a class="text-light nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">Recursos</a>
+            <a class="text-light nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"
+              aria-expanded="false">Recursos</a>
             <ul class="text-center dropdown-menu" aria-labelledby="navbarDropdown">
               <li><a class="dropdown-item" href="#">Registrar Producto</a></li>
               <li><a class="dropdown-item" href="#">Registrar Inventario</a></li>
@@ -39,7 +43,8 @@
           </li>
 
           <li class="nav-item dropdown ">
-            <a class="text-light nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">Facturacion</a>
+            <a class="text-light nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"
+              aria-expanded="false">Facturacion</a>
             <ul class="text-center dropdown-menu" aria-labelledby="navbarDropdown">
               <li><a class="dropdown-item" href="#">Registrar</a></li>
               <li><a class="dropdown-item" href="#">Consultar</a></li>
@@ -47,16 +52,16 @@
           </li>
 
           <li class="nav-item dropdown ">
-            <a class="text-light nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">Informes</a>
+            <a class="text-light nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"
+              aria-expanded="false">Informes</a>
             <ul class="text-center dropdown-menu" aria-labelledby="navbarDropdown">
               <li><a class="dropdown-item" href="#">Registrar</a></li>
               <li><a class="dropdown-item" href="#">Consultar</a></li>
             </ul>
-          </li>        
-          <button type="button" class="btn btn-info">Información</button>
+          </li>
+          <button type="button" class="text-light btn btn-info">Información</button>
         </ul>
       </div>
     </div>
   </nav>
 </header>
-
