@@ -13,6 +13,14 @@ import { RegisterUserComponent } from './User/register-user/register-user.compon
 import { AppRoutingModule } from './app-routing.module';
 import { UsuarioRegistroComponent } from './Usuario/usuario-registro/usuario-registro.component';
 import { UsuarioConsultaComponent } from './Usuario/usuario-consulta/usuario-consulta.component';
+import { HistorialClinicoComponent } from './Usuario/historial-clinico/historial-clinico.component';
+import { AgendarCitaComponent } from './Agenda/agendar-cita/agendar-cita.component';
+import { ConsultarCitasComponent } from './Agenda/consultar-citas/consultar-citas.component';
+import { RegistrarServicioComponent } from './Servicio/registrar-servicio/registrar-servicio.component';
+import { ConsultarServicioComponent } from './Servicio/consultar-servicio/consultar-servicio.component';
+import { InformeComponent } from './informe/informe.component';
+import { RealizarFacturaComponent } from './Facturacion/realizar-factura/realizar-factura.component';
+import { HistorialFacturaComponent } from './Facturacion/historial-factura/historial-factura.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +32,14 @@ import { UsuarioConsultaComponent } from './Usuario/usuario-consulta/usuario-con
     RegisterUserComponent,
     UsuarioRegistroComponent,
     UsuarioConsultaComponent,
+    HistorialClinicoComponent,
+    AgendarCitaComponent,
+    ConsultarCitasComponent,
+    RegistrarServicioComponent,
+    ConsultarServicioComponent,
+    InformeComponent,
+    RealizarFacturaComponent,
+    HistorialFacturaComponent,
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),

@@ -1,1 +1,20 @@
+.fondo{
+    background: linear-gradient(rgb(4, 248, 248), rgb(0, 255, 157));
+};
 
+.card{
+    min-width : 300;
+    max-width: 500;
+    padding: 5rem 2.5rem;
+    border-radius: 1rem;
+    border: 1px solid transparent;
+
+    backdrop-filter: blur(1rem);
+
+    box-shadow: 1.3rem 1.3rem 1.3rem rgb(255, 255, 255);
+    
+};
+
+.cb1{
+    background-color: rgb(255, 255, 255)
+};

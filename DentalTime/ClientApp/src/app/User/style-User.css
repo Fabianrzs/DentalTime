@@ -5,6 +5,9 @@
     box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
   transition: all 0.3s cubic-bezier(.25,.8,.25,1);
 }
+.fondo{
+    background: linear-gradient(rgb(4, 248, 248), rgb(0, 255, 157));
+  }
 #logreg-forms form {
     width: 100%;
     max-width: 410px;
