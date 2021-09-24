@@ -1,1 +1,23 @@
-<p>historial-clinico works!</p>
+<div>
+    <div style="width: 30%">
+        <div class="card">
+          
+          <div class="card-body cb1">
+            <form action="">
+              <label for="">Identificacion</label>
+              <input class="form-control" type="text" aria-label="default input example">
+              
+              <div class="container">
+                <mat-form-field appearance="fill">
+                    <mat-label></mat-label>
+                    <input matInput [matDatepicker]="picker">
+                    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                    <mat-datepicker #picker></mat-datepicker>
+                  </mat-form-field>
+              </div>
+
+              <br>
+              <button type="button" class="btn btn-outline-info btn-sm">Consultar</button> 
+            </form>      
+        </div>
+</div>
