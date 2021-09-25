@@ -1,33 +1,139 @@
-<div class="container ">
-  
-  <div class="mx-auto" style="width: 40%">
-    
-    <div class="card">
-      
-      <div class="card-body cb1">
-        <form action="">
-          <label for="">Identificacion</label>
-          <input class="form-control" type="text" aria-label="default input example">
-          <label for="">Nombre</label>
-          <input class="form-control" type="text" aria-label="default input example">
-          <label for="">Apellidos</label>
-          <input class="form-control" type="text" aria-label="default input example">
-          <label for="">Genero</label>
-          <select class="form-select">
+<div class="container">
+  <div>
+    <h2>Registro de Paciente</h2>
+    <hr>
+  </div>
+  <div class="row ">
+    <div class="col-md">
+      <div class="form-floating" style="width: 400px;">
+        <input type="text" class="form-control">
+        <label for="floatingInputGrid">Identificacion</label>
+      </div>
+    </div>
+  </div>
+  <br>
+  <div>
+    <h4>Nombre*</h4>
+  </div>
+  <div class="row ">
+    <div class="col-md">
+      <div class="form-floating">
+        <input type="text" class="form-control">
+        <label for="floatingInputGrid">Nombres</label>
+      </div>
+    </div>
+    <div class="col-md">
+      <div class="form-floating">
+        <input type="text" class="form-control">
+        <label for="floatingInputGrid">Primer Apellido</label>
+      </div>
+    </div>
+    <div class="col-md">
+      <div class="form-floating">
+        <input type="text" class="form-control">
+        <label for="floatingInputGrid">Segundo Apellido</label>
+      </div>
+    </div>
+  </div>
+
+  <br>
+  <div>
+    <h4>Paciente*</h4>
+  </div>
+  <div class="row ">
+    <div class="col-md">
+      <div class="form-floating">
+        <br><mat-form-field appearance="fill">
+          <mat-label></mat-label>
+          <input matInput [matDatepicker]="picker">
+          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+        
+        <label for="floatingInputGrid">Fecha de Nacimiento</label>
+      </div>
+    </div>
+    <div class="col-md">
+      <div class="form-floating">
+        <select class="form-select">
           <option selected>Seleccionar</option>
           <option value="1">Masculino</option>
-          <option value="2">Femenino</option>
-          </select>
-          <br>
-          <button type="button" class="btn btn-outline-danger btn-sm">Cancelar</button>
-          <button type="button" class="btn btn-outline-success btn-sm">Guardar</button> 
-        </form>      
+          <option value="2">Famenino</option>
+          <option value="3">Indefinido</option>
+        </select>
+        <label>Sexo</label>
+      </div>
     </div>
-    
+    <div class="col-md">
+      <div class="form-floating">
+        <select class="form-select">
+          <option selected>Seleccionar</option>
+            <option value="1">AB+</option>
+            <option value="2">A+</option>
+            <option value="3">A-</option>
+            <option value="4">AB-</option>
+            <option value="5">0+</option>
+            <option value="6">O-</option>
+        </select>
+        <label>Tipo Sanguineo</label>
+      </div>
+    </div>
   </div>
-  
+
+  <br>
+  <div>
+    <h4>Contacto*</h4>
+  </div>
+  <div class="row ">
+    <div class="col-md">
+      <div class="form-floating" style="width: 300px;">
+        <input type="text" class="form-control">
+        <label for="floatingInputGrid">Numero de Telefono</label>
+      </div>
+    </div>
+    <div class="col-md">
+      <div class="form-floating" style="width: 350px;">
+        <input type="text" class="form-control">
+        <label for="floatingInputGrid">Correo Electronico</label>
+      </div>
+    </div>
+  </div>
+
+  <br>
+  <div>
+    <h4>Clinico*</h4>
+  </div>
+  <div class="row ">
+    <div class="col-md">
+      <div class="form-floating">
+        <textarea class="form-control" id="floatingTextarea2" style="height: 100px"></textarea>
+        <label for="floatingInputGrid">Motivo de Consulta</label>
+      </div>
+    </div>
+    <div class="col-md">
+      <div class="form-floating">
+        <textarea class="form-control" id="floatingTextarea2" style="height: 100px"></textarea>
+        <label for="floatingInputGrid">Complicaciones</label>
+      </div>
+    </div>
+    <div class="col-md">
+      <div class="form-floating">
+        <textarea class="form-control" id="floatingTextarea2" style="height: 100px"></textarea>
+        <label for="floatingInputGrid">Antecedentes</label>
+      </div>
+    </div>
+  </div> 
+  <br>
 </div>
-</div>
-<!-- <div class="p-3 border fondo ">
-        
-      </div> -->
+
+<!-- <div class="col-md">
+      <div class="form-floating">
+        <select class="form-select" id="floatingSelectGrid" aria-label="Floating label select example">
+          <option selected>Open this select menu</option>
+          <option value="1">One</option>
+          <option value="2">Two</option>
+          <option value="3">Three</option>
+        </select>
+        <label for="floatingSelectGrid">Works with selects</label>
+      </div>
+    </div> -->
