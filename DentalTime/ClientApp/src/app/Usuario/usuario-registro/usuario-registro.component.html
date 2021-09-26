@@ -34,11 +34,10 @@
       <div class="form-floating">
         <mat-form-field appearance="fill">
           <mat-label></mat-label>
-          <input matInput [matDatepicker]="picker">
+          <input matInput [matDatepicker] ="picker" placeholder="Fecha de Nacimiento">
           <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
           <mat-datepicker #picker></mat-datepicker>
         </mat-form-field>
-        <label for="floatingInputGrid" style = "font-size: 70%;">Fecha de Nacimiento</label>
       </div>
     </div>
     <div class="col-md">
