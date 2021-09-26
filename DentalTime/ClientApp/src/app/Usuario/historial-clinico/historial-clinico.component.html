@@ -1,28 +1,102 @@
-<div class="container overflow-hidden">
-  <div class="row gx-5" style="width: 30%">
-      <div class="col">
-        <form action="">
-          <label for="">Identificacion</label>
-          <input class="form-control" type="text" aria-label="default input example">
-  
-          <div class="container">
+<div class="container">
+  <div>
+    <h2>Historial Clinico</h2>
+    <hr>
+  </div>
+  <div class="row">
+    <div class="col">
+      <div style="width: 30%">
+        <div class="row">
+          <div class="form-floating">
+            <input type="text" class="form-control">
+            <label for="floatingInputGrid">Identificacion</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="form-floating">
             <mat-form-field appearance="fill">
               <mat-label></mat-label>
-              <input matInput [matDatepicker]="picker">
+              <input matInput [matDatepicker]="picker" placeholder="Fecha de Inicio">
               <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
               <mat-datepicker #picker></mat-datepicker>
             </mat-form-field>
           </div>
-          <br>
-          <button type="button" class="btn btn-outline-info btn-sm">Consultar</button>
-        </form>
+        </div>
+        <div class="row">
+          <div class="form-floating">
+            <mat-form-field appearance="fill">
+              <mat-label></mat-label>
+              <input matInput [matDatepicker]="picker" placeholder="Fecha de Fin">
+              <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+              <mat-datepicker #picker></mat-datepicker>
+            </mat-form-field>
+          </div>
+        </div>
+        <div class="row justify-content-center">
+          <div class="col-2 col-2">
+            <button type="button" class="btn btn-outline-info btn-sm">Buscar</button>
+          </div>
+        </div>
       </div>
-  </div>
-  
-  <div class="bg-danger" style="width: 65%">
-    <div class="col">
-      <h1>hola</h1>
     </div>
-    
+    <div class="col">
+      <div class = "row"> 
+          <h1 class="text-center"> lista </h1>   
+          <br>
+          <hr>
+          <table>
+            <thead>
+              <tr>
+                <th>item</th>
+                <th>item</th>
+                <th>item</th>
+                <th>item</th>
+                <th>item</th>
+                <th>item</th>
+                <th>item</th>
+                <th>item</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>info</td>
+                <td>info</td>
+                <td>info</td>
+                <td>info</td>
+                <td>info</td>
+                <td>info</td>
+                <td>info</td>
+                <td>info</td>
+              </tr>
+              <tr>
+                <td>info</td>
+                <td>info</td>
+                <td>info</td>
+                <td>info</td>
+                <td>info</td>
+                <td>info</td>
+                <td>info</td>
+                <td>info</td>
+              </tr>
+              <tr>
+                <td>info</td>
+                <td>info</td>
+                <td>info</td>
+                <td>info</td>
+                <td>info</td>
+                <td>info</td>
+                <td>info</td>
+                <td>info</td>
+              </tr>
+            </tbody>
+          </table>      
+      </div>
+      <div class ="row">
+          <h2  class="text-center"> consultar </h2>
+      </div>
+    </div>
+  </div>
+  <div>
+
   </div>
 </div>
