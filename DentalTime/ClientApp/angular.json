@@ -154,5 +154,8 @@
       }
     }
   },
-  "defaultProject": "DentalTime"
+  "defaultProject": "DentalTime",
+  "cli": {
+    "analytics": "63b9ebd3-ab85-4577-aed2-31ec61f4a215"
+  }
 }

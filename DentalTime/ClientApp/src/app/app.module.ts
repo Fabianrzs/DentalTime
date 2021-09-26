@@ -37,6 +37,7 @@ import { HistorialFacturaComponent } from './Facturacion/historial-factura/histo
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatNativeDateModule } from '@angular/material/core';
+import { RegistrarConsultaComponent } from './Usuario/registrar-consulta/registrar-consulta.component';
 
 
 @NgModule({
@@ -57,6 +58,7 @@ import { MatNativeDateModule } from '@angular/material/core';
     InformeComponent,
     RealizarFacturaComponent,
     HistorialFacturaComponent,
+    RegistrarConsultaComponent,
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),

@@ -14,6 +14,7 @@ import { InformeComponent } from './informe/informe.component';
 import { RealizarFacturaComponent } from './Facturacion/realizar-factura/realizar-factura.component';
 import { HistorialClinicoComponent } from './Usuario/historial-clinico/historial-clinico.component';
 import { HistorialFacturaComponent } from './Facturacion/historial-factura/historial-factura.component';
+import { RegistrarConsultaComponent } from './Usuario/registrar-consulta/registrar-consulta.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginUserComponent, },
@@ -27,9 +28,9 @@ const routes: Routes = [
   { path: 'consultarServicio', component:ConsultarServicioComponent},
   { path: 'registrarServicio', component:RegistrarServicioComponent},
   { path: 'registrarFactura', component:RealizarFacturaComponent}, 
-  {path: 'consultarFactura', component:HistorialFacturaComponent},
-  {path: 'informe', component:InformeComponent},
-
+  { path: 'consultarFactura', component:HistorialFacturaComponent},
+  { path: 'informe', component:InformeComponent},
+  { path: 'registrarConsulta', component: RegistrarConsultaComponent}
 ];
 
 
