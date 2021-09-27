@@ -1,15 +1,23 @@
 <div class="container">
   <div class="row justify-content-center">
-    <div class="col-4">
+    <div class="col-4" style = "min-width: 400px;">
       <h2 class="text-center">Registro de Consulta</h2>
       <hr>
 
-      <div class="form-floating">
+      <div class="form-floating border border-5">
         <input type="text" class="form-control">
         <label for="floatingInputGrid">Identificacion</label>
       </div>
+      <div class="form-floating border border-5">
+        <input type="text" class="form-control" disabled>
+        <label for="floatingInputGrid">Nombres</label>
+      </div>
+      <div class="form-floating border border-5">
+        <input type="text" class="form-control" disabled>
+        <label for="floatingInputGrid">Apellidos</label>
+      </div>
 
-      <div class="form-floating">
+      <div class="form-floating border border-5">
         <select class="form-select">
           <option selected>Seleccionar</option>
           <option value="1">Servicio 1</option>
@@ -19,69 +27,27 @@
         <label>Nombre del Servicio</label>
       </div>
 
-      <div class="form-floating">
+      <div class="form-floating border border-5">
+        <input type="date" class="form-control">
+        <label for="floatingInputGrid">Fecha</label>
+      </div>
+
+      <div class="form-floating border border-5">
         <textarea class="form-control" id="floatingTextarea2" style="height: 200px"></textarea>
         <label for="floatingInputGrid">Descripcion</label>
       </div>
-
       <br>
-
-      <div>
-        <button type="button" class="btn btn-outline-success btn-sm">Guardar</button>
+      <div class="col-12">
+        <div class="row justify-content-center">
+          <div class="col-6">
+              <button type="button" class="btn btn-outline-danger btn-sm position-absolute top-0 end-0">Cancelar</button>
+          </div>
+          <div class="col col-md">
+              <button type="button" class="btn btn-outline-success btn-sm ">Guardar</button>
+          </div>
+        </div>
       </div>
 
     </div>
   </div>
-
 </div>
-
-<!-- <div class="row ">
-      <div class="col-md">
-        <div class="form-floating">
-          <input type="text" class="form-control">
-          <label for="floatingInputGrid">Identificacion</label>
-        </div>
-      </div>
-      <div class="col-md">
-        <div class="form-floating">
-          <input type="text" class="form-control">
-          <label for="floatingInputGrid">Nombres</label>
-        </div>
-      </div>
-      <div class="col-md">
-        <div class="form-floating">
-          <input type="text" class="form-control">
-          <label for="floatingInputGrid">Apellidos</label>
-        </div>
-      </div>
-    </div>
-  
-    <br>
-    <div class="row ">
-      <div class="col-md">
-        <div class="form-floating">
-          <select class="form-select">
-            <option selected>Seleccionar</option>
-            <option value="1">Servicio 1</option>
-            <option value="2">Servicio 2</option>
-            <option value="3">Servicio 3</option>
-          </select>
-          <label>Nombre del Servicio</label>
-        </div>
-      </div>
-      <div class="col-md">
-        <div class="form-floating">
-          <textarea class="form-control" id="floatingTextarea2" style="height: 100px"></textarea>
-          <label for="floatingInputGrid">Descripcion</label>
-        </div>
-      </div>
-    </div>
-    <div class = "row justify-content-center">
-        
-        
-        
-        <div class="col-2">
-          <button type="button" class="btn btn-outline-success btn-sm">Guardar</button>
-        </div>
-      </div>
-   -->
