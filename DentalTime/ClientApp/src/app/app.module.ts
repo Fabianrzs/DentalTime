@@ -38,6 +38,9 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatNativeDateModule } from '@angular/material/core';
 import { RegistrarConsultaComponent } from './Usuario/registrar-consulta/registrar-consulta.component';
+import { ProductoRegistroComponent } from './Inventario/producto-registro/producto-registro.component';
+import { GestionInventarioComponent } from './Inventario/gestion-inventario/gestion-inventario.component';
+
 
 
 @NgModule({
@@ -59,6 +62,8 @@ import { RegistrarConsultaComponent } from './Usuario/registrar-consulta/registr
     RealizarFacturaComponent,
     HistorialFacturaComponent,
     RegistrarConsultaComponent,
+    ProductoRegistroComponent,
+    GestionInventarioComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),

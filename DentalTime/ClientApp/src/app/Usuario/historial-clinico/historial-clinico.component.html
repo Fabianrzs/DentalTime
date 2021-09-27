@@ -1,41 +1,51 @@
 <div class="container">
-  <div>
-    <h2>Historial Clinico</h2>
+  <div class="row">
+    <h1 class="text-center">Historial Clinico</h1>
     <hr>
   </div>
   <div class="row">
-    <div class="col">
-      <div style="width: 45%">
-        <div class="row">
-          <div class="form-floating">
-            <input type="text" class="form-control">
-            <label for="floatingInputGrid"> Identificacion</label>
-          </div>
-        </div>
-        <div class="row">
-          <div class="form-floating">
-            <input type="date" class="form-control">
-            <label for="floatingInputGrid">Fecha de Inicio</label>
-          </div>
-        </div>
-        <div class="row">
-          <div class="form-floating">
-            <input type="date" class="form-control">
-            <label for="floatingInputGrid">Fecha de Fin</label>
-          </div>
-        </div>
-        <br>
-        <div class="row">
-          <div class="col">
-            <button type="button" class="btn btn-outline-info btn-sm">Buscar</button>
-          </div>
+    <div class="col-4" style="min-width: 120px; max-width: 350px;">
+      <h2 class="text-center">Datos</h2>
+      <hr>
+
+      <div class="form-floating border border-5">
+        <input type="text" class="form-control">
+        <label for="floatingInputGrid">Identificacion</label>
+      </div>
+
+
+      <div class="form-floating border border-5">
+        <input type="text" class="form-control" disabled>
+        <label for="floatingInputGrid">Nombres</label>
+      </div>
+
+      <div class="form-floating border border-5">
+        <input type="text" class="form-control" disabled>
+        <label for="floatingInputGrid">Apellidos</label>
+      </div>
+
+      <div class="form-floating border border-5">
+        <input type="date" class="form-control">
+        <label for="floatingInputGrid">Fecha de Inicio</label>
+      </div>
+
+      <div class="form-floating border border-5">
+        <input type="date" class="form-control">
+        <label for="floatingInputGrid">Fecha de Fin</label>
+      </div>
+
+      <br>
+      <div class="row ">
+        <div class="col">
+          <button type="button"
+            class="btn btn-outline-info btn-sm position-absolute top-0 start-50 translate-middle">Consultar</button>
         </div>
       </div>
     </div>
-    <div class="col">
+
+    <div class="col-8">
       <div class="row">
-        <h1 class="text-center"> lista </h1>
-        <br>
+        <h2 class="text-center"> Historias </h2>
         <hr>
         <table>
           <thead>
@@ -87,7 +97,12 @@
     </div>
   </div>
   <br>
-  <div class ="row bg-info" style="height: 500px;">
-    <h2  class="text-center"> consultar </h2>
+  <div class="row">
+    <h2 class="text-center"> Detalles </h2>
+    <hr>
+    <div class="col-12" style="height: 100%;">
+
+
+    </div>
   </div>
 </div>

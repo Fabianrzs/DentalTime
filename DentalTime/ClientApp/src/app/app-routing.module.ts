@@ -15,6 +15,8 @@ import { RealizarFacturaComponent } from './Facturacion/realizar-factura/realiza
 import { HistorialClinicoComponent } from './Usuario/historial-clinico/historial-clinico.component';
 import { HistorialFacturaComponent } from './Facturacion/historial-factura/historial-factura.component';
 import { RegistrarConsultaComponent } from './Usuario/registrar-consulta/registrar-consulta.component';
+import { GestionInventarioComponent } from './Inventario/gestion-inventario/gestion-inventario.component';
+import { ProductoRegistroComponent } from './Inventario/producto-registro/producto-registro.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginUserComponent, },
@@ -30,7 +32,9 @@ const routes: Routes = [
   { path: 'registrarFactura', component:RealizarFacturaComponent}, 
   { path: 'consultarFactura', component:HistorialFacturaComponent},
   { path: 'informe', component:InformeComponent},
-  { path: 'registrarConsulta', component: RegistrarConsultaComponent}
+  { path: 'registrarConsulta', component: RegistrarConsultaComponent},
+  { path: 'registroProducto', component: ProductoRegistroComponent},
+  { path: 'gestionInventario', component: GestionInventarioComponent}
 ];
 
 

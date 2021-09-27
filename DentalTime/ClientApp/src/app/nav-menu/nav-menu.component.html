@@ -27,17 +27,6 @@
             </ul>
           </li>
 
-          <li class="nav-item dropdown ">
-            <a class="text-dark  nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"
-              aria-expanded="false">Agenda</a>
-            <ul class="text-center dropdown-menu" aria-labelledby="navbarDropdown">
-              <li><a class="dropdown-item btn btn-primary btn-outline-primary " [routerLink]="['/registrarAgenda']">Agendar Cita</a></li>
-              <li><a class="dropdown-item btn btn-primary btn-outline-primary " [routerLink]="['/consultarCita']">Consultar Agenda</a></li>
-            </ul>
-          </li>
-         
-            
-      
           <li class="nav-item dropdown">
             <a class="text-dark  nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"
               aria-expanded="false">Servicios</a>
@@ -51,10 +40,8 @@
             <a class="text-dark  nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"
               aria-expanded="false">Inventario</a>
             <ul class="text-center dropdown-menu" aria-labelledby="navbarDropdown">
-              <li><a class="dropdown-item btn btn-primary btn-outline-primary " [routerLink]="['/registrarAgenda']">Registrar Producto</a></li>
-              <li><a class="dropdown-item btn btn-primary btn-outline-primary " [routerLink]="['/registrarAgenda']">Registrar Inventario</a></li>
-              <li><a class="dropdown-item btn btn-primary btn-outline-primary " [routerLink]="['/registrarAgenda']">Consultar Inventario</a></li>
-              <li><a class="dropdown-item btn btn-primary btn-outline-primary " [routerLink]="['/registrarAgenda']">Descontar Inventario</a></li>
+              <li><a class="dropdown-item btn btn-primary btn-outline-primary " [routerLink]="['/registroProducto']">Registrar Producto</a></li>
+              <li><a class="dropdown-item btn btn-primary btn-outline-primary " [routerLink]="['/gestionInventario']">Gestionar Inventario</a></li>
             </ul>
           </li>
 
@@ -65,6 +52,10 @@
               <li><a class="dropdown-item btn btn-primary btn-outline-primary " [routerLink]="['/registrarFactura']">Realizar Factura</a></li>
               <li><a class="dropdown-item btn btn-primary btn-outline-primary " [routerLink]="['/consultarFactura']">Historial de Facturas</a></li>
             </ul>
+          </li>
+
+          <li class="nav-item" [routerLinkActive]="['link-active']" [routerLinkActiveOptions]="{ exact: true }">
+            <a class="nav-link text-dark " [routerLink]="['/registrarAgenda']">Angendar</a>
           </li>
 
           <li class="nav-item" [routerLinkActive]="['link-active']" [routerLinkActiveOptions]="{ exact: true }">

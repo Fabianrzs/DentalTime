@@ -1,14 +1,17 @@
 <div class="container">
-  <div>
-    <h2>Consulta de Paciente</h2>
+  <div class="row">
+    <h1 class="text-center">Consulta de Paciente</h1>
     <hr>
-    <div class="row">
-      <div class="col-6">
-        <input type="text" class="formcontrol" placeholder="Identificacion">
-      </div>
-    </div>
-    <br>
   </div>
+  <div class="row">
+    <div class="col-6">
+      <label for="filter"><b>Filtro</b></label>
+      <br>
+      <input id = "filter" type="text" class="formcontrol" placeholder="Identificacion">
+      <br>
+    </div>
+  </div>
+ 
   <div class="row">
     <div class="col-md">
       <div class="column">
@@ -17,7 +20,8 @@
             <thead>
               <tr>
                 <th>Identificacion</th>
-                <th>Nombre</th>
+                <th>Nombres</th>
+                <th>Apellidos</th>
                 <th>Sexo</th>
                 <th>Edad</th>
               </tr>
@@ -25,13 +29,15 @@
             <tbody>
               <tr>
                 <td>1003</td>
-                <td>Fabian</td>
+                <td>Fabian David</td>
+                <td>Ramirez Liñan</td>
                 <td>Masculino</td>
                 <td>17</td>
               </tr>
               <tr>
                 <td>1004</td>
-                <td>Andres</td>
+                <td>Andres Alfonso</td>
+                <td>Pertuz Perez</td>
                 <td>Masculino</td>
                 <td>21</td>
               </tr>
@@ -45,7 +51,7 @@
         <h2>Detalle del Paciente</h2>
         <hr>
       </div>
-      <div class="bg-light p-2 text-dark">
+      <div class="p-2 text-dark">
         <h3>Nombres: Andres Alfonso</h3>
         <h3>Apellidos: Pertuz Perez</h3>
         <h3>Edad: 21</h3>
