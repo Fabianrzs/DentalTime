@@ -5,15 +5,6 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 //-------------------------------------------------------Angular CLI--------------------------------------------------
 
-
-
-import {MatDatepickerModule} from '@angular/material/datepicker';
-import {MatInputModule} from '@angular/material/input';
-import { MatFormFieldModule } from '@angular/material/form-field';
-//-------------------------------------------------------Angular Material -------------------------------------------
-
-
-
 import { RouterModule } from '@angular/router';
 import { AppRoutingModule } from './app-routing.module';
 import { NavMenuComponent } from './nav-menu/nav-menu.component';
@@ -31,17 +22,12 @@ import { ConsultarServicioComponent } from './Servicio/consultar-servicio/consul
 import { InformeComponent } from './informe/informe.component';
 import { RealizarFacturaComponent } from './Facturacion/realizar-factura/realizar-factura.component';
 import { HistorialFacturaComponent } from './Facturacion/historial-factura/historial-factura.component';
-//---------------------------------------------------Routers---------------------------------------------------------------
-
-
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatNativeDateModule } from '@angular/material/core';
 import { RegistrarConsultaComponent } from './Usuario/registrar-consulta/registrar-consulta.component';
 import { ProductoRegistroComponent } from './Inventario/producto-registro/producto-registro.component';
 import { GestionInventarioComponent } from './Inventario/gestion-inventario/gestion-inventario.component';
+//---------------------------------------------------Routers---------------------------------------------------------------
 
-
+import { FullCalendarModule} from 'primeng/Fullcalendar';
 
 @NgModule({
   declarations: [
@@ -70,15 +56,10 @@ import { GestionInventarioComponent } from './Inventario/gestion-inventario/gest
     HttpClientModule,
     FormsModule,
     RouterModule.forRoot([
-      { path: '', component: HomeComponent, pathMatch: 'full' },
-    ]),
+    { path: '', component: HomeComponent, pathMatch: 'full' },
+], { relativeLinkResolution: 'legacy' }),
     AppRoutingModule,
-    NgbModule,
-    BrowserAnimationsModule,
-    MatDatepickerModule,
-    MatInputModule,
-    MatFormFieldModule,
-    MatNativeDateModule
+    FullCalendarModule
   ],
   providers: [],
   bootstrap: [AppComponent]

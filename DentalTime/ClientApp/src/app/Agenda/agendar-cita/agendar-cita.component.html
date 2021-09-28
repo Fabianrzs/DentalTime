@@ -3,7 +3,7 @@
   <hr>
   <br>
   <div class="row">
-    <div class="col col-5 " style="min-width: 300px;">
+    <div class="col col-4 " style="min-width: 300px;">
       <h2 class="text-center">Registro</h2>
       <hr>
       <div class="col-md">
@@ -37,7 +37,7 @@
         </div>
       </div>
       <br>
-      <div class="row justify-content-center">
+      <div class="">
         <div class="col col-auto">
           <button type="button" class="btn btn-outline-danger btn-sm">Cancelar</button>
         </div>
@@ -46,44 +46,8 @@
         </div>
       </div>
     </div>
-    <div class="col" style="min-width: 400px;">
-      <h2 class="text-center">Agenda</h2>
-      <hr>
-      <div class=" bg-info" style="height: 350px;">
-        <div class="row">
-          <div class="col col-4">
-            <h1 class="text-center" style="height: 100px;"> Datos</h1>
-          </div>
-          <div class="col col-4">
-            <h1 class="text-center" style="height: 100px;"> Datos</h1>
-          </div>
-          <div class="col col-4">
-            <h1 class="text-center" style="height: 100px;"> Datos</h1>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col col-4">
-            <h1 class="text-center" style="height: 100px;"> Datos</h1>
-          </div>
-          <div class="col col-4">
-            <h1 class="text-center" style="height: 100px;"> Datos</h1>
-          </div>
-          <div class="col col-4">
-            <h1 class="text-center" style="height: 100px;"> Datos</h1>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col col-4">
-            <h1 class="text-center" style="height: 100px;"> Datos</h1>
-          </div>
-          <div class="col col-4">
-            <h1 class="text-center" style="height: 100px;"> Datos</h1>
-          </div>
-          <div class="col col-4">
-            <h1 class="text-center" style="height: 100px;"> Datos</h1>
-          </div>
-        </div>
-      </div>
+    <div class="col-8 ">
+      <p-fullCalendar [events] = "events" [options] = "options" ></p-fullCalendar>
     </div>
   </div>
 </div>
