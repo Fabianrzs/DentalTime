@@ -1,20 +1,24 @@
 <header class=" text-dark">
   <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light border-bottom box-shadow mb-3">
+    <a class="navbar-brand" href="#">
+      <img src="../Imagenes/Logo2.png" alt="" width="150" height="50">
+    </a>
+    
     <div class="container p-3 mb-2 text-dark">
-      
+      <!-- <a class="navbar-brand" [routerLink]="['/']">parcialPrimerCorte</a> -->
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse"
         aria-label="Toggle navigation" [attr.aria-expanded]="isExpanded" (click)="toggle()">
         <span class="navbar-toggler-icon"></span>
+        
       </button>
       
       <div class="navbar-collapse collapse d-sm-inline-flex justify-content-end" [ngClass]="{ show: isExpanded }">
-
+        <img src="/ClientApp/src/app/Imagenes/Logo 2.png" alt="">
        
         <ul class="navbar-nav flex-grow">
           <li class="nav-item" [routerLinkActive]="['link-active']" [routerLinkActiveOptions]="{ exact: true }">
             <a class="nav-link text-dark " [routerLink]="['/home']">Home</a>
           </li>
-
           <li class="nav-item dropdown" [routerLinkActive]="['link-active']" [routerLinkActiveOptions]="{ exact: true }">
             <a class="text-dark  nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"
               aria-expanded="false" aria-label="Basic outlined example">Usuario</a>
