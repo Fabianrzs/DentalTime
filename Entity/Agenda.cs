@@ -10,6 +10,5 @@ namespace Entity
     {
         public Paciente Paciente { get; set; }
         public Servicio Servicio { get; set; }
-        
     }
 }
