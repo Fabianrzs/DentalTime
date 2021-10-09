@@ -1,0 +1,15 @@
+D:\PROYECTOS PROGRAMACION\PWEB\Proyecto\DAL\obj\Debug\net5.0\DAL.csproj.AssemblyReference.cache
+D:\PROYECTOS PROGRAMACION\PWEB\Proyecto\DAL\obj\Debug\net5.0\DAL.GeneratedMSBuildEditorConfig.editorconfig
+D:\PROYECTOS PROGRAMACION\PWEB\Proyecto\DAL\obj\Debug\net5.0\DAL.AssemblyInfoInputs.cache
+D:\PROYECTOS PROGRAMACION\PWEB\Proyecto\DAL\obj\Debug\net5.0\DAL.AssemblyInfo.cs
+D:\PROYECTOS PROGRAMACION\PWEB\Proyecto\DAL\obj\Debug\net5.0\DAL.csproj.CoreCompileInputs.cache
+D:\PROYECTOS PROGRAMACION\PWEB\Proyecto\DAL\bin\Debug\net5.0\DAL.deps.json
+D:\PROYECTOS PROGRAMACION\PWEB\Proyecto\DAL\bin\Debug\net5.0\DAL.dll
+D:\PROYECTOS PROGRAMACION\PWEB\Proyecto\DAL\bin\Debug\net5.0\ref\DAL.dll
+D:\PROYECTOS PROGRAMACION\PWEB\Proyecto\DAL\bin\Debug\net5.0\DAL.pdb
+D:\PROYECTOS PROGRAMACION\PWEB\Proyecto\DAL\bin\Debug\net5.0\Entity.dll
+D:\PROYECTOS PROGRAMACION\PWEB\Proyecto\DAL\bin\Debug\net5.0\Entity.pdb
+D:\PROYECTOS PROGRAMACION\PWEB\Proyecto\DAL\obj\Debug\net5.0\DAL.dll
+D:\PROYECTOS PROGRAMACION\PWEB\Proyecto\DAL\obj\Debug\net5.0\ref\DAL.dll
+D:\PROYECTOS PROGRAMACION\PWEB\Proyecto\DAL\obj\Debug\net5.0\DAL.pdb
+D:\PROYECTOS PROGRAMACION\PWEB\Proyecto\DAL\obj\Debug\net5.0\DAL.csproj.CopyComplete

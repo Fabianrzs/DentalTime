@@ -12,7 +12,7 @@ namespace Entity
         {
             Tipo = "Paciente";
         }
-        public char[] TipoSaguineo { get; set; }
+        public string TipoSaguineo { get; set; }
         public string NumeroTelefonico { get; set; }
         public string CorreoElectronico { get; set; }
         public string Antecedentes { get; set; }

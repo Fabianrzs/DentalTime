@@ -9,7 +9,7 @@ namespace Entity
 {
     public class Persona
     {
-        public string Identificcacion { get; set; }
+        public string Identificacion { get; set; }
         public string Nombres { get; set; }
         public string Apellidos { get; set; }
         public string Sexo { get; set; }
