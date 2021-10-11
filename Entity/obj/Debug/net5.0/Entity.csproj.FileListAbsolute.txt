@@ -10,3 +10,15 @@ D:\PROYECTOS PROGRAMACION\PWEB\Proyecto\Entity\obj\Debug\net5.0\Entity.csproj.Co
 D:\PROYECTOS PROGRAMACION\PWEB\Proyecto\Entity\obj\Debug\net5.0\Entity.dll
 D:\PROYECTOS PROGRAMACION\PWEB\Proyecto\Entity\obj\Debug\net5.0\ref\Entity.dll
 D:\PROYECTOS PROGRAMACION\PWEB\Proyecto\Entity\obj\Debug\net5.0\Entity.pdb
+I:\Semestre 5\Programacion WEB\Proyectos\Proyecto\Entity\bin\Debug\net5.0\Entity.deps.json
+I:\Semestre 5\Programacion WEB\Proyectos\Proyecto\Entity\bin\Debug\net5.0\Entity.dll
+I:\Semestre 5\Programacion WEB\Proyectos\Proyecto\Entity\bin\Debug\net5.0\ref\Entity.dll
+I:\Semestre 5\Programacion WEB\Proyectos\Proyecto\Entity\bin\Debug\net5.0\Entity.pdb
+I:\Semestre 5\Programacion WEB\Proyectos\Proyecto\Entity\obj\Debug\net5.0\Entity.csproj.AssemblyReference.cache
+I:\Semestre 5\Programacion WEB\Proyectos\Proyecto\Entity\obj\Debug\net5.0\Entity.GeneratedMSBuildEditorConfig.editorconfig
+I:\Semestre 5\Programacion WEB\Proyectos\Proyecto\Entity\obj\Debug\net5.0\Entity.AssemblyInfoInputs.cache
+I:\Semestre 5\Programacion WEB\Proyectos\Proyecto\Entity\obj\Debug\net5.0\Entity.AssemblyInfo.cs
+I:\Semestre 5\Programacion WEB\Proyectos\Proyecto\Entity\obj\Debug\net5.0\Entity.csproj.CoreCompileInputs.cache
+I:\Semestre 5\Programacion WEB\Proyectos\Proyecto\Entity\obj\Debug\net5.0\Entity.dll
+I:\Semestre 5\Programacion WEB\Proyectos\Proyecto\Entity\obj\Debug\net5.0\ref\Entity.dll
+I:\Semestre 5\Programacion WEB\Proyectos\Proyecto\Entity\obj\Debug\net5.0\Entity.pdb
