@@ -1,9 +1,5 @@
 <header class=" text-dark shadow-lg bg-white rounded">
   <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light border-bottom box-shadow mb-3">
-    <a class="navbar-brand" href="#">
-      <img src="../../assets/Logo 3.png" alt="">
-    </a>
-
     <div class="container p-3 mb-2 text-dark">
       <!-- <a class="navbar-brand" [routerLink]="['/']">parcialPrimerCorte</a> -->
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse"
@@ -11,17 +7,30 @@
         <span class="navbar-toggler-icon"></span>
       </button>
 
-      <div class="navbar-collapse collapse d-sm-inline-flex justify-content-end" [ngClass]="{ show: isExpanded }">
-        <img src="/ClientApp/src/app/Imagenes/Logo 2.png" alt="">
+      <a class="navbar-brand" href="#">
+        <img src="../../assets/Logo 3.png" alt="">
+      </a>
 
+      <div class="navbar-collapse collapse d-sm-inline-flex justify-content-end" [ngClass]="{ show: isExpanded }">
         <div *ngIf="!nav">
-          <div class="navbar-nav flex-grow">
-            <a class="nav-link active" aria-current="page" href="#">Inicio</a>
-            <a class="nav-link" href="#">Servicios</a>
-            <a class="nav-link" href="#">Sobre Nosotros</a>
-            <a class="nav-link" href="#">Contactanos</a>
-            <button class="btn btn-outline-success" type="submit" (click)="visibilidadModulos()">Sign in</button>
-          </div>
+          <ul class="nav nav-pills">
+            <li class="nav-item" [routerLinkActive]="['link-active']" >
+              <a class="nav-link" aria-current="page" [routerLink]="['/contenido']">Inicio</a>
+            </li>
+            <li class="nav-item" [routerLinkActive]="['link-active']" >
+              <a class="nav-link" href="">Servicios</a>
+            </li>
+            <li class="nav-item" [routerLinkActive]="['link-active']" >
+              <a class="nav-link" href="">Sobre Nosotros</a>
+            </li>
+            <li class="nav-item" [routerLinkActive]="['link-active']">
+              <a class="nav-link" href="">Contactanos</a>
+            </li>
+            <li class="nav-item" [routerLinkActive]="['link-active']">
+              <a class="btn btn-outline-primary" type="submit" [routerLink]="['/login']">Sign in</a>
+            </li>
+            <!-- (click)="visibilidadModulos()" -->
+          </ul>
         </div>
 
         <div *ngIf="nav">
@@ -81,6 +90,3 @@
     </div>
   </nav>
 </header>
-
-
-

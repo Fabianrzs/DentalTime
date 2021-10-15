@@ -26,11 +26,8 @@ import { RegistrarConsultaComponent } from './Usuario/registrar-consulta/registr
 import { ProductoRegistroComponent } from './Inventario/producto-registro/producto-registro.component';
 import { GestionInventarioComponent } from './Inventario/gestion-inventario/gestion-inventario.component';
 //---------------------------------------------------Routers---------------------------------------------------------------
-
-import { FullCalendarModule} from 'primeng/Fullcalendar';
-
 @NgModule({
-  declarations: [
+  declarations: [		
     AppComponent,
     NavMenuComponent,
     HomeComponent,
@@ -49,8 +46,8 @@ import { FullCalendarModule} from 'primeng/Fullcalendar';
     HistorialFacturaComponent,
     RegistrarConsultaComponent,
     ProductoRegistroComponent,
-    GestionInventarioComponent
-  ],
+    GestionInventarioComponent,
+   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
     HttpClientModule,
@@ -58,8 +55,7 @@ import { FullCalendarModule} from 'primeng/Fullcalendar';
     RouterModule.forRoot([
     { path: '', component: HomeComponent, pathMatch: 'full' },
 ], { relativeLinkResolution: 'legacy' }),
-    AppRoutingModule,
-    FullCalendarModule
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]

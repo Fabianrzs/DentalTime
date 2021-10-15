@@ -34,7 +34,7 @@ const routes: Routes = [
   { path: 'informe', component:InformeComponent},
   { path: 'registrarConsulta', component: RegistrarConsultaComponent},
   { path: 'registroProducto', component: ProductoRegistroComponent},
-  { path: 'gestionInventario', component: GestionInventarioComponent}
+  { path: 'gestionInventario', component: GestionInventarioComponent},
 ];
 
 
