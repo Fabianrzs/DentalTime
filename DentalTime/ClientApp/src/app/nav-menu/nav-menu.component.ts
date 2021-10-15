@@ -7,12 +7,16 @@ import { Component } from '@angular/core';
 })
 export class NavMenuComponent {
   isExpanded = false;
-
+  nav = false; 
   collapse() {
     this.isExpanded = false;
   }
 
   toggle() {
     this.isExpanded = !this.isExpanded;
+  }
+
+  visibilidadModulos(){
+    this.nav = !this.nav;
   }
 }
