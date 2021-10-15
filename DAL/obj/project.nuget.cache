@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "1YgoJXzPAPFaw9Vkx5R2uy8ziMxhSOLvNZUZGTXRlxKGpp5hP62p6X9zZX+nXnSxqqouJKAwezJ7Ve3rd+PVnA==",
+  "dgSpecHash": "+cOsxvONzrZTyyfGdDYR8C/HzC8k8lhA+SEV/JLsnh6Xmt0tkwcyAuKhDoYKC7M2Ow6ikcZkiPpaIZtGpomApA==",
   "success": true,
   "projectFilePath": "I:\\Semestre 5\\Programacion WEB\\Proyectos\\Proyecto\\DAL\\DAL.csproj",
   "expectedPackageFiles": [
@@ -12,7 +12,10 @@
     "C:\\Users\\andre\\.nuget\\packages\\runtime.win-x86.runtime.native.system.data.sqlclient.sni\\4.4.0\\runtime.win-x86.runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512",
     "C:\\Users\\andre\\.nuget\\packages\\system.data.sqlclient\\4.8.3\\system.data.sqlclient.4.8.3.nupkg.sha512",
     "C:\\Users\\andre\\.nuget\\packages\\system.security.accesscontrol\\4.7.0\\system.security.accesscontrol.4.7.0.nupkg.sha512",
-    "C:\\Users\\andre\\.nuget\\packages\\system.security.principal.windows\\4.7.0\\system.security.principal.windows.4.7.0.nupkg.sha512"
+    "C:\\Users\\andre\\.nuget\\packages\\system.security.principal.windows\\4.7.0\\system.security.principal.windows.4.7.0.nupkg.sha512",
+    "C:\\Users\\andre\\.nuget\\packages\\microsoft.netcore.app.ref\\5.0.0\\microsoft.netcore.app.ref.5.0.0.nupkg.sha512",
+    "C:\\Users\\andre\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\5.0.0\\microsoft.windowsdesktop.app.ref.5.0.0.nupkg.sha512",
+    "C:\\Users\\andre\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\5.0.0\\microsoft.aspnetcore.app.ref.5.0.0.nupkg.sha512"
   ],
   "logs": []
 }

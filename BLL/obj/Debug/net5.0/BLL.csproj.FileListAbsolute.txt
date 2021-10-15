@@ -28,7 +28,6 @@ I:\Semestre 5\Programacion WEB\Proyectos\Proyecto\BLL\obj\Debug\net5.0\BLL.Gener
 I:\Semestre 5\Programacion WEB\Proyectos\Proyecto\BLL\obj\Debug\net5.0\BLL.AssemblyInfoInputs.cache
 I:\Semestre 5\Programacion WEB\Proyectos\Proyecto\BLL\obj\Debug\net5.0\BLL.AssemblyInfo.cs
 I:\Semestre 5\Programacion WEB\Proyectos\Proyecto\BLL\obj\Debug\net5.0\BLL.csproj.CoreCompileInputs.cache
-I:\Semestre 5\Programacion WEB\Proyectos\Proyecto\BLL\obj\Debug\net5.0\BLL.csproj.CopyComplete
 I:\Semestre 5\Programacion WEB\Proyectos\Proyecto\BLL\obj\Debug\net5.0\BLL.dll
 I:\Semestre 5\Programacion WEB\Proyectos\Proyecto\BLL\obj\Debug\net5.0\ref\BLL.dll
 I:\Semestre 5\Programacion WEB\Proyectos\Proyecto\BLL\obj\Debug\net5.0\BLL.pdb

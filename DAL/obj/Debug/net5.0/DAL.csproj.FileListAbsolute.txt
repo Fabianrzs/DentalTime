@@ -24,7 +24,6 @@ I:\Semestre 5\Programacion WEB\Proyectos\Proyecto\DAL\obj\Debug\net5.0\DAL.Gener
 I:\Semestre 5\Programacion WEB\Proyectos\Proyecto\DAL\obj\Debug\net5.0\DAL.AssemblyInfoInputs.cache
 I:\Semestre 5\Programacion WEB\Proyectos\Proyecto\DAL\obj\Debug\net5.0\DAL.AssemblyInfo.cs
 I:\Semestre 5\Programacion WEB\Proyectos\Proyecto\DAL\obj\Debug\net5.0\DAL.csproj.CoreCompileInputs.cache
-I:\Semestre 5\Programacion WEB\Proyectos\Proyecto\DAL\obj\Debug\net5.0\DAL.csproj.CopyComplete
 I:\Semestre 5\Programacion WEB\Proyectos\Proyecto\DAL\obj\Debug\net5.0\DAL.dll
 I:\Semestre 5\Programacion WEB\Proyectos\Proyecto\DAL\obj\Debug\net5.0\ref\DAL.dll
 I:\Semestre 5\Programacion WEB\Proyectos\Proyecto\DAL\obj\Debug\net5.0\DAL.pdb
