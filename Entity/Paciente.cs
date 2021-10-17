@@ -16,14 +16,15 @@ namespace Entity
         public string Apellidos { get; set; }
         public string Sexo { get; set; }
         public DateTime FechaNacimiento { get; set; }
+        public string PaisNacimiento { get; set; }
+        public string CiudadNacimiento { get; set; }
         public string TipoSaguineo { get; set; }
         public string NumeroTelefonico { get; set; }
         public string CorreoElectronico { get; set; }
-        public string PaisNacimiento { get; set; }
-        public string CiudadNacimiento { get; set; }
+       
 
 
-        public ICollection<Cita> Citas { get; set; }
-        public ICollection<HistoriaClinica> historiasClinicas { get; set; }
+        public ICollection<Cita> HistorialCita { get; set; }
+        public ICollection<HistoriaClinica> HistorialClinico { get; set; }
     }
 }

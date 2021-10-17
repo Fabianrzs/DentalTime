@@ -10,13 +10,13 @@ namespace Entity
     public class ConsultaClinica
     {
         [Key]
-        public int CodConsulta { get; set; }
+        public int CodConsultaClinica { get; set; }
         public string Motivo { get; set; }
         public string Antecedentes { get; set; }
         public string Medicacion { get; set; }
         public DateTime UltimaConsulta { get; set; }
         public string ValoracionMedica { get; set; }
 
-        public ICollection<HistoriaClinica> HistoriaClinicas { get; set; }
+        public HistoriaClinica HistoriaClinica { get; set; }
     }
 }

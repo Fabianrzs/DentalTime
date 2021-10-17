@@ -12,9 +12,13 @@ namespace Entity
         [Key]
         public string Referencia { get; set; }
         public string Nombre { get; set; }
-        public string Fabricante { get; set; }
-        public int UnidadesMin { get; set; }
-        public int UnidadesMax { get; set; }
-        public int UnidadesActuales { get; set; }
+        public string Marca { get; set; }
+        public string Categoria { get; set; }
+        public string Descripcion { get; set; }
+        public int StockMin { get; set; }
+        public int StockMax { get; set; }
+        public int StockActual { get; set; }
+
+
     }
 }

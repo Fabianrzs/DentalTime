@@ -16,6 +16,7 @@ namespace Entity
         public string Duracion { get; set; }
         public string Descripcion { get; set; }
 
-        public Cita Cita { get; set; }
+
+        public ICollection<Cita> Citas { get; set; }
     }
 }

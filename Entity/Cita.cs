@@ -15,14 +15,19 @@ namespace Entity
         public string Motivo { get; set; }
 
 
-        public int CodAgenda { get; set; }
-        public Agenda Agenda { get; set; }
 
-        public string NoDocumento { get; set; }
+        public string NoDocumentoOfCita { get; set; }
         public Paciente Paciente { get; set; }
 
 
-        public int Referencia { get; set; }
+
+        public int CodAgendaOfCita { get; set; }
+        public Agenda Agenda { get; set; }
+
+
+
+        public int ReferenciaServicioOfCita { get; set; }
         public Servicio Servicio { get; set; }
+
     }
 }
