@@ -26,7 +26,9 @@ I:\Semestre 5\Programacion WEB\Proyectos\Proyecto\DAL\obj\Debug\net5.0\DAL.cspro
 I:\Semestre 5\Programacion WEB\Proyectos\Proyecto\DAL\obj\Debug\net5.0\DAL.dll
 I:\Semestre 5\Programacion WEB\Proyectos\Proyecto\DAL\obj\Debug\net5.0\ref\DAL.dll
 I:\Semestre 5\Programacion WEB\Proyectos\Proyecto\DAL\obj\Debug\net5.0\DAL.pdb
-I:\Semestre 5\Programacion WEB\Proyectos\Proyecto\DAL\obj\Debug\net5.0\DAL.csproj.CopyComplete
 D:\PROYECTOS PROGRAMACION\PWEB\Proyecto\DAL\bin\Debug\net5.0\DAL.runtimeconfig.json
 D:\PROYECTOS PROGRAMACION\PWEB\Proyecto\DAL\bin\Debug\net5.0\DAL.runtimeconfig.dev.json
 D:\PROYECTOS PROGRAMACION\PWEB\Proyecto\DAL\obj\Debug\net5.0\DAL.genruntimeconfig.cache
+I:\Semestre 5\Programacion WEB\Proyectos\Proyecto\DAL\bin\Debug\net5.0\DAL.runtimeconfig.json
+I:\Semestre 5\Programacion WEB\Proyectos\Proyecto\DAL\bin\Debug\net5.0\DAL.runtimeconfig.dev.json
+I:\Semestre 5\Programacion WEB\Proyectos\Proyecto\DAL\obj\Debug\net5.0\DAL.genruntimeconfig.cache
