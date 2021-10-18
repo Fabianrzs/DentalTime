@@ -23,7 +23,8 @@ namespace DentalTime
         public void ConfigureServices(IServiceCollection services)
         {
             var connectionString = Configuration.GetConnectionString("DefaultConnection");
-            services.AddDbContext<DentalTimeContext>(p => p.UseSqlServer(connectionString));
+            services.AddDbContext<DentalTimeContext>(d => d.UseSqlServer(connectionString));
+           
             services.AddSwaggerGen();
             services.AddControllersWithViews();
             // In production, the Angular files will be served from this directory

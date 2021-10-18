@@ -26,7 +26,7 @@ namespace Entity
 
 
 
-        public int ReferenciaServicioOfCita { get; set; }
+        public string ReferenciaServicioOfCita { get; set; }
         public Servicio Servicio { get; set; }
 
     }
