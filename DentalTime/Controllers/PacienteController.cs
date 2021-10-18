@@ -15,23 +15,23 @@ namespace DentalTime.Controllers
     [ApiController]
     public class PacienteController : ControllerBase
     {
-        private PacienteService _pacienteService;
+        private PacienteService _service;
 
         public PacienteController(DentalTimeContext context)
         {
-            _pacienteService = new PacienteService (context);
+            _service = new PacienteService (context);
         }
 
         [HttpPost]
         public ActionResult<Paciente> Guardar(PacienteImputModel pacienteImput)
         {
             Paciente paciente = MapearPaciente(pacienteImput);
-            PacienteResponse pacienteResponse = _pacienteService.Guardar(paciente);
-            if (pacienteResponse.Error)
+            var request = _service.Guardar(paciente);
+            if (request.Error)
             {
-                return BadRequest(pacienteResponse.Mensaje);
+                return BadRequest(request.Mensaje);
             }
-            return Ok(pacienteResponse.Paciente);
+            return Ok(request.Paciente);
         }
 
         private Paciente MapearPaciente(PacienteImputModel pacienteImput)
@@ -50,5 +50,6 @@ namespace DentalTime.Controllers
             paciente.CorreoElectronico = pacienteImput.CorreoElectronico;
             return paciente;
         }
+
     }
 }

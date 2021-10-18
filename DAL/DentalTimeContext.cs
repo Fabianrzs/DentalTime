@@ -14,7 +14,6 @@ namespace DAL
         {
 
         }
-
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Cita>()
