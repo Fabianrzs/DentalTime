@@ -22,6 +22,7 @@ namespace DentalTime.Controllers
             _pacienteService = new PacienteService (context);
         }
 
+        [HttpPost]
         public ActionResult<Paciente> Guardar(PacienteImputModel pacienteImput)
         {
             Paciente paciente = MapearPaciente(pacienteImput);
