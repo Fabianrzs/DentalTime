@@ -24,7 +24,7 @@ namespace BLL
             {
                 _context.ConsultasClinicas.Add(consultaClinica);
                 _context.SaveChanges();
-                return new ConsultaClinicaGuardarResponse(_context.ConsultasClinicas.Find(consultaClinica));
+                return new ConsultaClinicaGuardarResponse(consultaClinica);
             }
             catch (Exception e)
             {

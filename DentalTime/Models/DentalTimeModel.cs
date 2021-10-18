@@ -93,7 +93,7 @@ namespace DentalTime.Models
 
     public class ConsultaClinicaImputModel
     {
-        public int CodConsultaClinica { get; set; }
+        
         public string Motivo { get; set; }
         public string Antecedentes { get; set; }
         public string Medicacion { get; set; }
@@ -104,6 +104,7 @@ namespace DentalTime.Models
 
     public class ConsultaClinicaViewModel : ConsultaClinicaImputModel
     {
+        public int CodConsultaClinica { get; set; }
         public ConsultaClinicaViewModel (ConsultaClinica consultaClinica)
         {
             CodConsultaClinica = consultaClinica.CodConsultaClinica;
