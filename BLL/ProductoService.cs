@@ -16,21 +16,21 @@ namespace BLL
             _context = context;
         }
 
-        public LogProducto Guardar(Producto producto)
+        public LogResponse Guardar(Producto producto)
         {
             try
             {
                 if(_context.Productos.Find(producto.Referencia) == null)
                 {
                     _context.Productos.Add(producto);
-                    return new LogProducto(producto);
+                    return new LogResponse(producto);
                 }
-                return new LogProducto($"El producto ya se encuentra registrado");
+                return new LogResponse($"El producto ya se encuentra registrado");
             }
-            catch (Exception e) { return new LogProducto($"Error al Guardar: Se presento lo siguiente {e.Message}"); }
+            catch (Exception e) { return new LogResponse($"Error al Guardar: Se presento lo siguiente {e.Message}"); }
         }
 
-        public LogProducto Modificar(Producto productoNew, string referencia)
+        public LogResponse Modificar(Producto productoNew, string referencia)
         {
             try
             {
@@ -39,47 +39,28 @@ namespace BLL
                 {
                     producto = productoNew;
                     _context.Productos.Update(producto);
-                    return new LogProducto(producto);
+                    return new LogResponse(producto);
                 }
-                return new LogProducto($"No se encuentra registro a modificar");
+                return new LogResponse($"No se encuentra registro a modificar");
             }
-            catch (Exception e) { return new LogProducto($"Error al Modificar: Se presento lo siguiente {e.Message}"); }
+            catch (Exception e) { return new LogResponse($"Error al Modificar: Se presento lo siguiente {e.Message}"); }
         }
 
-        public LogProducto FindRegistro(string referencia)
+        public LogResponse Find (string referencia)
         {
             try
             {
                 Producto producto = _context.Productos.Find(referencia);
                 if (producto != null)
                 {
-                    return new LogProducto(producto);
+                    return new LogResponse(producto);
                 }
-                return new LogProducto($"No se encuentra el registro buscado");
+                return new LogResponse($"No se encuentra el registro buscado");
             }
-            catch (Exception e) { return new LogProducto($"Error al Buscar: Se presento lo siguiente {e.Message}"); }
+            catch (Exception e) { return new LogResponse($"Error al Buscar: Se presento lo siguiente {e.Message}"); }
         }
 
-        public class LogProducto
-        {
-            public Producto Producto { get; set; }
-            public string Mensaje { get; set; }
-            public bool Error { get; set; }
-
-            public LogProducto(Producto producto)
-            {
-                Producto = producto;
-                Error = false;
-            }
-
-            public LogProducto(string mensaje)
-            {
-                Mensaje = mensaje;
-                Error = true;
-            }
-        }
-
-        public string DeleteRegistro(string referencia)
+        public string Delete (string referencia)
         {
             try
             {
@@ -94,7 +75,7 @@ namespace BLL
             catch (Exception e) { return ($"Error al Eliminar: Se presento lo siguiente {e.Message}"); }
         }
 
-        public ConsultaResponse Consultar()
+        public ConsultaResponse Consultar ()
         {
             try
             {
@@ -107,23 +88,41 @@ namespace BLL
             }
             catch (Exception e) { return new ConsultaResponse($"Error al Consultar: Se presento lo siguiente {e.Message}"); }
         }
+    }
 
-        public class ConsultaResponse
+    public class LogResponse
+    {
+        public Producto Producto { get; set; }
+        public string Mensaje { get; set; }
+        public bool Error { get; set; }
+
+        public LogResponse(Producto producto)
         {
-            public List<Producto> Productos { get; set; }
-            public string Mensaje { get; set; }
-            public bool Error { get; set; }
-            public ConsultaResponse(List<Producto> productos)
-            {
-                Productos = productos;
-                Error = false;
-            }
-            public ConsultaResponse(string mensaje)
-            {
-                Mensaje = mensaje;
-                Error = true;
-            }
+            Producto = producto;
+            Error = false;
         }
 
+        public LogResponse(string mensaje)
+        {
+            Mensaje = mensaje;
+            Error = true;
+        }
+    }
+
+    public class ConsultaResponse
+    {
+        public List<Producto> Productos { get; set; }
+        public string Mensaje { get; set; }
+        public bool Error { get; set; }
+        public ConsultaResponse(List<Producto> productos)
+        {
+            Productos = productos;
+            Error = false;
+        }
+        public ConsultaResponse(string mensaje)
+        {
+            Mensaje = mensaje;
+            Error = true;
+        }
     }
 }
