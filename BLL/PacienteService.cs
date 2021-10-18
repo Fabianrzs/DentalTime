@@ -24,7 +24,7 @@ namespace BLL
                 var buscarPaciente = _context.Pacientes.Find(paciente.NoDocumeto);
                 if (buscarPaciente != null)
                 {
-                    return new PacienteResponse("Error el paciente ya se encuentra registrada");
+                    return new PacienteResponse("Error el paciente ya se encuentra registrado");
                 }
                 _context.Pacientes.Add(paciente);
                 _context.SaveChanges();
@@ -33,6 +33,23 @@ namespace BLL
             catch (Exception e)
             {
                 return new PacienteResponse("Error en la aplicacion"+e.Message);
+            }
+        }
+
+        public PacienteResponse Buscar (Paciente paciente)
+        {
+            try
+            {
+                var buscarPaciente = _context.Pacientes.Find(paciente.NoDocumeto);
+                if (buscarPaciente != null)
+                {
+                    return new PacienteResponse(buscarPaciente);
+                }
+                return new PacienteResponse("Error el paciente no se encuentra registrado");
+            }
+            catch (Exception e)
+            {
+                return new PacienteResponse("Error en la aplicacion" + e.Message);
             }
         }
 

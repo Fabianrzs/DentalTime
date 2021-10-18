@@ -17,31 +17,34 @@ namespace BLL
             _context = context;
         }
 
-        public HistorialLogResponse Guardar(HistoriaClinica historia)
+        public HistorialRegistroResponse Guardar(HistoriaClinica historia)
         {
             try
             {
                 _context.HistoriasClinicas.Add(historia);
-                return new HistorialLogResponse(historia);
+                return new HistorialRegistroResponse(historia);
             }
-            catch (Exception e) { return new HistorialLogResponse($"Error al Guardar: Se presento lo siguiente {e.Message}"); }
+            catch (Exception e) 
+            { 
+                return new HistorialRegistroResponse($"Error al Guardar: Se presento lo siguiente {e.Message}"); 
+            }
         }
 
 
     }
-    public class HistorialLogResponse
+    public class HistorialRegistroResponse
     {
         public HistoriaClinica HistoriaClinica { get; set; }
         public string Mensaje { get; set; }
         public bool Error { get; set; }
 
-        public HistorialLogResponse(HistoriaClinica historiaClinica)
+        public HistorialRegistroResponse(HistoriaClinica historiaClinica)
         {
             HistoriaClinica = historiaClinica;
             Error = false;
         }
 
-        public HistorialLogResponse(string mensaje)
+        public HistorialRegistroResponse(string mensaje)
         {
             Mensaje = mensaje;
             Error = true;
