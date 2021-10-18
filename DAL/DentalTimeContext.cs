@@ -44,7 +44,7 @@ namespace DAL
 
         public DbSet<Agenda> Agendas { get; set; }
         public DbSet<Cita> Citas { get; set; }
-        public DbSet<ConsultaClinica> Consultas { get; set; }
+        public DbSet<ConsultaClinica> ConsultasClinicas { get; set; }
         public DbSet<HistoriaClinica> HistoriasClinicas { get; set; }
         public DbSet<Paciente> Pacientes { get; set; }
         public DbSet<Producto> Productos { get; set; }

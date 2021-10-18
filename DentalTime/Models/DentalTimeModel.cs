@@ -73,7 +73,9 @@ namespace DentalTime.Models
         public int CodHistoriaClinica { get; set; }
         public DateTime FachaHora { get; set; }
         public string NoDocumentoOfHistoria { get; set; }
+        public PacienteViewModel PacienteViewModel { get; set; }
         public int CodConsultaOfHistoria { get; set; }
+        public ConsultaClinicaViewModel ConsultaClinicaViewModel { get; set; }
     }
 
     public class HistoriaClinicaViewModel : HistoriaClinicaImputModel
@@ -83,7 +85,9 @@ namespace DentalTime.Models
             CodHistoriaClinica = historiaClinica.CodHistoriaClinica;
             FachaHora = historiaClinica.FachaHora;
             NoDocumentoOfHistoria = historiaClinica.NoDocumentoOfHistoria;
+            PacienteViewModel = new PacienteViewModel(historiaClinica.Paciente);
             CodConsultaOfHistoria = historiaClinica.CodConsultaOfHistoria;
+            ConsultaClinicaViewModel = new ConsultaClinicaViewModel(historiaClinica.ConsultaClinica);
         }
     }
 
