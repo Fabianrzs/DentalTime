@@ -31,9 +31,6 @@ I:\Semestre 5\Programacion WEB\Proyectos\Proyecto\BLL\obj\Debug\net5.0\BLL.cspro
 I:\Semestre 5\Programacion WEB\Proyectos\Proyecto\BLL\obj\Debug\net5.0\BLL.dll
 I:\Semestre 5\Programacion WEB\Proyectos\Proyecto\BLL\obj\Debug\net5.0\ref\BLL.dll
 I:\Semestre 5\Programacion WEB\Proyectos\Proyecto\BLL\obj\Debug\net5.0\BLL.pdb
-D:\PROYECTOS PROGRAMACION\PWEB\Proyecto\BLL\bin\Debug\net5.0\BLL.runtimeconfig.json
-D:\PROYECTOS PROGRAMACION\PWEB\Proyecto\BLL\bin\Debug\net5.0\BLL.runtimeconfig.dev.json
-D:\PROYECTOS PROGRAMACION\PWEB\Proyecto\BLL\obj\Debug\net5.0\BLL.genruntimeconfig.cache
 I:\Semestre 5\Programacion WEB\Proyectos\Proyecto\BLL\bin\Debug\net5.0\BLL.runtimeconfig.json
 I:\Semestre 5\Programacion WEB\Proyectos\Proyecto\BLL\bin\Debug\net5.0\BLL.runtimeconfig.dev.json
 I:\Semestre 5\Programacion WEB\Proyectos\Proyecto\BLL\obj\Debug\net5.0\BLL.genruntimeconfig.cache
