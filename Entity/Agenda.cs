@@ -11,6 +11,7 @@ namespace Entity
     {
         [Key]
         public int CodAgenda { get; set; }
+        public DateTime FechaHora { get; set; }
         public string Estado { get; set; }
 
 

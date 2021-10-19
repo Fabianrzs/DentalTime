@@ -11,7 +11,6 @@ namespace Entity
     {
         [Key]
         public int CodCita { get; set; }
-        public DateTime FechaHora { get; set; }
         public string Motivo { get; set; }
 
 
