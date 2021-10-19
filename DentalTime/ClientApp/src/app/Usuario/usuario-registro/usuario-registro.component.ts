@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Paciente } from 'src/app/models/Paciente';
 
 @Component({
   selector: 'app-usuario-registro',
@@ -7,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UsuarioRegistroComponent implements OnInit {
 
+  paciente: Paciente;
+
   constructor() { }
+  
 
   ngOnInit() {
+    this.paciente = new Paciente();
   }
 
 }

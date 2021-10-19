@@ -25,6 +25,7 @@ import { HistorialFacturaComponent } from './Facturacion/historial-factura/histo
 import { RegistrarConsultaComponent } from './Usuario/registrar-consulta/registrar-consulta.component';
 import { ProductoRegistroComponent } from './Inventario/producto-registro/producto-registro.component';
 import { GestionInventarioComponent } from './Inventario/gestion-inventario/gestion-inventario.component';
+import { FiltroPacientePipe } from './pipe/filtro-paciente.pipe';
 //---------------------------------------------------Routers---------------------------------------------------------------
 @NgModule({
   declarations: [		
@@ -47,6 +48,7 @@ import { GestionInventarioComponent } from './Inventario/gestion-inventario/gest
     RegistrarConsultaComponent,
     ProductoRegistroComponent,
     GestionInventarioComponent,
+    FiltroPacientePipe,
    ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
