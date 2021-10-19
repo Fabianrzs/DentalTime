@@ -51,5 +51,13 @@ namespace DentalTime.Controllers
             return paciente;
         }
 
+        [HttpGet]
+        public ActionResult<List<Paciente>> Consulta()
+        {
+            var request = _service.Consult();
+            if (request.Error) return BadRequest(request.Mensaje);
+            return Ok(request.Pacientes);
+        }
+
     }
 }
