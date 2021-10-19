@@ -17,60 +17,93 @@ namespace BLL
             _context = context;
         }
 
-        public PacienteResponse Guardar(Paciente paciente)
+        public PacienteLogResponse Save(Paciente paciente)
         {
             try
             {
-                var buscarPaciente = _context.Pacientes.Find(paciente.NoDocumeto);
+                var buscarPaciente = _context.Pacientes.Find(paciente.NoDocumento);
                 if (buscarPaciente != null)
                 {
-                    return new PacienteResponse("Error el paciente ya se encuentra registrado");
+                    return new PacienteLogResponse("Error el paciente ya se encuentra registrado");
                 }
                 _context.Pacientes.Add(paciente);
                 _context.SaveChanges();
-                return new PacienteResponse(paciente);
+                return new PacienteLogResponse(paciente);
             }
             catch (Exception e)
             {
-                return new PacienteResponse("Error en la aplicacion"+e.Message);
+                return new PacienteLogResponse("Error en la aplicacion"+e.Message);
             }
         }
 
-        public PacienteResponse Buscar (Paciente paciente)
+        public PacienteLogResponse Find (string documento)
         {
             try
             {
-                var buscarPaciente = _context.Pacientes.Find(paciente.NoDocumeto);
+                var buscarPaciente = _context.Pacientes.Find(documento);
                 if (buscarPaciente != null)
                 {
-                    return new PacienteResponse(buscarPaciente);
+                    return new PacienteLogResponse(buscarPaciente);
                 }
-                return new PacienteResponse("Error el paciente no se encuentra registrado");
+                return new PacienteLogResponse("Error el paciente no se encuentra registrado");
             }
             catch (Exception e)
             {
-                return new PacienteResponse("Error en la aplicacion" + e.Message);
+                return new PacienteLogResponse("Error en la aplicacion" + e.Message);
             }
         }
 
+        public PacienteConsultaResponse Consult()
+        {
+            try
+            {
+                List<Paciente> pacientes = _context.Pacientes.ToList();
+                if (pacientes != null)
+                {
+                    return new PacienteConsultaResponse(pacientes);
+                }
+                return new PacienteConsultaResponse($"No se han agregado registros");
+            }
+            catch (Exception e) { return new PacienteConsultaResponse($"Error al Consultar: Se presento lo siguiente {e.Message}"); }
+        }
     }
 
-    public class PacienteResponse
+    public class PacienteLogResponse
     {
         public Paciente Paciente { get; set; }
         public string Mensaje { get; set; }
         public bool Error { get; set; }
 
 
-        public PacienteResponse(string mensaje)
+        public PacienteLogResponse(string mensaje)
         {
             Mensaje = mensaje;
             Error = true;
         }
 
-        public PacienteResponse(Paciente paciente)
+        public PacienteLogResponse(Paciente paciente)
         {
             Paciente = paciente;
+            Error = false;
+        }
+
+    }
+    public class PacienteConsultaResponse
+    {
+        public List<Paciente> Pacientes { get; set; }
+        public string Mensaje { get; set; }
+        public bool Error { get; set; }
+
+
+        public PacienteConsultaResponse(string mensaje)
+        {
+            Mensaje = mensaje;
+            Error = true;
+        }
+
+        public PacienteConsultaResponse(List<Paciente> pacientes)
+        {
+            Pacientes = pacientes;
             Error = false;
         }
 

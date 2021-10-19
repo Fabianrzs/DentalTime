@@ -23,15 +23,15 @@ namespace DentalTime.Controllers
         }
 
         [HttpPost]
-        public ActionResult<Producto> Guardar(ProductoImputModel productoInput)
+        public ActionResult<Producto> Guardar(ProductoInputModel productoInput)
         {
             var producto = mapearProducto(productoInput);
-            var request = _service.Guardar(producto);
+            var request = _service.Save(producto);
             if (request.Error) return BadRequest(request.Mensaje);
             return Ok(request.Producto);
         }
 
-        private Producto mapearProducto(ProductoImputModel productoInput)
+        private Producto mapearProducto(ProductoInputModel productoInput)
         {
             var producto = new Producto();
 
@@ -50,7 +50,7 @@ namespace DentalTime.Controllers
         [HttpGet]
         public ActionResult<List<Producto>> Consultar()
         {
-            var request = _service.Consultar();
+            var request = _service.Consult();
             if (request.Error) return BadRequest(request.Mensaje);
             return Ok(request.Productos);
         }

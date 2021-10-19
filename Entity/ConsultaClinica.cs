@@ -12,6 +12,7 @@ namespace Entity
         [Key]
         public int CodConsultaClinica { get; set; }
         public string Motivo { get; set; }
+        public string Complicaciones { get; set; }
         public string Antecedentes { get; set; }
         public string Medicacion { get; set; }
         public DateTime UltimaConsulta { get; set; }

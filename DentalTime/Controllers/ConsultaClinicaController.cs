@@ -24,18 +24,15 @@ namespace DentalTime.Controllers
         }
 
         [HttpPost]
-        public ActionResult<ConsultaClinica> Guardar(ConsultaClinicaImputModel consultaClinicaImputModel)
+        public ActionResult<ConsultaClinica> Guardar(ConsultaClinicaInputModel consultaClinicaImputModel)
         {
-            ConsultaClinica consultaClinica = MapearConsultaClinica(consultaClinicaImputModel);
-            var respuesta = _service.Guardar(consultaClinica);
-            if (respuesta.Error)
-            {
-                return BadRequest(respuesta.Mensaje);
-            }
-            return Ok(respuesta.ConsultaClinica);
+            var consultaClinica = MapearConsultaClinica(consultaClinicaImputModel);
+            var request = _service.Save(consultaClinica);
+            if (request.Error) return BadRequest(request.Mensaje);
+            return Ok(request.ConsultaClinica);
         }
 
-        private ConsultaClinica MapearConsultaClinica(ConsultaClinicaImputModel consultaClinicaImputModel)
+        private ConsultaClinica MapearConsultaClinica(ConsultaClinicaInputModel consultaClinicaImputModel)
         {
             ConsultaClinica consultaClinica = new ConsultaClinica();
             consultaClinica.Motivo = consultaClinicaImputModel.Motivo;

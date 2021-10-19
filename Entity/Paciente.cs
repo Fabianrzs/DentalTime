@@ -11,7 +11,7 @@ namespace Entity
     {
         public string TipoDocumento { get; set; }
         [Key]
-        public string NoDocumeto { get; set; }
+        public string NoDocumento { get; set; }
         public string Nombres { get; set; }
         public string Apellidos { get; set; }
         public string Sexo { get; set; }

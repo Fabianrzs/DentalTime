@@ -13,40 +13,93 @@ namespace BLL
 
         private readonly DentalTimeContext _context;
 
-        public ConsultaClinicaService (DentalTimeContext context)
+        public ConsultaClinicaService(DentalTimeContext context)
         {
             _context = context;
         }
 
-        public ConsultaClinicaGuardarResponse Guardar(ConsultaClinica consultaClinica)
+        public ConsultaClinicaLogResponse Save(ConsultaClinica consultaClinica)
         {
             try
             {
                 _context.ConsultasClinicas.Add(consultaClinica);
                 _context.SaveChanges();
-                return new ConsultaClinicaGuardarResponse(consultaClinica);
+                return new ConsultaClinicaLogResponse(consultaClinica);
             }
             catch (Exception e)
             {
-                return new ConsultaClinicaGuardarResponse ($"Error al Guardar: Se presento lo siguiente {e.Message}");
+                return new ConsultaClinicaLogResponse($"Error al Guardar: Se presento lo siguiente {e.Message}");
             }
+        }
+
+        public ConsultaClinicaLogResponse Find()
+        {
+            try
+            {
+                ConsultaClinica consulta = _context.ConsultasClinicas.OrderByDescending(c => c.CodConsultaClinica).FirstOrDefault();
+
+                if (consulta == null)
+                {
+                    return new ConsultaClinicaLogResponse($"Error al buscar: consulta no asociada");
+                }
+                return new ConsultaClinicaLogResponse(consulta);
+            }
+            catch (Exception e)
+            {
+                return new ConsultaClinicaLogResponse($"Error al Buscar: Se presento lo siguiente {e.Message}");
+            }
+
+        }
+
+        public ConsultaClinicaConsultaResponse Consult()
+        {
+            try
+            {
+                List<ConsultaClinica> consultas = _context.ConsultasClinicas.ToList();
+                if (consultas != null)
+                {
+                    return new ConsultaClinicaConsultaResponse(consultas);
+                }
+                return new ConsultaClinicaConsultaResponse($"No se han agregado registros");
+            }
+            catch (Exception e) { return new ConsultaClinicaConsultaResponse($"Error al Consultar: Se presento lo siguiente {e.Message}"); }
         }
 
     }
 
-    public class ConsultaClinicaGuardarResponse
+    public class ConsultaClinicaLogResponse
     {
-        public ConsultaClinica ConsultaClinica{ get; set; }
+        public ConsultaClinica ConsultaClinica { get; set; }
         public string Mensaje { get; set; }
         public bool Error { get; set; }
 
-        public ConsultaClinicaGuardarResponse(ConsultaClinica consultaClinica)
+        public ConsultaClinicaLogResponse(ConsultaClinica consultaClinica)
         {
             ConsultaClinica = consultaClinica;
             Error = false;
         }
 
-        public ConsultaClinicaGuardarResponse(string mensaje)
+        public ConsultaClinicaLogResponse(string mensaje)
+        {
+            Mensaje = mensaje;
+            Error = true;
+        }
+
+    }
+
+    public class ConsultaClinicaConsultaResponse
+    {
+        public List<ConsultaClinica> ConsultaClinicas { get; set; }
+        public string Mensaje { get; set; }
+        public bool Error { get; set; }
+
+        public ConsultaClinicaConsultaResponse(List<ConsultaClinica> consultaClinica)
+        {
+            ConsultaClinicas = consultaClinica;
+            Error = false;
+        }
+
+        public ConsultaClinicaConsultaResponse(string mensaje)
         {
             Mensaje = mensaje;
             Error = true;

@@ -4,14 +4,16 @@ using DAL;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace DAL.Migrations
 {
     [DbContext(typeof(DentalTimeContext))]
-    partial class DentalTimeContextModelSnapshot : ModelSnapshot
+    [Migration("20211018232915_sixthMigration")]
+    partial class sixthMigration
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -107,7 +109,7 @@ namespace DAL.Migrations
                     b.Property<int>("CodConsultaOfHistoria")
                         .HasColumnType("int");
 
-                    b.Property<DateTime>("Fecha")
+                    b.Property<DateTime>("FachaHora")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("NoDocumentoOfHistoria")
@@ -125,7 +127,7 @@ namespace DAL.Migrations
 
             modelBuilder.Entity("Entity.Paciente", b =>
                 {
-                    b.Property<string>("NoDocumento")
+                    b.Property<string>("NoDocumeto")
                         .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("Apellidos")
@@ -158,7 +160,7 @@ namespace DAL.Migrations
                     b.Property<string>("TipoSaguineo")
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("NoDocumento");
+                    b.HasKey("NoDocumeto");
 
                     b.ToTable("Pacientes");
                 });

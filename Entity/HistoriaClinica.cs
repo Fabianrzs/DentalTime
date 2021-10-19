@@ -11,7 +11,7 @@ namespace Entity
     {
         [Key]
         public int CodHistoriaClinica { get; set; }
-        public DateTime FachaHora { get; set; }
+        public DateTime Fecha { get; set; }
 
         public string NoDocumentoOfHistoria { get; set; }
         public Paciente Paciente { get; set; }

@@ -14,7 +14,6 @@ D:\PROYECTOS PROGRAMACION\PWEB\Proyecto\BLL\bin\Debug\net5.0\DAL.dll
 D:\PROYECTOS PROGRAMACION\PWEB\Proyecto\BLL\bin\Debug\net5.0\Entity.dll
 D:\PROYECTOS PROGRAMACION\PWEB\Proyecto\BLL\bin\Debug\net5.0\DAL.pdb
 D:\PROYECTOS PROGRAMACION\PWEB\Proyecto\BLL\bin\Debug\net5.0\Entity.pdb
-D:\PROYECTOS PROGRAMACION\PWEB\Proyecto\BLL\obj\Debug\net5.0\BLL.csproj.CopyComplete
 I:\Semestre 5\Programacion WEB\Proyectos\Proyecto\BLL\bin\Debug\net5.0\BLL.deps.json
 I:\Semestre 5\Programacion WEB\Proyectos\Proyecto\BLL\bin\Debug\net5.0\BLL.dll
 I:\Semestre 5\Programacion WEB\Proyectos\Proyecto\BLL\bin\Debug\net5.0\ref\BLL.dll

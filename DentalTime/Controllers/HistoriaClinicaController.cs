@@ -1,4 +1,8 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using BLL;
+using DAL;
+using DentalTime.Models;
+using Entity;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -11,5 +15,30 @@ namespace DentalTime.Controllers
     [ApiController]
     public class HistoriaClinicaController : ControllerBase
     {
+        private HistorialClinicoService _service;
+        
+        public HistoriaClinicaController(DentalTimeContext dentalTimeContext)
+        {
+            _service = new HistorialClinicoService(dentalTimeContext);            
+        }
+
+        [HttpPost]
+        public ActionResult<HistoriaClinica> Guardar(HistoriaClinicaInputModel historiaClinicaInput)
+        {
+            HistoriaClinica historiaClinica = mapearHistoria(historiaClinicaInput);
+            var request = _service.Save(historiaClinica);
+            if (request.Error) return BadRequest(request.Mensaje);
+            return Ok(request.HistoriaClinica);
+        }
+
+        private HistoriaClinica mapearHistoria(HistoriaClinicaInputModel historiaClinicaInput)
+        {
+            HistoriaClinica historiaClinica = new HistoriaClinica();
+            historiaClinica.CodConsultaOfHistoria = historiaClinicaInput.CodConsultaOfHistoria;
+            historiaClinica.NoDocumentoOfHistoria = historiaClinicaInput.NoDocumentoOfHistoria;     
+            historiaClinica.Fecha = historiaClinicaInput.FechaHora;
+
+            return historiaClinica;
+        }
     }
 }

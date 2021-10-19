@@ -17,47 +17,107 @@ namespace BLL
             _context = context;
         }
 
-        public LogAgendaResponse Guardar(Agenda agenda)
+        public AgendaLogResponse Save(Agenda agenda)
         {
             try
             {
                 _context.Agendas.Add(agenda);
-                return new LogAgendaResponse(agenda);
+                return new AgendaLogResponse(agenda);
             }
-            catch (Exception e) { return new LogAgendaResponse($"Error al Guardar: Se presento lo siguiente {e.Message}"); }
+            catch (Exception e) { return new AgendaLogResponse($"Error al Guardar: Se presento lo siguiente {e.Message}"); }
+        }
+        public AgendaLogResponse Update(Agenda AgendaNew, string codAgenda)
+        {
+            try
+            {
+                Agenda agenda = _context.Agendas.Find(codAgenda);
+                if (agenda != null)
+                {
+                    agenda = AgendaNew;
+                    _context.Agendas.Update(agenda);
+                    return new AgendaLogResponse(agenda);
+                }
+                return new AgendaLogResponse($"No se encuentra registro a modificar");
+            }
+            catch (Exception e) { return new AgendaLogResponse($"Error al Modificar: Se presento lo siguiente {e.Message}"); }
+        }
+
+        public AgendaLogResponse Find(string codAgenda)
+        {
+            try
+            {
+                Agenda agenda = _context.Agendas.Find(codAgenda);
+                if (agenda != null)
+                {
+                    return new AgendaLogResponse(agenda);
+                }
+                return new AgendaLogResponse($"No se encuentra el registro buscado");
+            }
+            catch (Exception e) { return new AgendaLogResponse($"Error al Buscar: Se presento lo siguiente {e.Message}"); }
+        }
+
+        public string Delete(string codAgenda)
+        {
+            try
+            {
+                Agenda agenda = _context.Agendas.Find(codAgenda);
+                if (agenda != null)
+                {
+                    _context.Agendas.Remove(agenda);
+                    return "Registro eliminado satisfactoriamente";
+                }
+                return ($"No se encuentra el registro a eliminar");
+            }
+            catch (Exception e) { return ($"Error al Eliminar: Se presento lo siguiente {e.Message}"); }
+        }
+
+        public AgendaConsultaResponse Consult()
+        {
+            try
+            {
+                List<Agenda> agendas = _context.Agendas.ToList();
+                if (agendas != null)
+                {
+                    return new AgendaConsultaResponse(agendas);
+                }
+                return new AgendaConsultaResponse($"No se han agregado registros");
+            }
+            catch (Exception e) { return new AgendaConsultaResponse($"Error al Consultar: Se presento lo siguiente {e.Message}"); }
         }
     }
 
-    public class LogAgendaResponse
+
+
+    public class AgendaLogResponse
     {
         public Agenda Agenda { get; set; }
         public string Mensaje { get; set; }
         public bool Error { get; set; }
-        public LogAgendaResponse(Agenda agenda)
+        public AgendaLogResponse(Agenda agenda)
         {
             Agenda = agenda;
             Error = false;
         }
 
-        public LogAgendaResponse(string mensaje)
+        public AgendaLogResponse(string mensaje)
         {
             Mensaje = mensaje;
             Error = true;
         }
     }
 
-    public class ConsultaAgendaResponse
+    public class AgendaConsultaResponse
     {
         public List<Agenda> Agendas { get; set; }
         public string Mensaje { get; set; }
         public bool Error { get; set; }
-        public ConsultaAgendaResponse(List<Agenda> agendas)
+        public AgendaConsultaResponse(List<Agenda> agendas)
         {
             Agendas = agendas;
             Error = false;
         }
 
-        public ConsultaAgendaResponse(string mensaje)
+        public AgendaConsultaResponse(string mensaje)
         {
             Mensaje = mensaje;
             Error = true;

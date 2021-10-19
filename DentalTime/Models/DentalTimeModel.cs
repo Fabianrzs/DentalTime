@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DentalTime.Models
 {
-    public class ProductoImputModel 
+    public class ProductoInputModel 
     {
         public string Referencia { get; set; }
         public string Nombre { get; set; }
@@ -18,7 +18,7 @@ namespace DentalTime.Models
         public int StockActual { get; set; }
     }
 
-    public class ProductoViewModel : ProductoImputModel
+    public class ProductoViewModel : ProductoInputModel
     {
         public ProductoViewModel(Producto producto)
         {
@@ -34,7 +34,7 @@ namespace DentalTime.Models
     }
 
 
-    public class PacienteImputModel
+    public class PacienteInputModel
     {
         public string TipoDocumento { get; set; }
         public string NoDocumeto { get; set; }
@@ -49,12 +49,12 @@ namespace DentalTime.Models
         public string CorreoElectronico { get; set; }
     }
 
-    public class PacienteViewModel : PacienteImputModel
+    public class PacienteViewModel : PacienteInputModel
     {
         public PacienteViewModel(Paciente paciente)
         {
             TipoDocumento = paciente.TipoDocumento;
-            NoDocumeto = paciente.NoDocumeto;
+            NoDocumeto = paciente.NoDocumento;
             Nombres = paciente.Nombres;
             Apellidos = paciente.Apellidos;
             Sexo = paciente.Sexo;
@@ -68,46 +68,46 @@ namespace DentalTime.Models
     }
 
 
-    public class HistoriaClinicaImputModel
+    public class HistoriaClinicaInputModel
     {
-        public int CodHistoriaClinica { get; set; }
-        public DateTime FachaHora { get; set; }
+        public DateTime FechaHora { get; set; }
         public string NoDocumentoOfHistoria { get; set; }
-        public PacienteViewModel PacienteViewModel { get; set; }
         public int CodConsultaOfHistoria { get; set; }
-        public ConsultaClinicaViewModel ConsultaClinicaViewModel { get; set; }
+        public PacienteViewModel PacienteView { get; set; }
+        public ConsultaClinicaViewModel ConsultaView { get; set; }
     }
 
-    public class HistoriaClinicaViewModel : HistoriaClinicaImputModel
+    public class HistoriaClinicaViewModel : HistoriaClinicaInputModel
     {
+        public int CodHistoriaClinica { get; set; }
         public HistoriaClinicaViewModel(HistoriaClinica historiaClinica)
         {
             CodHistoriaClinica = historiaClinica.CodHistoriaClinica;
-            FachaHora = historiaClinica.FachaHora;
+            FechaHora = historiaClinica.Fecha;
             NoDocumentoOfHistoria = historiaClinica.NoDocumentoOfHistoria;
-            PacienteViewModel = new PacienteViewModel(historiaClinica.Paciente);
+            PacienteView = new PacienteViewModel(historiaClinica.Paciente);
             CodConsultaOfHistoria = historiaClinica.CodConsultaOfHistoria;
-            ConsultaClinicaViewModel = new ConsultaClinicaViewModel(historiaClinica.ConsultaClinica);
+            ConsultaView = new ConsultaClinicaViewModel(historiaClinica.ConsultaClinica);
         }
     }
 
-    public class ConsultaClinicaImputModel
+    public class ConsultaClinicaInputModel
     {
-        
         public string Motivo { get; set; }
+        public string Complicaciones { get; set; }
         public string Antecedentes { get; set; }
         public string Medicacion { get; set; }
         public DateTime UltimaConsulta { get; set; }
         public string ValoracionMedica { get; set; }
-
     }
 
-    public class ConsultaClinicaViewModel : ConsultaClinicaImputModel
+    public class ConsultaClinicaViewModel : ConsultaClinicaInputModel
     {
         public int CodConsultaClinica { get; set; }
         public ConsultaClinicaViewModel (ConsultaClinica consultaClinica)
         {
             CodConsultaClinica = consultaClinica.CodConsultaClinica;
+            Complicaciones = consultaClinica.Complicaciones;
             Motivo = consultaClinica.Motivo;
             Antecedentes = consultaClinica.Antecedentes;
             Medicacion = consultaClinica.Medicacion;

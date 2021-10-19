@@ -23,10 +23,10 @@ namespace DentalTime.Controllers
         }
 
         [HttpPost]
-        public ActionResult<Paciente> Guardar(PacienteImputModel pacienteImput)
+        public ActionResult<Paciente> Guardar(PacienteInputModel pacienteImput)
         {
             Paciente paciente = MapearPaciente(pacienteImput);
-            var request = _service.Guardar(paciente);
+            var request = _service.Save(paciente);
             if (request.Error)
             {
                 return BadRequest(request.Mensaje);
@@ -34,11 +34,11 @@ namespace DentalTime.Controllers
             return Ok(request.Paciente);
         }
 
-        private Paciente MapearPaciente(PacienteImputModel pacienteImput)
+        private Paciente MapearPaciente(PacienteInputModel pacienteImput)
         {
             var paciente = new Paciente();
             paciente.TipoDocumento = pacienteImput.TipoDocumento;
-            paciente.NoDocumeto = pacienteImput.NoDocumeto;
+            paciente.NoDocumento = pacienteImput.NoDocumeto;
             paciente.Nombres = pacienteImput.Nombres;
             paciente.Apellidos = pacienteImput.Apellidos;
             paciente.Sexo = pacienteImput.Sexo;

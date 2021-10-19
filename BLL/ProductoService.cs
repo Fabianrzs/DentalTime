@@ -16,7 +16,7 @@ namespace BLL
             _context = context;
         }
 
-        public ProductoLogResponse Guardar(Producto producto)
+        public ProductoLogResponse Save(Producto producto)
         {
             try
             {
@@ -30,7 +30,7 @@ namespace BLL
             catch (Exception e) { return new ProductoLogResponse($"Error al Guardar: Se presento lo siguiente {e.Message}"); }
         }
 
-        public ProductoLogResponse Modificar(Producto productoNew, string referencia)
+        public ProductoLogResponse Update(Producto productoNew, string referencia)
         {
             try
             {
@@ -75,7 +75,7 @@ namespace BLL
             catch (Exception e) { return ($"Error al Eliminar: Se presento lo siguiente {e.Message}"); }
         }
 
-        public ProductoConsultaResponse Consultar ()
+        public ProductoConsultaResponse Consult ()
         {
             try
             {

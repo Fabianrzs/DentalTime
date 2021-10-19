@@ -17,34 +17,62 @@ namespace BLL
             _context = context;
         }
 
-        public HistorialRegistroResponse Guardar(HistoriaClinica historia)
+        public HistorialLogResponse Save(HistoriaClinica historia)
         {
             try
             {
+                /*Paciente paciente = _context.Pacientes.Find(historia.NoDocumentoOfHistoria);
+                ConsultaClinica consulta = _context.ConsultasClinicas.OrderByDescending(c => c.CodConsultaClinica).FirstOrDefault();
+
+                if (paciente == null)
+                {
+                    return new HistorialLogResponse($"Error al Guardar: El paciente no se encuentra registrado");
+                }
+                else if (consulta == null)
+                {
+                    return new HistorialLogResponse($"Error al Guardar: El paciente no se encuentro consulta asociada");
+                }
+                historia.Paciente = paciente;
+                historia.ConsultaClinica = consulta;*/
+
                 _context.HistoriasClinicas.Add(historia);
-                return new HistorialRegistroResponse(historia);
+                _context.SaveChanges();
+                return new HistorialLogResponse(historia);
             }
             catch (Exception e) 
             { 
-                return new HistorialRegistroResponse($"Error al Guardar: Se presento lo siguiente {e.Message}"); 
+                return new HistorialLogResponse($"Error al Guardar: Se presento lo siguiente {e.Message}"); 
             }
         }
 
+        public HistorialConsultaResponse Consult()
+        {
+            try
+            {
+                List<HistoriaClinica> historiasClinicas = _context.HistoriasClinicas.ToList();
+                if (historiasClinicas != null)
+                {
+                    return new HistorialConsultaResponse(historiasClinicas);
+                }
+                return new HistorialConsultaResponse($"No se han agregado registros");
+            }
+            catch (Exception e) { return new HistorialConsultaResponse($"Error al Consultar: Se presento lo siguiente {e.Message}"); }
+        }
 
     }
-    public class HistorialRegistroResponse
+    public class HistorialLogResponse
     {
         public HistoriaClinica HistoriaClinica { get; set; }
         public string Mensaje { get; set; }
         public bool Error { get; set; }
 
-        public HistorialRegistroResponse(HistoriaClinica historiaClinica)
+        public HistorialLogResponse(HistoriaClinica historiaClinica)
         {
             HistoriaClinica = historiaClinica;
             Error = false;
         }
 
-        public HistorialRegistroResponse(string mensaje)
+        public HistorialLogResponse(string mensaje)
         {
             Mensaje = mensaje;
             Error = true;
