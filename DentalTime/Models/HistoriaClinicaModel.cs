@@ -21,7 +21,7 @@ namespace DentalTime.Models
         public HistoriaClinicaViewModel(HistoriaClinica historiaClinica)
         {
             CodHistoriaClinica = historiaClinica.CodHistoriaClinica;
-            FechaHora = historiaClinica.Fecha;
+            FechaHora = historiaClinica.FechaInicio;
             NoDocumentoOfHistoria = historiaClinica.NoDocumentoOfHistoria;
             PacienteView = new PacienteViewModel(historiaClinica.Paciente);
             CodConsultaOfHistoria = historiaClinica.CodConsultaOfHistoria;

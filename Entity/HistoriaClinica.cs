@@ -11,13 +11,14 @@ namespace Entity
     {
         [Key]
         public int CodHistoriaClinica { get; set; }
-        public DateTime Fecha { get; set; }
+        public DateTime FechaInicio { get; set; }
+        public DateTime FechaActual { get; set; }
 
         public string NoDocumentoOfHistoria { get; set; }
         public Paciente Paciente { get; set; }
 
-        public int CodConsultaOfHistoria { get; set; }
-        public ConsultaClinica ConsultaClinica { get; set; }
+        public int CodConsultaClinica { get; set; }
+        public List<ConsultaClinica> ConsultasClinicas { get; set; }
 
     }
 }

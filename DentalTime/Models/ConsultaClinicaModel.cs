@@ -26,7 +26,7 @@ namespace DentalTime.Models
             Complicaciones = consultaClinica.Complicaciones;
             Motivo = consultaClinica.Motivo;
             Antecedentes = consultaClinica.Antecedentes;
-            Medicacion = consultaClinica.Medicacion;
+            Medicacion = consultaClinica.RecetaClinica;
             UltimaConsulta = consultaClinica.UltimaConsulta;
             ValoracionMedica = consultaClinica.ValoracionMedica;
         }

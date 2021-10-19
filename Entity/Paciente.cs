@@ -23,6 +23,6 @@ namespace Entity
         public string CorreoElectronico { get; set; }
 
         public ICollection<Cita> HistorialCita { get; set; }
-        public ICollection<HistoriaClinica> HistorialClinico { get; set; }
+        public HistoriaClinica HistoriaClinica { get; set; }
     }
 }

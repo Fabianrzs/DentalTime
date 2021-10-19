@@ -37,7 +37,7 @@ namespace DentalTime.Controllers
             ConsultaClinica consultaClinica = new ConsultaClinica();
             consultaClinica.Motivo = consultaClinicaImputModel.Motivo;
             consultaClinica.Antecedentes = consultaClinicaImputModel.Antecedentes;
-            consultaClinica.Medicacion = consultaClinicaImputModel.Medicacion;
+            consultaClinica.RecetaClinica = consultaClinicaImputModel.Medicacion;
             consultaClinica.UltimaConsulta = consultaClinicaImputModel.UltimaConsulta;
             consultaClinica.ValoracionMedica = consultaClinicaImputModel.ValoracionMedica;
             return consultaClinica;

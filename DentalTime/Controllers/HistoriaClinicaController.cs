@@ -36,7 +36,7 @@ namespace DentalTime.Controllers
             HistoriaClinica historiaClinica = new HistoriaClinica();
             historiaClinica.CodConsultaOfHistoria = historiaClinicaInput.CodConsultaOfHistoria;
             historiaClinica.NoDocumentoOfHistoria = historiaClinicaInput.NoDocumentoOfHistoria;     
-            historiaClinica.Fecha = historiaClinicaInput.FechaHora;
+            historiaClinica.FechaInicio = historiaClinicaInput.FechaHora;
 
             return historiaClinica;
         }
