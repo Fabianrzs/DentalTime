@@ -21,8 +21,6 @@ namespace Entity
         public string TipoSaguineo { get; set; }
         public string NumeroTelefonico { get; set; }
         public string CorreoElectronico { get; set; }
-       
-
 
         public ICollection<Cita> HistorialCita { get; set; }
         public ICollection<HistoriaClinica> HistorialClinico { get; set; }

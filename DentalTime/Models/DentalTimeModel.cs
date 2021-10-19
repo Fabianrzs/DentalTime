@@ -46,30 +46,7 @@ namespace DentalTime.Models
         }
     }
 
-    public class ConsultaClinicaInputModel
-    {
-        public string Motivo { get; set; }
-        public string Complicaciones { get; set; }
-        public string Antecedentes { get; set; }
-        public string Medicacion { get; set; }
-        public DateTime UltimaConsulta { get; set; }
-        public string ValoracionMedica { get; set; }
-    }
-
-    public class ConsultaClinicaViewModel : ConsultaClinicaInputModel
-    {
-        public int CodConsultaClinica { get; set; }
-        public ConsultaClinicaViewModel(ConsultaClinica consultaClinica)
-        {
-            CodConsultaClinica = consultaClinica.CodConsultaClinica;
-            Complicaciones = consultaClinica.Complicaciones;
-            Motivo = consultaClinica.Motivo;
-            Antecedentes = consultaClinica.Antecedentes;
-            Medicacion = consultaClinica.Medicacion;
-            UltimaConsulta = consultaClinica.UltimaConsulta;
-            ValoracionMedica = consultaClinica.ValoracionMedica;
-        }
-    }
+    
 
     public class HistoriaClinicaInputModel
     {
@@ -94,38 +71,7 @@ namespace DentalTime.Models
         }
     }
 
-    public class PacienteInputModel
-    {
-        public string TipoDocumento { get; set; }
-        public string NoDocumeto { get; set; }
-        public string Nombres { get; set; }
-        public string Apellidos { get; set; }
-        public string Sexo { get; set; }
-        public DateTime FechaNacimiento { get; set; }
-        public string PaisNacimiento { get; set; }
-        public string CiudadNacimiento { get; set; }
-        public string TipoSaguineo { get; set; }
-        public string NumeroTelefonico { get; set; }
-        public string CorreoElectronico { get; set; }
-    }
-
-    public class PacienteViewModel : PacienteInputModel
-    {
-        public PacienteViewModel(Paciente paciente)
-        {
-            TipoDocumento = paciente.TipoDocumento;
-            NoDocumeto = paciente.NoDocumento;
-            Nombres = paciente.Nombres;
-            Apellidos = paciente.Apellidos;
-            Sexo = paciente.Sexo;
-            FechaNacimiento = paciente.FechaNacimiento;
-            PaisNacimiento = paciente.PaisNacimiento;
-            CiudadNacimiento = paciente.CiudadNacimiento;
-            TipoSaguineo = paciente.TipoSaguineo;
-            NumeroTelefonico = paciente.NumeroTelefonico;
-            CorreoElectronico = paciente.CorreoElectronico;
-        }
-    }
+   
 
     public class ProductoInputModel 
     {

@@ -19,10 +19,8 @@ namespace Entity
         public Paciente Paciente { get; set; }
 
 
-
         public int CodAgendaOfCita { get; set; }
         public Agenda Agenda { get; set; }
-
 
 
         public string ReferenciaServicioOfCita { get; set; }
