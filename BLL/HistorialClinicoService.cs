@@ -17,7 +17,7 @@ namespace BLL
             _context = context;
         }
 
-        public HistorialLogResponse Save(HistoriaClinica historia)
+        public HistorialLogResponse Save(HistoriaOdontologica historia)
         {
             try
             {
@@ -49,7 +49,7 @@ namespace BLL
         {
             try
             {
-                List<HistoriaClinica> historiasClinicas = _context.HistoriasClinicas.ToList();
+                List<HistoriaOdontologica> historiasClinicas = _context.HistoriasClinicas.ToList();
                 if (historiasClinicas != null)
                 {
                     return new HistorialConsultaResponse(historiasClinicas);
@@ -62,11 +62,11 @@ namespace BLL
     }
     public class HistorialLogResponse
     {
-        public HistoriaClinica HistoriaClinica { get; set; }
+        public HistoriaOdontologica HistoriaClinica { get; set; }
         public string Mensaje { get; set; }
         public bool Error { get; set; }
 
-        public HistorialLogResponse(HistoriaClinica historiaClinica)
+        public HistorialLogResponse(HistoriaOdontologica historiaClinica)
         {
             HistoriaClinica = historiaClinica;
             Error = false;
@@ -81,11 +81,11 @@ namespace BLL
     }
     public class HistorialConsultaResponse
     {
-        public List<HistoriaClinica> HistoriasClinicas { get; set; }
+        public List<HistoriaOdontologica> HistoriasClinicas { get; set; }
         public string Mensaje { get; set; }
         public bool Error { get; set; }
 
-        public HistorialConsultaResponse(List<HistoriaClinica> historiasClinicas)
+        public HistorialConsultaResponse(List<HistoriaOdontologica> historiasClinicas)
         {
             HistoriasClinicas = historiasClinicas;
             Error = false;

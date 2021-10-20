@@ -7,15 +7,16 @@ using System.Threading.Tasks;
 
 namespace Entity
 {
-    public class Agenda
+    public class SolicitudCita
     {
         [Key]
-        public int CodAgenda { get; set; }
-        public DateTime FechaHora { get; set; }
+        public int IdSolicitudCita { get; set; }
+        public DateTime Fecha { get; set; }
         public string Estado { get; set; }
 
 
-        public ICollection<Cita> Citas { get; set; }
+        public string NoDocumentoPaciente { get; set; }
+        public Paciente Paciente { get; set; }
 
     }
 }

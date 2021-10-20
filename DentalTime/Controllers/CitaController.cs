@@ -15,25 +15,25 @@ namespace DentalTime.Controllers
     [ApiController]
     public class CitaController : ControllerBase
     {
-        private CitaService _service;
+        private SolicitudCitaService _service;
         
         public CitaController(DentalTimeContext context)
         {
-            _service = new CitaService(context);
+            _service = new SolicitudCitaService(context);
         }
 
         [HttpPost]
-        public ActionResult<Cita> Guardar(CitaInputModel citaInput)
+        public ActionResult<SolicitudCita> Guardar(CitaInputModel citaInput)
         {
-            Cita cita = mapearCita(citaInput);
+            SolicitudCita cita = mapearCita(citaInput);
             var request = _service.Save(cita);
             if (request.Error) return BadRequest(request.Mensaje);
             return Ok(request.Cita);
         }
 
-        private Cita mapearCita(CitaInputModel citaInput)
+        private SolicitudCita mapearCita(CitaInputModel citaInput)
         {
-            Cita cita = new Cita();
+            SolicitudCita cita = new SolicitudCita();
             cita.Motivo = citaInput.Motivo;
             return cita;
         }

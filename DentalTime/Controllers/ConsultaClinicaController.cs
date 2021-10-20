@@ -24,7 +24,7 @@ namespace DentalTime.Controllers
         }
 
         [HttpPost]
-        public ActionResult<ConsultaClinica> Guardar(ConsultaClinicaInputModel consultaClinicaImputModel)
+        public ActionResult<ConsultaOdontologica> Guardar(ConsultaClinicaInputModel consultaClinicaImputModel)
         {
             var consultaClinica = MapearConsultaClinica(consultaClinicaImputModel);
             var request = _service.Save(consultaClinica);
@@ -32,9 +32,9 @@ namespace DentalTime.Controllers
             return Ok(request.ConsultaClinica);
         }
 
-        private ConsultaClinica MapearConsultaClinica(ConsultaClinicaInputModel consultaClinicaImputModel)
+        private ConsultaOdontologica MapearConsultaClinica(ConsultaClinicaInputModel consultaClinicaImputModel)
         {
-            ConsultaClinica consultaClinica = new ConsultaClinica();
+            ConsultaOdontologica consultaClinica = new ConsultaOdontologica();
             consultaClinica.Motivo = consultaClinicaImputModel.Motivo;
             consultaClinica.Antecedentes = consultaClinicaImputModel.Antecedentes;
             consultaClinica.RecetaClinica = consultaClinicaImputModel.Medicacion;

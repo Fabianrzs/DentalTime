@@ -16,13 +16,14 @@ namespace BLL
             _context = context;
         }
 
-        public ProductoLogResponse Save(Producto producto)
+        public ProductoLogResponse Save (Producto producto)
         {
             try
             {
                 if(_context.Productos.Find(producto.Referencia) == null)
                 {
                     _context.Productos.Add(producto);
+                    _context.SaveChanges();
                     return new ProductoLogResponse(producto);
                 }
                 return new ProductoLogResponse($"El producto ya se encuentra registrado");
@@ -30,7 +31,7 @@ namespace BLL
             catch (Exception e) { return new ProductoLogResponse($"Error al Guardar: Se presento lo siguiente {e.Message}"); }
         }
 
-        public ProductoLogResponse Update(Producto productoNew, string referencia)
+        public ProductoLogResponse Update (Producto productoNew, string referencia)
         {
             try
             {
@@ -39,6 +40,7 @@ namespace BLL
                 {
                     producto = productoNew;
                     _context.Productos.Update(producto);
+                    _context.SaveChanges();
                     return new ProductoLogResponse(producto);
                 }
                 return new ProductoLogResponse($"No se encuentra registro a modificar");
@@ -68,9 +70,10 @@ namespace BLL
                 if (producto != null)
                 {
                     _context.Productos.Remove(producto);
-                    return "Registro eliminado satisfactoriamente";
+                    _context.SaveChanges();
+                    return "Producto eliminado satisfactoriamente";
                 }
-                return ($"No se encuentra el registro a eliminar");
+                return ($"No se encuentra el producto a eliminar");
             }
             catch (Exception e) { return ($"Error al Eliminar: Se presento lo siguiente {e.Message}"); }
         }

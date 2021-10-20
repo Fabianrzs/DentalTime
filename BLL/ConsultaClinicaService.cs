@@ -18,7 +18,7 @@ namespace BLL
             _context = context;
         }
 
-        public ConsultaClinicaLogResponse Save(ConsultaClinica consultaClinica)
+        public ConsultaClinicaLogResponse Save(ConsultaOdontologica consultaClinica)
         {
             try
             {
@@ -36,7 +36,7 @@ namespace BLL
         {
             try
             {
-                ConsultaClinica consulta = _context.ConsultasClinicas.OrderByDescending(c => c.CodConsultaClinica).FirstOrDefault();
+                ConsultaOdontologica consulta = _context.ConsultasClinicas.OrderByDescending(c => c.IConsultaOdontologica).FirstOrDefault();
 
                 if (consulta == null)
                 {
@@ -55,7 +55,7 @@ namespace BLL
         {
             try
             {
-                List<ConsultaClinica> consultas = _context.ConsultasClinicas.ToList();
+                List<ConsultaOdontologica> consultas = _context.ConsultasClinicas.ToList();
                 if (consultas != null)
                 {
                     return new ConsultaClinicaConsultaResponse(consultas);
@@ -69,11 +69,11 @@ namespace BLL
 
     public class ConsultaClinicaLogResponse
     {
-        public ConsultaClinica ConsultaClinica { get; set; }
+        public ConsultaOdontologica ConsultaClinica { get; set; }
         public string Mensaje { get; set; }
         public bool Error { get; set; }
 
-        public ConsultaClinicaLogResponse(ConsultaClinica consultaClinica)
+        public ConsultaClinicaLogResponse(ConsultaOdontologica consultaClinica)
         {
             ConsultaClinica = consultaClinica;
             Error = false;
@@ -89,11 +89,11 @@ namespace BLL
 
     public class ConsultaClinicaConsultaResponse
     {
-        public List<ConsultaClinica> ConsultaClinicas { get; set; }
+        public List<ConsultaOdontologica> ConsultaClinicas { get; set; }
         public string Mensaje { get; set; }
         public bool Error { get; set; }
 
-        public ConsultaClinicaConsultaResponse(List<ConsultaClinica> consultaClinica)
+        public ConsultaClinicaConsultaResponse(List<ConsultaOdontologica> consultaClinica)
         {
             ConsultaClinicas = consultaClinica;
             Error = false;

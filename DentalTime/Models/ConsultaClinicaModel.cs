@@ -20,9 +20,9 @@ namespace DentalTime.Models
     public class ConsultaClinicaViewModel : ConsultaClinicaInputModel
     {
         public int CodConsultaClinica { get; set; }
-        public ConsultaClinicaViewModel(ConsultaClinica consultaClinica)
+        public ConsultaClinicaViewModel(ConsultaOdontologica consultaClinica)
         {
-            CodConsultaClinica = consultaClinica.CodConsultaClinica;
+            CodConsultaClinica = consultaClinica.IConsultaOdontologica;
             Complicaciones = consultaClinica.Complicaciones;
             Motivo = consultaClinica.Motivo;
             Antecedentes = consultaClinica.Antecedentes;

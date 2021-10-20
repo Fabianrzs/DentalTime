@@ -23,17 +23,17 @@ namespace DentalTime.Controllers
         }
 
         [HttpPost]
-        public ActionResult<HistoriaClinica> Guardar(HistoriaClinicaInputModel historiaClinicaInput)
+        public ActionResult<HistoriaOdontologica> Guardar(HistoriaClinicaInputModel historiaClinicaInput)
         {
-            HistoriaClinica historiaClinica = mapearHistoria(historiaClinicaInput);
+            HistoriaOdontologica historiaClinica = mapearHistoria(historiaClinicaInput);
             var request = _service.Save(historiaClinica);
             if (request.Error) return BadRequest(request.Mensaje);
             return Ok(request.HistoriaClinica);
         }
 
-        private HistoriaClinica mapearHistoria(HistoriaClinicaInputModel historiaClinicaInput)
+        private HistoriaOdontologica mapearHistoria(HistoriaClinicaInputModel historiaClinicaInput)
         {
-            HistoriaClinica historiaClinica = new HistoriaClinica();
+            HistoriaOdontologica historiaClinica = new HistoriaOdontologica();
             historiaClinica.CodConsultaOfHistoria = historiaClinicaInput.CodConsultaOfHistoria;
             historiaClinica.NoDocumentoOfHistoria = historiaClinicaInput.NoDocumentoOfHistoria;     
             historiaClinica.FechaInicio = historiaClinicaInput.FechaHora;

@@ -10,13 +10,11 @@ namespace Entity
     public class Servicio
     {
         [Key]
-        public string  Referencia { get; set; }
+        public string  IdServico { get; set; }
         public string Nombre { get; set; }
         public decimal Precio { get; set; }
         public string Duracion { get; set; }
-        public string Descripcion { get; set; }
 
-
-        public ICollection<Cita> Citas { get; set; }
+        public Procedimiento Procedimiento { get; set; }
     }
 }

@@ -8,20 +8,20 @@ using System.Threading.Tasks;
 
 namespace BLL
 {
-    public class CitaService
+    public class SolicitudCitaService
     {
         private readonly DentalTimeContext _context;
         
-        public CitaService(DentalTimeContext context)
+        public SolicitudCitaService(DentalTimeContext context)
         {
             _context = context;
         }
 
-        public CitaLogResponse Save(Cita cita)
+        public CitaLogResponse Save (SolicitudCita cita)
         {
             try
             {
-                if (_context.Citas.Find(cita.CodCita) == null)
+                if (_context.Citas.Find(cita.IdSolicitudCita) == null)
                 {
                     _context.Citas.Add(cita);
                     return new CitaLogResponse(cita);
@@ -31,11 +31,11 @@ namespace BLL
             catch (Exception e) { return new CitaLogResponse($"Error al Guardar: Se presento lo siguiente {e.Message}"); }
         }
 
-        public CitaLogResponse Update(Cita citaNew, int codCita)
+        public CitaLogResponse Update(SolicitudCita citaNew, int codCita)
         {
             try
             {
-                Cita cita = _context.Citas.Find(codCita);
+                SolicitudCita cita = _context.Citas.Find(codCita);
                 if (cita != null)
                 {
                     cita = citaNew;
@@ -51,7 +51,7 @@ namespace BLL
         {
             try
             {
-                Cita cita = _context.Citas.Find(codCita);
+                SolicitudCita cita = _context.Citas.Find(codCita);
                 if (cita != null)
                 {
                     return new CitaLogResponse(cita);
@@ -65,7 +65,7 @@ namespace BLL
         {
             try
             {
-                Cita cita = _context.Citas.Find(codCita);
+                SolicitudCita cita = _context.Citas.Find(codCita);
                 if (cita != null)
                 {
                     _context.Citas.Remove(cita);
@@ -80,7 +80,7 @@ namespace BLL
         {
             try
             {
-                List<Cita> citas = _context.Citas.ToList();
+                List<SolicitudCita> citas = _context.Citas.ToList();
                 if (citas != null)
                 {
                     return new CitaConsultaResponse(citas);
@@ -93,11 +93,11 @@ namespace BLL
 
     public class CitaLogResponse
     {
-        public Cita Cita { get; set; }
+        public SolicitudCita Cita { get; set; }
         public string Mensaje { get; set; }
         public bool Error { get; set; }
 
-        public CitaLogResponse(Cita cita)
+        public CitaLogResponse(SolicitudCita cita)
         {
             Cita = cita;
             Error = false;
@@ -112,10 +112,10 @@ namespace BLL
 
     public class CitaConsultaResponse
     {
-        public List<Cita> Citas { get; set; }
+        public List<SolicitudCita> Citas { get; set; }
         public string Mensaje { get; set; }
         public bool Error { get; set; }
-        public CitaConsultaResponse(List<Cita> citas)
+        public CitaConsultaResponse(List<SolicitudCita> citas)
         {
             Citas = citas;
             Error = false;
