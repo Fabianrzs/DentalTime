@@ -50,6 +50,11 @@ namespace DAL
                 .HasOne<Servicio>(p => p.Servicio)
                 .WithOne(s => s.Procedimiento)
                 .HasForeignKey<Procedimiento>(p => p.IdServico);
+
+            modelBuilder.Entity<Producto>()
+                .HasOne<Inventario>(p => p.Inventario)
+                .WithMany(i => i.Productos)
+                .HasForeignKey(p => p.IdInventario);
         }
 
         public DbSet<Producto> Productos { get; set; }
@@ -59,5 +64,6 @@ namespace DAL
         public DbSet<Paciente> Pacientes { get; set; }
         public DbSet<Servicio> Servicios { get; set; }
         public DbSet<Procedimiento> Procedimientos { get; set; }
+        public DbSet<Inventario> Inventarios { get; set; }
     }
 }
