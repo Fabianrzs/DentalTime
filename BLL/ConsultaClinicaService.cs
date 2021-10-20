@@ -22,7 +22,7 @@ namespace BLL
         {
             try
             {
-                _context.ConsultasClinicas.Add(consultaClinica);
+                _context.ConsultasOdontologicas.Add(consultaClinica);
                 _context.SaveChanges();
                 return new ConsultaClinicaLogResponse(consultaClinica);
             }
@@ -36,7 +36,7 @@ namespace BLL
         {
             try
             {
-                ConsultaOdontologica consulta = _context.ConsultasClinicas.OrderByDescending(c => c.IConsultaOdontologica).FirstOrDefault();
+                ConsultaOdontologica consulta = _context.ConsultasOdontologicas.OrderByDescending(c => c.IConsultaOdontologica).FirstOrDefault();
 
                 if (consulta == null)
                 {
@@ -55,7 +55,7 @@ namespace BLL
         {
             try
             {
-                List<ConsultaOdontologica> consultas = _context.ConsultasClinicas.ToList();
+                List<ConsultaOdontologica> consultas = _context.ConsultasOdontologicas.ToList();
                 if (consultas != null)
                 {
                     return new ConsultaClinicaConsultaResponse(consultas);

@@ -22,7 +22,7 @@ namespace Entity
         public string NumeroTelefonico { get; set; }
         
 
-        public ICollection<SolicitudCita> HistorialCita { get; set; }
-        public HistoriaOdontologica HistoriaOdontologico { get; set; }
+        public ICollection<SolicitudCita> HistorialCitas { get; set; }
+        public HistoriaOdontologica HistorialOdontologico { get; set; }
     }
 }

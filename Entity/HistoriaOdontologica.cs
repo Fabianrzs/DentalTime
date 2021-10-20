@@ -10,7 +10,7 @@ namespace Entity
     public class HistoriaOdontologica
     {
         [Key]
-        public int IdHistoriaOdontologica { get; set; }
+        public string IdHistoriaOdontologica { get; set; }
         public DateTime FechaInicio { get; set; }
 
 
@@ -19,6 +19,8 @@ namespace Entity
 
         public string IdAntecedentes { get; set; }
         public Antecedentes Antecedentes { get; set; }
+
+        public ICollection<ConsultaOdontologica> ConsultasOdontologica { get; set; }
 
     }
 }

@@ -35,7 +35,7 @@ namespace BLL
                 historia.Paciente = paciente;
                 historia.ConsultaClinica = consulta;*/
 
-                _context.HistoriasClinicas.Add(historia);
+                _context.HistoriasOdontologicas.Add(historia);
                 _context.SaveChanges();
                 return new HistorialLogResponse(historia);
             }
@@ -49,7 +49,7 @@ namespace BLL
         {
             try
             {
-                List<HistoriaOdontologica> historiasClinicas = _context.HistoriasClinicas.ToList();
+                List<HistoriaOdontologica> historiasClinicas = _context.HistoriasOdontologicas.ToList();
                 if (historiasClinicas != null)
                 {
                     return new HistorialConsultaResponse(historiasClinicas);

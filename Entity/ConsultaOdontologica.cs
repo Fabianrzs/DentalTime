@@ -17,9 +17,13 @@ namespace Entity
         public string Valoracion { get; set; }
         public string RecetaMedica { get; set; }
 
-        public int IdHistoriaOdontologica { get; set; }
+
+        public int IdSolicitudCita { get; set; }
+        public SolicitudCita SolicitudCita { get; set; }
+
+        public string IdHistoriaOdontologica { get; set; }
         public HistoriaOdontologica HistoriaOdontologica { get; set; }
 
-        public ICollection<Procedimiento> Procedimiento { get; set; }
+        public ICollection<Procedimiento> Procedimientos { get; set; }
     }
 }
