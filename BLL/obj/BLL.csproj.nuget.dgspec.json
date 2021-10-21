@@ -1,23 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Hp\\Documents\\DTMaster\\DentalTime\\BLL\\BLL.csproj": {}
+    "D:\\PROYECTOS PROGRAMACION\\PWEB\\Proyecto\\BLL\\BLL.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Hp\\Documents\\DTMaster\\DentalTime\\BLL\\BLL.csproj": {
+    "D:\\PROYECTOS PROGRAMACION\\PWEB\\Proyecto\\BLL\\BLL.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Hp\\Documents\\DTMaster\\DentalTime\\BLL\\BLL.csproj",
+        "projectUniqueName": "D:\\PROYECTOS PROGRAMACION\\PWEB\\Proyecto\\BLL\\BLL.csproj",
         "projectName": "BLL",
-        "projectPath": "C:\\Users\\Hp\\Documents\\DTMaster\\DentalTime\\BLL\\BLL.csproj",
-        "packagesPath": "C:\\Users\\Hp\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Hp\\Documents\\DTMaster\\DentalTime\\BLL\\obj\\",
+        "projectPath": "D:\\PROYECTOS PROGRAMACION\\PWEB\\Proyecto\\BLL\\BLL.csproj",
+        "packagesPath": "C:\\Users\\WIN10\\.nuget\\packages\\",
+        "outputPath": "D:\\PROYECTOS PROGRAMACION\\PWEB\\Proyecto\\BLL\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
         "configFilePaths": [
-          "C:\\Users\\Hp\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\WIN10\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -31,11 +28,11 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "C:\\Users\\Hp\\Documents\\DTMaster\\DentalTime\\DAL\\DAL.csproj": {
-                "projectPath": "C:\\Users\\Hp\\Documents\\DTMaster\\DentalTime\\DAL\\DAL.csproj"
+              "D:\\PROYECTOS PROGRAMACION\\PWEB\\Proyecto\\DAL\\DAL.csproj": {
+                "projectPath": "D:\\PROYECTOS PROGRAMACION\\PWEB\\Proyecto\\DAL\\DAL.csproj"
               },
-              "C:\\Users\\Hp\\Documents\\DTMaster\\DentalTime\\Entity\\Entity.csproj": {
-                "projectPath": "C:\\Users\\Hp\\Documents\\DTMaster\\DentalTime\\Entity\\Entity.csproj"
+              "D:\\PROYECTOS PROGRAMACION\\PWEB\\Proyecto\\Entity\\Entity.csproj": {
+                "projectPath": "D:\\PROYECTOS PROGRAMACION\\PWEB\\Proyecto\\Entity\\Entity.csproj"
               }
             }
           }
@@ -68,20 +65,17 @@
         }
       }
     },
-    "C:\\Users\\Hp\\Documents\\DTMaster\\DentalTime\\DAL\\DAL.csproj": {
+    "D:\\PROYECTOS PROGRAMACION\\PWEB\\Proyecto\\DAL\\DAL.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Hp\\Documents\\DTMaster\\DentalTime\\DAL\\DAL.csproj",
+        "projectUniqueName": "D:\\PROYECTOS PROGRAMACION\\PWEB\\Proyecto\\DAL\\DAL.csproj",
         "projectName": "DAL",
-        "projectPath": "C:\\Users\\Hp\\Documents\\DTMaster\\DentalTime\\DAL\\DAL.csproj",
-        "packagesPath": "C:\\Users\\Hp\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Hp\\Documents\\DTMaster\\DentalTime\\DAL\\obj\\",
+        "projectPath": "D:\\PROYECTOS PROGRAMACION\\PWEB\\Proyecto\\DAL\\DAL.csproj",
+        "packagesPath": "C:\\Users\\WIN10\\.nuget\\packages\\",
+        "outputPath": "D:\\PROYECTOS PROGRAMACION\\PWEB\\Proyecto\\DAL\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
         "configFilePaths": [
-          "C:\\Users\\Hp\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\WIN10\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -95,8 +89,8 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "C:\\Users\\Hp\\Documents\\DTMaster\\DentalTime\\Entity\\Entity.csproj": {
-                "projectPath": "C:\\Users\\Hp\\Documents\\DTMaster\\DentalTime\\Entity\\Entity.csproj"
+              "D:\\PROYECTOS PROGRAMACION\\PWEB\\Proyecto\\Entity\\Entity.csproj": {
+                "projectPath": "D:\\PROYECTOS PROGRAMACION\\PWEB\\Proyecto\\Entity\\Entity.csproj"
               }
             }
           }
@@ -147,20 +141,17 @@
         }
       }
     },
-    "C:\\Users\\Hp\\Documents\\DTMaster\\DentalTime\\Entity\\Entity.csproj": {
+    "D:\\PROYECTOS PROGRAMACION\\PWEB\\Proyecto\\Entity\\Entity.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Hp\\Documents\\DTMaster\\DentalTime\\Entity\\Entity.csproj",
+        "projectUniqueName": "D:\\PROYECTOS PROGRAMACION\\PWEB\\Proyecto\\Entity\\Entity.csproj",
         "projectName": "Entity",
-        "projectPath": "C:\\Users\\Hp\\Documents\\DTMaster\\DentalTime\\Entity\\Entity.csproj",
-        "packagesPath": "C:\\Users\\Hp\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Hp\\Documents\\DTMaster\\DentalTime\\Entity\\obj\\",
+        "projectPath": "D:\\PROYECTOS PROGRAMACION\\PWEB\\Proyecto\\Entity\\Entity.csproj",
+        "packagesPath": "C:\\Users\\WIN10\\.nuget\\packages\\",
+        "outputPath": "D:\\PROYECTOS PROGRAMACION\\PWEB\\Proyecto\\Entity\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
         "configFilePaths": [
-          "C:\\Users\\Hp\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\WIN10\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [

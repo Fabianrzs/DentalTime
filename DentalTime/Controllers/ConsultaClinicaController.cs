@@ -36,17 +36,6 @@ namespace DentalTime.Controllers
         {
             ConsultaOdontologica consultaClinica = new ConsultaOdontologica();
             consultaClinica.Motivo = consultaClinicaImputModel.Motivo;
-<<<<<<< HEAD
-            /*consultaClinica.Antecedentes = consultaClinicaImputModel.Antecedentes;
-            consultaClinica.RecetaClinica = consultaClinicaImputModel.Medicacion;
-            consultaClinica.UltimaConsulta = consultaClinicaImputModel.UltimaConsulta;
-            consultaClinica.ValoracionMedica = consultaClinicaImputModel.ValoracionMedica;*/
-=======
-           /** consultaClinica.Antecedentes = consultaClinicaImputModel.Antecedentes;
-            consultaClinica.RecetaClinica = consultaClinicaImputModel.Medicacion;
-            consultaClinica.UltimaConsulta = consultaClinicaImputModel.UltimaConsulta;
-            consultaClinica.ValoracionMedica = consultaClinicaImputModel.ValoracionMedica;**/
->>>>>>> 4c67271d38f14c9e5d4ead7cecfdadf57afbdacc
             return consultaClinica;
         }
     }
