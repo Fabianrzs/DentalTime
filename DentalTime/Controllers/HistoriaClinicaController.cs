@@ -34,8 +34,8 @@ namespace DentalTime.Controllers
         private HistoriaOdontologica mapearHistoria(HistoriaClinicaInputModel historiaClinicaInput)
         {
             HistoriaOdontologica historiaClinica = new HistoriaOdontologica();
-            historiaClinica.CodConsultaOfHistoria = historiaClinicaInput.CodConsultaOfHistoria;
-            historiaClinica.NoDocumentoOfHistoria = historiaClinicaInput.NoDocumentoOfHistoria;     
+            /*historiaClinica.CodConsultaOfHistoria = historiaClinicaInput.CodConsultaOfHistoria;
+            historiaClinica.NoDocumentoOfHistoria = historiaClinicaInput.NoDocumentoOfHistoria;     */
             historiaClinica.FechaInicio = historiaClinicaInput.FechaHora;
 
             return historiaClinica;

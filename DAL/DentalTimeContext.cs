@@ -24,7 +24,7 @@ namespace DAL
             modelBuilder.Entity<HistoriaOdontologica>()
                 .HasOne<Antecedentes>(ho => ho.Antecedentes)
                 .WithOne(a => a.HistoriaOdontologica)
-                .HasForeignKey<HistoriaOdontologica>(ho => ho.IdAntecedentes);
+                .HasForeignKey<HistoriaOdontologica>(ho => ho.IdAntecedentesOfHO);
 
             modelBuilder.Entity<SolicitudCita>()
                 .HasOne<Paciente>(sc => sc.Paciente)

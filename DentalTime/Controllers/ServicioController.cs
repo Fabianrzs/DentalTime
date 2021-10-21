@@ -35,9 +35,8 @@ namespace DentalTime.Controllers
         {
             Servicio servicio = new Servicio();
 
-            servicio.Referencia = servicioInput.Referencia;
+            
             servicio.Nombre = servicioInput.Nombre;
-            servicio.Descripcion = servicioInput.Descripcion;
             servicio.Duracion = servicioInput.Duracion;
             servicio.Precio = servicioInput.Precio;
                        

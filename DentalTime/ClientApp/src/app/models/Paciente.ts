@@ -1,13 +1,13 @@
 export class Paciente {
   tipoDocumento: string;
-  noDocumeto: string;
+  noDocumento: string;
   nombres: string;
   apellidos: string;
   sexo: string;
   fechaNacimiento: Date;
   paisNacimiento: string;
   ciudadNacimiento: string;
-  tipoSaguineo: string;
+  tipoSanguineo: string;
   numeroTelefonico: string;
   correoElectronico: string;
 }

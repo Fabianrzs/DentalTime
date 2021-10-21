@@ -25,7 +25,7 @@
                 <th scope="col">Apellidos </th>
                 <th scope="col">FechaNacimiento </th>
                 <th scope="col">Sexo</th>
-                <th scope="col">TipoSaguineo</th>
+                <th scope="col">TipoSanguineo</th>
                 <th scope="col">NumeroTelefonico</th>
                 <th scope="col">CorreoElectronico</th>
               </tr>
@@ -33,12 +33,14 @@
             <tbody>
               <tr *ngFor="let p of pacientes|filtroPaciente:searchText; index as i ">
                 <th scope="row">{{i + 1}}</th>
-                <td>{{p.noDocumeto}}</td>
+                <td>{{p.noDocumento}}</td>
                 <td>{{p.nombres}}</td>
                 <td>{{p.apellidos}}</td>
                 <td>{{p.fechaNacimiento}}</td>
                 <td>{{p.sexo}}</td>
-                <td>{{p.tipoSaguineo}}</td>
+                <td>{{p.tipoSanguineo}}</td>
+                <td>{{p.numeroTelefonico}}</td>
+                <td>{{p.correoElectronico}}</td>
               </tr>
             </tbody>
           </table>

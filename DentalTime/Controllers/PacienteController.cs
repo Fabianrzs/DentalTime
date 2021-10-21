@@ -38,14 +38,13 @@ namespace DentalTime.Controllers
         {
             var paciente = new Paciente();
             paciente.TipoDocumento = pacienteImput.TipoDocumento;
-            paciente.NoDocumento = pacienteImput.NoDocumeto;
+            paciente.NoDocumento = pacienteImput.NoDocumento;
             paciente.Nombres = pacienteImput.Nombres;
             paciente.Apellidos = pacienteImput.Apellidos;
             paciente.Sexo = pacienteImput.Sexo;
+            paciente.TipoSanguineo = pacienteImput.TipoSanguineo;
             paciente.FechaNacimiento = pacienteImput.FechaNacimiento;
-            paciente.PaisNacimiento = pacienteImput.PaisNacimiento;
-            paciente.CiudadNacimiento = pacienteImput.CiudadNacimiento;
-            paciente.TipoSaguineo = pacienteImput.TipoSaguineo;
+            paciente.LugarNacimiento = pacienteImput.LugarNacimiento;
             paciente.NumeroTelefonico = pacienteImput.NumeroTelefonico;
             paciente.CorreoElectronico = pacienteImput.CorreoElectronico;
             return paciente;

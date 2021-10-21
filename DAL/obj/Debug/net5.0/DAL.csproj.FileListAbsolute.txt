@@ -32,4 +32,3 @@ D:\PROYECTOS PROGRAMACION\PWEB\Proyecto\DAL\obj\Debug\net5.0\DAL.genruntimeconfi
 I:\Semestre 5\Programacion WEB\Proyectos\Proyecto\DAL\bin\Debug\net5.0\DAL.runtimeconfig.json
 I:\Semestre 5\Programacion WEB\Proyectos\Proyecto\DAL\bin\Debug\net5.0\DAL.runtimeconfig.dev.json
 I:\Semestre 5\Programacion WEB\Proyectos\Proyecto\DAL\obj\Debug\net5.0\DAL.genruntimeconfig.cache
-D:\PROYECTOS PROGRAMACION\PWEB\Proyecto\DAL\obj\Debug\net5.0\DAL.csproj.CopyComplete

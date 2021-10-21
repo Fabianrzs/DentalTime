@@ -9,7 +9,7 @@ export class FiltroPacientePipe implements PipeTransform {
   transform(paciente: Paciente[], searchText: string): any {
     if(searchText == null) return paciente;
     return paciente.filter(p =>
-      p.nombres.toLowerCase()
+      p.noDocumento.toLowerCase()
      .indexOf(searchText.toLowerCase()) !== -1);
      
   }

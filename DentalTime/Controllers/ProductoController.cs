@@ -23,7 +23,7 @@ namespace DentalTime.Controllers
         }
 
         [HttpPost]
-        public ActionResult<Producto> Save (ProductoInputModel productoInput)
+        public ActionResult<Producto> Guardar (ProductoInputModel productoInput)
         {
             var producto = mapearProducto(productoInput);
             var request = _service.Save(producto);
@@ -37,10 +37,12 @@ namespace DentalTime.Controllers
 
             producto.Referencia = productoInput.Referencia;
             producto.Nombre = productoInput.Nombre;
+            producto.Laboratorio = productoInput.Laboratorio;
             producto.Marca = productoInput.Marca;
             producto.StockActual = productoInput.StockActual;
             producto.StockMax = productoInput.StockMax;
             producto.StockMin = productoInput.StockMin;
+            producto.IdInventario = productoInput.IdInventario;
 
             return producto;
         }
