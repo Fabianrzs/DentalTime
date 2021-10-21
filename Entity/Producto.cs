@@ -16,6 +16,8 @@ namespace Entity
         public string Marca { get; set; }
         public int StockMin { get; set; }
         public int StockMax { get; set; }
-        public int StockActual { get; set; }
+
+        public string IdInventario { get; set; }
+        public Inventario Inventario { get; set; }
     }
 }

@@ -20,7 +20,7 @@ namespace BLL
         {
             try
             {
-                if (_context.Servicios.Find(servicio.Referencia) == null)
+                if (_context.Servicios.Find(servicio.IdServico) == null)
                 {
                     _context.Servicios.Add(servicio);
                     return new ServicioLogResponse(servicio);

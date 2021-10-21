@@ -15,11 +15,8 @@ namespace DentalTime.Models
     public class AgendaViewModel : AgendaInputModel
     {
         public int CodAgenda { get; set; }
-        public AgendaViewModel(Agenda agenda)
+        public AgendaViewModel()
         {
-            CodAgenda = agenda.CodAgenda;
-            FechaHora = agenda.FechaHora;
-            Estado = agenda.Estado;
         }
     }
 }

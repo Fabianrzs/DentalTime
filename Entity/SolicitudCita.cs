@@ -18,5 +18,6 @@ namespace Entity
         public string NoDocumentoPaciente { get; set; }
         public Paciente Paciente { get; set; }
 
+        public ConsultaOdontologica ConsultaOdontologica { get; set; }
     }
 }
