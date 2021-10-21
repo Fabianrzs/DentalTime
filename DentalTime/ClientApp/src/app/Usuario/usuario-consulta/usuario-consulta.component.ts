@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Paciente } from 'src/app/models/Paciente';
-import { PacienteServiceService } from 'src/app/service/pacienteService.service';
+import { PacienteServiceService } from 'src/app/services/pacienteService.service';
 
 @Component({
   selector: 'app-usuario-consulta',

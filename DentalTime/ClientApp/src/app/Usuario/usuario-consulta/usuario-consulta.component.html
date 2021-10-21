@@ -1,17 +1,18 @@
 <div class="container">
   <div class="row">
-    <h1 class="text-center">Consulta de Paciente</h1>
+    <h4 class="text-center">Consulta de Paciente</h4>
     <hr>
   </div>
   <div class="row">
     <div class="col-6">
-      <label for="filter"><b>Filtro</b></label>
+      <label for="filter">Filtro</label>
       <br>
-      <input onChange="get()" [(ngModel)]="searchText" type="text" class="formcontrol"  placeholder="Type to filter Id">
-      <br>
+      <input onChange="get()" [(ngModel)]="searchText" 
+      type="text" class="formcontrol"  placeholder="Identificacion Buscada">
+
     </div>
   </div>
- 
+  <br>
   <div class="row">
     <div class="col-md">
       <div class="column">
@@ -25,9 +26,6 @@
                 <th scope="col">Apellidos </th>
                 <th scope="col">FechaNacimiento </th>
                 <th scope="col">Sexo</th>
-                <th scope="col">TipoSanguineo</th>
-                <th scope="col">NumeroTelefonico</th>
-                <th scope="col">CorreoElectronico</th>
               </tr>
             </thead>
             <tbody>
@@ -38,9 +36,6 @@
                 <td>{{p.apellidos}}</td>
                 <td>{{p.fechaNacimiento}}</td>
                 <td>{{p.sexo}}</td>
-                <td>{{p.tipoSanguineo}}</td>
-                <td>{{p.numeroTelefonico}}</td>
-                <td>{{p.correoElectronico}}</td>
               </tr>
             </tbody>
           </table>

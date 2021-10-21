@@ -9,6 +9,7 @@ import { tap, catchError } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class PacienteServiceService {
+  
 
   baseUrl: string;
 
@@ -18,15 +19,23 @@ export class PacienteServiceService {
     private handleErrorService: HandleHttpErrorService) {
     this.baseUrl = baseUrl;
   }
-
   get(): Observable<Paciente[]> {
     return this.http.get<Paciente[]>(this.baseUrl + 'api/paciente')
       .pipe(
-        tap(() => this.handleErrorService.log('datos enviados')),
+        tap(_ => this.handleErrorService.log('Cosulta realizada')),
         catchError(this.handleErrorService.handleError<Paciente[]>('Consulta Paciente', null))
       );
   }
 
+  post(paciente: Paciente): Observable<any>{
+    return this.http.post<Paciente>(this.baseUrl+ 'api/paciente', paciente)
+    .pipe(
+      tap(_ => this.handleErrorService.log('Se envio a guardar')),
+      catchError(this.handleErrorService.handleError<Paciente>('Registrar Persona', null))
+    );
+  }
+
+  
 }
 
 

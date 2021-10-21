@@ -32,7 +32,6 @@ I:\Semestre 5\Programacion WEB\Proyectos\Proyecto\BLL\obj\Debug\net5.0\ref\BLL.d
 I:\Semestre 5\Programacion WEB\Proyectos\Proyecto\BLL\obj\Debug\net5.0\BLL.pdb
 I:\Semestre 5\Programacion WEB\Proyectos\Proyecto\BLL\obj\Debug\net5.0\BLL.csproj.CopyComplete
 <<<<<<< HEAD
-D:\PROYECTOS PROGRAMACION\PWEB\Proyecto\BLL\obj\Debug\net5.0\BLL.csproj.CopyComplete
 =======
 C:\Users\Hp\Documents\DTMaster\DentalTime\BLL\bin\Debug\net5.0\BLL.deps.json
 C:\Users\Hp\Documents\DTMaster\DentalTime\BLL\bin\Debug\net5.0\BLL.dll

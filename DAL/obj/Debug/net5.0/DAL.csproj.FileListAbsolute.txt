@@ -34,7 +34,6 @@ I:\Semestre 5\Programacion WEB\Proyectos\Proyecto\DAL\bin\Debug\net5.0\DAL.runti
 I:\Semestre 5\Programacion WEB\Proyectos\Proyecto\DAL\obj\Debug\net5.0\DAL.genruntimeconfig.cache
 <<<<<<< HEAD
 =======
-D:\PROYECTOS PROGRAMACION\PWEB\Proyecto\DAL\obj\Debug\net5.0\DAL.csproj.CopyComplete
 C:\Users\Hp\Documents\DTMaster\DentalTime\DAL\bin\Debug\net5.0\DAL.deps.json
 C:\Users\Hp\Documents\DTMaster\DentalTime\DAL\bin\Debug\net5.0\DAL.runtimeconfig.json
 C:\Users\Hp\Documents\DTMaster\DentalTime\DAL\bin\Debug\net5.0\DAL.runtimeconfig.dev.json

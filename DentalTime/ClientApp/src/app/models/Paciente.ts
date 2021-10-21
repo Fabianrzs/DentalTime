@@ -4,10 +4,9 @@ export class Paciente {
   nombres: string;
   apellidos: string;
   sexo: string;
-  fechaNacimiento: Date;
-  paisNacimiento: string;
-  ciudadNacimiento: string;
   tipoSanguineo: string;
-  numeroTelefonico: string;
+  fechaNacimiento: Date;
+  LugarNacimiento: string;
   correoElectronico: string;
+  numeroTelefonico: string;
 }

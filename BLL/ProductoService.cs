@@ -20,10 +20,12 @@ namespace BLL
         {
             try
             {
-                if(_context.Inventarios.Find(producto.IdInventario) != null)
+                Inventario inventario = _context.Inventarios.Find(producto.IdInventario);
+                if (inventario != null)
                 {
                     if (_context.Productos.Find(producto.Referencia) == null)
                     {
+                        producto.Inventario = inventario;
                         _context.Productos.Add(producto);
                         _context.SaveChanges();
                         return new ProductoLogResponse(producto);
