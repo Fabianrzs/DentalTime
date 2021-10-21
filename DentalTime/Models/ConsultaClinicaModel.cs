@@ -22,6 +22,7 @@ namespace DentalTime.Models
         public int CodConsultaClinica { get; set; }
         public ConsultaClinicaViewModel(ConsultaOdontologica consultaClinica)
         {
+<<<<<<< HEAD
             /*CodConsultaClinica = consultaClinica.IConsultaOdontologica;
             Complicaciones = consultaClinica.Complicaciones;
             Motivo = consultaClinica.Motivo;
@@ -29,6 +30,14 @@ namespace DentalTime.Models
             Medicacion = consultaClinica.RecetaClinica;
             UltimaConsulta = consultaClinica.UltimaConsulta;
             ValoracionMedica = consultaClinica.ValoracionMedica;*/
+=======
+            /**Complicaciones = consultaClinica.Complicaciones; **/
+            Motivo = consultaClinica.Motivo;
+           /** Antecedentes = consultaClinica.Antecedentes;**/
+           /** Medicacion = consultaClinica.RecetaClinica;**/
+           /** UltimaConsulta = consultaClinica.UltimaConsulta;**/
+           /** ValoracionMedica = consultaClinica.ValoracionMedica;**/
+>>>>>>> 4c67271d38f14c9e5d4ead7cecfdadf57afbdacc
         }
     }
 }

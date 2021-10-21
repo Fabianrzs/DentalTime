@@ -31,4 +31,24 @@ I:\Semestre 5\Programacion WEB\Proyectos\Proyecto\BLL\obj\Debug\net5.0\BLL.dll
 I:\Semestre 5\Programacion WEB\Proyectos\Proyecto\BLL\obj\Debug\net5.0\ref\BLL.dll
 I:\Semestre 5\Programacion WEB\Proyectos\Proyecto\BLL\obj\Debug\net5.0\BLL.pdb
 I:\Semestre 5\Programacion WEB\Proyectos\Proyecto\BLL\obj\Debug\net5.0\BLL.csproj.CopyComplete
+<<<<<<< HEAD
 D:\PROYECTOS PROGRAMACION\PWEB\Proyecto\BLL\obj\Debug\net5.0\BLL.csproj.CopyComplete
+=======
+C:\Users\Hp\Documents\DTMaster\DentalTime\BLL\bin\Debug\net5.0\BLL.deps.json
+C:\Users\Hp\Documents\DTMaster\DentalTime\BLL\bin\Debug\net5.0\BLL.dll
+C:\Users\Hp\Documents\DTMaster\DentalTime\BLL\bin\Debug\net5.0\ref\BLL.dll
+C:\Users\Hp\Documents\DTMaster\DentalTime\BLL\bin\Debug\net5.0\BLL.pdb
+C:\Users\Hp\Documents\DTMaster\DentalTime\BLL\bin\Debug\net5.0\DAL.dll
+C:\Users\Hp\Documents\DTMaster\DentalTime\BLL\bin\Debug\net5.0\Entity.dll
+C:\Users\Hp\Documents\DTMaster\DentalTime\BLL\bin\Debug\net5.0\DAL.pdb
+C:\Users\Hp\Documents\DTMaster\DentalTime\BLL\bin\Debug\net5.0\Entity.pdb
+C:\Users\Hp\Documents\DTMaster\DentalTime\BLL\obj\Debug\net5.0\BLL.csproj.AssemblyReference.cache
+C:\Users\Hp\Documents\DTMaster\DentalTime\BLL\obj\Debug\net5.0\BLL.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Hp\Documents\DTMaster\DentalTime\BLL\obj\Debug\net5.0\BLL.AssemblyInfoInputs.cache
+C:\Users\Hp\Documents\DTMaster\DentalTime\BLL\obj\Debug\net5.0\BLL.AssemblyInfo.cs
+C:\Users\Hp\Documents\DTMaster\DentalTime\BLL\obj\Debug\net5.0\BLL.csproj.CoreCompileInputs.cache
+C:\Users\Hp\Documents\DTMaster\DentalTime\BLL\obj\Debug\net5.0\BLL.csproj.CopyComplete
+C:\Users\Hp\Documents\DTMaster\DentalTime\BLL\obj\Debug\net5.0\BLL.dll
+C:\Users\Hp\Documents\DTMaster\DentalTime\BLL\obj\Debug\net5.0\ref\BLL.dll
+C:\Users\Hp\Documents\DTMaster\DentalTime\BLL\obj\Debug\net5.0\BLL.pdb
+>>>>>>> 4c67271d38f14c9e5d4ead7cecfdadf57afbdacc

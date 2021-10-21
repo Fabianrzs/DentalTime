@@ -32,3 +32,25 @@ D:\PROYECTOS PROGRAMACION\PWEB\Proyecto\DAL\obj\Debug\net5.0\DAL.genruntimeconfi
 I:\Semestre 5\Programacion WEB\Proyectos\Proyecto\DAL\bin\Debug\net5.0\DAL.runtimeconfig.json
 I:\Semestre 5\Programacion WEB\Proyectos\Proyecto\DAL\bin\Debug\net5.0\DAL.runtimeconfig.dev.json
 I:\Semestre 5\Programacion WEB\Proyectos\Proyecto\DAL\obj\Debug\net5.0\DAL.genruntimeconfig.cache
+<<<<<<< HEAD
+=======
+D:\PROYECTOS PROGRAMACION\PWEB\Proyecto\DAL\obj\Debug\net5.0\DAL.csproj.CopyComplete
+C:\Users\Hp\Documents\DTMaster\DentalTime\DAL\bin\Debug\net5.0\DAL.deps.json
+C:\Users\Hp\Documents\DTMaster\DentalTime\DAL\bin\Debug\net5.0\DAL.runtimeconfig.json
+C:\Users\Hp\Documents\DTMaster\DentalTime\DAL\bin\Debug\net5.0\DAL.runtimeconfig.dev.json
+C:\Users\Hp\Documents\DTMaster\DentalTime\DAL\bin\Debug\net5.0\DAL.dll
+C:\Users\Hp\Documents\DTMaster\DentalTime\DAL\bin\Debug\net5.0\ref\DAL.dll
+C:\Users\Hp\Documents\DTMaster\DentalTime\DAL\bin\Debug\net5.0\DAL.pdb
+C:\Users\Hp\Documents\DTMaster\DentalTime\DAL\bin\Debug\net5.0\Entity.dll
+C:\Users\Hp\Documents\DTMaster\DentalTime\DAL\bin\Debug\net5.0\Entity.pdb
+C:\Users\Hp\Documents\DTMaster\DentalTime\DAL\obj\Debug\net5.0\DAL.csproj.AssemblyReference.cache
+C:\Users\Hp\Documents\DTMaster\DentalTime\DAL\obj\Debug\net5.0\DAL.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Hp\Documents\DTMaster\DentalTime\DAL\obj\Debug\net5.0\DAL.AssemblyInfoInputs.cache
+C:\Users\Hp\Documents\DTMaster\DentalTime\DAL\obj\Debug\net5.0\DAL.AssemblyInfo.cs
+C:\Users\Hp\Documents\DTMaster\DentalTime\DAL\obj\Debug\net5.0\DAL.csproj.CoreCompileInputs.cache
+C:\Users\Hp\Documents\DTMaster\DentalTime\DAL\obj\Debug\net5.0\DAL.csproj.CopyComplete
+C:\Users\Hp\Documents\DTMaster\DentalTime\DAL\obj\Debug\net5.0\DAL.dll
+C:\Users\Hp\Documents\DTMaster\DentalTime\DAL\obj\Debug\net5.0\ref\DAL.dll
+C:\Users\Hp\Documents\DTMaster\DentalTime\DAL\obj\Debug\net5.0\DAL.pdb
+C:\Users\Hp\Documents\DTMaster\DentalTime\DAL\obj\Debug\net5.0\DAL.genruntimeconfig.cache
+>>>>>>> 4c67271d38f14c9e5d4ead7cecfdadf57afbdacc

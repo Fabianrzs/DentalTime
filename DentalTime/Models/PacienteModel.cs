@@ -31,8 +31,15 @@ namespace DentalTime.Models
             Sexo = paciente.Sexo;
             LugarNacimiento = paciente.LugarNacimiento;
             FechaNacimiento = paciente.FechaNacimiento;
+<<<<<<< HEAD
             LugarNacimiento = paciente.LugarNacimiento;
             NumeroTelefonico = paciente.NumeroTelefonico;
+=======
+          /**  PaisNacimiento = paciente.PaisNacimiento;
+            CiudadNacimiento = paciente.CiudadNacimiento;
+            TipoSaguineo = paciente.TipoSaguineo; **/
+             NumeroTelefonico = paciente.NumeroTelefonico;
+>>>>>>> 4c67271d38f14c9e5d4ead7cecfdadf57afbdacc
             CorreoElectronico = paciente.CorreoElectronico;
         }
     }

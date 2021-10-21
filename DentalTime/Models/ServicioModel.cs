@@ -19,11 +19,19 @@ namespace DentalTime.Models
     {
         public ServicioViewModel(Servicio servicio)
         {
+<<<<<<< HEAD
 
             Nombre = servicio.Nombre;
             Precio = servicio.Precio;
             Duracion = servicio.Duracion;
 
+=======
+          /**  Referencia = servicio.Referencia;**/
+            Nombre = servicio.Nombre;
+            Precio = servicio.Precio;
+            Duracion = servicio.Duracion;
+          /**  Descripcion = servicio.Descripcion;**/
+>>>>>>> 4c67271d38f14c9e5d4ead7cecfdadf57afbdacc
         }
     }
 }
