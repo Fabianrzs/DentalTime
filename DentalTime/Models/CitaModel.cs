@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Entity;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -15,10 +16,8 @@ namespace DentalTime.Models
         public class CitaViewModel : CitaInputModel
         {
             public int CodCita { get; set; }
-            public CitaViewModel(Cita cita)
+            public CitaViewModel(SolicitudCita cita)
             {
-                CodCita = cita.CodCita;
-                Motivo = cita.Motivo;
             }
         }
 

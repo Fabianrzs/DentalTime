@@ -36,7 +36,7 @@ namespace BLL
         {
             try
             {
-                ConsultaOdontologica consulta = _context.ConsultasOdontologicas.OrderByDescending(c => c.IConsultaOdontologica).FirstOrDefault();
+                ConsultaOdontologica consulta = null;/* _context.ConsultasOdontologicas.OrderByDescending(c => c.ConsultaOdontologica).FirstOrDefault();*/
 
                 if (consulta == null)
                 {

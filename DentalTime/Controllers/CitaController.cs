@@ -8,6 +8,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using static DentalTime.Models.CitaModel;
 
 namespace DentalTime.Controllers
 {
@@ -34,7 +35,7 @@ namespace DentalTime.Controllers
         private SolicitudCita mapearCita(CitaInputModel citaInput)
         {
             SolicitudCita cita = new SolicitudCita();
-            cita.Motivo = citaInput.Motivo;
+            //cita.Motivo = citaInput.Motivo;
             return cita;
         }
     }

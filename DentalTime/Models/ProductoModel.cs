@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Entity;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -24,11 +25,8 @@ namespace DentalTime.Models
             Referencia = producto.Referencia;
             Nombre = producto.Nombre;
             Marca = producto.Marca;
-            Categoria = producto.Categoria;
-            Descripcion = producto.Descripcion;
             StockMin = producto.StockMin;
             StockMax = producto.StockMax;
-            StockActual = producto.StockActual;
         }
     }
 }
