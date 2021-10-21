@@ -8,19 +8,23 @@
     "net5.0": []
   },
   "packageFolders": {
-    "C:\\Users\\WIN10\\.nuget\\packages\\": {}
+    "C:\\Users\\Hp\\.nuget\\packages\\": {},
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\PROYECTOS PROGRAMACION\\PWEB\\Proyecto\\Entity\\Entity.csproj",
+      "projectUniqueName": "C:\\Users\\Hp\\Documents\\DTMaster\\DentalTime\\Entity\\Entity.csproj",
       "projectName": "Entity",
-      "projectPath": "D:\\PROYECTOS PROGRAMACION\\PWEB\\Proyecto\\Entity\\Entity.csproj",
-      "packagesPath": "C:\\Users\\WIN10\\.nuget\\packages\\",
-      "outputPath": "D:\\PROYECTOS PROGRAMACION\\PWEB\\Proyecto\\Entity\\obj\\",
+      "projectPath": "C:\\Users\\Hp\\Documents\\DTMaster\\DentalTime\\Entity\\Entity.csproj",
+      "packagesPath": "C:\\Users\\Hp\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Hp\\Documents\\DTMaster\\DentalTime\\Entity\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+      ],
       "configFilePaths": [
-        "C:\\Users\\WIN10\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Hp\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [

@@ -43,9 +43,9 @@ namespace DentalTime.Controllers
             paciente.Apellidos = pacienteImput.Apellidos;
             paciente.Sexo = pacienteImput.Sexo;
             paciente.FechaNacimiento = pacienteImput.FechaNacimiento;
-            paciente.PaisNacimiento = pacienteImput.PaisNacimiento;
+          /**  paciente.PaisNacimiento = pacienteImput.PaisNacimiento;
             paciente.CiudadNacimiento = pacienteImput.CiudadNacimiento;
-            paciente.TipoSaguineo = pacienteImput.TipoSaguineo;
+            paciente.TipoSaguineo = pacienteImput.TipoSaguineo; **/
             paciente.NumeroTelefonico = pacienteImput.NumeroTelefonico;
             paciente.CorreoElectronico = pacienteImput.CorreoElectronico;
             return paciente;

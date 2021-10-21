@@ -20,12 +20,12 @@ namespace DentalTime.Models
         public int CodHistoriaClinica { get; set; }
         public HistoriaClinicaViewModel(HistoriaOdontologica historiaClinica)
         {
-            CodHistoriaClinica = historiaClinica.IdHistoriaOdontologica;
+           /** CodHistoriaClinica = historiaClinica.IdHistoriaOdontologica;**/
             FechaHora = historiaClinica.FechaInicio;
-            NoDocumentoOfHistoria = historiaClinica.NoDocumentoOfHistoria;
+          /**  NoDocumentoOfHistoria = historiaClinica.NoDocumentoOfHistoria;**/
             PacienteView = new PacienteViewModel(historiaClinica.Paciente);
-            CodConsultaOfHistoria = historiaClinica.CodConsultaOfHistoria;
-            ConsultaView = new ConsultaClinicaViewModel(historiaClinica.ConsultaClinica);
+          /**  CodConsultaOfHistoria = historiaClinica.CodConsultaOfHistoria;
+            ConsultaView = new ConsultaClinicaViewModel(historiaClinica.ConsultaClinica);**/
         }
     }
 }

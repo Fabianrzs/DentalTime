@@ -38,7 +38,7 @@ namespace DentalTime.Controllers
             producto.Referencia = productoInput.Referencia;
             producto.Nombre = productoInput.Nombre;
             producto.Marca = productoInput.Marca;
-            producto.StockActual = productoInput.StockActual;
+          /**  producto.StockActual = productoInput.StockActual;**/
             producto.StockMax = productoInput.StockMax;
             producto.StockMin = productoInput.StockMin;
 

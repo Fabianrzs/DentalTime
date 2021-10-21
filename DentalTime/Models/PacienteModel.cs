@@ -31,10 +31,10 @@ namespace DentalTime.Models
             Apellidos = paciente.Apellidos;
             Sexo = paciente.Sexo;
             FechaNacimiento = paciente.FechaNacimiento;
-            PaisNacimiento = paciente.PaisNacimiento;
+          /**  PaisNacimiento = paciente.PaisNacimiento;
             CiudadNacimiento = paciente.CiudadNacimiento;
-            TipoSaguineo = paciente.TipoSaguineo;
-            NumeroTelefonico = paciente.NumeroTelefonico;
+            TipoSaguineo = paciente.TipoSaguineo; **/
+             NumeroTelefonico = paciente.NumeroTelefonico;
             CorreoElectronico = paciente.CorreoElectronico;
         }
     }
