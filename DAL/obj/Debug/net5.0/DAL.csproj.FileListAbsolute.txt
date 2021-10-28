@@ -53,3 +53,4 @@ C:\Users\Hp\Documents\DTMaster\DentalTime\DAL\obj\Debug\net5.0\ref\DAL.dll
 C:\Users\Hp\Documents\DTMaster\DentalTime\DAL\obj\Debug\net5.0\DAL.pdb
 C:\Users\Hp\Documents\DTMaster\DentalTime\DAL\obj\Debug\net5.0\DAL.genruntimeconfig.cache
 >>>>>>> 4c67271d38f14c9e5d4ead7cecfdadf57afbdacc
+I:\Semestre 5\Programacion WEB\Proyectos\Proyecto\DAL\obj\Debug\net5.0\DAL.csproj.CopyComplete
