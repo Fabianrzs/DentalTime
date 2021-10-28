@@ -9,7 +9,6 @@
       <br>
       <input onChange="get()" [(ngModel)]="searchText" 
       type="text" class="formcontrol"  placeholder="Identificacion Buscada">
-
     </div>
   </div>
   <br>
@@ -26,37 +25,31 @@
                 <th scope="col">Apellidos </th>
                 <th scope="col">FechaNacimiento </th>
                 <th scope="col">Sexo</th>
+                <th scope="col">Detalles</th>
               </tr>
             </thead>
             <tbody>
-              <tr *ngFor="let p of pacientes|filtroPaciente:searchText; index as i ">
+              <tr *ngFor="let p of pacientes |filtroPaciente:searchText; index as i ">
                 <th scope="row">{{i + 1}}</th>
                 <td>{{p.noDocumento}}</td>
                 <td>{{p.nombres}}</td>
                 <td>{{p.apellidos}}</td>
                 <td>{{p.fechaNacimiento}}</td>
                 <td>{{p.sexo}}</td>
+                <!-- <td><a (click)="find('{{p.noDocumento}}')">view</a></td> -->
               </tr>
             </tbody>
           </table>
         </div>
       </div>
     </div>
-    <!-- <div class="col-md">
-      <div class="text-center">
-        <h2>Detalle del Paciente</h2>
+    <!-- <div class="col-md" >
+      <div class="text-center" *ngIf = 'view'>
+        <h5>Detalle del Paciente</h5>
         <hr>
       </div>
-      <div class="p-2 text-dark">
-        <h3>Nombres: Andres Alfonso</h3>
-        <h3>Apellidos: Pertuz Perez</h3>
-        <h3>Edad: 21</h3>
-        <h3>Fecha de nacimiento: 12 Junio 2000</h3>
-        <h3>Sexo: Masculino</h3>
-        <h3>Tipo Sanguineo: O+</h3>
-        <h3>Contacto</h3>
-        <h3>Numero de Telefono: 3232851220</h3>
-        <h3>Correo electronico: anpertuzperez@gmail.com</h3>
+      <div >
+        
       </div>
     </div> -->
   </div>

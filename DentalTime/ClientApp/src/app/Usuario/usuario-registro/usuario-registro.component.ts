@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Paciente } from 'src/app/models/Paciente';
-import { PacienteServiceService } from 'src/app/services/pacienteService.service';
+import { PacienteService } from 'src/app/services/paciente.service';
 
 @Component({
   selector: 'app-usuario-registro',
@@ -13,7 +13,7 @@ export class UsuarioRegistroComponent implements OnInit {
   formPaciente: FormGroup;
   paciente: Paciente;
 
-  constructor(private service: PacienteServiceService, private formBuilder: FormBuilder) { }
+  constructor(private service: PacienteService, private formBuilder: FormBuilder) { }
 
 
   ngOnInit() {
@@ -55,7 +55,7 @@ export class UsuarioRegistroComponent implements OnInit {
 
   onSubmit() {
         if (this.formPaciente.invalid) {
-          alert('Vaina invalida');
+          alert('Infromacion Validada');
           return;
         }
         this.add();

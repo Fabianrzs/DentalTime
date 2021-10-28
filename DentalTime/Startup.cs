@@ -30,6 +30,8 @@ namespace DentalTime
             services.AddControllers().AddJsonOptions(x =>
             x.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.Preserve);
 
+            services.AddSwaggerGen();
+
             services.AddControllersWithViews();
             // In production, the Angular files will be served from this directory
             services.AddSpaStaticFiles(configuration =>
@@ -37,12 +39,21 @@ namespace DentalTime
                 configuration.RootPath = "ClientApp/dist";
             });
             // Register the Swagger generator, defining 1 or more Swagger documents
-            services.AddSwaggerGen();
+            
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
+
+            app.UseSwagger();
+            app.UseSwaggerUI(c =>
+            {
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "My API V1");
+
+            });
+            app.UseRouting();
+
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
@@ -61,15 +72,7 @@ namespace DentalTime
                 app.UseSpaStaticFiles();
             }
 
-            // Enable middleware to serve generated Swagger as a JSON endpoint.
-            app.UseSwagger();
-            app.UseSwaggerUI(c =>
-            {
-                c.SwaggerEndpoint("/swagger/v1/swagger.json", "My API V1");
-
-            });
-            app.UseRouting();
-
+            // Enable middleware to serve generated Swagger as a JSON endpoint
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute(

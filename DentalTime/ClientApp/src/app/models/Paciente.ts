@@ -1,4 +1,5 @@
 export class Paciente {
+  
   tipoDocumento: string;
   noDocumento: string;
   nombres: string;
@@ -9,4 +10,5 @@ export class Paciente {
   LugarNacimiento: string;
   correoElectronico: string;
   numeroTelefonico: string;
+
 }
