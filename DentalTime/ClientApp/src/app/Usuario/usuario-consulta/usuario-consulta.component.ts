@@ -11,7 +11,7 @@ export class UsuarioConsultaComponent implements OnInit {
 
   searchText: string;
   view = false;
-  pacientes: Paciente[];
+  pacientes: Paciente[] = [];
 
   constructor(private service: PacienteService) { }
 
@@ -21,7 +21,9 @@ export class UsuarioConsultaComponent implements OnInit {
 
   get() {  
     this.service.get().subscribe(result => {
+
       this.pacientes = result;
+      alert(this.pacientes);
     });
   }
 }

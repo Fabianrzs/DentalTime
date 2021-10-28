@@ -18,8 +18,8 @@ export class RegistrarServicioComponent implements OnInit {
   constructor(private service: ServicioService, private formBuilder: FormBuilder) { }
 
   ngOnInit() {
-    this.buildForm();
-    this.get();
+    //this.buildForm();
+    //this.get();
   }
   
   get() {  
