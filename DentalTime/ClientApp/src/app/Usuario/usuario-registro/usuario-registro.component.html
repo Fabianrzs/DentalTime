@@ -13,14 +13,13 @@
               <select class="form-select" formControlName="tipoDocumento" 
               [ngClass]="{ 'is-invalid':  control.tipoDocumento.errors }" >
                 <option value="" selected>Seleccionar</option>
-                <option value="1">Cedula de Ciudadania</option>
-                <option value="2">Cedula de Extranjera</option>
-                <option value="3">Pasaporte</option>
-                <option value="4">Registro Civil</option>
-                <option value="5">Tarjeta de Identidad</option>
+                <option value="Cedula de Ciudadania">Cedula de Ciudadania</option>
+                <option value="Cedula de Extranjera">Cedula de Extranjera</option>
+                <option value="Pasaporte">Pasaporte</option>
+                <option value="Registro Civil">Registro Civil</option>
+                <option value="Tarjeta de Identidad">Tarjeta de Identidad</option>
               </select>
               <label>Tipo de Identificacion</label>
-              
             </div>
           </div>
           <div class="col-md">
@@ -62,9 +61,9 @@
               <select class="form-select" formControlName="sexo"
               [ngClass]="{ 'is-invalid':  control.sexo.errors }" >
                 <option value="" selected>Seleccionar</option>
-                <option value="1">Masculino</option>
-                <option value="2">Famenino</option>
-                <option value="3">Indefinido</option>
+                <option value="Masculino">Masculino</option>
+                <option value="Famenino">Famenino</option>
+                <option value="Indefinido">Indefinido</option>
               </select>
               <label>Sexo</label>
             </div>
@@ -74,12 +73,12 @@
               <select class="form-select" formControlName="tipoSanguineo"
               [ngClass]="{ 'is-invalid':  control.tipoSanguineo.errors }" >
                 <option value="" selected>Seleccionar</option>
-                <option value="1">AB+</option>
-                <option value="2">A+</option>
-                <option value="3">A-</option>
-                <option value="4">AB-</option>
-                <option value="5">O+</option>
-                <option value="6">O-</option>
+                <option value="AB+">AB+</option>
+                <option value="A+">A+</option>
+                <option value="A-">A-</option>
+                <option value="AB-">AB-</option>
+                <option value="O+">O+</option>
+                <option value="O-">O-</option>
               </select>
               <label>Tipo Sanguineo</label>
             </div>
