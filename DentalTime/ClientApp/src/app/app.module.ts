@@ -3,6 +3,8 @@ import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
+
+import {NgbPaginationModule, NgbAlertModule} from '@ng-bootstrap/ng-bootstrap';
 //-------------------------------------------------------Angular CLI--------------------------------------------------
 
 import { RouterModule } from '@angular/router';
@@ -55,9 +57,11 @@ import { FiltroPacientePipe } from './pipe/filtro-paciente.pipe';
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
     HttpClientModule,
     FormsModule,
+    NgbPaginationModule, 
+    NgbAlertModule,
     RouterModule.forRoot([
     { path: '', component: HomeComponent, pathMatch: 'full' },
-], { relativeLinkResolution: 'legacy' }),
+    ], { relativeLinkResolution: 'legacy' }),
     AppRoutingModule
   ],
   providers: [],

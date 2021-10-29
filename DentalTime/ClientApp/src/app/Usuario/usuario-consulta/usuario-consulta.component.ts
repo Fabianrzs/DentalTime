@@ -11,16 +11,25 @@ export class UsuarioConsultaComponent implements OnInit {
 
   searchText: string;
 
+  PACIENTES: Paciente[];  
+
+  page = 1;
+  pageSize = 4;
+  collectionSize = 0;
   pacientes: Paciente[];
 
-  constructor(private service: PacienteService) { }
+  constructor(public service: PacienteService) { }
 
   ngOnInit() {
     this.get();
   }
   get() {
     this.service.get().subscribe(result => {
-      this.pacientes = result;
+      this.PACIENTES = result;
     });
+    this.collectionSize = this.PACIENTES.length;
+    this.pacientes = this.PACIENTES
+    .map((paciente, i) => ({noDocumento: i + 1, ...paciente}))
+    .slice((this.page - 1) * this.pageSize, (this.page - 1) * this.pageSize + this.pageSize);
   }
 }

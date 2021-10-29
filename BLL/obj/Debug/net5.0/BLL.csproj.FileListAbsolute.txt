@@ -30,7 +30,6 @@ I:\Semestre 5\Programacion WEB\Proyectos\Proyecto\BLL\obj\Debug\net5.0\BLL.cspro
 I:\Semestre 5\Programacion WEB\Proyectos\Proyecto\BLL\obj\Debug\net5.0\BLL.dll
 I:\Semestre 5\Programacion WEB\Proyectos\Proyecto\BLL\obj\Debug\net5.0\ref\BLL.dll
 I:\Semestre 5\Programacion WEB\Proyectos\Proyecto\BLL\obj\Debug\net5.0\BLL.pdb
-I:\Semestre 5\Programacion WEB\Proyectos\Proyecto\BLL\obj\Debug\net5.0\BLL.csproj.CopyComplete
 D:\PROYECTOS PROGRAMACION\PWEB\Proyecto\BLL\obj\Debug\net5.0\BLL.csproj.CopyComplete
 C:\Users\WIN10\Desktop\puebadefuego\BLL\bin\Debug\net5.0\BLL.deps.json
 C:\Users\WIN10\Desktop\puebadefuego\BLL\bin\Debug\net5.0\BLL.dll
