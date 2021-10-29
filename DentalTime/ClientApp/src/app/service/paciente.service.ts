@@ -1,9 +1,16 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Inject, Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { HandleHttpErrorService } from '../@base/handle-http-error.service';
 import { Paciente } from '../models/Paciente';
 import { tap, catchError } from 'rxjs/operators';
+
+
+const httpOptionsPut = {
+  headers: new HttpHeaders({ 'Content-Type': 'application/json' }),
+  responseType: 'text'
+};
+
 
 @Injectable({
   providedIn: 'root'
@@ -31,6 +38,15 @@ export class PacienteService {
         catchError(this.handleErrorService.handleError<Paciente>('Registrar Persona', null))
       );
   }
+
+  getId(id: string): Observable<Paciente> {
+      return this.http.get<Paciente>(`${this.baseUrl + 'api/Paciente'}/Identificacion${id}`)
+      .pipe(
+        tap(_ => this.handleErrorService.log('Actualizacion')),
+        catchError(this.handleErrorService.handleError<Paciente>('Buscar Paciente', null))
+      );
+  }
+
 }
 
 

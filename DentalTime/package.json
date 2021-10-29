@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "@ng-bootstrap/ng-bootstrap": "^11.0.0-beta.2",
     "@schematics/angular": "^12.2.7",
     "@syncfusion/ej2-angular-schedule": "^17.1.42",
     "bootstrap": "^5.1.1",

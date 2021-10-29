@@ -10,13 +10,13 @@ import { PacienteService } from 'src/app/service/paciente.service';
 export class UsuarioConsultaComponent implements OnInit {
 
   searchText: string;
-
+  view = false;
   PACIENTES: Paciente[];  
-
   page = 1;
   pageSize = 4;
   collectionSize = 0;
   pacientes: Paciente[];
+  paciente: Paciente;
 
   constructor(public service: PacienteService) { }
 
@@ -26,10 +26,20 @@ export class UsuarioConsultaComponent implements OnInit {
   get() {
     this.service.get().subscribe(result => {
       this.PACIENTES = result;
+      this.collectionSize = this.PACIENTES.length;
+      this.pacientes = this.PACIENTES
+      .map((paciente, i) => ({noDocumento: i + 1, ...paciente}))
+      .slice((this.page - 1) * this.pageSize, (this.page - 1) * this.pageSize + this.pageSize);
     });
-    this.collectionSize = this.PACIENTES.length;
-    this.pacientes = this.PACIENTES
-    .map((paciente, i) => ({noDocumento: i + 1, ...paciente}))
-    .slice((this.page - 1) * this.pageSize, (this.page - 1) * this.pageSize + this.pageSize);
+  }
+
+  
+  onSearch(id: string){
+    this.view = true;
+    alert(id)
+    this.service.getId(id).subscribe(result => {
+      this.paciente = result;
+      alert(this.paciente);
+    });
   }
 }
