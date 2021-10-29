@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Paciente } from 'src/app/models/Paciente';
-import { PacienteServiceService } from 'src/app/service/pacienteService.service';
+import { PacienteService } from 'src/app/service/paciente.service';
 
 @Component({
   selector: 'app-usuario-consulta',
@@ -13,7 +13,7 @@ export class UsuarioConsultaComponent implements OnInit {
 
   pacientes: Paciente[];
 
-  constructor(private service: PacienteServiceService) { }
+  constructor(private service: PacienteService) { }
 
   ngOnInit() {
     this.get();
@@ -23,5 +23,4 @@ export class UsuarioConsultaComponent implements OnInit {
       this.pacientes = result;
     });
   }
-
 }

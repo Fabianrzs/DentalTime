@@ -8,22 +8,20 @@ namespace DentalTime.Models
 {
     public class ServicioInputModel
     {
-        public string Referencia { get; set; }
+        public string IdServico { get; set; }
         public string Nombre { get; set; }
         public decimal Precio { get; set; }
         public string Duracion { get; set; }
-        public string Descripcion { get; set; }
-    }
 
-    public class ServicioViewModel : ServicioInputModel
-    {
-        public ServicioViewModel(Servicio servicio)
+        public class ServicioViewModel : ServicioInputModel
         {
-
-            Nombre = servicio.Nombre;
-            Precio = servicio.Precio;
-            Duracion = servicio.Duracion;
-
+            public ServicioViewModel(Servicio servicio)
+            {
+                IdServico = servicio.IdServico;
+                Nombre = servicio.Nombre;
+                Precio = servicio.Precio;
+                Duracion = servicio.Duracion;
+            }
         }
     }
 }

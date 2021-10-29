@@ -23,6 +23,7 @@ namespace BLL
                 if (_context.Servicios.Find(servicio.IdServico) == null)
                 {
                     _context.Servicios.Add(servicio);
+                    _context.SaveChanges();
                     return new ServicioLogResponse(servicio);
                 }
                 return new ServicioLogResponse($"El producto ya se encuentra registrado");
@@ -39,6 +40,7 @@ namespace BLL
                 {
                     servicio = servicioNew;
                     _context.Servicios.Update(servicio);
+                    _context.SaveChanges();
                     return new ServicioLogResponse(servicio);
                 }
                 return new ServicioLogResponse($"No se encuentra registro a modificar");

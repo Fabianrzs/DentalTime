@@ -34,13 +34,19 @@ namespace DentalTime.Controllers
         private Servicio mapearServicio(ServicioInputModel servicioInput)
         {
             Servicio servicio = new Servicio();
-
-            
+            servicio.IdServico = servicioInput.IdServico;
             servicio.Nombre = servicioInput.Nombre;
-            servicio.Duracion = servicioInput.Duracion;
             servicio.Precio = servicioInput.Precio;
-                       
+            servicio.Duracion = servicioInput.Duracion;
             return servicio;
+        }
+
+        [HttpGet]
+        public ActionResult<List<Producto>> Consult()
+        {
+            var request = _service.Consult();
+            if (request.Error) return BadRequest(request.Mensaje);
+            return Ok(request.Servicios);
         }
     }
 }

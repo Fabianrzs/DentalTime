@@ -29,11 +29,11 @@ namespace DentalTime.Models
             Nombres = paciente.Nombres;
             Apellidos = paciente.Apellidos;
             Sexo = paciente.Sexo;
-            LugarNacimiento = paciente.LugarNacimiento;
+            TipoSanguineo = paciente.TipoSanguineo;
             FechaNacimiento = paciente.FechaNacimiento;
             LugarNacimiento = paciente.LugarNacimiento;
-            NumeroTelefonico = paciente.NumeroTelefonico;
             CorreoElectronico = paciente.CorreoElectronico;
+            NumeroTelefonico = paciente.NumeroTelefonico;
         }
     }
 }
