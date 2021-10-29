@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\PROYECTOS PROGRAMACION\\PWEB\\Proyecto\\Entity\\Entity.csproj",
+      "projectUniqueName": "C:\\Users\\WIN10\\Desktop\\puebadefuego\\Entity\\Entity.csproj",
       "projectName": "Entity",
-      "projectPath": "D:\\PROYECTOS PROGRAMACION\\PWEB\\Proyecto\\Entity\\Entity.csproj",
+      "projectPath": "C:\\Users\\WIN10\\Desktop\\puebadefuego\\Entity\\Entity.csproj",
       "packagesPath": "C:\\Users\\WIN10\\.nuget\\packages\\",
-      "outputPath": "D:\\PROYECTOS PROGRAMACION\\PWEB\\Proyecto\\Entity\\obj\\",
+      "outputPath": "C:\\Users\\WIN10\\Desktop\\puebadefuego\\Entity\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\WIN10\\AppData\\Roaming\\NuGet\\NuGet.Config",

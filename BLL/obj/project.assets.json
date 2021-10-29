@@ -5741,11 +5741,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\PROYECTOS PROGRAMACION\\PWEB\\Proyecto\\BLL\\BLL.csproj",
+      "projectUniqueName": "C:\\Users\\WIN10\\Desktop\\puebadefuego\\BLL\\BLL.csproj",
       "projectName": "BLL",
-      "projectPath": "D:\\PROYECTOS PROGRAMACION\\PWEB\\Proyecto\\BLL\\BLL.csproj",
+      "projectPath": "C:\\Users\\WIN10\\Desktop\\puebadefuego\\BLL\\BLL.csproj",
       "packagesPath": "C:\\Users\\WIN10\\.nuget\\packages\\",
-      "outputPath": "D:\\PROYECTOS PROGRAMACION\\PWEB\\Proyecto\\BLL\\obj\\",
+      "outputPath": "C:\\Users\\WIN10\\Desktop\\puebadefuego\\BLL\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\WIN10\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -5762,11 +5762,11 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "D:\\PROYECTOS PROGRAMACION\\PWEB\\Proyecto\\DAL\\DAL.csproj": {
-              "projectPath": "D:\\PROYECTOS PROGRAMACION\\PWEB\\Proyecto\\DAL\\DAL.csproj"
+            "C:\\Users\\WIN10\\Desktop\\puebadefuego\\DAL\\DAL.csproj": {
+              "projectPath": "C:\\Users\\WIN10\\Desktop\\puebadefuego\\DAL\\DAL.csproj"
             },
-            "D:\\PROYECTOS PROGRAMACION\\PWEB\\Proyecto\\Entity\\Entity.csproj": {
-              "projectPath": "D:\\PROYECTOS PROGRAMACION\\PWEB\\Proyecto\\Entity\\Entity.csproj"
+            "C:\\Users\\WIN10\\Desktop\\puebadefuego\\Entity\\Entity.csproj": {
+              "projectPath": "C:\\Users\\WIN10\\Desktop\\puebadefuego\\Entity\\Entity.csproj"
             }
           }
         }

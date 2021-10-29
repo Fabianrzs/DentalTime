@@ -8,25 +8,29 @@ import { tap, catchError } from 'rxjs/operators';
 @Injectable({
   providedIn: 'root'
 })
-export class PacienteServiceService {
-
+export class PacienteService {
   baseUrl: string;
-
   constructor(
     private http: HttpClient,
     @Inject('BASE_URL') baseUrl: string,
     private handleErrorService: HandleHttpErrorService) {
     this.baseUrl = baseUrl;
   }
-
   get(): Observable<Paciente[]> {
-    return this.http.get<Paciente[]>(this.baseUrl + 'api/paciente')
+    return this.http.get<Paciente[]>(this.baseUrl + 'api/Paciente')
       .pipe(
-        tap(() => this.handleErrorService.log('datos enviados')),
+        tap(_ => this.handleErrorService.log('Consulta Realizada')),
         catchError(this.handleErrorService.handleError<Paciente[]>('Consulta Paciente', null))
       );
   }
 
+  post(paciente: Paciente): Observable<Paciente> {
+    return this.http.post<Paciente>(this.baseUrl + 'api/Paciente', paciente)
+      .pipe(
+        tap(() => this.handleErrorService.log('Se envio a guardar')),
+        catchError(this.handleErrorService.handleError<Paciente>('Registrar Persona', null))
+      );
+  }
 }
 
 

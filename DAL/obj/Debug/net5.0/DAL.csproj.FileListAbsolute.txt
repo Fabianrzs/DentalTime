@@ -32,3 +32,20 @@ D:\PROYECTOS PROGRAMACION\PWEB\Proyecto\DAL\obj\Debug\net5.0\DAL.genruntimeconfi
 I:\Semestre 5\Programacion WEB\Proyectos\Proyecto\DAL\bin\Debug\net5.0\DAL.runtimeconfig.json
 I:\Semestre 5\Programacion WEB\Proyectos\Proyecto\DAL\bin\Debug\net5.0\DAL.runtimeconfig.dev.json
 I:\Semestre 5\Programacion WEB\Proyectos\Proyecto\DAL\obj\Debug\net5.0\DAL.genruntimeconfig.cache
+C:\Users\WIN10\Desktop\puebadefuego\DAL\bin\Debug\net5.0\DAL.deps.json
+C:\Users\WIN10\Desktop\puebadefuego\DAL\bin\Debug\net5.0\DAL.runtimeconfig.json
+C:\Users\WIN10\Desktop\puebadefuego\DAL\bin\Debug\net5.0\DAL.runtimeconfig.dev.json
+C:\Users\WIN10\Desktop\puebadefuego\DAL\bin\Debug\net5.0\DAL.dll
+C:\Users\WIN10\Desktop\puebadefuego\DAL\bin\Debug\net5.0\ref\DAL.dll
+C:\Users\WIN10\Desktop\puebadefuego\DAL\bin\Debug\net5.0\DAL.pdb
+C:\Users\WIN10\Desktop\puebadefuego\DAL\bin\Debug\net5.0\Entity.dll
+C:\Users\WIN10\Desktop\puebadefuego\DAL\bin\Debug\net5.0\Entity.pdb
+C:\Users\WIN10\Desktop\puebadefuego\DAL\obj\Debug\net5.0\DAL.csproj.AssemblyReference.cache
+C:\Users\WIN10\Desktop\puebadefuego\DAL\obj\Debug\net5.0\DAL.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\WIN10\Desktop\puebadefuego\DAL\obj\Debug\net5.0\DAL.AssemblyInfoInputs.cache
+C:\Users\WIN10\Desktop\puebadefuego\DAL\obj\Debug\net5.0\DAL.AssemblyInfo.cs
+C:\Users\WIN10\Desktop\puebadefuego\DAL\obj\Debug\net5.0\DAL.csproj.CoreCompileInputs.cache
+C:\Users\WIN10\Desktop\puebadefuego\DAL\obj\Debug\net5.0\DAL.dll
+C:\Users\WIN10\Desktop\puebadefuego\DAL\obj\Debug\net5.0\ref\DAL.dll
+C:\Users\WIN10\Desktop\puebadefuego\DAL\obj\Debug\net5.0\DAL.pdb
+C:\Users\WIN10\Desktop\puebadefuego\DAL\obj\Debug\net5.0\DAL.genruntimeconfig.cache

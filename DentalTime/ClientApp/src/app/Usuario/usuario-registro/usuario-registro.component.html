@@ -1,112 +1,126 @@
-<div class="container ">
-  <div class="row">
-    <h1 class="text-center">Registro de Paciente</h1>
-    <hr>
+<div class="row justify-content-center">
+  <div  class="col-6" style = "min-width: 800px;">
+    <div class="container ">
+      <div class="row">
+        <h4 class="text-center">Registro de Paciente</h4>
+        <hr>
+      </div>
+      
+      <form [formGroup]="formPaciente">
+        <div class="row ">
+          <div class="col-md">
+            <div class="form-floating">
+              <select class="form-select" formControlName="tipoDocumento" 
+              [ngClass]="{ 'is-invalid':  control.tipoDocumento.errors }" >
+                <option value="" selected>Seleccionar</option>
+                <option value="1">Cedula de Ciudadania</option>
+                <option value="2">Cedula de Extranjera</option>
+                <option value="3">Pasaporte</option>
+                <option value="4">Registro Civil</option>
+                <option value="5">Tarjeta de Identidad</option>
+              </select>
+              <label>Tipo de Identificacion</label>
+              
+            </div>
+          </div>
+          <div class="col-md">
+            <div class="form-floating">
+              <input type="text" formControlName="noDocumento" class="form-control"
+              [ngClass]="{ 'is-invalid':  control.noDocumento.errors }" >
+              <label for="floatingInputGrid">Identificacion</label>
+            </div>
+          </div>
+        </div>
+        <br>
+        <div class ="row ">
+          <div class="col-md">
+            <div class="form-floating">
+              <input type="text" formControlName="nombres" class="form-control"
+              [ngClass]="{ 'is-invalid':  control.nombres.errors }" >
+              <label for="floatingInputGrid">Nombres</label>
+            </div>
+          </div>
+          <div class="col-md">
+            <div class="form-floating">
+              <input type="text" formControlName="apellidos" class="form-control"
+              [ngClass]="{ 'is-invalid':  control.apellidos.errors }" >
+              <label for="floatingInputGrid">Apellidos</label>
+            </div>
+          </div>
+        </div>
+        <br>
+        <div class="row ">
+          <div class="col-md">
+            <div class="form-floating">
+              <input type="date" formControlName="fechaNacimiento" class="form-control"
+              [ngClass]="{ 'is-invalid':  control.fechaNacimiento.errors }" >
+              <label for="floatingInputGrid">Fecha de Nacimiento</label>
+            </div>
+          </div>
+          <div class="col-md">
+            <div class="form-floating">
+              <select class="form-select" formControlName="sexo"
+              [ngClass]="{ 'is-invalid':  control.sexo.errors }" >
+                <option value="" selected>Seleccionar</option>
+                <option value="1">Masculino</option>
+                <option value="2">Famenino</option>
+                <option value="3">Indefinido</option>
+              </select>
+              <label>Sexo</label>
+            </div>
+          </div>
+          <div class="col-md">
+            <div class="form-floating">
+              <select class="form-select" formControlName="tipoSanguineo"
+              [ngClass]="{ 'is-invalid':  control.tipoSanguineo.errors }" >
+                <option value="" selected>Seleccionar</option>
+                <option value="1">AB+</option>
+                <option value="2">A+</option>
+                <option value="3">A-</option>
+                <option value="4">AB-</option>
+                <option value="5">O+</option>
+                <option value="6">O-</option>
+              </select>
+              <label>Tipo Sanguineo</label>
+            </div>
+          </div>
+        </div>
+        <br>
+        <div class="row ">
+          <div class="col-md">
+            <div class="form-floating">
+              <input type="text" formControlName="lugarNacimiento" class="form-control"
+              [ngClass]="{ 'is-invalid':  control.lugarNacimiento.errors }" >
+              <label for="floatingInputGrid">Lugar de Nacimiento</label>
+            </div>
+          </div>
+          <div class="col-md">
+            <div class="form-floating">
+              <input type="text" formControlName="numeroTelefonico" class="form-control"
+              [ngClass]="{ 'is-invalid':  control.numeroTelefonico.errors }" >
+              <label for="floatingInputGrid">Numero de Telefono</label>
+            </div>
+          </div>
+          <div class="col-md">
+            <div class="form-floating">
+              <input type="text" formControlName="correoElectronico" class="form-control"
+              [ngClass]="{ 'is-invalid':  control.correoElectronico.errors }" >
+              <label for="floatingInputGrid">Correo Electronico</label>
+            </div>
+          </div>
+        </div>
+      </form>
+      <br>
+      <div class="row justify-content-center">
+        <div class="col-6">
+            <button type="button" class="btn btn-outline-danger btn-sm position-absolute top-0 end-0"
+            (click)="clearCampos()">Cancelar</button>
+        </div>
+        <div class="col col-md">
+            <button type="button" class="btn btn-outline-success btn-sm" (click)="onSubmit()">Guardar</button>
+        </div>
+      </div>
+      <br>
+    </div>
   </div>
-  
-  <div>
-    <h2>Datos Principales*</h2>
-  </div>
-  <div class="row ">
-    <div class="col-md">
-      <div class="form-floating">
-        <input type="text" class="form-control">
-        <label for="floatingInputGrid">Identificacion</label>
-      </div>
-    </div>
-    <div class="col-md">
-      <div class="form-floating">
-        <input type="text" class="form-control">
-        <label for="floatingInputGrid">Nombres</label>
-      </div>
-    </div>
-    <div class="col-md">
-      <div class="form-floating">
-        <input type="text" class="form-control">
-        <label for="floatingInputGrid">Apellidos</label>
-      </div>
-    </div>
-  </div>
-  <br>
-  <div class="row ">
-    <div class="col-md">
-      <div class="form-floating">
-        <input type="date" class="form-control">
-        <label for="floatingInputGrid">Fecha de Nacimiento</label>
-      </div>
-    </div>
-    <div class="col-md">
-      <div class="form-floating">
-        <select class="form-select">
-          <option selected>Seleccionar</option>
-          <option value="1">Masculino</option>
-          <option value="2">Famenino</option>
-          <option value="3">Indefinido</option>
-        </select>
-        <label>Sexo</label>
-      </div>
-    </div>
-    <div class="col-md">
-      <div class="form-floating">
-        <select class="form-select">
-          <option selected>Seleccionar</option>
-          <option value="1">AB+</option>
-          <option value="2">A+</option>
-          <option value="3">A-</option>
-          <option value="4">AB-</option>
-          <option value="5">0+</option>
-          <option value="6">O-</option>
-        </select>
-        <label>Tipo Sanguineo</label>
-      </div>
-    </div>
-  </div>
-
-  <br>
-  <div>
-    <h2>Contacto*</h2>
-  </div>
-  <div class="row ">
-    <div class="col-md">
-      <div class="form-floating" style="width: 300px;">
-        <input type="text" class="form-control">
-        <label for="floatingInputGrid">Numero de Telefono</label>
-      </div>
-    </div>
-    <div class="col-md">
-      <div class="form-floating" style="width: 350px;">
-        <input type="text" class="form-control">
-        <label for="floatingInputGrid">Correo Electronico</label>
-      </div>
-    </div>
-  </div>
-
-  <br>
-  <div>
-    <h2>Clinico*</h2>
-  </div>
-  <div class="row ">
-    <div class="col-md">
-      <div class="form-floating">
-        <textarea class="form-control" id="floatingTextarea2" style="height: 100px"></textarea>
-        <label for="floatingInputGrid">Complicaciones</label>
-      </div>
-    </div>
-    <div class="col-md">
-      <div class="form-floating">
-        <textarea class="form-control" id="floatingTextarea2" style="height: 100px"></textarea>
-        <label for="floatingInputGrid">Antecedentes</label>
-      </div>
-    </div>
-  </div>
-  <br>
-  <div class="row justify-content-center">
-    <div class="col-6">
-        <button type="button" class="btn btn-outline-danger btn-sm position-absolute top-0 end-0">Cancelar</button>
-    </div>
-    <div class="col col-md">
-        <button type="button" class="btn btn-outline-success btn-sm ">Guardar</button>
-    </div>
-  </div>
-  <br>
 </div>

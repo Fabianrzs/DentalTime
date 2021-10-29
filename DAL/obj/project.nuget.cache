@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "u5eH1QndrMvEDpblWVrsSLDIRecoQfNECrfKCUbwzVG2UvZpCrZxoLJDLV1M78COn/KcrXD+0ZKnBsIJgx7Yxw==",
+  "dgSpecHash": "jBIbBreBaeQGW5K3jn+lQqhLXv03vDzTxu5ary26ULw7mAZMb5K8Ob/B+6raom8LSsOXSloW8mIfUgXokvRLgw==",
   "success": true,
-  "projectFilePath": "D:\\PROYECTOS PROGRAMACION\\PWEB\\Proyecto\\DAL\\DAL.csproj",
+  "projectFilePath": "C:\\Users\\WIN10\\Desktop\\puebadefuego\\DAL\\DAL.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\WIN10\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\WIN10\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",

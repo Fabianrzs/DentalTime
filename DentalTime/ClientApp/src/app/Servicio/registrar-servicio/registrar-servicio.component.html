@@ -1,38 +1,42 @@
 <div class="container">
   <div class="row ">
     <div class="col-4 col-sm" style="min-width: 200px; max-width: 250px;">
-      <h2 class="text-center">Registro</h2>
+      <h5 class="text-center">Registro</h5>
       <hr>
+      <form [formGroup]="formServicio">
       <div class="form-floating border border-5">
-        <input type="text" class="form-control">
-        <label for="floatingInputGrid">Codigo del Servicio</label>
+        <input type="text" formControlName="idServico" class="form-control"
+          [ngClass]="{ 'is-invalid':  control.idServico.errors }">
+        <label for="floatingInputGrid">Identificador</label>
       </div>
       <div class="form-floating border border-5">
-        <input type="text" class="form-control">
+        <input type="text" formControlName="nombre" class="form-control"
+          [ngClass]="{ 'is-invalid':  control.nombre.errors }">
         <label for="floatingInputGrid">Nombre</label>
       </div>
       <div class="form-floating border border-5">
-        <input type="text" class="form-control">
+        <input type="text" formControlName="precio" class="form-control"
+          [ngClass]="{ 'is-invalid':  control.precio.errors }">
         <label for="floatingInputGrid">Precio</label>
       </div>
       <div class="form-floating border border-5">
-        <input type="text" class="form-control">
+        <input type="text" formControlName="duracion" class="form-control"
+          [ngClass]="{ 'is-invalid':  control.duracion.errors }">
         <label for="floatingInputGrid">Duracion</label>
-      </div>
-      <div class="form-floating border border-5">
-        <textarea class="form-control" id="floatingTextarea2" style="height: 120px;"></textarea>
-        <label for="floatingInputGrid">Descripcion</label>
       </div>
       <br>
       <div class="row justify-content-center">
         <div class="col-6">
-            <button type="button" class="btn btn-outline-danger btn-sm position-absolute top-0 end-0">Cancelar</button>
+          <button type="button" class="btn btn-outline-danger btn-sm position-absolute top-0 end-0"
+            (click)="clearCampos()">Cancelar</button>
         </div>
         <div class="col-6 col-md">
-            <button type="button" class="btn btn-outline-success btn-sm ">Guardar</button>
+          <button type="button" class="btn btn-outline-success btn-sm" (click)="onSubmit()">Guardar</button>
         </div>
       </div>
+      </form>
     </div>
+
 
     <div class="col-8 col-sm">
       <div class="row">
@@ -44,42 +48,42 @@
 
 
       <div class="row">
-        <div class="col-12">
-          <label for="filter"><b>Filtro</b></label>
+        <div class="col-6">
+          <label for="filter">Filtro</label>
           <br>
-          <input id="filter" type="text" class="formcontrol" placeholder="Codigo">
+          <input onChange="get()" [(ngModel)]="searchText" 
+          type="text" class="formcontrol"  placeholder="Identificador Buscado">
         </div>
       </div>
-
-
+      
       <div class="row">
-        <div class="col-12">
-          <table class="table">
-            <thead>
-              <tr>
-                <th scope="col"></th>
-                <th scope="col">Cod</th>
-                <th scope="col">Nombre</th>
-                <th scope="col">Precio</th>
-                <th scope="col">Duracion</th>
-                <th scope="col">Descripcion</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <th></th>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
+        <div class="col-md">
+          <div class="column">
+            <div class="table-container">
+              <table class="table table-striped" *ngIf='servicios && servicios.length'>
+                <thead>
+                  <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Identificador</th>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Precio</th>
+                    <th scope="col">Duracion</th>
+                    <th scope="col">Descripcion</th>
+                  </tr>            
+                </thead>
+                <tbody>
+                  <tr *ngFor="let s of servicios; index as i ">
+                    <th scope="row">{{i + 1}}</th>
+                    <td>{{s.idServico}}</td>
+                    <td>{{s.nombre}}</td>
+                    <td>{{s.precio}}</td>
+                    <td>{{s.duracion}}</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
       </div>
-
     </div>
   </div>
 </div>
