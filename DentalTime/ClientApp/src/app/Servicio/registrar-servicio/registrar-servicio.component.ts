@@ -1,7 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Servicio } from 'src/app/models/Servicio';
+<<<<<<< HEAD
 import { ServicioService } from 'src/app/service/servicio.service';
+=======
+import { ServicioService } from 'src/app/services/servicio.service';
+
+>>>>>>> 46b6a98727ca27e29a9701e0ebf2ce521f31d793
 @Component({
   selector: 'app-registrar-servicio',
   templateUrl: './registrar-servicio.component.html',
@@ -17,8 +22,13 @@ export class RegistrarServicioComponent implements OnInit {
   constructor(private service: ServicioService, private formBuilder: FormBuilder) { }
 
   ngOnInit() {
+<<<<<<< HEAD
     this.get();
     this.buildForm();
+=======
+    //this.buildForm();
+    //this.get();
+>>>>>>> 46b6a98727ca27e29a9701e0ebf2ce521f31d793
   }
   
   get() {  
@@ -48,7 +58,11 @@ export class RegistrarServicioComponent implements OnInit {
 
   onSubmit() {
         if (this.formServicio.invalid) {
+<<<<<<< HEAD
           alert('Informacion Validada');
+=======
+          alert('Infromacion Validada');
+>>>>>>> 46b6a98727ca27e29a9701e0ebf2ce521f31d793
           return;
         }
         this.add();
@@ -59,7 +73,10 @@ export class RegistrarServicioComponent implements OnInit {
       if(result != null) {
         alert('Servicio Guardado');
         this.servicio = result;
+<<<<<<< HEAD
         this.get();
+=======
+>>>>>>> 46b6a98727ca27e29a9701e0ebf2ce521f31d793
       }
     });
   }
@@ -69,6 +86,7 @@ export class RegistrarServicioComponent implements OnInit {
     this.servicio.nombre = '';
     this.servicio.precio = 0;
     this.servicio.duracion = '';
+<<<<<<< HEAD
 
     this.formServicio = this.formBuilder.group({
       idServico: [this.servicio.idServico , Validators.required],
@@ -76,5 +94,7 @@ export class RegistrarServicioComponent implements OnInit {
       precio: [this.servicio.precio , Validators.required],
       duracion:[this.servicio.duracion , Validators.required],
     });
+=======
+>>>>>>> 46b6a98727ca27e29a9701e0ebf2ce521f31d793
   }
 }

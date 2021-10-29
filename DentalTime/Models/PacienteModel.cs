@@ -24,6 +24,7 @@ namespace DentalTime.Models
     {
         public PacienteViewModel(Paciente paciente)
         {
+<<<<<<< HEAD
             TipoDocumento = paciente.TipoDocumento;
             NoDocumento = paciente.NoDocumento;
             Nombres = paciente.Nombres;
@@ -34,6 +35,9 @@ namespace DentalTime.Models
             LugarNacimiento = paciente.LugarNacimiento;
             CorreoElectronico = paciente.CorreoElectronico;
             NumeroTelefonico = paciente.NumeroTelefonico;
+=======
+            
+>>>>>>> 46b6a98727ca27e29a9701e0ebf2ce521f31d793
         }
     }
 }

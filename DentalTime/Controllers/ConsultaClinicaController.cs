@@ -36,10 +36,6 @@ namespace DentalTime.Controllers
         {
             ConsultaOdontologica consultaClinica = new ConsultaOdontologica();
             consultaClinica.Motivo = consultaClinicaImputModel.Motivo;
-            /*consultaClinica.Antecedentes = consultaClinicaImputModel.Antecedentes;
-            consultaClinica.RecetaClinica = consultaClinicaImputModel.Medicacion;
-            consultaClinica.UltimaConsulta = consultaClinicaImputModel.UltimaConsulta;
-            consultaClinica.ValoracionMedica = consultaClinicaImputModel.ValoracionMedica;*/
             return consultaClinica;
         }
     }

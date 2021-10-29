@@ -72,7 +72,11 @@
                   </tr>            
                 </thead>
                 <tbody>
+<<<<<<< HEAD
                   <tr *ngFor="let s of servicios; index as i ">
+=======
+                  <tr *ngFor="let s of servicios | filtroServicio:searchText; index as i ">
+>>>>>>> 46b6a98727ca27e29a9701e0ebf2ce521f31d793
                     <th scope="row">{{i + 1}}</th>
                     <td>{{s.idServico}}</td>
                     <td>{{s.nombre}}</td>

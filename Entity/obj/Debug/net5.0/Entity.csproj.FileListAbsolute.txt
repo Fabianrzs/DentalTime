@@ -22,6 +22,7 @@ I:\Semestre 5\Programacion WEB\Proyectos\Proyecto\Entity\obj\Debug\net5.0\Entity
 I:\Semestre 5\Programacion WEB\Proyectos\Proyecto\Entity\obj\Debug\net5.0\Entity.dll
 I:\Semestre 5\Programacion WEB\Proyectos\Proyecto\Entity\obj\Debug\net5.0\ref\Entity.dll
 I:\Semestre 5\Programacion WEB\Proyectos\Proyecto\Entity\obj\Debug\net5.0\Entity.pdb
+<<<<<<< HEAD
 C:\Users\WIN10\Desktop\puebadefuego\Entity\bin\Debug\net5.0\Entity.deps.json
 C:\Users\WIN10\Desktop\puebadefuego\Entity\bin\Debug\net5.0\Entity.dll
 C:\Users\WIN10\Desktop\puebadefuego\Entity\bin\Debug\net5.0\ref\Entity.dll
@@ -34,3 +35,17 @@ C:\Users\WIN10\Desktop\puebadefuego\Entity\obj\Debug\net5.0\Entity.csproj.CoreCo
 C:\Users\WIN10\Desktop\puebadefuego\Entity\obj\Debug\net5.0\Entity.dll
 C:\Users\WIN10\Desktop\puebadefuego\Entity\obj\Debug\net5.0\ref\Entity.dll
 C:\Users\WIN10\Desktop\puebadefuego\Entity\obj\Debug\net5.0\Entity.pdb
+=======
+C:\Users\Hp\Documents\DTMaster\DentalTime\Entity\bin\Debug\net5.0\Entity.deps.json
+C:\Users\Hp\Documents\DTMaster\DentalTime\Entity\bin\Debug\net5.0\Entity.dll
+C:\Users\Hp\Documents\DTMaster\DentalTime\Entity\bin\Debug\net5.0\ref\Entity.dll
+C:\Users\Hp\Documents\DTMaster\DentalTime\Entity\bin\Debug\net5.0\Entity.pdb
+C:\Users\Hp\Documents\DTMaster\DentalTime\Entity\obj\Debug\net5.0\Entity.csproj.AssemblyReference.cache
+C:\Users\Hp\Documents\DTMaster\DentalTime\Entity\obj\Debug\net5.0\Entity.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Hp\Documents\DTMaster\DentalTime\Entity\obj\Debug\net5.0\Entity.AssemblyInfoInputs.cache
+C:\Users\Hp\Documents\DTMaster\DentalTime\Entity\obj\Debug\net5.0\Entity.AssemblyInfo.cs
+C:\Users\Hp\Documents\DTMaster\DentalTime\Entity\obj\Debug\net5.0\Entity.csproj.CoreCompileInputs.cache
+C:\Users\Hp\Documents\DTMaster\DentalTime\Entity\obj\Debug\net5.0\Entity.dll
+C:\Users\Hp\Documents\DTMaster\DentalTime\Entity\obj\Debug\net5.0\ref\Entity.dll
+C:\Users\Hp\Documents\DTMaster\DentalTime\Entity\obj\Debug\net5.0\Entity.pdb
+>>>>>>> 46b6a98727ca27e29a9701e0ebf2ce521f31d793

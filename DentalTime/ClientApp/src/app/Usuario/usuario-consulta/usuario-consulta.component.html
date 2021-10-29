@@ -7,8 +7,13 @@
     <div class="col-6">
       <label for="filter">Filtro</label>
       <br>
+<<<<<<< HEAD
       <input onChange="get()" [(ngModel)]="searchText"
              type="text" class="formcontrol" placeholder="Identificacion Buscada">
+=======
+      <input onChange="get()" [(ngModel)]="searchText" 
+      type="text" class="formcontrol"  placeholder="Identificacion Buscada">
+>>>>>>> 46b6a98727ca27e29a9701e0ebf2ce521f31d793
     </div>
   </div>
   <br>
@@ -29,7 +34,7 @@
               </tr>
             </thead>
             <tbody>
-              <tr *ngFor="let p of pacientes|filtroPaciente:searchText; index as i ">
+              <tr *ngFor="let p of pacientes; index as i ">
                 <th scope="row">{{i + 1}}</th>
                 <td>{{p.noDocumento}}</td>
                 <td>{{p.nombres}}</td>
@@ -49,7 +54,11 @@
         <hr>
       </div>
       <div >
+<<<<<<< HEAD
 
+=======
+        
+>>>>>>> 46b6a98727ca27e29a9701e0ebf2ce521f31d793
       </div>
     </div> -->
   </div>
