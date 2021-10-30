@@ -58,8 +58,8 @@ namespace DentalTime.Controllers
             return Ok(request.Pacientes);
         }
 
-        [HttpGet ("Identificacion")]
-        public ActionResult<Producto> Find(string identificacion)
+        [HttpGet ("{Identificacion}")]
+        public ActionResult<Producto> Get(string identificacion)
         {
             var request = _service.Find(identificacion);
             if (request.Error) return BadRequest(request.Mensaje);

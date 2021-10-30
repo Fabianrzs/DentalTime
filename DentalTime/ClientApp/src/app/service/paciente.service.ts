@@ -11,10 +11,14 @@ const httpOptionsPut = {
   responseType: 'text'
 };
 
+const httpOptions = {
+  headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+};
 
 @Injectable({
   providedIn: 'root'
 })
+
 export class PacienteService {
   baseUrl: string;
   constructor(
@@ -23,6 +27,7 @@ export class PacienteService {
     private handleErrorService: HandleHttpErrorService) {
     this.baseUrl = baseUrl;
   }
+
   get(): Observable<Paciente[]> {
     return this.http.get<Paciente[]>(this.baseUrl + 'api/Paciente')
       .pipe(
@@ -40,13 +45,11 @@ export class PacienteService {
   }
 
   getId(id: string): Observable<Paciente> {
-      return this.http.get<Paciente>(`${this.baseUrl + 'api/Paciente'}/Identificacion${id}`)
+    const url = `${this.baseUrl + 'api/paciente'}/${id}`;
+    return this.http.get<Paciente>(url, httpOptions)
       .pipe(
-        tap(_ => this.handleErrorService.log('Actualizacion')),
+        tap(_ => this.handleErrorService.log('datos enviados')),
         catchError(this.handleErrorService.handleError<Paciente>('Buscar Paciente', null))
       );
   }
-
 }
-
-

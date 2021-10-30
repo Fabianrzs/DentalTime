@@ -39,7 +39,7 @@ export class UsuarioConsultaComponent implements OnInit {
     alert(id)
     this.service.getId(id).subscribe(result => {
       this.paciente = result;
-      alert(this.paciente);
+      alert(JSON.stringify(this.paciente));
     });
   }
 }
