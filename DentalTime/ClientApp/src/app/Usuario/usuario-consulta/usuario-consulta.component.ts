@@ -21,7 +21,7 @@ export class UsuarioConsultaComponent implements OnInit {
   constructor(public service: PacienteService) { }
 
   ngOnInit() {
-    this.get();
+ 
   }
   get() {
     this.service.get().subscribe(result => {
