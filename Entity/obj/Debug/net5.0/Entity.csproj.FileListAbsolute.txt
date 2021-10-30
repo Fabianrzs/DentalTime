@@ -46,3 +46,15 @@ D:\PROYECTOS PROGRAMACION\PWEB\Angular\proyecto\Entity\obj\Debug\net5.0\Entity.c
 D:\PROYECTOS PROGRAMACION\PWEB\Angular\proyecto\Entity\obj\Debug\net5.0\Entity.dll
 D:\PROYECTOS PROGRAMACION\PWEB\Angular\proyecto\Entity\obj\Debug\net5.0\ref\Entity.dll
 D:\PROYECTOS PROGRAMACION\PWEB\Angular\proyecto\Entity\obj\Debug\net5.0\Entity.pdb
+C:\Users\andre\source\repos\DentalTime\Entity\bin\Debug\net5.0\Entity.deps.json
+C:\Users\andre\source\repos\DentalTime\Entity\bin\Debug\net5.0\Entity.dll
+C:\Users\andre\source\repos\DentalTime\Entity\bin\Debug\net5.0\ref\Entity.dll
+C:\Users\andre\source\repos\DentalTime\Entity\bin\Debug\net5.0\Entity.pdb
+C:\Users\andre\source\repos\DentalTime\Entity\obj\Debug\net5.0\Entity.csproj.AssemblyReference.cache
+C:\Users\andre\source\repos\DentalTime\Entity\obj\Debug\net5.0\Entity.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\andre\source\repos\DentalTime\Entity\obj\Debug\net5.0\Entity.AssemblyInfoInputs.cache
+C:\Users\andre\source\repos\DentalTime\Entity\obj\Debug\net5.0\Entity.AssemblyInfo.cs
+C:\Users\andre\source\repos\DentalTime\Entity\obj\Debug\net5.0\Entity.csproj.CoreCompileInputs.cache
+C:\Users\andre\source\repos\DentalTime\Entity\obj\Debug\net5.0\Entity.dll
+C:\Users\andre\source\repos\DentalTime\Entity\obj\Debug\net5.0\ref\Entity.dll
+C:\Users\andre\source\repos\DentalTime\Entity\obj\Debug\net5.0\Entity.pdb

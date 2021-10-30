@@ -58,12 +58,16 @@ namespace DentalTime.Controllers
             return Ok(request.Pacientes);
         }
 
-        [HttpGet ("Identificacion")]
-        public ActionResult<Producto> Find(string identificacion)
+        [HttpGet ("{identificacion}")]
+        public ActionResult<PacienteViewModel> Get (string identificacion)
         {
             var request = _service.Find(identificacion);
-            if (request.Error) return BadRequest(request.Mensaje);
-            return Ok(request.Paciente);
+            if (request.Paciente == null)
+            {
+                return NotFound();
+            }
+            var pacienteViewModel = new PacienteViewModel(request.Paciente);
+            return pacienteViewModel;
         }
 
     }

@@ -63,3 +63,20 @@ D:\PROYECTOS PROGRAMACION\PWEB\Angular\proyecto\BLL\obj\Debug\net5.0\BLL.csproj.
 D:\PROYECTOS PROGRAMACION\PWEB\Angular\proyecto\BLL\obj\Debug\net5.0\BLL.dll
 D:\PROYECTOS PROGRAMACION\PWEB\Angular\proyecto\BLL\obj\Debug\net5.0\ref\BLL.dll
 D:\PROYECTOS PROGRAMACION\PWEB\Angular\proyecto\BLL\obj\Debug\net5.0\BLL.pdb
+C:\Users\andre\source\repos\DentalTime\BLL\bin\Debug\net5.0\BLL.deps.json
+C:\Users\andre\source\repos\DentalTime\BLL\bin\Debug\net5.0\BLL.dll
+C:\Users\andre\source\repos\DentalTime\BLL\bin\Debug\net5.0\ref\BLL.dll
+C:\Users\andre\source\repos\DentalTime\BLL\bin\Debug\net5.0\BLL.pdb
+C:\Users\andre\source\repos\DentalTime\BLL\bin\Debug\net5.0\DAL.dll
+C:\Users\andre\source\repos\DentalTime\BLL\bin\Debug\net5.0\Entity.dll
+C:\Users\andre\source\repos\DentalTime\BLL\bin\Debug\net5.0\DAL.pdb
+C:\Users\andre\source\repos\DentalTime\BLL\bin\Debug\net5.0\Entity.pdb
+C:\Users\andre\source\repos\DentalTime\BLL\obj\Debug\net5.0\BLL.csproj.AssemblyReference.cache
+C:\Users\andre\source\repos\DentalTime\BLL\obj\Debug\net5.0\BLL.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\andre\source\repos\DentalTime\BLL\obj\Debug\net5.0\BLL.AssemblyInfoInputs.cache
+C:\Users\andre\source\repos\DentalTime\BLL\obj\Debug\net5.0\BLL.AssemblyInfo.cs
+C:\Users\andre\source\repos\DentalTime\BLL\obj\Debug\net5.0\BLL.csproj.CoreCompileInputs.cache
+C:\Users\andre\source\repos\DentalTime\BLL\obj\Debug\net5.0\BLL.csproj.CopyComplete
+C:\Users\andre\source\repos\DentalTime\BLL\obj\Debug\net5.0\BLL.dll
+C:\Users\andre\source\repos\DentalTime\BLL\obj\Debug\net5.0\ref\BLL.dll
+C:\Users\andre\source\repos\DentalTime\BLL\obj\Debug\net5.0\BLL.pdb

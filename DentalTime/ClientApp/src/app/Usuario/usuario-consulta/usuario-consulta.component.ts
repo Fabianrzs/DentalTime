@@ -36,10 +36,11 @@ export class UsuarioConsultaComponent implements OnInit {
   
   onSearch(id: string){
     this.view = true;
-    alert(id)
+    alert(id);
     this.service.getId(id).subscribe(result => {
+      alert(JSON.stringify(result));
       this.paciente = result;
-      alert(this.paciente);
     });
+    
   }
 }
