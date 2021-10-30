@@ -1,5 +1,5 @@
 <div class="container">
-  <div class="row ">
+  <div class="row" style="height: 500px;">
     <div class="col-4 col-sm" style="min-width: 200px; max-width: 250px;">
       <h5 class="text-center">Registro</h5>
       <hr>
@@ -41,18 +41,17 @@
     <div class="col-8 col-sm">
       <div class="row">
         <div class="col-12">
-          <h2 class="text-center">Servicios</h2>
+          <h5 class="text-center">Servicios</h5>
           <hr>
         </div>
       </div>
 
 
-      <div class="row">
+      <div class="row justify-content-right">
         <div class="col-6">
-          <label for="filter">Filtro</label>
-          <br>
-          <input onChange="get()" [(ngModel)]="searchText" 
-          type="text" class="formcontrol"  placeholder="Identificador Buscado">
+          <label for="filter">Filtro: <input onChange="get()" [(ngModel)]="searchText" 
+            type="text" class="formcontrol"  placeholder="Identificador Buscado"></label>
+         
         </div>
       </div>
       
@@ -60,15 +59,14 @@
         <div class="col-md">
           <div class="column">
             <div class="table-container">
-              <table class="table table-striped" *ngIf='servicios && servicios.length'>
-                <thead>
+              <table class="table table-light table-hover" *ngIf='servicios && servicios.length'>
+                <thead class = "text-primary">
                   <tr>
                     <th scope="col">#</th>
                     <th scope="col">Identificador</th>
                     <th scope="col">Nombre</th>
                     <th scope="col">Precio</th>
                     <th scope="col">Duracion</th>
-                    <th scope="col">Descripcion</th>
                   </tr>            
                 </thead>
                 <tbody>
@@ -81,6 +79,10 @@
                   </tr>
                 </tbody>
               </table>
+              <div class="d-flex justify-content-right p-2">
+                <ngb-pagination [collectionSize]="collectionSize" [(page)]="page" [pageSize]="pageSize" (pageChange)="get()">
+                </ngb-pagination>
+              </div>
             </div>
           </div>
       </div>

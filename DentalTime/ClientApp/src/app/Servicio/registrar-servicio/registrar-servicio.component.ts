@@ -13,6 +13,10 @@ export class RegistrarServicioComponent implements OnInit {
   formServicio: FormGroup;
   servicio: Servicio;
   servicios: Servicio[];
+  SERVICIOS: Servicio[];
+  page = 1;
+  pageSize = 3;
+  collectionSize = 0;
 
   constructor(private service: ServicioService, private formBuilder: FormBuilder) { }
 
@@ -23,7 +27,11 @@ export class RegistrarServicioComponent implements OnInit {
   
   get() {  
     this.service.get().subscribe(result => {
-      this.servicios = result;
+      this.SERVICIOS = result;
+      this.collectionSize = this.SERVICIOS.length;
+      this.servicios = this.SERVICIOS
+      .map((servicios, i) => ({id: i + 1, ...servicios}))
+      .slice((this.page - 1) * this.pageSize, (this.page - 1) * this.pageSize + this.pageSize);
     });
   }
 
