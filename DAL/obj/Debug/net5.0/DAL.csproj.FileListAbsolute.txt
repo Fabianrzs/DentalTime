@@ -67,21 +67,3 @@ D:\PROYECTOS PROGRAMACION\PWEB\Angular\proyecto\DAL\obj\Debug\net5.0\DAL.dll
 D:\PROYECTOS PROGRAMACION\PWEB\Angular\proyecto\DAL\obj\Debug\net5.0\ref\DAL.dll
 D:\PROYECTOS PROGRAMACION\PWEB\Angular\proyecto\DAL\obj\Debug\net5.0\DAL.pdb
 D:\PROYECTOS PROGRAMACION\PWEB\Angular\proyecto\DAL\obj\Debug\net5.0\DAL.genruntimeconfig.cache
-C:\Users\andre\source\repos\DentalTime\DAL\bin\Debug\net5.0\DAL.deps.json
-C:\Users\andre\source\repos\DentalTime\DAL\bin\Debug\net5.0\DAL.runtimeconfig.json
-C:\Users\andre\source\repos\DentalTime\DAL\bin\Debug\net5.0\DAL.runtimeconfig.dev.json
-C:\Users\andre\source\repos\DentalTime\DAL\bin\Debug\net5.0\DAL.dll
-C:\Users\andre\source\repos\DentalTime\DAL\bin\Debug\net5.0\ref\DAL.dll
-C:\Users\andre\source\repos\DentalTime\DAL\bin\Debug\net5.0\DAL.pdb
-C:\Users\andre\source\repos\DentalTime\DAL\bin\Debug\net5.0\Entity.dll
-C:\Users\andre\source\repos\DentalTime\DAL\bin\Debug\net5.0\Entity.pdb
-C:\Users\andre\source\repos\DentalTime\DAL\obj\Debug\net5.0\DAL.csproj.AssemblyReference.cache
-C:\Users\andre\source\repos\DentalTime\DAL\obj\Debug\net5.0\DAL.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\andre\source\repos\DentalTime\DAL\obj\Debug\net5.0\DAL.AssemblyInfoInputs.cache
-C:\Users\andre\source\repos\DentalTime\DAL\obj\Debug\net5.0\DAL.AssemblyInfo.cs
-C:\Users\andre\source\repos\DentalTime\DAL\obj\Debug\net5.0\DAL.csproj.CoreCompileInputs.cache
-C:\Users\andre\source\repos\DentalTime\DAL\obj\Debug\net5.0\DAL.csproj.CopyComplete
-C:\Users\andre\source\repos\DentalTime\DAL\obj\Debug\net5.0\DAL.dll
-C:\Users\andre\source\repos\DentalTime\DAL\obj\Debug\net5.0\ref\DAL.dll
-C:\Users\andre\source\repos\DentalTime\DAL\obj\Debug\net5.0\DAL.pdb
-C:\Users\andre\source\repos\DentalTime\DAL\obj\Debug\net5.0\DAL.genruntimeconfig.cache
