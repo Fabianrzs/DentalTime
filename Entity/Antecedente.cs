@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Entity
 {
-    public class Antecedentes
+    public class Antecedente
     {
         [Key]
         public string IdAntecedente { get; set; }

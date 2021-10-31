@@ -7,6 +7,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using DAL;
 using Microsoft.EntityFrameworkCore;
+using System.Text.Json.Serialization;
 
 namespace DentalTime
 {
@@ -24,6 +25,9 @@ namespace DentalTime
         {
             var connectionString = Configuration.GetConnectionString("DefaultConnection");
             services.AddDbContext<DentalTimeContext>(p => p.UseSqlServer(connectionString));
+
+            services.AddControllers().AddJsonOptions(x =>
+                       x.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.Preserve);
 
             services.AddControllersWithViews();
             // In production, the Angular files will be served from this directory

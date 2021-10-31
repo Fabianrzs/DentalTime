@@ -13,12 +13,12 @@ namespace DentalTime.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class ConsultaClinicaController : ControllerBase
+    public class ConsultaOdontologicaController : ControllerBase
     {
 
         private ConsultaClinicaService _service;
 
-        public ConsultaClinicaController(DentalTimeContext context)
+        public ConsultaOdontologicaController(DentalTimeContext context)
         {
             _service = new ConsultaClinicaService(context);
         }

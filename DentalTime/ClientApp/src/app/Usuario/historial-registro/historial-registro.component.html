@@ -3,10 +3,16 @@
   <div  class="col-6" style = "min-width: 800px;">
     <hr>
     <div class="row">
-      <div class = "col-6">
+      <div class = "col-md">
         <div class="form-floating border border-5">
           <input type="text" class="form-control">
           <label for="floatingInputGrid">No Documento</label>
+        </div>
+      </div>
+      <div class = "col-md">
+        <div class="form-floating border border-5">
+          <input type="date" class="form-control">
+          <label for="floatingInputGrid">Fecha de Inicio</label>
         </div>
       </div>
       
@@ -64,7 +70,7 @@
           <button type="button" class="btn btn-outline-danger btn-sm position-absolute top-0 end-0">Cancelar</button>
       </div>
       <div class="col col-md">
-          <button type="button" class="btn btn-outline-success btn-sm" >Guardar</button>
+          <button type="button" class="btn btn-outline-success btn-sm" (click)="add()">Guardar</button>
       </div>
     </div>
   </div>  

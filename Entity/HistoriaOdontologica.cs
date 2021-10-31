@@ -18,7 +18,7 @@ namespace Entity
         public Paciente Paciente { get; set; }
 
         public string IdAntecedentesOfHO { get; set; }
-        public Antecedentes Antecedentes { get; set; }
+        public Antecedente Antecedentes { get; set; }
 
         public ICollection<ConsultaOdontologica> ConsultasOdontologica { get; set; }
 

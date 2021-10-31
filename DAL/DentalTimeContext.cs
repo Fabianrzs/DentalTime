@@ -22,7 +22,7 @@ namespace DAL
                 .HasForeignKey<HistoriaOdontologica>(ho => ho.NoDocumentoPaciente);
 
             modelBuilder.Entity<HistoriaOdontologica>()
-                .HasOne<Antecedentes>(ho => ho.Antecedentes)
+                .HasOne<Antecedente>(ho => ho.Antecedentes)
                 .WithOne(a => a.HistoriaOdontologica)
                 .HasForeignKey<HistoriaOdontologica>(ho => ho.IdAntecedentesOfHO);
 
@@ -57,6 +57,7 @@ namespace DAL
                 .HasForeignKey(p => p.IdInventario);
         }
 
+        public DbSet<Antecedente> Antecedentes { get; set; }
         public DbSet<Producto> Productos { get; set; }
         public DbSet<SolicitudCita> Citas { get; set; }
         public DbSet<ConsultaOdontologica> ConsultasOdontologicas { get; set; }

@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Antecedente } from 'src/app/models/Antecedente';
+import { HistoriaOdontologica } from 'src/app/models/HistoriaOdontologica';
+import { HistoriaOdontologicaService } from 'src/app/service/historiaOdontologica.service';
 
 @Component({
   selector: 'app-historial-registro',
@@ -7,9 +10,27 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HistorialRegistroComponent implements OnInit {
 
-  constructor() { }
+
+  historia: HistoriaOdontologica;
+  antecedente: Antecedente;
+
+  constructor(private service: HistoriaOdontologicaService) { }
 
   ngOnInit() {
+    this.historia = new HistoriaOdontologica();
+    this.antecedente = new Antecedente();
+  }
+
+  add() {
+
+    this.historia.antecedente = this.antecedente;
+
+    this.service.post(this.historia).subscribe(result => {
+      if (result != null) {
+        alert('Paciente Guardado');
+        this.historia = result;
+      }
+    });
   }
 
 }
