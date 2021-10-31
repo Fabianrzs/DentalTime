@@ -55,7 +55,7 @@ export class UsuarioRegistroComponent implements OnInit {
 
   onSubmit() {
     if (this.formPaciente.invalid) {
-      alert('Infromacion Validada');
+      alert('Informacion Validada');
       return;
     }
     this.add();

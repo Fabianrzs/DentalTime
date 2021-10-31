@@ -67,4 +67,3 @@ D:\PROYECTOS PROGRAMACION\PWEB\Angular\proyecto\DAL\obj\Debug\net5.0\DAL.dll
 D:\PROYECTOS PROGRAMACION\PWEB\Angular\proyecto\DAL\obj\Debug\net5.0\ref\DAL.dll
 D:\PROYECTOS PROGRAMACION\PWEB\Angular\proyecto\DAL\obj\Debug\net5.0\DAL.pdb
 D:\PROYECTOS PROGRAMACION\PWEB\Angular\proyecto\DAL\obj\Debug\net5.0\DAL.genruntimeconfig.cache
-D:\PROYECTOS PROGRAMACION\PWEB\Angular\proyecto\DAL\obj\Debug\net5.0\DAL.csproj.CopyComplete

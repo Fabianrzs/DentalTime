@@ -59,10 +59,18 @@ namespace DentalTime.Controllers
         }
 
         [HttpGet ("{Identificacion}")]
-        public ActionResult<Producto> Get(string identificacion)
+        public ActionResult<Paciente> Get(string identificacion)
         {
             var request = _service.Find(identificacion);
             if (request.Error) return BadRequest(request.Mensaje);
+            return Ok(request.Paciente);
+        }
+
+        [HttpPut("{Identificacion}")]
+        public ActionResult<Paciente> Put(string identificacion, Paciente paciente)
+        {
+            var request = _service.Update(paciente, identificacion);
+            if(request.Error) return BadRequest(request.Mensaje);
             return Ok(request.Paciente);
         }
 

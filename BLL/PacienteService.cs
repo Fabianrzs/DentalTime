@@ -66,6 +66,27 @@ namespace BLL
             }
             catch (Exception e) { return new PacienteConsultaResponse($"Error al Consultar: Se presento lo siguiente {e.Message}"); }
         }
+
+        public PacienteLogResponse Update(Paciente paciente, string identificacion){
+            
+            try
+            {
+                var buscarPaciente = _context.Pacientes.Find(identificacion);
+                if (buscarPaciente != null)
+                {   
+                    _context.Pacientes.Update(paciente);
+                    _context.SaveChanges();
+                    return new PacienteLogResponse(paciente);
+                }
+                return new PacienteLogResponse("Error el paciente no se encuentra registrado");
+            }
+            catch (Exception e)
+            {
+                return new PacienteLogResponse("Error en la aplicacion" + e.Message);
+            }
+
+        }
+
     }
 
     public class PacienteLogResponse

@@ -16,13 +16,21 @@ export class UsuarioConsultaComponent implements OnInit {
   pageSize = 4;
   collectionSize = 0;
   pacientes: Paciente[];
-  paciente: Paciente;
+  paciente: Paciente = new Paciente();
 
   constructor(public service: PacienteService) { }
 
   ngOnInit() {
- 
+    this. get();
   }
+  
+  update() {
+    this.service.put(this.paciente).subscribe(p => {
+      alert(JSON.stringify(p));
+      this. get();
+    });
+  }
+
   get() {
     this.service.get().subscribe(result => {
       this.PACIENTES = result;
@@ -33,13 +41,13 @@ export class UsuarioConsultaComponent implements OnInit {
     });
   }
 
-  
+  Cancelar(){
+    this.view = false;
+  }
+
   onSearch(id: string){
-    this.view = true;
-    alert(id)
     this.service.getId(id).subscribe(result => {
       this.paciente = result;
-      alert(JSON.stringify(this.paciente));
     });
   }
 }

@@ -48,8 +48,18 @@ export class PacienteService {
     const url = `${this.baseUrl + 'api/paciente'}/${id}`;
     return this.http.get<Paciente>(url, httpOptions)
       .pipe(
-        tap(_ => this.handleErrorService.log('datos enviados')),
+        tap(_ => this.handleErrorService.log('datos Buscados')),
         catchError(this.handleErrorService.handleError<Paciente>('Buscar Paciente', null))
       );
   }
+
+  put(paciente: Paciente): Observable<any> {
+    const url = `${this.baseUrl}api/Paciente/${paciente.noDocumento}`;
+    return this.http.put(url, paciente, httpOptions)
+    .pipe(
+      tap(_ => this.handleErrorService.log('datos Modificados')),
+      catchError(this.handleErrorService.handleError<any>('Editar Persona'))
+    );
+  }
+
 }

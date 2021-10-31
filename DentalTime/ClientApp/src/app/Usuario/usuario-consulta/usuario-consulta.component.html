@@ -1,6 +1,6 @@
 <div class="container">
   <div class="row">
-    <div class="col-md" style="height: 700px;">
+    <div class="col-md" style="height: 500px;">
       <div class="form-group form-inline">
         Filtro: <input class="form-control ml-2" onChange="get()" [(ngModel)]="searchText" type="text"
           placeholder="Identificacion">
@@ -25,7 +25,7 @@
             <td>{{p.apellidos}}</td>
             <td>{{p.fechaNacimiento}}</td>
             <td>{{p.sexo}}</td>
-            <td><a class = "txt-primary"(click)="onSearch(p.noDocumento)">view</a></td>
+            <td><a class = "txt-primary" (click)="onSearch(p.noDocumento)" data-bs-toggle="modal" data-bs-target="#staticBackdrop">view</a></td>
           </tr>
         </tbody>
       </table>      
@@ -40,7 +40,109 @@
         </select>
       </div>
     </div>
-    <div *ngIf="view" class="col-4">       
+  </div>
+</div>
+
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title text-center" id="staticBackdropLabel">Informacion Generar</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="row">
+            <div class="col-md">
+              <div class="form-floating">
+                <input type="text" class="form-control"
+                [(ngModel)]="paciente.tipoDocumento" name="Tipo" readonly>
+                <label for="floatingInputGrid">Tipo de Documento</label>
+              </div>
+            </div>
+              <div class="col-md">
+                <div class="form-floating">
+                  <input type="text" class="form-control" 
+                  [(ngModel)]="paciente.noDocumento" name="noDocumento" readonly>
+                  <label for="floatingInputGrid">Identificacion</label>
+                </div>
+              </div>            
+          </div>
+          <br>
+          <div class="row">
+            <div class="col-md">
+              <div class="form-floating">
+                <input type="text" class="form-control"
+                [(ngModel)]="paciente.nombres" name="nombres" >
+                <label for="floatingInputGrid">Nombre</label>
+              </div>
+            </div>
+              <div class="col-md">
+                <div class="form-floating">
+                  <input type="text" class="form-control" 
+                  [(ngModel)]="paciente.apellidos" name="apellidos" >
+                  <label for="floatingInputGrid">apellidos</label>
+                </div>
+              </div>            
+          </div>
+          <br>
+          <div class="row">
+            <div class="col-md">
+              <div class="form-floating">
+                <input type="text" class="form-control"
+                [(ngModel)]="paciente.sexo" name="Sexo">
+                <label for="floatingInputGrid">Sexo</label>
+              </div>
+            </div>
+            <div class="col-md">
+              <div class="form-floating">
+                <input type="text" class="form-control" 
+                [(ngModel)]="paciente.tipoSanguineo" name="tipoSanguineo">
+                <label for="floatingInputGrid">Tipo de Sangre</label>
+              </div>
+            </div>            
+          </div>
+          <br>
+          <div class="row">
+            <div class="col-md">
+              <div class="form-floating">
+                <input type="date" class="form-control"
+                [(ngModel)]="paciente.fechaNacimiento" name="fechaNacimiento">
+                <label for="floatingInputGrid">Fecha de Nacimiento</label>
+              </div>
+            </div>
+              <div class="col-md">
+                <div class="form-floating">
+                  <input type="text" class="form-control" 
+                  [(ngModel)]="paciente.lugarNacimiento" name="lugarNacimiento">
+                  <label for="floatingInputGrid">Lugar de Nacimiento</label> 
+                </div>
+              </div>            
+          </div>
+          <br>
+          <div class="row">
+            <div class="col-md">
+              <div class="form-floating">
+                <input type="text" class="form-control"
+                [(ngModel)]="paciente.numeroTelefonico" name="numeroTelefonico">
+                <label for="floatingInputGrid">Numero Telefonico</label>
+              </div>
+            </div>
+              <div class="col-md">
+                <div class="form-floating">
+                  <input type="text" class="form-control" 
+                  [(ngModel)]="paciente.correoElectronico" name="correoElectronico">
+                  <label for="floatingInputGrid">Correo Electronico</label>
+                </div>
+              </div>            
+          </div>
+
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-outline-danger" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-outline-primary" (click)="update()">Modificar</button>
+      </div>
     </div>
   </div>
 </div>
