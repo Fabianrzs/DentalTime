@@ -26,8 +26,8 @@ export class UsuarioConsultaComponent implements OnInit {
   
   update() {
     this.service.put(this.paciente).subscribe(p => {
-      alert(JSON.stringify(p));
-      this. get();
+      alert("Datos Modificados");
+      this.get();
     });
   }
 

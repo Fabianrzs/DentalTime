@@ -57,7 +57,7 @@ export class PacienteService {
     const url = `${this.baseUrl}api/Paciente/${paciente.noDocumento}`;
     return this.http.put(url, paciente, httpOptions)
     .pipe(
-      tap(_ => this.handleErrorService.log('datos Modificados')),
+      tap(_ => this.handleErrorService.log('Datos Modificados')),
       catchError(this.handleErrorService.handleError<any>('Editar Persona'))
     );
   }

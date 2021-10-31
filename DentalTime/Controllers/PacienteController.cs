@@ -58,7 +58,7 @@ namespace DentalTime.Controllers
             return Ok(request.Pacientes);
         }
 
-        [HttpGet ("{Identificacion}")]
+        [HttpGet ("{identificacion}")]
         public ActionResult<Paciente> Get(string identificacion)
         {
             var request = _service.Find(identificacion);
@@ -66,7 +66,7 @@ namespace DentalTime.Controllers
             return Ok(request.Paciente);
         }
 
-        [HttpPut("{Identificacion}")]
+        [HttpPut("{identificacion}")]
         public ActionResult<Paciente> Put(string identificacion, Paciente paciente)
         {
             var request = _service.Update(paciente, identificacion);

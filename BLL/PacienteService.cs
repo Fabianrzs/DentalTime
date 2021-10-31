@@ -73,10 +73,21 @@ namespace BLL
             {
                 var buscarPaciente = _context.Pacientes.Find(identificacion);
                 if (buscarPaciente != null)
-                {   
-                    _context.Pacientes.Update(paciente);
+                {
+
+                    buscarPaciente.TipoDocumento = paciente.TipoDocumento;
+                    buscarPaciente.Nombres = paciente.Nombres;
+                    buscarPaciente.Apellidos = paciente.Apellidos;
+                    buscarPaciente.Sexo = paciente.Sexo;
+                    buscarPaciente.TipoSanguineo = paciente.TipoSanguineo;
+                    buscarPaciente.FechaNacimiento = paciente.FechaNacimiento;
+                    buscarPaciente.LugarNacimiento = paciente.LugarNacimiento;
+                    buscarPaciente.CorreoElectronico = paciente.CorreoElectronico;
+                    buscarPaciente.NumeroTelefonico = paciente.NumeroTelefonico;
+
+                    _context.Pacientes.Update(buscarPaciente);
                     _context.SaveChanges();
-                    return new PacienteLogResponse(paciente);
+                    return new PacienteLogResponse(buscarPaciente);
                 }
                 return new PacienteLogResponse("Error el paciente no se encuentra registrado");
             }
