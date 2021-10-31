@@ -96,5 +96,4 @@ export class UsuarioRegistroComponent implements OnInit {
       numeroTelefonico: [this.paciente.numeroTelefonico, Validators.required],
     });
   }
-
 }

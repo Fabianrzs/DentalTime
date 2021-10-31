@@ -28,6 +28,7 @@ import { RegistrarConsultaComponent } from './Usuario/registrar-consulta/registr
 import { ProductoRegistroComponent } from './Inventario/producto-registro/producto-registro.component';
 import { GestionInventarioComponent } from './Inventario/gestion-inventario/gestion-inventario.component';
 import { FiltroPacientePipe } from './pipe/filtro-paciente.pipe';
+import { HistorialRegistroComponent } from './Usuario/historial-registro/historial-registro.component';
 //---------------------------------------------------Routers---------------------------------------------------------------
 @NgModule({
   declarations: [		
@@ -51,6 +52,7 @@ import { FiltroPacientePipe } from './pipe/filtro-paciente.pipe';
     ProductoRegistroComponent,
     GestionInventarioComponent,
     FiltroPacientePipe,
+    HistorialRegistroComponent
    ],
   imports: [
     ReactiveFormsModule,
