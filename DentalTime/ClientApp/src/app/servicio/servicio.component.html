@@ -1,0 +1,89 @@
+<div class="container">
+  <div class="row" style="height: 500px;">
+    <div class="col-4 col-sm" style="min-width: 200px; max-width: 250px;">
+      <h5 class="text-center">Registro</h5>
+      <hr>
+
+      <form [formGroup]="formServicio">
+      <div class="form-floating border border-5">
+        <input type="text" formControlName="idServico" class="form-control"
+          [ngClass]="{ 'is-invalid':  control.idServico.errors }">
+        <label for="floatingInputGrid">Identificador</label>
+      </div>
+      <div class="form-floating border border-5">
+        <input type="text" formControlName="nombre" class="form-control"
+          [ngClass]="{ 'is-invalid':  control.nombre.errors }">
+        <label for="floatingInputGrid">Nombre</label>
+      </div>
+      <div class="form-floating border border-5">
+        <input type="text" formControlName="precio" class="form-control"
+          [ngClass]="{ 'is-invalid':  control.precio.errors }">
+        <label for="floatingInputGrid">Precio</label>
+      </div>
+      <div class="form-floating border border-5">
+        <input type="text" formControlName="duracion" class="form-control"
+          [ngClass]="{ 'is-invalid':  control.duracion.errors }">
+        <label for="floatingInputGrid">Duracion</label>
+      </div>
+      <br>
+      <div class="row justify-content-center">
+        <div class="col-6">
+          <button type="button" class="btn btn-outline-danger btn-sm position-absolute top-0 end-0"
+            (click)="clearCampos()">Cancelar</button>
+        </div>
+        <div class="col-6 col-md">
+          <button type="button" class="btn btn-outline-success btn-sm" (click)="onSubmit()">Guardar</button>
+        </div>
+      </div>
+      </form>
+      
+    </div>
+
+
+    <div class="col-8 col-sm">
+      <div class="row">
+        <div class="col-12">
+          <h5 class="text-center">Servicios</h5>
+          <hr>
+        </div>
+      </div>
+      <div class="row justify-content-right">
+        <div class="col-6">
+          <label for="filter">Filtro: <input onChange="get()" [(ngModel)]="searchText" 
+            type="text" class="formcontrol"  placeholder="Identificador Buscado"></label>
+        </div>
+      </div> 
+      <div class="row">
+        <div class="col-md">
+          <div class="column">
+            <div class="table-container">
+              <table class="table table-light table-hover" *ngIf='servicios && servicios.length'>
+                <thead class = "text-primary">
+                  <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Identificador</th>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Precio</th>
+                    <th scope="col">Duracion</th>
+                  </tr>            
+                </thead>
+                <tbody>
+                  <tr *ngFor="let s of servicios; index as i ">
+                    <th scope="row">{{i + 1}}</th>
+                    <td>{{s.idServico}}</td>
+                    <td>{{s.nombre}}</td>
+                    <td>{{s.precio}}</td>
+                    <td>{{s.duracion}}</td>
+                  </tr>
+                </tbody>
+              </table>
+              <div class="d-flex justify-content-right p-2">
+                <ngb-pagination [collectionSize]="collectionSize" [(page)]="page" [pageSize]="pageSize" (pageChange)="get()">
+                </ngb-pagination>
+              </div>
+            </div>
+          </div>
+      </div>
+    </div>
+  </div>
+</div>

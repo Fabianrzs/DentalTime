@@ -1,0 +1,95 @@
+<header class=" text-dark rounded">
+  <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light border-bottom box-shadow mb-3">
+    <div class="container p-3 mb-2 text-dark">
+      <!-- <a class="navbar-brand" [routerLink]="['/']">parcialPrimerCorte</a> -->
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse"
+        aria-label="Toggle navigation" [attr.aria-expanded]="isExpanded" (click)="toggle()">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <a class="navbar-brand" href="#">
+        <img src="../../assets/Logo 3.png" alt="">
+      </a>
+
+      <div class="navbar-collapse collapse d-sm-inline-flex justify-content-end" [ngClass]="{ show: isExpanded }">
+        <div *ngIf="nav">
+          <ul class="nav nav-pills">
+            <li class="nav-item" [routerLinkActive]="['link-active']" >
+              <a class="nav-link" aria-current="page" [routerLink]="['/contenido']">Inicio</a>
+            </li>
+            <li class="nav-item" [routerLinkActive]="['link-active']" >
+              <a class="nav-link" href="">Servicios</a>
+            </li>
+            <li class="nav-item" [routerLinkActive]="['link-active']" >
+              <a class="nav-link" href="">Sobre Nosotros</a>
+            </li>
+            <li class="nav-item" [routerLinkActive]="['link-active']">
+              <a class="nav-link" href="">Contactanos</a>
+            </li>
+            <li class="nav-item" [routerLinkActive]="['link-active']">
+              <a class="btn btn-outline-primary" type="submit" [routerLink]="['/login']">Sign in</a>
+            </li>
+            <!-- (click)="visibilidadModulos()" -->
+          </ul>
+        </div>
+
+        <div *ngIf="!nav">
+          <ul class="navbar-nav flex-grow">
+            <li class="nav-item" [routerLinkActive]="['link-active']" [routerLinkActiveOptions]="{ exact: true }">
+              <a class="nav-link text-dark " [routerLink]="['/home']">Home</a>
+            </li>
+            <li class="nav-item dropdown" [routerLinkActive]="['link-active']"
+              [routerLinkActiveOptions]="{ exact: true }">
+              <a class="text-dark  nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"
+                aria-expanded="false" aria-label="Basic outlined example">Paciente</a>
+              <ul class="text-center dropdown-menu " aria-labelledby="navbarDropdown">
+                <li><a class="dropdown-item btn btn-primary btn-outline-primary "
+                    [routerLink]="['/registroUsuario']">Registrar</a></li>
+                <li><a class="dropdown-item btn btn-primary btn-outline-primary "
+                    [routerLink]="['/consultaUsuario']">Consultar</a></li>
+                <hr class="navbar-divider">
+                <li><a class="dropdown-item btn btn-primary btn-outline-primary "
+                  [routerLink]="['/historialRegistro']">Registrar Historial</a></li>
+                <li><a class="dropdown-item btn btn-primary btn-outline-primary "
+                    [routerLink]="['/registrarConsulta']">Registrar Consulta</a></li>
+                <li><a class="dropdown-item btn btn-primary btn-outline-primary "
+                    [routerLink]="['/historialClinico']">Historial Odonlogico</a></li>
+                
+              </ul>
+            </li>
+
+            <li class="nav-item dropdown">
+              <a class="text-dark  nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"
+                aria-expanded="false">Servicios</a>
+              <ul class="text-center dropdown-menu" aria-labelledby="navbarDropdown">
+                <li><a class="dropdown-item btn btn-primary btn-outline-primary "
+                    [routerLink]="['/registrarServicio']">Registrar Sevicio</a></li>
+                <!-- <li><a class="dropdown-item btn btn-primary btn-outline-primary " [routerLink]="['/consultarServicio']">Consultar Servicios </a></li> -->
+              </ul>
+            </li>
+
+            <li class="nav-item dropdown ">
+              <a class="text-dark  nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"
+                aria-expanded="false">Inventario</a>
+              <ul class="text-center dropdown-menu" aria-labelledby="navbarDropdown">
+                <li><a class="dropdown-item btn btn-primary btn-outline-primary "
+                    [routerLink]="['/registroProducto']">Registrar Producto</a></li>
+                <li><a class="dropdown-item btn btn-primary btn-outline-primary "
+                    [routerLink]="['/gestionInventario']">Gestionar Inventario</a></li>
+              </ul>
+            </li>
+
+            <li class="nav-item" [routerLinkActive]="['link-active']" [routerLinkActiveOptions]="{ exact: true }">
+              <a class="nav-link text-dark " [routerLink]="['/registrarAgenda']">Agendar Cita</a>
+            </li>
+
+            <li class="nav-item" [routerLinkActive]="['link-active']" [routerLinkActiveOptions]="{ exact: true }">
+              <a class="nav-link text-dark " [routerLink]="['/informe']">Informe</a>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </nav>
+</header>

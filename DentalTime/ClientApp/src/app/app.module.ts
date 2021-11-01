@@ -9,29 +9,25 @@ import {NgbPaginationModule, NgbAlertModule} from '@ng-bootstrap/ng-bootstrap';
 
 import { RouterModule } from '@angular/router';
 import { AppRoutingModule } from './app-routing.module';
-import { NavMenuComponent } from './nav-menu/nav-menu.component';
-import { HomeComponent } from './home/home.component';
-import { FooterComponent } from './footer/footer.component';
-import { LoginUserComponent } from './User/login-user/login-user.component';
-import { RegisterUserComponent } from './User/register-user/register-user.component';
-import { UsuarioRegistroComponent } from './Usuario/usuario-registro/usuario-registro.component';
-import { UsuarioConsultaComponent } from './Usuario/usuario-consulta/usuario-consulta.component';
-import { HistorialClinicoComponent } from './Usuario/historial-clinico/historial-clinico.component';
-import { AgendarCitaComponent } from './Agenda/agendar-cita/agendar-cita.component';
-import { ConsultarCitasComponent } from './Agenda/consultar-citas/consultar-citas.component';
-import { RegistrarServicioComponent } from './Servicio/registrar-servicio/registrar-servicio.component';
-import { ConsultarServicioComponent } from './Servicio/consultar-servicio/consultar-servicio.component';
+import { NavMenuComponent } from './@pag/nav-menu/nav-menu.component';
+import { HomeComponent } from './@pag/home/home.component';
+import { FooterComponent } from './@pag/footer/footer.component';
+import { LoginUserComponent } from './userSession/login-user/login-user.component';
+import { RegisterUserComponent } from './userSession/register-user/register-user.component';
+import { UsuarioRegistroComponent } from './Paciente/usuario-registro/usuario-registro.component';
+import { UsuarioConsultaComponent } from './Paciente/usuario-consulta/usuario-consulta.component';
+import { HistorialClinicoComponent } from './Paciente/historial-odontologico/historial-clinico.component';
 import { InformeComponent } from './informe/informe.component';
-import { RealizarFacturaComponent } from './Facturacion/realizar-factura/realizar-factura.component';
-import { HistorialFacturaComponent } from './Facturacion/historial-factura/historial-factura.component';
-import { RegistrarConsultaComponent } from './Usuario/registrar-consulta/registrar-consulta.component';
 import { ProductoRegistroComponent } from './Inventario/producto-registro/producto-registro.component';
 import { GestionInventarioComponent } from './Inventario/gestion-inventario/gestion-inventario.component';
-import { FiltroPacientePipe } from './pipe/filtro-paciente.pipe';
-import { HistorialRegistroComponent } from './Usuario/historial-registro/historial-registro.component';
+import { FiltroPacientePipe } from './@elements/pipe/filtro-paciente.pipe';
+import { HistorialRegistroComponent } from './Paciente/historial-registro/historial-registro.component';
+import { ServicioComponent } from './servicio/servicio.component';
+import { ConsultaRegistroComponent } from './Paciente/consulta-registro/consulta-registro.component';
+import { SolicitudCitaComponent } from './solicitud-cita/solicitud-cita.component';
 //---------------------------------------------------Routers---------------------------------------------------------------
 @NgModule({
-  declarations: [		
+  declarations: [			
     AppComponent,
     NavMenuComponent,
     HomeComponent,
@@ -41,18 +37,14 @@ import { HistorialRegistroComponent } from './Usuario/historial-registro/histori
     UsuarioRegistroComponent,
     UsuarioConsultaComponent,
     HistorialClinicoComponent,
-    AgendarCitaComponent,
-    ConsultarCitasComponent,
-    RegistrarServicioComponent,
-    ConsultarServicioComponent,
+    ServicioComponent,
     InformeComponent,
-    RealizarFacturaComponent,
-    HistorialFacturaComponent,
-    RegistrarConsultaComponent,
+    ConsultaRegistroComponent,
     ProductoRegistroComponent,
     GestionInventarioComponent,
     FiltroPacientePipe,
-    HistorialRegistroComponent
+    HistorialRegistroComponent,
+      SolicitudCitaComponent
    ],
   imports: [
     ReactiveFormsModule,
