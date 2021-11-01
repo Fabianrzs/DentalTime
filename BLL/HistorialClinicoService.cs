@@ -22,7 +22,7 @@ namespace BLL
             try
             {
                 Paciente paciente = _context.Pacientes.Find(historia.NoDocumentoPaciente);
-                if (paciente != null)
+                if (paciente != null)   
                 {
                     historia.Paciente = paciente;
                     _context.Antecedentes.Add(historia.Antecedentes);

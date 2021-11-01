@@ -67,3 +67,20 @@ D:\PROYECTOS PROGRAMACION\PWEB\Angular\proyecto\DAL\obj\Debug\net5.0\DAL.dll
 D:\PROYECTOS PROGRAMACION\PWEB\Angular\proyecto\DAL\obj\Debug\net5.0\ref\DAL.dll
 D:\PROYECTOS PROGRAMACION\PWEB\Angular\proyecto\DAL\obj\Debug\net5.0\DAL.pdb
 D:\PROYECTOS PROGRAMACION\PWEB\Angular\proyecto\DAL\obj\Debug\net5.0\DAL.genruntimeconfig.cache
+I:\Semestre 5\Programacion WEB\Proyectos\DentalTime\DAL\bin\Debug\net5.0\DAL.deps.json
+I:\Semestre 5\Programacion WEB\Proyectos\DentalTime\DAL\bin\Debug\net5.0\DAL.runtimeconfig.json
+I:\Semestre 5\Programacion WEB\Proyectos\DentalTime\DAL\bin\Debug\net5.0\DAL.runtimeconfig.dev.json
+I:\Semestre 5\Programacion WEB\Proyectos\DentalTime\DAL\bin\Debug\net5.0\DAL.dll
+I:\Semestre 5\Programacion WEB\Proyectos\DentalTime\DAL\bin\Debug\net5.0\ref\DAL.dll
+I:\Semestre 5\Programacion WEB\Proyectos\DentalTime\DAL\bin\Debug\net5.0\DAL.pdb
+I:\Semestre 5\Programacion WEB\Proyectos\DentalTime\DAL\bin\Debug\net5.0\Entity.dll
+I:\Semestre 5\Programacion WEB\Proyectos\DentalTime\DAL\bin\Debug\net5.0\Entity.pdb
+I:\Semestre 5\Programacion WEB\Proyectos\DentalTime\DAL\obj\Debug\net5.0\DAL.csproj.AssemblyReference.cache
+I:\Semestre 5\Programacion WEB\Proyectos\DentalTime\DAL\obj\Debug\net5.0\DAL.GeneratedMSBuildEditorConfig.editorconfig
+I:\Semestre 5\Programacion WEB\Proyectos\DentalTime\DAL\obj\Debug\net5.0\DAL.AssemblyInfoInputs.cache
+I:\Semestre 5\Programacion WEB\Proyectos\DentalTime\DAL\obj\Debug\net5.0\DAL.AssemblyInfo.cs
+I:\Semestre 5\Programacion WEB\Proyectos\DentalTime\DAL\obj\Debug\net5.0\DAL.csproj.CoreCompileInputs.cache
+I:\Semestre 5\Programacion WEB\Proyectos\DentalTime\DAL\obj\Debug\net5.0\DAL.dll
+I:\Semestre 5\Programacion WEB\Proyectos\DentalTime\DAL\obj\Debug\net5.0\ref\DAL.dll
+I:\Semestre 5\Programacion WEB\Proyectos\DentalTime\DAL\obj\Debug\net5.0\DAL.pdb
+I:\Semestre 5\Programacion WEB\Proyectos\DentalTime\DAL\obj\Debug\net5.0\DAL.genruntimeconfig.cache

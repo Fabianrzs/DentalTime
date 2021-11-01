@@ -21,7 +21,7 @@ export class HistoriaOdontologicaService {
   post(historiaOdontologica: HistoriaOdontologica): Observable<HistoriaOdontologica> {
     return this.http.post<HistoriaOdontologica>(this.baseUrl + 'api/HistoriaOdontologica', historiaOdontologica)
       .pipe(
-        tap(() => this.handleErrorService.log('Se envio a guardar')),
+        tap(_ => this.handleErrorService.log('Se envio a guardar')),
         catchError(this.handleErrorService.handleError<HistoriaOdontologica>('Registrar Historia Odontologica', null))
       );
   }

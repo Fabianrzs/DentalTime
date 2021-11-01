@@ -23,7 +23,7 @@ namespace DentalTime.Controllers
         }
 
         [HttpPost]
-        public ActionResult<HistoriaOdontologica> Guardar(HistoriaClinicaInputModel historiaInput)
+        public ActionResult<HistoriaOdontologica> Guardar (HistoriaOdontologicaInputModel historiaInput)
         {
             HistoriaOdontologica historiaClinica = mapearHistoriaOdontologica(historiaInput);
             var request = _service.Save(historiaClinica);
@@ -31,20 +31,19 @@ namespace DentalTime.Controllers
             return Ok(request.HistoriaClinica);
         }
 
-        private HistoriaOdontologica mapearHistoriaOdontologica(HistoriaClinicaInputModel historiaInput)
+        private HistoriaOdontologica mapearHistoriaOdontologica (HistoriaOdontologicaInputModel historiaInput)
         {
             HistoriaOdontologica historiaClinica = new HistoriaOdontologica();
-
             historiaClinica.IdHistoriaOdontologica = historiaInput.IdHistoriaOdontologica;
             historiaClinica.FechaInicio = historiaInput.FechaInicio;
             historiaClinica.NoDocumentoPaciente = historiaInput.NoDocumentoPaciente;
-            historiaClinica.Antecedentes = new Antecedente();
-            historiaClinica.Antecedentes.IdAntecedente = historiaInput.Antecedente.IdAntecedente;
-            historiaClinica.Antecedentes.Enfermedades = historiaInput.Antecedente.Enfermedades;
-            historiaClinica.Antecedentes.Farmaceuticos = historiaInput.Antecedente.Farmaceuticos;
-            historiaClinica.Antecedentes.Quimicos = historiaInput.Antecedente.Quimicos;
-            historiaClinica.Antecedentes.Complicaciones = historiaInput.Antecedente.Complicaciones;
-
+            Antecedente antecedente = new Antecedente();
+            antecedente.IdAntecedente = historiaInput.Antecedente.IdAntecedente;
+            antecedente.Enfermedades = historiaInput.Antecedente.Enfermedades;
+            antecedente.Farmaceuticos = historiaInput.Antecedente.Farmaceuticos;
+            antecedente.Quimicos = historiaInput.Antecedente.Quimicos;
+            antecedente.Complicaciones = historiaInput.Antecedente.Complicaciones;
+            historiaClinica.Antecedentes = antecedente;
             return historiaClinica;
         }
 

@@ -63,3 +63,19 @@ D:\PROYECTOS PROGRAMACION\PWEB\Angular\proyecto\BLL\obj\Debug\net5.0\BLL.csproj.
 D:\PROYECTOS PROGRAMACION\PWEB\Angular\proyecto\BLL\obj\Debug\net5.0\BLL.dll
 D:\PROYECTOS PROGRAMACION\PWEB\Angular\proyecto\BLL\obj\Debug\net5.0\ref\BLL.dll
 D:\PROYECTOS PROGRAMACION\PWEB\Angular\proyecto\BLL\obj\Debug\net5.0\BLL.pdb
+I:\Semestre 5\Programacion WEB\Proyectos\DentalTime\BLL\bin\Debug\net5.0\BLL.deps.json
+I:\Semestre 5\Programacion WEB\Proyectos\DentalTime\BLL\bin\Debug\net5.0\BLL.dll
+I:\Semestre 5\Programacion WEB\Proyectos\DentalTime\BLL\bin\Debug\net5.0\ref\BLL.dll
+I:\Semestre 5\Programacion WEB\Proyectos\DentalTime\BLL\bin\Debug\net5.0\BLL.pdb
+I:\Semestre 5\Programacion WEB\Proyectos\DentalTime\BLL\bin\Debug\net5.0\DAL.dll
+I:\Semestre 5\Programacion WEB\Proyectos\DentalTime\BLL\bin\Debug\net5.0\Entity.dll
+I:\Semestre 5\Programacion WEB\Proyectos\DentalTime\BLL\bin\Debug\net5.0\DAL.pdb
+I:\Semestre 5\Programacion WEB\Proyectos\DentalTime\BLL\bin\Debug\net5.0\Entity.pdb
+I:\Semestre 5\Programacion WEB\Proyectos\DentalTime\BLL\obj\Debug\net5.0\BLL.csproj.AssemblyReference.cache
+I:\Semestre 5\Programacion WEB\Proyectos\DentalTime\BLL\obj\Debug\net5.0\BLL.GeneratedMSBuildEditorConfig.editorconfig
+I:\Semestre 5\Programacion WEB\Proyectos\DentalTime\BLL\obj\Debug\net5.0\BLL.AssemblyInfoInputs.cache
+I:\Semestre 5\Programacion WEB\Proyectos\DentalTime\BLL\obj\Debug\net5.0\BLL.AssemblyInfo.cs
+I:\Semestre 5\Programacion WEB\Proyectos\DentalTime\BLL\obj\Debug\net5.0\BLL.csproj.CoreCompileInputs.cache
+I:\Semestre 5\Programacion WEB\Proyectos\DentalTime\BLL\obj\Debug\net5.0\BLL.dll
+I:\Semestre 5\Programacion WEB\Proyectos\DentalTime\BLL\obj\Debug\net5.0\ref\BLL.dll
+I:\Semestre 5\Programacion WEB\Proyectos\DentalTime\BLL\obj\Debug\net5.0\BLL.pdb

@@ -58,11 +58,17 @@ export class HistorialRegistroComponent implements OnInit {
   }
 
   add() {
+    this.historia = this.formHistoriaOdontologica.value;
+    this.antecedente = this.formHistoriaOdontologica.value;
     this.historia.antecedente = this.antecedente;
+
     this.service.post(this.historia).subscribe(result => {
       if (result != null) {
         alert('Historia Odontologica Guardada');
+        alert(JSON.stringify(result));
         this.historia = result;
+      } else {
+        alert(JSON.stringify(result));
       }
     });
   }

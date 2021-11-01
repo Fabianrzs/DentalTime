@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DentalTime.Models
 {
-    public class HistoriaClinicaInputModel
+    public class HistoriaOdontologicaInputModel
     {
         public string IdHistoriaOdontologica { get; set; }
         public DateTime FechaInicio { get; set; }
