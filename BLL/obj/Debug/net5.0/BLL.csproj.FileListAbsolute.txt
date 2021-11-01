@@ -79,4 +79,3 @@ I:\Semestre 5\Programacion WEB\Proyectos\DentalTime\BLL\obj\Debug\net5.0\BLL.csp
 I:\Semestre 5\Programacion WEB\Proyectos\DentalTime\BLL\obj\Debug\net5.0\BLL.dll
 I:\Semestre 5\Programacion WEB\Proyectos\DentalTime\BLL\obj\Debug\net5.0\ref\BLL.dll
 I:\Semestre 5\Programacion WEB\Proyectos\DentalTime\BLL\obj\Debug\net5.0\BLL.pdb
-D:\PROYECTOS PROGRAMACION\PWEB\Angular\proyecto\BLL\obj\Debug\net5.0\BLL.csproj.CopyComplete

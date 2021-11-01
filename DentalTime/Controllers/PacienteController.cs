@@ -27,10 +27,7 @@ namespace DentalTime.Controllers
         {
             Paciente paciente = MapearPaciente(pacienteImput);
             var request = _service.Save(paciente);
-            if (request.Error)
-            {
-                return BadRequest(request.Mensaje);
-            }
+            if (request.Error)return BadRequest(request.Mensaje);
             return Ok(request.Paciente);
         }
 

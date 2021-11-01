@@ -27,8 +27,8 @@
       <div class="row">
         <div class="col-md">
           <div class="form-floating border border-5">
-            <input type="text" formControlName="idAntecedentes" class="form-control" 
-            [ngClass]="{ 'is-invalid':  control.idAntecedentes.errors }" >
+            <input type="text" formControlName="idAntecedente" class="form-control" 
+            [ngClass]="{ 'is-invalid':  control.idAntecedente.errors }" >
             <label for="floatingInputGrid">Id Antecedentes</label>
           </div>
         </div>
@@ -86,10 +86,10 @@
     <br>
     <div class="row justify-content-center">
       <div class="col-6">
-        <button type="button" class="btn btn-outline-danger btn-sm position-absolute top-0 end-0">Cancelar</button>
+        <button type="button" class="btn btn-outline-danger btn-sm position-absolute top-0 end-0" (click)="buildForm()">Cancelar</button>
       </div>
       <div class="col col-md">
-        <button type="button" class="btn btn-outline-success btn-sm" (click)="add()">Guardar</button>
+        <button type="button" class="btn btn-outline-success btn-sm" (click)="onSubmit()">Guardar</button>
       </div>
     </div>
   </div>

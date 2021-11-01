@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Paciente } from 'src/app/models/Paciente';
 import { PacienteService } from 'src/app/service/paciente.service';
+import Swal from 'sweetalert2';
 
 
 @Component({
@@ -54,6 +55,10 @@ export class UsuarioRegistroComponent implements OnInit {
 
   onSubmit() {
     if (this.formPaciente.invalid) {
+      Swal.fire({
+        icon: 'error',
+        text: 'Verifique los Campos',
+      })
       return;
     }
     this.add();
@@ -62,6 +67,9 @@ export class UsuarioRegistroComponent implements OnInit {
     this.paciente = this.formPaciente.value;
     this.service.post(this.paciente).subscribe(result => {
       if (result != null) {
+        Swal.fire(
+          'Registro Exitoso'
+        )
         this.clearCampos();
       }
     });

@@ -30,11 +30,13 @@ namespace BLL
                         _context.Antecedentes.Add(historia.Antecedentes);
                         _context.HistoriasOdontologicas.Add(historia);
                         _context.SaveChanges();
+
                         return new HistorialLogResponse(historia);
+
                     } else return new HistorialLogResponse($"Error al Guardar: El paciente ya ha iniciado una historia odontologica");
                 }
                 else return new HistorialLogResponse($"Error al Guardar: El paciente no se encuentra registrado");
-  
+ 
             }
             catch (Exception e) {return new HistorialLogResponse($"Error al Guardar: Se presento lo siguiente {e.Message}");}
         }

@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Antecedente } from 'src/app/models/Antecedente';
 import { HistoriaOdontologica } from 'src/app/models/HistoriaOdontologica';
 import { HistoriaOdontologicaService } from 'src/app/service/historiaOdontologica.service';
+import Swal from 'sweetalert2';
 @Component({
   selector: 'app-historial-registro',
   templateUrl: './historial-registro.component.html',
@@ -25,7 +25,7 @@ export class HistorialRegistroComponent implements OnInit {
     this.historia.idHistoriaOdontologica = "";
     this.historia.noDocumentoPaciente = "";
     this.historia.fechaInicio = new Date;
-    this.historia.idAntecedentes = "";
+    this.historia.idAntecedente = "";
     this.historia.complicaciones = "";
     this.historia.enfermedades = "";
     this.historia.farmaceuticos = "";
@@ -35,14 +35,12 @@ export class HistorialRegistroComponent implements OnInit {
       idHistoriaOdontologica: [this.historia.idHistoriaOdontologica, Validators.required],
       noDocumentoPaciente: [this.historia.noDocumentoPaciente, Validators.required],
       fechaInicio: [this.historia.fechaInicio, Validators.required],
-      idAntecedentes: [this.historia.idAntecedentes, Validators.required],
+      idAntecedente: [this.historia.idAntecedente, Validators.required],
       complicaciones: [this.historia.complicaciones, Validators.required],
       enfermedades: [this.historia.enfermedades, Validators.required],
       farmaceuticos: [this.historia.farmaceuticos, Validators.required],
       quimicos: [this.historia.quimicos, Validators.required],
     });
-
-    alert(this.historia.idAntecedentes);
   }
 
   get control(){
@@ -50,8 +48,12 @@ export class HistorialRegistroComponent implements OnInit {
   }
 
   onSubmit(){
+    
     if(this.formHistoriaOdontologica.invalid){
-      alert("Informacion Invalida");
+      Swal.fire({
+        icon: 'error',
+        text: 'Verifique los Campos',
+      })
       return;
     }
     this.add();
@@ -59,14 +61,14 @@ export class HistorialRegistroComponent implements OnInit {
 
   add() {
     this.historia = this.formHistoriaOdontologica.value;
-    alert("Ay"+this.historia.idAntecedentes);
     this.service.post(this.historia).subscribe(result => {
       if (result != null) {
-        alert('Historia Odontologica Guardada');
-        alert(JSON.stringify(result));
-        this.historia = result;
-      } else {
-        alert(JSON.stringify(result));
+        if (result != null) {
+          Swal.fire(
+            'Registro Exitoso'
+          )
+          this.buildForm()
+        }
       }
     });
   }
@@ -75,5 +77,7 @@ export class HistorialRegistroComponent implements OnInit {
   //   this.historia.idHistoriaOdontologica = this.historia.noDocumentoPaciente;
   //   this.antecedente.idAntecedentes = this.historia.noDocumentoPaciente;
   // }
+
+
 
 }

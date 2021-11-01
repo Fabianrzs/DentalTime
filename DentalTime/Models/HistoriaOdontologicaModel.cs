@@ -9,8 +9,8 @@ namespace DentalTime.Models
     public class HistoriaOdontologicaInputModel
     {
         public string IdHistoriaOdontologica { get; set; }
-        public DateTime FechaInicio { get; set; }
         public string NoDocumentoPaciente { get; set; }
+        public DateTime FechaInicio { get; set; }
         public string IdAntecedente { get; set; }
         public string Enfermedades { get; set; }
         public string Farmaceuticos { get; set; }
