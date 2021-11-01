@@ -12,7 +12,6 @@ export class HistorialRegistroComponent implements OnInit {
 
   formHistoriaOdontologica: FormGroup;
   historia: HistoriaOdontologica;
-  antecedente: Antecedente;
 
   constructor(private service: HistoriaOdontologicaService, private formBuilder: FormBuilder) { }
 
@@ -22,27 +21,28 @@ export class HistorialRegistroComponent implements OnInit {
 
   buildForm(){
     this.historia = new HistoriaOdontologica();
-    this.antecedente = new Antecedente();
 
     this.historia.idHistoriaOdontologica = "";
     this.historia.noDocumentoPaciente = "";
     this.historia.fechaInicio = new Date;
-    this.antecedente.idAntecedentes = "";
-    this.antecedente.complicaciones = "";
-    this.antecedente.enfermedades = "";
-    this.antecedente.farmaceuticos = "";
-    this.antecedente.quimicos = "";
+    this.historia.idAntecedentes = "";
+    this.historia.complicaciones = "";
+    this.historia.enfermedades = "";
+    this.historia.farmaceuticos = "";
+    this.historia.quimicos = "";
 
     this.formHistoriaOdontologica = this.formBuilder.group({
       idHistoriaOdontologica: [this.historia.idHistoriaOdontologica, Validators.required],
       noDocumentoPaciente: [this.historia.noDocumentoPaciente, Validators.required],
       fechaInicio: [this.historia.fechaInicio, Validators.required],
-      idAntecedentes: [this.antecedente.idAntecedentes, Validators.required],
-      complicaciones: [this.antecedente.complicaciones, Validators.required],
-      enfermedades: [this.antecedente.enfermedades, Validators.required],
-      farmaceuticos: [this.antecedente.farmaceuticos, Validators.required],
-      quimicos: [this.antecedente.quimicos, Validators.required],
+      idAntecedentes: [this.historia.idAntecedentes, Validators.required],
+      complicaciones: [this.historia.complicaciones, Validators.required],
+      enfermedades: [this.historia.enfermedades, Validators.required],
+      farmaceuticos: [this.historia.farmaceuticos, Validators.required],
+      quimicos: [this.historia.quimicos, Validators.required],
     });
+
+    alert(this.historia.idAntecedentes);
   }
 
   get control(){
@@ -59,9 +59,7 @@ export class HistorialRegistroComponent implements OnInit {
 
   add() {
     this.historia = this.formHistoriaOdontologica.value;
-    this.antecedente = this.formHistoriaOdontologica.value;
-    this.historia.antecedente = this.antecedente;
-
+    alert("Ay"+this.historia.idAntecedentes);
     this.service.post(this.historia).subscribe(result => {
       if (result != null) {
         alert('Historia Odontologica Guardada');

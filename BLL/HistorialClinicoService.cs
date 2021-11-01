@@ -24,11 +24,14 @@ namespace BLL
                 Paciente paciente = _context.Pacientes.Find(historia.NoDocumentoPaciente);
                 if (paciente != null)   
                 {
-                    historia.Paciente = paciente;
-                    _context.Antecedentes.Add(historia.Antecedentes);
-                    _context.HistoriasOdontologicas.Add(historia);
-                    _context.SaveChanges();
-                    return new HistorialLogResponse(historia);      
+                    if(_context.HistoriasOdontologicas.Find(historia.IdHistoriaOdontologica) == null)
+                    {
+                        historia.Paciente = paciente;
+                        _context.Antecedentes.Add(historia.Antecedentes);
+                        _context.HistoriasOdontologicas.Add(historia);
+                        _context.SaveChanges();
+                        return new HistorialLogResponse(historia);
+                    } else return new HistorialLogResponse($"Error al Guardar: El paciente ya ha iniciado una historia odontologica");
                 }
                 else return new HistorialLogResponse($"Error al Guardar: El paciente no se encuentra registrado");
   

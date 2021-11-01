@@ -4,5 +4,9 @@ export class HistoriaOdontologica {
     idHistoriaOdontologica: string;
     noDocumentoPaciente: string;
     fechaInicio: Date;
-    antecedente: Antecedente;  
+    idAntecedentes: string;
+    enfermedades: string;
+    quimicos: string;
+    farmaceuticos: string;
+    complicaciones: string; 
 }

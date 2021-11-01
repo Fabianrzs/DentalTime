@@ -38,11 +38,11 @@ namespace DentalTime.Controllers
             historiaClinica.FechaInicio = historiaInput.FechaInicio;
             historiaClinica.NoDocumentoPaciente = historiaInput.NoDocumentoPaciente;
             Antecedente antecedente = new Antecedente();
-            antecedente.IdAntecedente = historiaInput.Antecedente.IdAntecedente;
-            antecedente.Enfermedades = historiaInput.Antecedente.Enfermedades;
-            antecedente.Farmaceuticos = historiaInput.Antecedente.Farmaceuticos;
-            antecedente.Quimicos = historiaInput.Antecedente.Quimicos;
-            antecedente.Complicaciones = historiaInput.Antecedente.Complicaciones;
+            antecedente.IdAntecedente = historiaInput.IdAntecedente;
+            antecedente.Enfermedades = historiaInput.Enfermedades;
+            antecedente.Farmaceuticos = historiaInput.Farmaceuticos;
+            antecedente.Quimicos = historiaInput.Quimicos;
+            antecedente.Complicaciones = historiaInput.Complicaciones;
             historiaClinica.Antecedentes = antecedente;
             return historiaClinica;
         }

@@ -22,13 +22,14 @@ namespace BLL
             try
             {
                 var buscarPaciente = _context.Pacientes.Find(paciente.NoDocumento);
-                if (buscarPaciente != null)
+                if (buscarPaciente == null)
                 {
-                    return new PacienteLogResponse("Error el paciente ya se encuentra registrado");
+                    _context.Pacientes.Add(paciente);
+                    _context.SaveChanges();
+                    return new PacienteLogResponse(paciente);
+                   
                 }
-                _context.Pacientes.Add(paciente);
-                _context.SaveChanges();
-                return new PacienteLogResponse(paciente);
+                 return new PacienteLogResponse("Error el paciente ya se encuentra registrado");
             }
             catch (Exception e)
             {

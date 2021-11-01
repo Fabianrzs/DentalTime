@@ -11,7 +11,11 @@ namespace DentalTime.Models
         public string IdHistoriaOdontologica { get; set; }
         public DateTime FechaInicio { get; set; }
         public string NoDocumentoPaciente { get; set; }
-        public AntecedenteInputModel Antecedente { get; set; }
+        public string IdAntecedente { get; set; }
+        public string Enfermedades { get; set; }
+        public string Farmaceuticos { get; set; }
+        public string Quimicos { get; set; }
+        public string Complicaciones { get; set; }
     }
 
     //public class HistoriaClinicaViewModel : HistoriaClinicaInputModel

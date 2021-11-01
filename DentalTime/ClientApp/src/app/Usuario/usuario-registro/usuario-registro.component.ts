@@ -13,7 +13,6 @@ export class UsuarioRegistroComponent implements OnInit {
 
   formPaciente: FormGroup;
   paciente: Paciente;
-
   constructor(private service: PacienteService, private formBuilder: FormBuilder) { }
 
   ngOnInit() {
@@ -55,18 +54,15 @@ export class UsuarioRegistroComponent implements OnInit {
 
   onSubmit() {
     if (this.formPaciente.invalid) {
-      alert('Informacion Validada');
       return;
     }
     this.add();
   }
   add() {
-
     this.paciente = this.formPaciente.value;
     this.service.post(this.paciente).subscribe(result => {
       if (result != null) {
-        alert('Paciente Guardado');
-        this.paciente = result;
+        this.clearCampos();
       }
     });
   }

@@ -5813,19 +5813,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\andre\\.nuget\\packages\\": {}
+    "C:\\Users\\WIN10\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "I:\\Semestre 5\\Programacion WEB\\Proyectos\\DentalTime\\DAL\\DAL.csproj",
+      "projectUniqueName": "D:\\PROYECTOS PROGRAMACION\\PWEB\\Angular\\proyecto\\DAL\\DAL.csproj",
       "projectName": "DAL",
-      "projectPath": "I:\\Semestre 5\\Programacion WEB\\Proyectos\\DentalTime\\DAL\\DAL.csproj",
-      "packagesPath": "C:\\Users\\andre\\.nuget\\packages\\",
-      "outputPath": "I:\\Semestre 5\\Programacion WEB\\Proyectos\\DentalTime\\DAL\\obj\\",
+      "projectPath": "D:\\PROYECTOS PROGRAMACION\\PWEB\\Angular\\proyecto\\DAL\\DAL.csproj",
+      "packagesPath": "C:\\Users\\WIN10\\.nuget\\packages\\",
+      "outputPath": "D:\\PROYECTOS PROGRAMACION\\PWEB\\Angular\\proyecto\\DAL\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\andre\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\WIN10\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -5839,8 +5839,8 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "I:\\Semestre 5\\Programacion WEB\\Proyectos\\DentalTime\\Entity\\Entity.csproj": {
-              "projectPath": "I:\\Semestre 5\\Programacion WEB\\Proyectos\\DentalTime\\Entity\\Entity.csproj"
+            "D:\\PROYECTOS PROGRAMACION\\PWEB\\Angular\\proyecto\\Entity\\Entity.csproj": {
+              "projectPath": "D:\\PROYECTOS PROGRAMACION\\PWEB\\Angular\\proyecto\\Entity\\Entity.csproj"
             }
           }
         }
@@ -5887,7 +5887,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "D:\\Program\\dotnet\\sdk\\5.0.401\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.402\\RuntimeIdentifierGraph.json"
       }
     }
   }

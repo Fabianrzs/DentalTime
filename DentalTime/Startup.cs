@@ -26,6 +26,9 @@ namespace DentalTime
             var connectionString = Configuration.GetConnectionString("DefaultConnection");
             services.AddDbContext<DentalTimeContext>(p => p.UseSqlServer(connectionString));
 
+            services.AddControllers().AddNewtonsoftJson(x =>
+ x.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore);
+
             services.AddControllersWithViews();
             // In production, the Angular files will be served from this directory
             services.AddSpaStaticFiles(configuration =>

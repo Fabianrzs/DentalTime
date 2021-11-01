@@ -10,6 +10,7 @@ namespace Entity
     public class Paciente
     {
         public string TipoDocumento { get; set; }
+        
         [Key]
         public string NoDocumento { get; set; }
         public string Nombres { get; set; }
