@@ -21,12 +21,16 @@ namespace BLL
         {
             try
             {
-                if (_context.Citas.Find(cita.IdSolicitudCita) == null)
+                Paciente paciente = _context.Pacientes.Find(cita.NoDocumentoPaciente);
+                if(paciente != null)
                 {
+                    cita.Paciente = paciente;
                     _context.Citas.Add(cita);
+                    _context.SaveChanges();
                     return new CitaLogResponse(cita);
+
                 }
-                return new CitaLogResponse($"La cita ya se encuentra registrado");
+                return new CitaLogResponse($"El paciente no se encuentra registrado");
             }
             catch (Exception e) { return new CitaLogResponse($"Error al Guardar: Se presento lo siguiente {e.Message}"); }
         }

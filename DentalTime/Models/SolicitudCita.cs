@@ -15,10 +15,10 @@ namespace DentalTime.Models
 
     public class SolicitudCitaCitaViewModel : SolicitudCitaInputModel
     {
-        public int CodAgenda { get; set; }
+        public int IdSolicitudCita { get; set; }
         public SolicitudCitaCitaViewModel(SolicitudCita cita)
         {
-            CodAgenda = cita.IdSolicitudCita;
+            IdSolicitudCita = cita.IdSolicitudCita;
             Fecha = cita.Fecha;
             Estado = cita.Estado;
             NoDocumentoPaciente = cita.NoDocumentoPaciente;

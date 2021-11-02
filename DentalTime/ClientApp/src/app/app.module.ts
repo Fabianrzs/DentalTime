@@ -25,6 +25,7 @@ import { HistorialRegistroComponent } from './Paciente/historial-registro/histor
 import { ServicioComponent } from './servicio/servicio.component';
 import { ConsultaRegistroComponent } from './Paciente/consulta-registro/consulta-registro.component';
 import { SolicitudCitaComponent } from './solicitud-cita/solicitud-cita.component';
+
 //---------------------------------------------------Routers---------------------------------------------------------------
 @NgModule({
   declarations: [			

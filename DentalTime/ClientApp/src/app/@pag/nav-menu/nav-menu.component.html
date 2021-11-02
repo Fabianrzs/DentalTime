@@ -58,14 +58,9 @@
               </ul>
             </li>
 
-            <li class="nav-item dropdown">
-              <a class="text-dark  nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"
-                aria-expanded="false">Servicios</a>
-              <ul class="text-center dropdown-menu" aria-labelledby="navbarDropdown">
-                <li><a class="dropdown-item btn btn-primary btn-outline-primary "
-                    [routerLink]="['/registrarServicio']">Registrar Sevicio</a></li>
-                <!-- <li><a class="dropdown-item btn btn-primary btn-outline-primary " [routerLink]="['/consultarServicio']">Consultar Servicios </a></li> -->
-              </ul>
+
+            <li class="nav-item" [routerLinkActive]="['link-active']" [routerLinkActiveOptions]="{ exact: true }">
+              <a class="nav-link text-dark " [routerLink]="['/registrarServicio']">Servicios</a>
             </li>
 
             <li class="nav-item dropdown ">
