@@ -70,13 +70,13 @@ export class SolicitudCitaComponent implements OnInit {
     }).then((result) => {
       if (result.isConfirmed) {
         this.service.put(this.agendaCita).subscribe(p => {
-
-          Swal.fire(
-            '',
-            'Registro Modificado!',
-            'success'
-          )
-          this.get();
+          if(p != null) {
+            Swal.fire(
+              '',
+              'Registro Modificado!',
+              'success'
+            );this.get();
+          } 
         });
       }
     })
