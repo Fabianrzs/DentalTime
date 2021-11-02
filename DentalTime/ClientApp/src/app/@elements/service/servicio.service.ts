@@ -5,10 +5,21 @@ import { catchError, tap } from 'rxjs/operators';
 import { HandleHttpErrorService } from './@base/handle-http-error.service';
 import { Servicio } from '../models/Servicio';
 
+const httpOptionsPut = {
+  headers: new HttpHeaders({ 'Content-Type': 'application/json' }),
+  responseType: 'text'
+};
+
+const httpOptions = {
+  headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+};
+
+
 @Injectable({
   providedIn: 'root'
 })
 export class ServicioService {
+  
   baseUrl: string;
   constructor(
     private http: HttpClient,
@@ -31,4 +42,14 @@ export class ServicioService {
       catchError(this.handleErrorService.handleError<Servicio>('Registrar Servicio', null))
     );
   }
+
+  getId(id: string): Observable<Servicio> {
+    const url = `${this.baseUrl + 'api/SolicitudCita'}/${id}`;
+    return this.http.get<Servicio>(url, httpOptions)
+      .pipe(
+        tap(_ => this.handleErrorService.log('datos Buscados')),
+        catchError(this.handleErrorService.handleError<Servicio>('Buscar Cita', null))
+      );
+  }
+
 }

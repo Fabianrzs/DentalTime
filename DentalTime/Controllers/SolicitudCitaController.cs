@@ -64,5 +64,13 @@ namespace DentalTime.Controllers
             return Ok(request.Cita);
         }
 
+        // [HttpPut("{identificacion}")]
+        // public ActionResult<Paciente> Put(string identificacion, Paciente paciente)
+        // {
+        //     var request = _service.Update(paciente, identificacion);
+        //     if(request.Error) return BadRequest(request.Mensaje);
+        //     return Ok(request.Paciente);
+        // }
+
     }
 }

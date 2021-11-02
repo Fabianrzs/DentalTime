@@ -42,9 +42,16 @@ namespace BLL
                 SolicitudCita cita = _context.Citas.Find(codCita);
                 if (cita != null)
                 {
-                    cita = citaNew;
-                    _context.Citas.Update(cita);
-                    return new CitaLogResponse(cita);
+                   if (_context.Pacientes.Find(citaNew.NoDocumentoPaciente) != null)
+                   {
+                        cita.Fecha = citaNew.Fecha;
+                        cita.Estado = citaNew.Estado;
+                        cita.NoDocumentoPaciente = citaNew.NoDocumentoPaciente;
+                        _context.Citas.Update(cita);
+                        _context.SaveChanges();
+                        return new CitaLogResponse(cita);
+                   }
+                    return new CitaLogResponse($"El paciente no se encuentra registrado");
                 }
                 return new CitaLogResponse($"No se encuentra registro a modificar");
             }

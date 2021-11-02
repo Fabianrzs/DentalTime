@@ -92,10 +92,7 @@ namespace BLL
                 }
                 return new PacienteLogResponse("Error el paciente no se encuentra registrado");
             }
-            catch (Exception e)
-            {
-                return new PacienteLogResponse("Error en la aplicacion" + e.Message);
-            }
+            catch (Exception e){ return new PacienteLogResponse("Error en la aplicacion" + e.Message);}
 
         }
 

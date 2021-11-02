@@ -62,7 +62,7 @@ export class ServicioComponent implements OnInit {
         this.add();
       }
   add() {
-    this.servicio= this.formServicio.value;
+    this.servicio = this.formServicio.value;
     this.service.post(this.servicio).subscribe(result => {
       if(result != null) {
         alert('Servicio Guardado');

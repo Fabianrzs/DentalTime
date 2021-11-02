@@ -68,7 +68,9 @@ export class UsuarioRegistroComponent implements OnInit {
     this.service.post(this.paciente).subscribe(result => {
       if (result != null) {
         Swal.fire(
-          'Registro Exitoso'
+          '',
+          'Registro Exitoso',
+          'success'
         )
         this.clearCampos();
       }

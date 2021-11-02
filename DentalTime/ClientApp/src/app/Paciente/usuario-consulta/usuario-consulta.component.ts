@@ -37,7 +37,6 @@ export class UsuarioConsultaComponent implements OnInit {
     }).then((result) => {
       if (result.isConfirmed) {
         this.service.put(this.paciente).subscribe(p => {
-          
           Swal.fire(
             '',
             'Registro Modificado!',

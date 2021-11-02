@@ -9,54 +9,56 @@ import { SolicitudCitaService } from '../@elements/service/SolicitudCita.service
   styleUrls: ['./solicitud-cita.component.css']
 })
 export class SolicitudCitaComponent implements OnInit {
-  
+
   page = 1;
   pageSize = 4;
   collectionSize = 0;
-  searchText:string;
+  searchText: string;
   agendaCita: SolicitudCita;
-  agendaCitaModificar: SolicitudCita;
   agendaCitas: SolicitudCita[];
   AGENDACITA: SolicitudCita[];
 
-  constructor(private service:SolicitudCitaService) { }
-  
-  ngOnInit() { 
-    this.agendaCita = new SolicitudCita();
-    this.agendaCitaModificar = new SolicitudCita();
-    this.get();
-   }
+  constructor(private service: SolicitudCitaService) { }
 
-  get() {  
+  ngOnInit() {
+    this.agendaCita = new SolicitudCita();
+    this.get();
+  }
+
+  get() {
     this.service.get().subscribe(result => {
-      
+
       this.AGENDACITA = result
       this.collectionSize = this.AGENDACITA.length;
       this.agendaCitas = this.AGENDACITA
-      .map((servicios, i) => ({id: i + 1, ...servicios}))
-      .slice((this.page - 1) * this.pageSize, (this.page - 1) * this.pageSize + this.pageSize);
+        .map((servicios, i) => ({ id: i + 1, ...servicios }))
+        .slice((this.page - 1) * this.pageSize, (this.page - 1) * this.pageSize + this.pageSize);
     });
   }
 
-  onSearch(id: number){
+  onSearch(id: number) {
     this.service.getId(id).subscribe(result => {
-      this.agendaCitaModificar = result;
+      this.agendaCita = result;
+      this.get();
     });
   }
 
   add() {
     this.service.post(this.agendaCita).subscribe(result => {
       if (result != null) {
-        if (result != null) {
-          Swal.fire(
-            'Registro Exitoso'
-          )
-        }
+        Swal.fire(
+          '',
+          'Registro Exitoso',
+          'success'
+          
+        );
+        this.instancias();
+        this.get();
       }
     });
   }
 
-  update(){
+  update() {
     Swal.fire({
       title: 'Estas seguro?',
       text: "Deseas Modificar",
@@ -68,17 +70,20 @@ export class SolicitudCitaComponent implements OnInit {
     }).then((result) => {
       if (result.isConfirmed) {
         this.service.put(this.agendaCita).subscribe(p => {
-          
+
           Swal.fire(
             '',
             'Registro Modificado!',
             'success'
           )
           this.get();
-        }); 
+        });
       }
-    }) 
+    })
   }
 
+  instancias() {
+    this.agendaCita = new SolicitudCita();
+  }
 }
 
