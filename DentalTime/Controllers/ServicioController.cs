@@ -27,7 +27,14 @@ namespace DentalTime.Controllers
         {
             Servicio servicio = mapearServicio(servicioInput);
             var request = _service.Save(servicio);
-            if (request.Error) return BadRequest(request.Error);
+            if (request.Error){
+                ModelState.AddModelError("Guardar Sevicio", request.Mensaje);
+                var problemDetails = new ValidationProblemDetails(ModelState)
+                {
+                    Status = StatusCodes.Status400BadRequest,
+                };
+                return BadRequest(problemDetails);
+            }
             return Ok(request.Servicio);
         }
 
@@ -45,7 +52,7 @@ namespace DentalTime.Controllers
         public ActionResult<List<Producto>> Consult()
         {
             var request = _service.Consult();
-            if (request.Error) return BadRequest(request.Mensaje);
+            if (request.Error) return BadRequest(request.Error);
             return Ok(request.Servicios);
         }
     }

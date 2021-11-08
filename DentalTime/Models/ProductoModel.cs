@@ -8,6 +8,7 @@ namespace DentalTime.Models
 {
     public class ProductoInputModel
     {
+
         public string Referencia { get; set; }
         public string Nombre { get; set; }
         public string Laboratorio { get; set; }

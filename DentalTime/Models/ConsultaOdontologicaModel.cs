@@ -1,6 +1,7 @@
 ﻿using Entity;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -8,12 +9,19 @@ namespace DentalTime.Models
 {
     public class ConsultaClinicaInputModel
     {
+        [Required(ErrorMessage = "Identificacion del Paciente requerido")]
         public string IdentificacionPaciente { get; set; }
+        [Required(ErrorMessage = "Motivo requerido")]
         public string Motivo { get; set; }
+        [Required(ErrorMessage = "Complicaciones requerido")]
         public string Complicaciones { get; set; }
+        [Required(ErrorMessage = "Complicaciones requerido")]
         public string Antecedentes { get; set; }
+        [Required(ErrorMessage = "Complicaciones requerido")]
         public string Medicacion { get; set; }
+        [Required(ErrorMessage = "Complicaciones requerido")]
         public DateTime UltimaConsulta { get; set; }
+        [Required(ErrorMessage = "Complicaciones requerido")]
         public string ValoracionMedica { get; set; }
     }
 

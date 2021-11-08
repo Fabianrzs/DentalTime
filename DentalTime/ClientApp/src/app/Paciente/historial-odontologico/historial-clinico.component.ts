@@ -38,5 +38,4 @@ export class HistorialClinicoComponent implements OnInit {
   get() {
 
   }
-
 }

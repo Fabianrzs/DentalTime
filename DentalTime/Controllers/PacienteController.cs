@@ -19,7 +19,7 @@ namespace DentalTime.Controllers
 
         public PacienteController(DentalTimeContext context)
         {
-            _service = new PacienteService (context);
+            _service = new PacienteService(context);
         }
 
         [HttpPost]
@@ -27,7 +27,15 @@ namespace DentalTime.Controllers
         {
             Paciente paciente = MapearPaciente(pacienteImput);
             var request = _service.Save(paciente);
-            if (request.Error)return BadRequest(request.Mensaje);
+            if (request.Error)
+            {
+                ModelState.AddModelError("Guardar Paciente", request.Mensaje);
+                var problemDetails = new ValidationProblemDetails(ModelState)
+                {
+                    Status = StatusCodes.Status400BadRequest,
+                };
+                return BadRequest(problemDetails);
+            }
             return Ok(request.Paciente);
         }
 
@@ -55,7 +63,7 @@ namespace DentalTime.Controllers
             return Ok(request.Pacientes);
         }
 
-        [HttpGet ("{identificacion}")]
+        [HttpGet("{identificacion}")]
         public ActionResult<Paciente> Get(string identificacion)
         {
             var request = _service.Find(identificacion);
@@ -67,7 +75,7 @@ namespace DentalTime.Controllers
         public ActionResult<Paciente> Put(string identificacion, Paciente paciente)
         {
             var request = _service.Update(paciente, identificacion);
-            if(request.Error) return BadRequest(request.Mensaje);
+            if (request.Error) return BadRequest(request.Mensaje);
             return Ok(request.Paciente);
         }
 

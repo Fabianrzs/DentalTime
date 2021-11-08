@@ -27,7 +27,15 @@ namespace DentalTime.Controllers
         {
             Antecedente antecedente = mapearAntecedente(inputModel);
             var request = _service.Save(antecedente);
-            if (request.Error) return BadRequest(request.Mensaje);
+            if (request.Error)
+            {
+                ModelState.AddModelError("Guardar Antecedente", request.Mensaje);
+                var problemDetails = new ValidationProblemDetails(ModelState)
+                {
+                    Status = StatusCodes.Status400BadRequest,
+                };
+                return BadRequest(problemDetails);
+            }
             return Ok(request.Antecedente);
         }
 

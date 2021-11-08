@@ -28,7 +28,15 @@ namespace DentalTime.Controllers
             Inventario inventario = new Inventario();
             inventario.IdInventario = inventarioInput.IdInventario;
             var request = service.Save(inventario);
-            if (request.Error) return BadRequest(request.Mensaje);
+            if (request.Error)
+            {
+                ModelState.AddModelError("Guardar Inventario", request.Mensaje);
+                var problemDetails = new ValidationProblemDetails(ModelState)
+                {
+                    Status = StatusCodes.Status400BadRequest,
+                };
+                return BadRequest(problemDetails);
+            }
             return Ok(request.Inventario);
         }
     }

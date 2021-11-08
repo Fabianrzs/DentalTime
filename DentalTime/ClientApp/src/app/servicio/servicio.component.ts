@@ -1,8 +1,10 @@
 import { Component, OnInit } from "@angular/core";
 import { FormBuilder, FormGroup, Validators } from "@angular/forms";
+import { NgbModal } from "@ng-bootstrap/ng-bootstrap";
 import { Servicio } from "src/app/@elements/models/Servicio";
 import { ServicioService } from "src/app/@elements/service/servicio.service";
 import Swal from "sweetalert2";
+import { AlertModalComponent } from "../@base/alertModal/alertModal.component";
 @Component({
   selector: "app-servicio",
   templateUrl: "./servicio.component.html",
@@ -20,7 +22,8 @@ export class ServicioComponent implements OnInit {
 
   constructor(
     private service: ServicioService,
-    private formBuilder: FormBuilder
+    private formBuilder: FormBuilder,
+    private modal: NgbModal,
   ) {}
 
   ngOnInit() {
@@ -75,11 +78,13 @@ export class ServicioComponent implements OnInit {
     this.servicio = this.formServicio.value;
     this.service.post(this.servicio).subscribe((result) => {
       if (result != null) {
-        Swal.fire("", "Registro Exitoso", "success");
+        /*Swal.fire("", "Registro Exitoso", "success");*/
+        const messageBox = this.modal.open(AlertModalComponent);
+        messageBox.componentInstance.title = "Resultado";
+        messageBox.componentInstance.message = "Registro Guardado Satisfactoriamente";
         this.clearCampos();
         this.get();
       }
-      
     });
   }
 

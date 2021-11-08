@@ -28,7 +28,15 @@ namespace DentalTime.Controllers
         {
             var consultaClinica = MapearConsultaClinica(consultaClinicaImputModel);
             var request = _service.Save(consultaClinica);
-            if (request.Error) return BadRequest(request.Mensaje);
+            if (request.Error)
+            {
+                ModelState.AddModelError("Guardar Consulta Odontologica", request.Mensaje);
+                var problemDetails = new ValidationProblemDetails(ModelState)
+                {
+                    Status = StatusCodes.Status400BadRequest,
+                };
+                return BadRequest(problemDetails);
+            }
             return Ok(request.ConsultaClinica);
         }
 

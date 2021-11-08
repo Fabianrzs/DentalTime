@@ -1,9 +1,9 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Inject, Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { HandleHttpErrorService } from './@base/handle-http-error.service';
 import { Paciente } from '../models/Paciente';
 import { tap, catchError } from 'rxjs/operators';
+import { HandleHttpErrorService } from 'src/app/@base/handle-http-error.service';
 
 
 const httpOptionsPut = {

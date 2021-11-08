@@ -4,7 +4,6 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 
-import {NgbPaginationModule, NgbAlertModule} from '@ng-bootstrap/ng-bootstrap';
 //-------------------------------------------------------Angular CLI--------------------------------------------------
 
 import { RouterModule } from '@angular/router';
@@ -25,6 +24,8 @@ import { HistorialRegistroComponent } from './Paciente/historial-registro/histor
 import { ServicioComponent } from './servicio/servicio.component';
 import { ConsultaRegistroComponent } from './Paciente/consulta-registro/consulta-registro.component';
 import { SolicitudCitaComponent } from './solicitud-cita/solicitud-cita.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { AlertModalComponent } from './@base/alertModal/alertModal.component';
 
 //---------------------------------------------------Routers---------------------------------------------------------------
 @NgModule({
@@ -52,12 +53,14 @@ import { SolicitudCitaComponent } from './solicitud-cita/solicitud-cita.componen
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
     HttpClientModule,
     FormsModule,
-    NgbPaginationModule, 
-    NgbAlertModule,
+    NgbModule,
     RouterModule.forRoot([
     { path: '', component: HomeComponent, pathMatch: 'full' },
     ], { relativeLinkResolution: 'legacy' }),
     AppRoutingModule
+  ],
+  entryComponents:[
+    AlertModalComponent
   ],
   providers: [],
   bootstrap: [AppComponent]

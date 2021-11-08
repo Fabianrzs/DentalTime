@@ -27,7 +27,15 @@ namespace DentalTime.Controllers
         {
             SolicitudCita cita = mapearCita(citaInput);
             var request = _service.Save(cita);
-            if (request.Error) return BadRequest(request.Mensaje);
+            if (request.Error)
+            {
+                ModelState.AddModelError("Registar Cita", request.Mensaje);
+                var problemDetails = new ValidationProblemDetails(ModelState)
+                {
+                    Status = StatusCodes.Status400BadRequest,
+                };
+                return BadRequest(problemDetails);
+            }
             return Ok(request.Cita);
         }
 
