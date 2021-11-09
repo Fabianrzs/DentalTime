@@ -9,7 +9,7 @@
         <div class="col-md">
           <div class="form-floating border border-5">
             <input type="text" formControlName="noDocumentoPaciente" class="form-control" 
-            [ngClass]="{ 'is-invalid':  control.noDocumentoPaciente.errors }" >
+            [(ngModel)]= "this.historia.noDocumentoPaciente" readonly>
             <label for="floatingInputGrid">No Documento</label>
           </div>
         </div>
@@ -21,32 +21,9 @@
           </div>
         </div>
       </div>
-
       <br>
-
-      <div class="row">
-        <div class="col-md">
-          <div class="form-floating border border-5">
-            <input type="text" formControlName="idAntecedente" class="form-control" 
-            [ngClass]="{ 'is-invalid':  control.idAntecedente.errors }" >
-            <label for="floatingInputGrid">Id Antecedentes</label>
-          </div>
-        </div>
-        <div class="col-md">
-          <div class="form-floating border border-5">
-            <input type="text" formControlName="idHistoriaOdontologica" class="form-control" 
-            [ngClass]="{ 'is-invalid':  control.idHistoriaOdontologica.errors }" >
-            <label for="floatingInputGrid">Id Historia Odontologica</label>
-          </div>
-        </div>
-      </div>
-
-      <br>
-
       <h5 class="text-center">Antecedentes</h5>
-
       <hr>
-
       <div class="row">
         <div class="col-md">
           <div class="form-floating border border-5">
@@ -86,7 +63,7 @@
     <br>
     <div class="row justify-content-center">
       <div class="col-6">
-        <button type="button" class="btn btn-outline-danger btn-sm position-absolute top-0 end-0" (click)="buildForm()">Cancelar</button>
+        <button type="button" class="btn btn-outline-danger btn-sm position-absolute top-0 end-0" routerLink='/consultaUsuario'>Cancelar</button>
       </div>
       <div class="col col-md">
         <button type="button" class="btn btn-outline-success btn-sm" (click)="onSubmit()">Guardar</button>

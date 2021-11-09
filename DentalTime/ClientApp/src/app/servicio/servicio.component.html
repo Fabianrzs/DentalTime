@@ -1,45 +1,5 @@
-<div class="container">
+<div class="container" style="width: 700px;">
   <div class="row" style="height: 500px;">
-    <div class="col-4 col-sm" style="min-width: 200px; max-width: 250px;">
-      <h5 class="text-center">Registro</h5>
-      <hr>
-
-      <form [formGroup]="formServicio">
-      <div class="form-floating border border-5">
-        <input type="text" formControlName="idServico" class="form-control"
-          [ngClass]="{ 'is-invalid':  control.idServico.errors }">
-        <label for="floatingInputGrid">Identificador</label>
-      </div>
-      <div class="form-floating border border-5">
-        <input type="text" formControlName="nombre" class="form-control"
-          [ngClass]="{ 'is-invalid':  control.nombre.errors }">
-        <label for="floatingInputGrid">Nombre</label>
-      </div>
-      <div class="form-floating border border-5">
-        <input type="text" formControlName="precio" class="form-control"
-          [ngClass]="{ 'is-invalid':  control.precio.errors }">
-        <label for="floatingInputGrid">Precio</label>
-      </div>
-      <div class="form-floating border border-5">
-        <input type="text" formControlName="duracion" class="form-control"
-          [ngClass]="{ 'is-invalid':  control.duracion.errors }">
-        <label for="floatingInputGrid">Duracion</label>
-      </div>
-      <br>
-      <div class="row justify-content-center">
-        <div class="col-6">
-          <button type="button" class="btn btn-outline-danger btn-sm position-absolute top-0 end-0"
-            (click)="clearCampos()">Cancelar</button>
-        </div>
-        <div class="col-6 col-md">
-          <button type="button" class="btn btn-outline-success btn-sm" (click)="onSubmit()">Guardar</button>
-        </div>
-      </div>
-      </form>
-      
-    </div>
-
-
     <div class="col-8 col-sm">
       <div class="row">
         <div class="col-12">
@@ -48,9 +8,12 @@
         </div>
       </div>
       <div class="row justify-content-right">
-        <div class="col-6">
+        <div class="col-10">
           <label for="filter">Filtro: <input onChange="get()" [(ngModel)]="searchText" 
             type="text" class="formcontrol"  placeholder="Identificador Buscado"></label>
+        </div>
+        <div class="col align-self-end">
+          <button type="button" class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#ModalRegistrarServicio">Agregar</button>
         </div>
       </div> 
       <div class="row">
@@ -83,6 +46,47 @@
               </div>
             </div>
           </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    <div class="modal fade" id="ModalRegistrarServicio" data-bs-backdrop="static"
+     data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title text-center" id="staticBackdropLabel">Registrar Servicio</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form [formGroup]="formServicio">
+      <div class="form-floating border border-5">
+        <input type="text" formControlName="idServico" class="form-control"
+          [ngClass]="{ 'is-invalid':  control.idServico.errors }">
+        <label for="floatingInputGrid">Identificador</label>
+      </div>
+      <div class="form-floating border border-5">
+        <input type="text" formControlName="nombre" class="form-control"
+          [ngClass]="{ 'is-invalid':  control.nombre.errors }">
+        <label for="floatingInputGrid">Nombre</label>
+      </div>
+      <div class="form-floating border border-5">
+        <input type="text" formControlName="precio" class="form-control"
+          [ngClass]="{ 'is-invalid':  control.precio.errors }">
+        <label for="floatingInputGrid">Precio</label>
+      </div>
+      <div class="form-floating border border-5">
+        <input type="text" formControlName="duracion" class="form-control"
+          [ngClass]="{ 'is-invalid':  control.duracion.errors }">
+        <label for="floatingInputGrid">Duracion</label>
+      </div>
+      <br>
+      </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-outline-danger btn-sm" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-outline-success btn-sm" (click)="onSubmit()">Guardar</button>
       </div>
     </div>
   </div>

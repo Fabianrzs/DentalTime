@@ -4,7 +4,6 @@ export class ConsultaOdontologica {
     diagnostico : string;
     valoracion: string;
     recetaMedica: string;
-
     idSolicitudCita: number
     idHistoriaOdontologica: string;
 }

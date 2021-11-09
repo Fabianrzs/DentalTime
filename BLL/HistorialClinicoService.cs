@@ -55,6 +55,18 @@ namespace BLL
             catch (Exception e) { return new HistorialConsultaResponse($"Error al Consultar: Se presento lo siguiente {e.Message}"); }
         }
 
+
+        public HistorialLogResponse Find(string id){
+            try
+            {               
+                return new HistorialLogResponse(_context.HistoriasOdontologicas.Find(id));
+            }
+            catch (Exception e)
+            {
+                return new HistorialLogResponse("Error en la aplicacion" + e.Message);
+            }
+        }
+
     }
     public class HistorialLogResponse
     {

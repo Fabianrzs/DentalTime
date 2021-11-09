@@ -12,9 +12,10 @@
             <th scope="col">Documento</th>
             <th scope="col">Nombres </th>
             <th scope="col">Apellidos </th>
-            <th scope="col">Fecha Nacimiento</th>
-            <th scope="col">Sexo</th>
+            <th scope="col">Historia</th>
+            <th scope="col">Consulta</th>
             <th scope="col">Details</th>
+
           </tr>
         </thead>
         <tbody>
@@ -23,9 +24,12 @@
             <td>{{p.noDocumento}}</td>
             <td>{{p.nombres}}</td>
             <td>{{p.apellidos}}</td>
-            <td>{{p.fechaNacimiento}}</td>
-            <td>{{p.sexo}}</td>
-            <td><a class = "txt-primary" (click)="onSearch(p.noDocumento)" data-bs-toggle="modal" data-bs-target="#staticBackdrop">view</a></td>
+            <td>
+              <a class = "txt-primary" routerLink='/historialRegistro/{{p.noDocumento}}'>Iniciar/</a>
+              <a class = "txt-primary" routerLink='/historialClinico/{{p.noDocumento}}'>Detalles</a>
+            </td>
+            <td><a class = "txt-primary" routerLink='/registrarConsulta/{{p.noDocumento}}'>Agregar</a></td>
+            <td><a class = "txt-primary" (click)="onSearch(p.noDocumento)" data-bs-toggle="modal" data-bs-target="#ModalModificar">view</a></td>
           </tr>
         </tbody>
       </table>      
@@ -43,7 +47,7 @@
   </div>
 </div>
 
-<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static"
+<div class="modal fade" id="ModalModificar" data-bs-backdrop="static"
      data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
@@ -138,7 +142,6 @@
               </div>
             </div>            
         </div>
-
       </form>
       </div>
       <div class="modal-footer">

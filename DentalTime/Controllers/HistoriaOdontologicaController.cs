@@ -62,5 +62,14 @@ namespace DentalTime.Controllers
             if (request.Error) return BadRequest(request.Mensaje);
             return Ok(request.HistoriasClinicas);
         }
+
+        [HttpGet("{id}")]
+        public ActionResult<HistoriaOdontologica> Get(string id)
+        {
+            var request = _service.Find(id);
+            if (request.Error) return BadRequest(request.Mensaje);
+            return Ok(request.HistoriaClinica);
+        }
+
     }
 }

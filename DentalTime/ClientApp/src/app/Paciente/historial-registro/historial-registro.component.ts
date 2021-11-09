@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { ActivatedRoute } from '@angular/router';
+import { find } from 'rxjs/operators';
 import { HistoriaOdontologica } from 'src/app/@elements/models/HistoriaOdontologica';
 import { HistoriaOdontologicaService } from 'src/app/@elements/service/historiaOdontologica.service';
 import Swal from 'sweetalert2';
@@ -12,30 +14,28 @@ export class HistorialRegistroComponent implements OnInit {
 
   formHistoriaOdontologica: FormGroup;
   historia: HistoriaOdontologica;
+  historiaBuscada: HistoriaOdontologica;
 
-  constructor(private service: HistoriaOdontologicaService, private formBuilder: FormBuilder) { }
+  constructor(private service: HistoriaOdontologicaService, private formBuilder: FormBuilder, private rutaActiva: ActivatedRoute) { }
 
   ngOnInit() {
+    const noDocumentoPaciente = this.rutaActiva.snapshot.params.noDocumentoPaciente;
+    this.find(noDocumentoPaciente);
     this.buildForm();
   }
 
+  find(noDocumentoPaciente: string) {
+    this.service.getId(noDocumentoPaciente).subscribe(result => {
+      this.historiaBuscada = result;
+      alert(noDocumentoPaciente);
+      alert(JSON.stringify(result));
+
+    });
+  }
+
   buildForm(){
-    this.historia = new HistoriaOdontologica();
-
-    this.historia.idHistoriaOdontologica = "";
-    this.historia.noDocumentoPaciente = "";
-    this.historia.fechaInicio = new Date;
-    this.historia.idAntecedente = "";
-    this.historia.complicaciones = "";
-    this.historia.enfermedades = "";
-    this.historia.farmaceuticos = "";
-    this.historia.quimicos = "";
-
+    this.historia = this.historiaBuscada;
     this.formHistoriaOdontologica = this.formBuilder.group({
-      idHistoriaOdontologica: [this.historia.idHistoriaOdontologica, Validators.required],
-      noDocumentoPaciente: [this.historia.noDocumentoPaciente, Validators.required],
-      fechaInicio: [this.historia.fechaInicio, Validators.required],
-      idAntecedente: [this.historia.idAntecedente, Validators.required],
       complicaciones: [this.historia.complicaciones, Validators.required],
       enfermedades: [this.historia.enfermedades, Validators.required],
       farmaceuticos: [this.historia.farmaceuticos, Validators.required],
