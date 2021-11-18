@@ -14,6 +14,7 @@ import { HistorialRegistroComponent } from './Paciente/historial-registro/histor
 import { SolicitudCitaComponent } from './solicitud-cita/solicitud-cita.component';
 import { ServicioComponent } from './servicio/servicio.component';
 import { ConsultaRegistroComponent } from './Paciente/consulta-registro/consulta-registro.component';
+import { AgendaMedicoComponent } from './agenda-medico/agenda-medico.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginUserComponent, },
@@ -29,7 +30,7 @@ const routes: Routes = [
   { path: 'registrarConsulta/:noDocumentoPaciente', component: ConsultaRegistroComponent},
   { path: 'registroProducto', component: ProductoRegistroComponent},
   { path: 'gestionInventario', component: GestionInventarioComponent},
-  
+  { path: 'agendaMedico', component: AgendaMedicoComponent}, 
 ];
 
 

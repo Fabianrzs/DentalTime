@@ -26,15 +26,27 @@ namespace DAL
                 .WithOne(a => a.HistoriaOdontologica)
                 .HasForeignKey<HistoriaOdontologica>(ho => ho.IdAntecedentesOfHO);
 
+            modelBuilder.Entity<Procedimiento>()
+                .HasOne<Servicio>(p => p.Servicio)
+                .WithOne(s => s.Procedimiento)
+                .HasForeignKey<Procedimiento>(p => p.IdServico);
+
+            modelBuilder.Entity<SolicitudCita>()
+               .HasOne<ConsultaOdontologica>(sc => sc.ConsultaOdontologica)
+               .WithOne(co => co.SolicitudCita)
+               .HasForeignKey<ConsultaOdontologica>(co => co.IdSolicitudCita);
+
+            modelBuilder.Entity<Agenda>()
+                .HasOne<SolicitudCita>(a => a.Cita)
+                .WithOne(s => s.Agenda)
+                .HasForeignKey<SolicitudCita>(s => s.CodAgenda);
+
+            //---------------------------------------------------
+
             modelBuilder.Entity<SolicitudCita>()
                 .HasOne<Paciente>(sc => sc.Paciente)
                 .WithMany(p => p.HistorialCitas)
                 .HasForeignKey(sc => sc.NoDocumentoPaciente);
-
-            modelBuilder.Entity<SolicitudCita>()
-                .HasOne<ConsultaOdontologica>(sc => sc.ConsultaOdontologica)
-                .WithOne(co => co.SolicitudCita)
-                .HasForeignKey<ConsultaOdontologica>(co => co.IdSolicitudCita);
 
             modelBuilder.Entity<ConsultaOdontologica>()
                 .HasOne<HistoriaOdontologica>(co => co.HistoriaOdontologica)
@@ -45,11 +57,6 @@ namespace DAL
                 .HasOne<ConsultaOdontologica>(p => p.ConsultaOdontologica)
                 .WithMany(co => co.Procedimientos)
                 .HasForeignKey(p => p.IdConsultaOdontologica);
-
-            modelBuilder.Entity<Procedimiento>()
-                .HasOne<Servicio>(p => p.Servicio)
-                .WithOne(s => s.Procedimiento)
-                .HasForeignKey<Procedimiento>(p => p.IdServico);
 
             modelBuilder.Entity<Producto>()
                 .HasOne<Inventario>(p => p.Inventario)
@@ -66,5 +73,7 @@ namespace DAL
         public DbSet<Servicio> Servicios { get; set; }
         public DbSet<Procedimiento> Procedimientos { get; set; }
         public DbSet<Inventario> Inventarios { get; set; }
+        public DbSet<Agenda> Agendas { get; set; }
+
     }
 }

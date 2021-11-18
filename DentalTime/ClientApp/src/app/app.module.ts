@@ -26,10 +26,11 @@ import { ConsultaRegistroComponent } from './Paciente/consulta-registro/consulta
 import { SolicitudCitaComponent } from './solicitud-cita/solicitud-cita.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AlertModalComponent } from './@base/alertModal/alertModal.component';
+import { AgendaMedicoComponent } from './agenda-medico/agenda-medico.component';
 
 //---------------------------------------------------Routers---------------------------------------------------------------
 @NgModule({
-  declarations: [			
+  declarations: [				
     AppComponent,
     NavMenuComponent,
     HomeComponent,
@@ -46,7 +47,8 @@ import { AlertModalComponent } from './@base/alertModal/alertModal.component';
     GestionInventarioComponent,
     FiltroPacientePipe,
     HistorialRegistroComponent,
-      SolicitudCitaComponent
+      SolicitudCitaComponent,
+      AgendaMedicoComponent
    ],
   imports: [
     ReactiveFormsModule,

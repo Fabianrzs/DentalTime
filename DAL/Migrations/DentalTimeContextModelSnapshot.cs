@@ -19,7 +19,28 @@ namespace DAL.Migrations
                 .HasAnnotation("ProductVersion", "5.0.11")
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-            modelBuilder.Entity("Entity.Antecedentes", b =>
+            modelBuilder.Entity("Entity.Agenda", b =>
+                {
+                    b.Property<int>("CodAgenda")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Estado")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("FechaHoraFin")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("FechaHoraInicio")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("CodAgenda");
+
+                    b.ToTable("Agendas");
+                });
+
+            modelBuilder.Entity("Entity.Antecedente", b =>
                 {
                     b.Property<string>("IdAntecedente")
                         .HasColumnType("nvarchar(450)");
@@ -239,6 +260,9 @@ namespace DAL.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+                    b.Property<int>("CodAgenda")
+                        .HasColumnType("int");
+
                     b.Property<string>("Estado")
                         .HasColumnType("nvarchar(max)");
 
@@ -249,6 +273,9 @@ namespace DAL.Migrations
                         .HasColumnType("nvarchar(450)");
 
                     b.HasKey("IdSolicitudCita");
+
+                    b.HasIndex("CodAgenda")
+                        .IsUnique();
 
                     b.HasIndex("NoDocumentoPaciente");
 
@@ -274,7 +301,7 @@ namespace DAL.Migrations
 
             modelBuilder.Entity("Entity.HistoriaOdontologica", b =>
                 {
-                    b.HasOne("Entity.Antecedentes", "Antecedentes")
+                    b.HasOne("Entity.Antecedente", "Antecedentes")
                         .WithOne("HistoriaOdontologica")
                         .HasForeignKey("Entity.HistoriaOdontologica", "IdAntecedentesOfHO");
 
@@ -315,14 +342,27 @@ namespace DAL.Migrations
 
             modelBuilder.Entity("Entity.SolicitudCita", b =>
                 {
+                    b.HasOne("Entity.Agenda", "Agenda")
+                        .WithOne("Cita")
+                        .HasForeignKey("Entity.SolicitudCita", "CodAgenda")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.HasOne("Entity.Paciente", "Paciente")
                         .WithMany("HistorialCitas")
                         .HasForeignKey("NoDocumentoPaciente");
 
+                    b.Navigation("Agenda");
+
                     b.Navigation("Paciente");
                 });
 
-            modelBuilder.Entity("Entity.Antecedentes", b =>
+            modelBuilder.Entity("Entity.Agenda", b =>
+                {
+                    b.Navigation("Cita");
+                });
+
+            modelBuilder.Entity("Entity.Antecedente", b =>
                 {
                     b.Navigation("HistoriaOdontologica");
                 });
