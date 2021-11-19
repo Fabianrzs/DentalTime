@@ -1,32 +1,46 @@
-<div class="container">
-    <div class="row">
-        <div class="col-md-4 offset-md-4">
-            <div class="login-form bg-light mt-4 p-4">
-                <form action="" method="" class="row g-3">
-                    <h4 class = "text-center">Welcome Back</h4>
-                    <div class="col-12">
-                        <label>Username</label>
-                        <input type="text" name="username" class="form-control" placeholder="Username">
-                    </div>
-                    <div class="col-12">
-                        <label>Password</label>
-                        <input type="password" name="password" class="form-control" placeholder="Password">
-                    </div>
-                    <div class="col-12">
-                        <div class="form-check">
-                            <input class="form-check-input" type="checkbox" id="rememberMe">
-                            <label class="form-check-label" for="rememberMe"> Remember me</label>
-                        </div>
-                    </div>
-                    <div class="col-12" [routerLinkActive]="['link-active']">
-                        <button type="submit" class="btn btn-dark float-end" [routerLink]="['/login']">Login</button>
-                    </div>
-                </form>
-                <hr class="mt-4">
-                <div class="col-12" [routerLinkActive]="['link-active']">
-                    <p class="text-center mb-0">Have not account yet? <a [routerLink]="['/register']">Signup</a></p>
-                </div>
+<div class="container-fluid px-1 px-md-5 px-lg-1 px-xl-5 py-5 mx-auto">
+    <div class="card card0 border-0">
+    <h2>Login</h2>
+    <div class='row d-flex'>
+        <div class="col-lg-6">
+            <div class="card1 pb-5">
+                <div class="row px-3 justify-content-center mt-4 mb-5 border-line"> <img src="../../../assets/ImagenLogin.png" class="image"> </div>
             </div>
         </div>
+        <div class="col-lg-6">
+            <div class="card2 card border-0 px-4 py-5">
+        <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+
+            <div class="form-group">
+                <label for="username">Usuario</label>
+                <input type="text" formControlName="username"
+                    class="form-control" [ngClass]="{ 'is-invalid': submitted &&
+                    f.username.errors }" />
+                <div *ngIf="submitted && f.username.errors"
+                    class="invalid-feedback">
+                    <div *ngIf="f.username.errors.required">Username is required</div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" formControlName="password"
+                    class="form-control" [ngClass]="{ 'is-invalid': submitted &&
+                    f.password.errors }" />
+                <div *ngIf="submitted && f.password.errors"
+                    class="invalid-feedback">
+                    <div *ngIf="f.password.errors.required">Password is required</div>
+                </div>
+            </div>
+            <div class="form-group">
+                <button [disabled]="loading" class="btn btn-primary">
+                    <span *ngIf="loading" class="spinner-border
+                        spinner-border-sm mr-1"></span>
+                    Login
+                </button>
+                <div class="row mb-4 px-3"> <small class="font-weight-bold">Don't have an account? <a  [routerLink]="['/register']" class="text-danger ">Register</a></small> </div>
+            
+            </div>
+        </form>
     </div>
+</div>
 </div>

@@ -15,22 +15,23 @@ import { SolicitudCitaComponent } from './solicitud-cita/solicitud-cita.componen
 import { ServicioComponent } from './servicio/servicio.component';
 import { ConsultaRegistroComponent } from './Paciente/consulta-registro/consulta-registro.component';
 import { AgendaMedicoComponent } from './agenda-medico/agenda-medico.component';
+import { AuthGuard } from './@elements/service/auth.guard';
 
 const routes: Routes = [
   { path: 'login', component: LoginUserComponent, },
   { path: 'register', component: RegisterUserComponent, },
   { path: 'home', component: HomeComponent, },
-  { path: 'registroUsuario', component: UsuarioRegistroComponent, },
-  { path: 'consultaUsuario', component: UsuarioConsultaComponent, },
-  { path: 'historialClinico/:noDocumentoPaciente', component: HistorialClinicoComponent, },
-  { path: 'historialRegistro/:noDocumentoPaciente', component: HistorialRegistroComponent, },
-  { path: 'registrarAgenda', component: SolicitudCitaComponent, },
-  { path: 'registrarServicio', component:ServicioComponent},
-  { path: 'informe', component:InformeComponent},
-  { path: 'registrarConsulta/:noDocumentoPaciente', component: ConsultaRegistroComponent},
-  { path: 'registroProducto', component: ProductoRegistroComponent},
-  { path: 'gestionInventario', component: GestionInventarioComponent},
-  { path: 'agendaMedico', component: AgendaMedicoComponent}, 
+  { path: 'registroUsuario', component: UsuarioRegistroComponent, canActivate: [AuthGuard]},
+  { path: 'consultaUsuario', component: UsuarioConsultaComponent, canActivate: [AuthGuard]},
+  { path: 'historialClinico/:noDocumentoPaciente', component: HistorialClinicoComponent, canActivate: [AuthGuard]},
+  { path: 'historialRegistro/:noDocumentoPaciente', component: HistorialRegistroComponent, canActivate: [AuthGuard]},
+  { path: 'registrarAgenda', component: SolicitudCitaComponent, canActivate: [AuthGuard]},
+  { path: 'registrarServicio', component:ServicioComponent, canActivate: [AuthGuard]},
+  { path: 'informe', component:InformeComponent, canActivate: [AuthGuard]},
+  { path: 'registrarConsulta/:noDocumentoPaciente', component: ConsultaRegistroComponent, canActivate: [AuthGuard]},
+  { path: 'registroProducto', component: ProductoRegistroComponent, canActivate: [AuthGuard]},
+  { path: 'gestionInventario', component: GestionInventarioComponent, canActivate: [AuthGuard]},
+  { path: 'agendaMedico', component: AgendaMedicoComponent, canActivate: [AuthGuard]},
 ];
 
 

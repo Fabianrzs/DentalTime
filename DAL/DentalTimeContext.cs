@@ -74,6 +74,8 @@ namespace DAL
         public DbSet<Procedimiento> Procedimientos { get; set; }
         public DbSet<Inventario> Inventarios { get; set; }
         public DbSet<Agenda> Agendas { get; set; }
+        public DbSet<User> Users { get; set; }
+
 
     }
 }

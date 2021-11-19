@@ -12,7 +12,7 @@
       </a>
 
       <div class="navbar-collapse collapse d-sm-inline-flex justify-content-end" [ngClass]="{ show: isExpanded }">
-        <div *ngIf="nav">
+        <div *ngIf="!currentUser">
           <ul class="nav nav-pills">
             <li class="nav-item" [routerLinkActive]="['link-active']" >
               <a class="nav-link" aria-current="page" [routerLink]="['/contenido']">Inicio</a>
@@ -29,11 +29,10 @@
             <li class="nav-item" [routerLinkActive]="['link-active']">
               <a class="btn btn-outline-primary" type="submit" [routerLink]="['/login']">Sign in</a>
             </li>
-            <!-- (click)="visibilidadModulos()" -->
           </ul>
         </div>
 
-        <div *ngIf="!nav">
+        <div *ngIf="currentUser">
           <ul class="navbar-nav flex-grow">
             <li class="nav-item" [routerLinkActive]="['link-active']" [routerLinkActiveOptions]="{ exact: true }">
               <a class="nav-link text-dark " [routerLink]="['/home']">Home</a>

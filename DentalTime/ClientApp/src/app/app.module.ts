@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AppComponent } from './app.component';
 
 //-------------------------------------------------------Angular CLI--------------------------------------------------
@@ -27,6 +27,7 @@ import { SolicitudCitaComponent } from './solicitud-cita/solicitud-cita.componen
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AlertModalComponent } from './@base/alertModal/alertModal.component';
 import { AgendaMedicoComponent } from './agenda-medico/agenda-medico.component';
+import { JwtInterceptor } from './@elements/service/jwt.interceptor';
 
 //---------------------------------------------------Routers---------------------------------------------------------------
 @NgModule({
@@ -48,7 +49,7 @@ import { AgendaMedicoComponent } from './agenda-medico/agenda-medico.component';
     FiltroPacientePipe,
     HistorialRegistroComponent,
       SolicitudCitaComponent,
-      AgendaMedicoComponent
+      AgendaMedicoComponent,
    ],
   imports: [
     ReactiveFormsModule,
@@ -64,7 +65,9 @@ import { AgendaMedicoComponent } from './agenda-medico/agenda-medico.component';
   entryComponents:[
     AlertModalComponent
   ],
-  providers: [],
+  providers: [
+    {provide: HTTP_INTERCEPTORS, useClass:JwtInterceptor, multi: true},
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

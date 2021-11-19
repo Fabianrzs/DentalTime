@@ -8,6 +8,10 @@ using Microsoft.Extensions.Hosting;
 using DAL;
 using Microsoft.EntityFrameworkCore;
 using System.Text.Json.Serialization;
+using System.Text;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.IdentityModel.Tokens;
+using DentalTime.Config;
 
 namespace DentalTime
 {
@@ -23,6 +27,7 @@ namespace DentalTime
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            //conect orm
             var connectionString = Configuration.GetConnectionString("DefaultConnection");
             services.AddDbContext<DentalTimeContext>(p => p.UseSqlServer(connectionString));
 
@@ -30,12 +35,43 @@ namespace DentalTime
                 x.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore);
 
             services.AddControllersWithViews();
+
+            //jwt
+            #region    configure strongly typed settings objects
+            var appSettingsSection = Configuration.GetSection("AppSetting");
+            services.Configure<AppSetting>(appSettingsSection);
+            #endregion
+
+            #region Configure jwt authentication inteprete el token 
+            var appSettings = appSettingsSection.Get<AppSetting>();
+            var key = Encoding.ASCII.GetBytes(appSettings.Secret);
+            services.AddAuthentication(x =>
+            {
+                x.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+                x.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+            })
+            .AddJwtBearer(x =>
+            {
+                x.RequireHttpsMetadata = false;
+                x.SaveToken = true;
+                x.TokenValidationParameters = new TokenValidationParameters
+                {
+                    ValidateIssuerSigningKey = true,
+                    IssuerSigningKey = new SymmetricSecurityKey(key),
+                    ValidateIssuer = false,
+                    ValidateAudience = false
+                };
+            });
+            #endregion
+
             // In production, the Angular files will be served from this directory
             services.AddSpaStaticFiles(configuration =>
             {
                 configuration.RootPath = "ClientApp/dist";
             });
             // Register the Swagger generator, defining 1 or more Swagger documents
+            
+            //swagger
             services.AddSwaggerGen();
         }
 
@@ -88,7 +124,17 @@ namespace DentalTime
                     spa.UseAngularCliServer(npmScript: "start");
                 }
             });
+
+            #region global cors policy activate Authentication/Authorization
+            app.UseCors(x => x
+                .AllowAnyOrigin()
+                .AllowAnyMethod()
+                .AllowAnyHeader());
+
+            app.UseAuthentication();
+            app.UseAuthorization();
+            #endregion
         }
-    
+
     }
 }
