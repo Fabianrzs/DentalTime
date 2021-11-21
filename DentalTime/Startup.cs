@@ -12,6 +12,7 @@ using System.Text;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using DentalTime.Config;
+using Microsoft.OpenApi.Models;
 
 namespace DentalTime
 {
@@ -33,7 +34,8 @@ namespace DentalTime
 
             services.AddControllers().AddNewtonsoftJson(x =>
                 x.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore);
-
+            //signalR
+            services.AddSignalR();
             services.AddControllersWithViews();
 
             //jwt
@@ -64,15 +66,39 @@ namespace DentalTime
             });
             #endregion
 
+            //swagger
+            services.AddSwaggerGen(c =>
+            {
+                c.AddSecurityDefinition("bearerAuth", new OpenApiSecurityScheme{
+                    Name = "Authorization",
+                    Type = SecuritySchemeType.Http,
+                    Scheme = "bearer",
+                    BearerFormat = "JWT",
+                    In = ParameterLocation.Header,
+                    Description = "JTW Authorization header using the Bearer scheme."
+                });
+                c.AddSecurityRequirement(new OpenApiSecurityRequirement
+                {
+                    {
+                        new OpenApiSecurityScheme
+                        {
+                            Reference = new OpenApiReference
+                            {
+                                Type = ReferenceType.SecurityScheme,
+                                Id = "bearerAuth"
+                            }
+                        },
+                        new string[] {}
+                    }
+                });
+            });
+
             // In production, the Angular files will be served from this directory
             services.AddSpaStaticFiles(configuration =>
             {
                 configuration.RootPath = "ClientApp/dist";
             });
             // Register the Swagger generator, defining 1 or more Swagger documents
-            
-            //swagger
-            services.AddSwaggerGen();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -97,13 +123,16 @@ namespace DentalTime
             }
 
             // Enable middleware to serve generated Swagger as a JSON endpoint.
+
+            //swagger
             app.UseSwagger();
             app.UseSwaggerUI(c =>
             {
                 c.SwaggerEndpoint("/swagger/v1/swagger.json", "My API V1");
-
             });
             app.UseRouting();
+
+            app.UseRouting().UseAuthorization();
 
             app.UseEndpoints(endpoints =>
             {
@@ -125,6 +154,7 @@ namespace DentalTime
                 }
             });
 
+            //JWT
             #region global cors policy activate Authentication/Authorization
             app.UseCors(x => x
                 .AllowAnyOrigin()

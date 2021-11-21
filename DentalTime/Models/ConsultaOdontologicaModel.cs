@@ -15,13 +15,13 @@ namespace DentalTime.Models
         public string Motivo { get; set; }
         [Required(ErrorMessage = "Complicaciones requerido")]
         public string Complicaciones { get; set; }
-        [Required(ErrorMessage = "Complicaciones requerido")]
+        [Required(ErrorMessage = "Antecedentes requerido")]
         public string Antecedentes { get; set; }
-        [Required(ErrorMessage = "Complicaciones requerido")]
+        [Required(ErrorMessage = "Mendicacion requerido")]
         public string Medicacion { get; set; }
-        [Required(ErrorMessage = "Complicaciones requerido")]
+        [Required(ErrorMessage = "Ultima consulta  requerido")]
         public DateTime UltimaConsulta { get; set; }
-        [Required(ErrorMessage = "Complicaciones requerido")]
+        [Required(ErrorMessage = "Valoracion Medica requerido")]
         public string ValoracionMedica { get; set; }
     }
 

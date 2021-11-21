@@ -24,12 +24,6 @@ namespace DentalTime.Controllers
 
         public LoginController(DentalTimeContext context, IOptions<AppSetting> appSettings)
         {
-            //var admin = _context.Users.Find("admin");
-            //if (admin == null)
-            //{
-            //    _context.Users.Add(new Entity.User() { UserName = "admin", Password = "admin", Email = "admin@gmail.com", Estado = "AC", FirstName = "Adminitrador", LastName = "", MobilePhone = "31800000000" });
-            //    var i = _context.SaveChanges();
-            //}
             _jwtService = new JwtService(appSettings);
             _userService = new UserService(context);
         }
@@ -51,7 +45,5 @@ namespace DentalTime.Controllers
             var response = _jwtService.GenerateToken(user);
             return Ok(response);
         }
-
-
     }
 }

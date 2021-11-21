@@ -73,6 +73,9 @@
             <li class="nav-item" [routerLinkActive]="['link-active']" [routerLinkActiveOptions]="{ exact: true }">
               <a class="nav-link text-dark " [routerLink]="['/informe']">Informe</a>
             </li>
+            <li class="nav-item" [routerLinkActive]="['link-active']">
+              <a class="nav-link text-dark hover-light" (click)="logout()">Logout</a>
+            </li>
           </ul>
         </div>
 
