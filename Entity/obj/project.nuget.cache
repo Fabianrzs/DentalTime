@@ -1,8 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "mUJ11/hm0InME8+Bps90Vr2iYsg/K2FRb0zQkj2AXm97caL/TGM1aSYkT0WgsHw6t1/TED8EzOguOW55DcRuEg==",
+  "dgSpecHash": "lbfcDZLllL/ab+FfOFponFOenVUyoSxv3cS6a49RbYHmiicifi9n+DJA7+itg4nChx/8jvC1lN+toOd7hCuQvg==",
   "success": true,
-  "projectFilePath": "D:\\PROYECTOS PROGRAMACION\\PWEB\\Angular\\proyecto\\Entity\\Entity.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "I:\\Semestre 5\\Programacion WEB\\Proyectos\\DentalTime\\Entity\\Entity.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\andre\\.nuget\\packages\\microsoft.netcore.app.ref\\5.0.0\\microsoft.netcore.app.ref.5.0.0.nupkg.sha512",
+    "C:\\Users\\andre\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\5.0.0\\microsoft.windowsdesktop.app.ref.5.0.0.nupkg.sha512",
+    "C:\\Users\\andre\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\5.0.0\\microsoft.aspnetcore.app.ref.5.0.0.nupkg.sha512"
+  ],
   "logs": []
 }
