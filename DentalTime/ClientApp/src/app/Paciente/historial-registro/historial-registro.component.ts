@@ -3,7 +3,9 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import { find } from 'rxjs/operators';
 import { HistoriaOdontologica } from 'src/app/@elements/models/HistoriaOdontologica';
+import { Paciente } from 'src/app/@elements/models/Paciente';
 import { HistoriaOdontologicaService } from 'src/app/@elements/service/historiaOdontologica.service';
+import { PacienteService } from 'src/app/@elements/service/paciente.service';
 import Swal from 'sweetalert2';
 @Component({
   selector: 'app-historial-registro',
@@ -14,27 +16,37 @@ export class HistorialRegistroComponent implements OnInit {
 
   formHistoriaOdontologica: FormGroup;
   historia: HistoriaOdontologica;
-  historiaBuscada: HistoriaOdontologica;
+  paciente: Paciente;
 
-  constructor(private service: HistoriaOdontologicaService, private formBuilder: FormBuilder, private rutaActiva: ActivatedRoute) { }
+  constructor(private serviceHistoria: HistoriaOdontologicaService,
+    private servicePaciente: PacienteService  ,
+    private formBuilder: FormBuilder, 
+    private rutaActiva: ActivatedRoute) { }
 
   ngOnInit() {
     const noDocumentoPaciente = this.rutaActiva.snapshot.params.noDocumentoPaciente;
-    this.find(noDocumentoPaciente);
-    this.buildForm();
+    this.findPaciente(noDocumentoPaciente);
   }
 
-  find(noDocumentoPaciente: string) {
-    this.service.getId(noDocumentoPaciente).subscribe(result => {
-      this.historiaBuscada = result;
-      alert(noDocumentoPaciente);
-      alert(JSON.stringify(result));
-
+  findPaciente(noDocumentoPaciente: string) {
+    this.servicePaciente.getId(noDocumentoPaciente).subscribe(result => {
+      this.paciente = result;
     });
   }
 
+  findHistoria(noDocumentoPaciente: string) {
+    this.serviceHistoria.getId(noDocumentoPaciente).subscribe(result => {
+      this.historia = result;
+    });
+    if(this.historia == null) {
+      this.buildForm();
+      return ;
+    }
+    document.getElementById('guardar').style.visibility = 'hidden';
+  }
+
   buildForm(){
-    this.historia = this.historiaBuscada;
+    this.historia = new HistoriaOdontologica();
     this.formHistoriaOdontologica = this.formBuilder.group({
       complicaciones: [this.historia.complicaciones, Validators.required],
       enfermedades: [this.historia.enfermedades, Validators.required],
@@ -61,7 +73,7 @@ export class HistorialRegistroComponent implements OnInit {
 
   add() {
     this.historia = this.formHistoriaOdontologica.value;
-    this.service.post(this.historia).subscribe(result => {
+    this.serviceHistoria.post(this.historia).subscribe(result => {
       if (result != null) {
         if (result != null) {
           Swal.fire(

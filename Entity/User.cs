@@ -15,5 +15,7 @@ namespace Entity
         public string Estado { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
+        public string Rol { get; set; }
+        public string CorreoElectronico { get; set; }
     }
 }

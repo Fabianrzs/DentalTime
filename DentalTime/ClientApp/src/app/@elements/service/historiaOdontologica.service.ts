@@ -43,5 +43,4 @@ export class HistoriaOdontologicaService {
         catchError(this.handleErrorService.handleError<HistoriaOdontologica>('Buscar Paciente', null))
       );
   }
-
 }

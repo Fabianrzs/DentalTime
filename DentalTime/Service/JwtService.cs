@@ -17,18 +17,14 @@ namespace DentalTime.Service
     {
         private readonly AppSetting _appSettings;
 
-        public JwtService(IOptions<AppSetting> appSettings)
-        {
-            _appSettings = appSettings.Value;
-        }
+        public JwtService(IOptions<AppSetting> appSettings) => _appSettings = appSettings.Value;
 
         public LoginViewModel GenerateToken(User user)
         {
             // return null if user not found
-            if (user == null)
-                return null;
+            if (user == null)return null;
 
-            var userResponse = new LoginViewModel() { FirstName = user.FirstName, LastName = user.LastName, Username = user.UserName };
+            var userResponse = new LoginViewModel() { FirstName = user.FirstName, LastName = user.LastName, UserName = user.UserName };
 
             // authentication successful so generate jwt token
             var tokenHandler = new JwtSecurityTokenHandler();
@@ -38,9 +34,9 @@ namespace DentalTime.Service
                 Subject = new ClaimsIdentity(new Claim[]
                 {
                     new Claim(ClaimTypes.Name, user.UserName.ToString()),
-                    //new Claim(ClaimTypes.Role, "Admin"),
+                    new Claim(ClaimTypes.Role, user.Rol),
                 }),
-                Expires = DateTime.UtcNow.AddHours(5),
+                Expires = DateTime.UtcNow.AddHours(1),
                 SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256Signature)
             };
             var token = tokenHandler.CreateToken(tokenDescriptor);

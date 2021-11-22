@@ -28,25 +28,31 @@ namespace DentalTime
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddControllersWithViews();
+            services.AddControllers();
             //conect orm
             var connectionString = Configuration.GetConnectionString("DefaultConnection");
             services.AddDbContext<DentalTimeContext>(p => p.UseSqlServer(connectionString));
 
             services.AddControllers().AddNewtonsoftJson(x =>
                 x.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore);
+
             //signalR
             services.AddSignalR();
             services.AddControllersWithViews();
-
             //jwt
             #region    configure strongly typed settings objects
             var appSettingsSection = Configuration.GetSection("AppSetting");
             services.Configure<AppSetting>(appSettingsSection);
             #endregion
-
             #region Configure jwt authentication inteprete el token 
             var appSettings = appSettingsSection.Get<AppSetting>();
             var key = Encoding.ASCII.GetBytes(appSettings.Secret);
+
+            services.AddControllers();
+            services.AddCors();
+
+
             services.AddAuthentication(x =>
             {
                 x.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
@@ -65,34 +71,36 @@ namespace DentalTime
                 };
             });
             #endregion
-
             //swagger
             services.AddSwaggerGen(c =>
             {
-                c.AddSecurityDefinition("bearerAuth", new OpenApiSecurityScheme{
+
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "TheCodeBuzz-Service", Version = "v1" });
+
+                c.AddSecurityDefinition("bearerAuth", new OpenApiSecurityScheme
+                {
                     Name = "Authorization",
                     Type = SecuritySchemeType.Http,
                     Scheme = "bearer",
                     BearerFormat = "JWT",
                     In = ParameterLocation.Header,
-                    Description = "JTW Authorization header using the Bearer scheme."
+                    Description = "JWT Authorization header using the Bearer scheme."
                 });
                 c.AddSecurityRequirement(new OpenApiSecurityRequirement
                 {
                     {
-                        new OpenApiSecurityScheme
-                        {
-                            Reference = new OpenApiReference
+                          new OpenApiSecurityScheme
                             {
-                                Type = ReferenceType.SecurityScheme,
-                                Id = "bearerAuth"
-                            }
-                        },
-                        new string[] {}
+                                Reference = new OpenApiReference
+                                {
+                                    Type = ReferenceType.SecurityScheme,
+                                    Id = "bearerAuth"
+                                }
+                            },
+                            new string[] {}
                     }
                 });
             });
-
             // In production, the Angular files will be served from this directory
             services.AddSpaStaticFiles(configuration =>
             {
@@ -107,6 +115,8 @@ namespace DentalTime
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
+                app.UseSwagger();
+                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "DentanTime v1"));
             }
             else
             {
@@ -115,8 +125,9 @@ namespace DentalTime
                 app.UseHsts();
             }
 
-            app.UseHttpsRedirection();
+
             app.UseStaticFiles();
+
             if (!env.IsDevelopment())
             {
                 app.UseSpaStaticFiles();
@@ -126,13 +137,28 @@ namespace DentalTime
 
             //swagger
             app.UseSwagger();
+
             app.UseSwaggerUI(c =>
             {
-                c.SwaggerEndpoint("/swagger/v1/swagger.json", "My API V1");
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "TestService");
             });
+
+            app.UseHttpsRedirection();
+
             app.UseRouting();
 
             app.UseRouting().UseAuthorization();
+
+            //JWT
+            #region global cors policy activate Authentication/Authorization
+            app.UseCors(x => x
+                .AllowAnyOrigin()
+                .AllowAnyMethod()
+                .AllowAnyHeader());
+
+            app.UseAuthentication();
+            app.UseAuthorization();
+            #endregion
 
             app.UseEndpoints(endpoints =>
             {
@@ -153,17 +179,6 @@ namespace DentalTime
                     spa.UseAngularCliServer(npmScript: "start");
                 }
             });
-
-            //JWT
-            #region global cors policy activate Authentication/Authorization
-            app.UseCors(x => x
-                .AllowAnyOrigin()
-                .AllowAnyMethod()
-                .AllowAnyHeader());
-
-            app.UseAuthentication();
-            app.UseAuthorization();
-            #endregion
         }
 
     }

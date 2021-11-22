@@ -30,7 +30,7 @@ namespace DentalTime.Controllers
 
         [AllowAnonymous]
         [HttpPost()]
-        public IActionResult Login(LoginInputModel model)
+        public IActionResult Login([FromBody] LoginInputModel model)
         {
             var user = _userService.Validate(model.UserName, model.Password);
             if (user == null)
