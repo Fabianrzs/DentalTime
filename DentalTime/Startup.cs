@@ -34,6 +34,7 @@ namespace DentalTime
             var connectionString = Configuration.GetConnectionString("DefaultConnection");
             services.AddDbContext<DentalTimeContext>(p => p.UseSqlServer(connectionString));
 
+            //Referencias anidadas
             services.AddControllers().AddNewtonsoftJson(x =>
                 x.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore);
 
@@ -74,9 +75,7 @@ namespace DentalTime
             //swagger
             services.AddSwaggerGen(c =>
             {
-
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "TheCodeBuzz-Service", Version = "v1" });
-
                 c.AddSecurityDefinition("bearerAuth", new OpenApiSecurityScheme
                 {
                     Name = "Authorization",
@@ -142,13 +141,9 @@ namespace DentalTime
             {
                 c.SwaggerEndpoint("/swagger/v1/swagger.json", "TestService");
             });
-
             app.UseHttpsRedirection();
-
             app.UseRouting();
-
             app.UseRouting().UseAuthorization();
-
             //JWT
             #region global cors policy activate Authentication/Authorization
             app.UseCors(x => x

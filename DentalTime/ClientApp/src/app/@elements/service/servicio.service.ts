@@ -88,7 +88,7 @@ export class ServicioService {
   }
 
   getId(id: string): Observable<Servicio> {
-    const url = `${this.baseUrl + "api/SolicitudCita"}/${id}`;
+    const url = `${this.baseUrl + "api/Servicio"}/${id}`;
     return this.http.get<Servicio>(url, httpOptions).pipe(
       tap((_) => this.handleErrorService.log("datos Buscados")),
       catchError(
