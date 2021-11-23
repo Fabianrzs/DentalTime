@@ -75,7 +75,7 @@ namespace DentalTime
             //swagger
             services.AddSwaggerGen(c =>
             {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "TheCodeBuzz-Service", Version = "v1" });
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "Service", Version = "v1" });
                 c.AddSecurityDefinition("bearerAuth", new OpenApiSecurityScheme
                 {
                     Name = "Authorization",
@@ -143,7 +143,6 @@ namespace DentalTime
             });
             app.UseHttpsRedirection();
             app.UseRouting();
-            app.UseRouting().UseAuthorization();
             //JWT
             #region global cors policy activate Authentication/Authorization
             app.UseCors(x => x

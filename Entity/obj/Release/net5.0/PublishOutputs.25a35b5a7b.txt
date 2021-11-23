@@ -1,0 +1,3 @@
+D:\PROYECTOS PROGRAMACION\PWEB\Angular\proyecto\publish\Entity.dll
+D:\PROYECTOS PROGRAMACION\PWEB\Angular\proyecto\publish\Entity.deps.json
+D:\PROYECTOS PROGRAMACION\PWEB\Angular\proyecto\publish\Entity.pdb
