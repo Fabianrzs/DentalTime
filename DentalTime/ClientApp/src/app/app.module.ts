@@ -28,10 +28,11 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AlertModalComponent } from './@base/alertModal/alertModal.component';
 import { AgendaMedicoComponent } from './agenda-medico/agenda-medico.component';
 import { JwtInterceptor } from './@elements/service/jwt.interceptor';
+import { UserSessionComponent } from './user-session/user-session.component';
 
 //---------------------------------------------------Routers---------------------------------------------------------------
 @NgModule({
-  declarations: [				
+  declarations: [					
     AppComponent,
     NavMenuComponent,
     HomeComponent,
@@ -50,6 +51,7 @@ import { JwtInterceptor } from './@elements/service/jwt.interceptor';
     HistorialRegistroComponent,
       SolicitudCitaComponent,
       AgendaMedicoComponent,
+      UserSessionComponent
    ],
   imports: [
     ReactiveFormsModule,

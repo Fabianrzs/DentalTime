@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { User } from './@elements/models/user';
+import { AuthenticationService } from './@elements/service/authentication.service';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +9,12 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'app';
+  currentUser: User;
+  constructor(
+    private authenticationService: AuthenticationService
+  ) {
+    this.authenticationService.currentUser.subscribe(
+      (x) => (this.currentUser = x)
+    );
+  }
 }

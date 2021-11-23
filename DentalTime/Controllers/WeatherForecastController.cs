@@ -7,7 +7,7 @@ using Microsoft.Extensions.Logging;
 
 namespace DentalTime.Controllers
 {
-    [ApiController]
+    //[Authorize]
     [Route("[controller]")]
     public class WeatherForecastController : ControllerBase
     {
