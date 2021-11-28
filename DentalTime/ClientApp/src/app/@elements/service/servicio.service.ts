@@ -20,8 +20,6 @@ const httpOptions = {
 })
 export class ServicioService {
   
-  private hubConnection: signalR.HubConnection;
-  signalReceived = new EventEmitter<any>();
   baseUrl: string;
 
   constructor(
@@ -30,36 +28,9 @@ export class ServicioService {
     private handleErrorService: HandleHttpErrorService
   ) {
     this.baseUrl = baseUrl;
-    this.buildConnection();
-    this.startConnection();
   }
 
-  private buildConnection = () => {
-    this.hubConnection = new signalR.HubConnectionBuilder()
-      .withUrl(this.baseUrl + "/signalHub")
-      .build();
-  };
-
-  private startConnection = () => {
-    this.hubConnection
-      .start()
-      .then(() => {
-        console.log("Connection Started...");
-        this.registerSignalEvents();
-      })
-      .catch((err) => {
-        console.log("Error while starting connection: " + err);
-        setTimeout(function () {
-          this.startConnection();
-        }, 3000);
-      });
-  };
-
-  private registerSignalEvents() {
-    this.hubConnection.on("SignalMessageReceived", (data: any) => {
-      this.signalReceived.emit(data);
-    });
-  }
+  
 
   get(): Observable<Servicio[]> {
     return this.http.get<Servicio[]>(this.baseUrl + "api/Servicio").pipe(

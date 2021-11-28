@@ -9,21 +9,38 @@
         <div class="col-md">
           <div class="form-floating border border-5">
             <input type="text" formControlName="noDocumentoPaciente" class="form-control" 
-            [(ngModel)]= "this.historia.noDocumentoPaciente" readonly>
+            [(ngModel)]= "historia.noDocumentoPaciente" readonly>
             <label for="floatingInputGrid">No Documento</label>
           </div>
         </div>
         <div class="col-md">
           <div class="form-floating border border-5">
             <input type="date" formControlName="fechaInicio" class="form-control" 
-            [ngClass]="{ 'is-invalid':  control.fechaInicio.errors }" >
+            [ngClass]="{ 'is-invalid':  control.fechaInicio.errors && formHistoriaOdontologica.get('fechaInicio').touched}" >
             <label for="floatingInputGrid">Fecha de Inicio</label>
           </div>
         </div>
       </div>
       <br>
-      <h5 class="text-center">Antecedentes</h5>
-      <hr>
+      <div class ="row ">
+        <div class="col-md">
+          <div class="form-floating">
+            <input type="text" name="nombres" class="form-control" 
+            [(ngModel)]="paciente.nombres"  readonly >
+            <label for="floatingInputGrid">Nombres</label>
+          </div>
+        </div>
+        <div class="col-md">
+          <div class="form-floating">
+            <input type="text" name="apellidos" class="form-control" 
+            [(ngModel)]="paciente.apellidos" readonly >
+            <label for="floatingInputGrid">Apellidos</label>
+          </div>
+        </div>
+      </div>
+      <br>
+      <h6 class="text-center">Antecedentes</h6>
+      
       <div class="row">
         <div class="col-md">
           <div class="form-floating border border-5">
@@ -40,9 +57,7 @@
           </div>
         </div>
       </div>
-
       <br>
-
       <div class="row">
         <div class="col-md">
           <div class="form-floating border border-5">

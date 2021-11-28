@@ -1,7 +1,6 @@
 import { Injectable } from "@angular/core";
 import { NgbModal } from "@ng-bootstrap/ng-bootstrap";
 import { Observable, of } from "rxjs";
-import Swal from "sweetalert2";
 import { AlertModalComponent } from "./alertModal/alertModal.component";
 
 @Injectable({

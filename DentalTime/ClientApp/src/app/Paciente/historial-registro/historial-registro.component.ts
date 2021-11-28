@@ -15,17 +15,18 @@ import Swal from 'sweetalert2';
 export class HistorialRegistroComponent implements OnInit {
 
   formHistoriaOdontologica: FormGroup;
-  historia: HistoriaOdontologica;
-  paciente: Paciente;
+  historia: HistoriaOdontologica = new HistoriaOdontologica();
+  paciente: Paciente = new  Paciente();
 
   constructor(private serviceHistoria: HistoriaOdontologicaService,
-    private servicePaciente: PacienteService  ,
+    private servicePaciente: PacienteService,
     private formBuilder: FormBuilder, 
-    private rutaActiva: ActivatedRoute) { }
+    private rutaActiva: ActivatedRoute) {}
 
   ngOnInit() {
     const noDocumentoPaciente = this.rutaActiva.snapshot.params.noDocumentoPaciente;
     this.findPaciente(noDocumentoPaciente);
+    this.findHistoria(noDocumentoPaciente);
   }
 
   findPaciente(noDocumentoPaciente: string) {
@@ -37,16 +38,17 @@ export class HistorialRegistroComponent implements OnInit {
   findHistoria(noDocumentoPaciente: string) {
     this.serviceHistoria.getId(noDocumentoPaciente).subscribe(result => {
       this.historia = result;
+      if(this.historia == null) {
+        this.historia = new HistoriaOdontologica();
+        this.buildForm();
+        return ;
+      }
+      (document.getElementById('guardar') as HTMLInputElement).disabled = true;
     });
-    if(this.historia == null) {
-      this.buildForm();
-      return ;
-    }
-    document.getElementById('guardar').style.visibility = 'hidden';
   }
 
   buildForm(){
-    this.historia = new HistoriaOdontologica();
+    
     this.formHistoriaOdontologica = this.formBuilder.group({
       complicaciones: [this.historia.complicaciones, Validators.required],
       enfermedades: [this.historia.enfermedades, Validators.required],
@@ -84,12 +86,4 @@ export class HistorialRegistroComponent implements OnInit {
       }
     });
   }
-
-  // cargarCampos(){
-  //   this.historia.idHistoriaOdontologica = this.historia.noDocumentoPaciente;
-  //   this.antecedente.idAntecedentes = this.historia.noDocumentoPaciente;
-  // }
-
-
-
 }

@@ -11,7 +11,7 @@
           <div class="col-md">
             <div class="form-floating">
               <select class="form-select" formControlName="tipoDocumento" 
-              [ngClass]="{ 'is-invalid':  control.tipoDocumento.errors }" >
+              [ngClass]="{ 'is-invalid':  control.tipoDocumento.errors && formPaciente.get('tipoDocumento').touched }" >
                 <option value="" selected>Seleccionar</option>
                 <option value="Cedula de Ciudadania">Cedula de Ciudadania</option>
                 <option value="Cedula de Extranjera">Cedula de Extranjera</option>
@@ -25,7 +25,7 @@
           <div class="col-md">
             <div class="form-floating">
               <input type="text" formControlName="noDocumento" class="form-control"
-              [ngClass]="{ 'is-invalid':  control.noDocumento.errors }" >
+              [ngClass]="{ 'is-invalid':  control.noDocumento.errors && formPaciente.get('noDocumento').touched}" >
               <label for="floatingInputGrid">Identificacion</label>
             </div>
           </div>
@@ -35,14 +35,14 @@
           <div class="col-md">
             <div class="form-floating">
               <input type="text" formControlName="nombres" class="form-control"
-              [ngClass]="{ 'is-invalid':  control.nombres.errors }" >
+              [ngClass]="{ 'is-invalid':  control.nombres.errors && formPaciente.get('nombres').touched}" >
               <label for="floatingInputGrid">Nombres</label>
             </div>
           </div>
           <div class="col-md">
             <div class="form-floating">
               <input type="text" formControlName="apellidos" class="form-control"
-              [ngClass]="{ 'is-invalid':  control.apellidos.errors }" >
+              [ngClass]="{ 'is-invalid':  control.apellidos.errors && formPaciente.get('apellidos').touched}" >
               <label for="floatingInputGrid">Apellidos</label>
             </div>
           </div>
@@ -52,14 +52,14 @@
           <div class="col-md">
             <div class="form-floating">
               <input type="date" formControlName="fechaNacimiento" class="form-control"
-              [ngClass]="{ 'is-invalid':  control.fechaNacimiento.errors }" >
+              [ngClass]="{ 'is-invalid':  control.fechaNacimiento.errors && formPaciente.get('fechaNacimiento').touched}" >
               <label for="floatingInputGrid">Fecha de Nacimiento</label>
             </div>
           </div>
           <div class="col-md">
             <div class="form-floating">
               <select class="form-select" formControlName="sexo"
-              [ngClass]="{ 'is-invalid':  control.sexo.errors }" >
+              [ngClass]="{ 'is-invalid':  control.sexo.errors && formPaciente.get('sexo').touched}" >
                 <option value="" selected>Seleccionar</option>
                 <option value="Masculino">Masculino</option>
                 <option value="Famenino">Femenino</option>
@@ -71,7 +71,7 @@
           <div class="col-md">
             <div class="form-floating">
               <select class="form-select" formControlName="tipoSanguineo"
-              [ngClass]="{ 'is-invalid':  control.tipoSanguineo.errors }" >
+              [ngClass]="{ 'is-invalid':  control.tipoSanguineo.errors && formPaciente.get('tipoSanguineo').touched}" >
                 <option value="" selected>Seleccionar</option>
                 <option value="AB+">AB+</option>
                 <option value="A+">A+</option>
@@ -89,21 +89,21 @@
           <div class="col-md">
             <div class="form-floating">
               <input type="text" formControlName="lugarNacimiento" class="form-control"
-              [ngClass]="{ 'is-invalid':  control.lugarNacimiento.errors }" >
+              [ngClass]="{ 'is-invalid':  control.lugarNacimiento.errors && formPaciente.get('lugarNacimiento').touched}" >
               <label for="floatingInputGrid">Lugar de Nacimiento</label>
             </div>
           </div>
           <div class="col-md">
             <div class="form-floating">
               <input type="text" formControlName="numeroTelefonico" class="form-control"
-              [ngClass]="{ 'is-invalid':  control.numeroTelefonico.errors }" >
+              [ngClass]="{ 'is-invalid':  control.numeroTelefonico.errors && formPaciente.get('numeroTelefonico').touched}" >
               <label for="floatingInputGrid">Numero de Telefono</label>
             </div>
           </div>
           <div class="col-md">
             <div class="form-floating">
               <input type="text" formControlName="correoElectronico" class="form-control"
-              [ngClass]="{ 'is-invalid':  control.correoElectronico.errors }" >
+              [ngClass]="{ 'is-invalid':  control.correoElectronico.errors && formPaciente.get('correoElectronico').touched}" >
               <label for="floatingInputGrid">Correo Electronico</label>
             </div>
           </div>

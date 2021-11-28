@@ -83,7 +83,7 @@ export class UserSessionComponent implements OnInit {
         (error) => {
           const modalRef = this.modalService.open(AlertModalComponent);
           modalRef.componentInstance.title = "Acceso Denegado";
-          modalRef.componentInstance.message = error.error;
+          modalRef.componentInstance.message = "Usuario o Contraseña Erroneas";
           this.loading = false;
         }
       );

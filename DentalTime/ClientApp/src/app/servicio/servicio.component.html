@@ -63,22 +63,22 @@
         <form [formGroup]="formServicio">
       <div class="form-floating border border-5">
         <input type="text" formControlName="idServico" class="form-control"
-          [ngClass]="{ 'is-invalid':  control.idServico.errors }">
+          [ngClass]="{ 'is-invalid':  control.idServico.errors && formServicio.get('idServico').touched }" >
         <label for="floatingInputGrid">Identificador</label>
       </div>
       <div class="form-floating border border-5">
         <input type="text" formControlName="nombre" class="form-control"
-          [ngClass]="{ 'is-invalid':  control.nombre.errors }">
+        [ngClass]="{ 'is-invalid':  control.nombre.errors && formServicio.get('nombre').touched }" >        
         <label for="floatingInputGrid">Nombre</label>
       </div>
       <div class="form-floating border border-5">
         <input type="text" formControlName="precio" class="form-control"
-          [ngClass]="{ 'is-invalid':  control.precio.errors }">
+        [ngClass]="{ 'is-invalid':  control.precio.errors && formServicio.get('precio').touched }" >        
         <label for="floatingInputGrid">Precio</label>
       </div>
       <div class="form-floating border border-5">
         <input type="text" formControlName="duracion" class="form-control"
-          [ngClass]="{ 'is-invalid':  control.duracion.errors }">
+        [ngClass]="{ 'is-invalid':  control.duracion.errors && formServicio.get('duracion').touched }" >        
         <label for="floatingInputGrid">Duracion</label>
       </div>
       <br>

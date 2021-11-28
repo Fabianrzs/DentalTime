@@ -13,6 +13,7 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using DentalTime.Config;
 using Microsoft.OpenApi.Models;
+using DentalTime.Hubs;
 
 namespace DentalTime
 {
@@ -41,6 +42,7 @@ namespace DentalTime
             //signalR
             services.AddSignalR();
             services.AddControllersWithViews();
+            
             //jwt
             #region    configure strongly typed settings objects
             var appSettingsSection = Configuration.GetSection("AppSetting");
@@ -134,6 +136,12 @@ namespace DentalTime
 
             // Enable middleware to serve generated Swagger as a JSON endpoint.
 
+            /* //SignalR
+
+            app.UseSignalR(routes =>{
+                routes.MapHub<SignalHub>("/signalhub");
+            });*/
+
             //swagger
             app.UseSwagger();
 
@@ -156,6 +164,7 @@ namespace DentalTime
 
             app.UseEndpoints(endpoints =>
             {
+                endpoints.MapHub<SignalHub>("/signalhub");
                 endpoints.MapControllerRoute(
                     name: "default",
                     pattern: "{controller}/{action=Index}/{id?}");

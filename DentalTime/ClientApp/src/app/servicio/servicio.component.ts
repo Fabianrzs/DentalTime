@@ -5,6 +5,7 @@ import { Servicio } from "src/app/@elements/models/Servicio";
 import { ServicioService } from "src/app/@elements/service/servicio.service";
 import Swal from "sweetalert2";
 import { AlertModalComponent } from "../@base/alertModal/alertModal.component";
+import { SignalRService } from "../@elements/service/SignalR.service";
 @Component({
   selector: "app-servicio",
   templateUrl: "./servicio.component.html",
@@ -23,7 +24,8 @@ export class ServicioComponent implements OnInit {
   constructor(
     private service: ServicioService,
     private formBuilder: FormBuilder,
-    private modal: NgbModal,
+    private signalRService: SignalRService,
+    private modal: NgbModal
   ) {}
 
   ngOnInit() {
@@ -35,6 +37,7 @@ export class ServicioComponent implements OnInit {
     this.service.get().subscribe((result) => {
       this.SERVICIOS = result;
       this.collectionSize = this.SERVICIOS.length;
+
       this.servicios = this.SERVICIOS.map((servicios, i) => ({
         id: i + 1,
         ...servicios,
@@ -42,6 +45,9 @@ export class ServicioComponent implements OnInit {
         (this.page - 1) * this.pageSize,
         (this.page - 1) * this.pageSize + this.pageSize
       );
+    });
+    this.signalRService.signalReceived.subscribe((signal: Servicio) => {  
+      this.servicios.push(signal)
     });
   }
 
@@ -81,7 +87,8 @@ export class ServicioComponent implements OnInit {
         /*Swal.fire("", "Registro Exitoso", "success");*/
         const messageBox = this.modal.open(AlertModalComponent);
         messageBox.componentInstance.title = "Resultado";
-        messageBox.componentInstance.message = "Registro Guardado Satisfactoriamente";
+        messageBox.componentInstance.message =
+          "Registro Guardado Satisfactoriamente";
         this.clearCampos();
         this.get();
       }
