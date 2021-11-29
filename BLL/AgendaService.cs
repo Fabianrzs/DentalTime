@@ -21,9 +21,13 @@ namespace BLL
         {
             try
             {
-                _context.Agendas.Add(agenda);
-                _context.SaveChanges();
-                return new AgendaLogResponse(agenda);
+                if(_context.Agendas.FirstOrDefault(a => a.FechaHoraFin == agenda.FechaHoraFin || a.FechaHoraFin == agenda.FechaHoraFin) == null){
+                    _context.Agendas.Add(agenda);
+                    _context.SaveChanges();
+                    return new AgendaLogResponse(agenda);
+                }
+
+                return new AgendaLogResponse($"Error al Guardar: Fecha Ocupada"); 
             }
             catch (Exception e) { return new AgendaLogResponse($"Error al Guardar: Se presento lo siguiente {e.Message}"); }
         }

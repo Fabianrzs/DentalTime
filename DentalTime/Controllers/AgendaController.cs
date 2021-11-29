@@ -32,7 +32,12 @@ namespace DentalTime.Controllers
             var request = _service.Save(paciente);
             if (request.Error)
             {
-                return BadRequest(request.Mensaje);
+                ModelState.AddModelError("Guardar Agenda", request.Mensaje);
+                var problemDetails = new ValidationProblemDetails(ModelState)
+                {
+                    Status = StatusCodes.Status400BadRequest,
+                };
+                return BadRequest(problemDetails);
             }
             return Ok(request.Agenda);
         }
