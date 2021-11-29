@@ -1,10 +1,12 @@
 ﻿using BLL;
 using DAL;
+using DentalTime.Hubs;
 using DentalTime.Models;
 using Entity;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.SignalR;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,14 +20,15 @@ namespace DentalTime.Controllers
     public class InventarioController : ControllerBase
     {
         private InventarioService service;
-
-        public InventarioController(DentalTimeContext context)
+        private readonly IHubContext<SignalHub> _hubContext;
+        public InventarioController(DentalTimeContext context, IHubContext<SignalHub> hubContext)
         {
+            _hubContext = hubContext;
             service = new InventarioService(context);
         }
 
         [HttpPost]
-        public ActionResult<Inventario> Guardar(InventarioInputModel inventarioInput)
+        public async Task<ActionResult<Inventario>> GuardarAsync(InventarioInputModel inventarioInput)
         {
             Inventario inventario = new Inventario();
             inventario.IdInventario = inventarioInput.IdInventario;
@@ -39,6 +42,7 @@ namespace DentalTime.Controllers
                 };
                 return BadRequest(problemDetails);
             }
+            await _hubContext.Clients.All.SendAsync("SignalMessageReceived", inventarioInput);
             return Ok(request.Inventario);
         }
     }

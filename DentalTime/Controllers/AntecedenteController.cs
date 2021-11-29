@@ -1,10 +1,12 @@
 ﻿using BLL;
 using DAL;
+using DentalTime.Hubs;
 using DentalTime.Models;
 using Entity;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.SignalR;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,16 +20,18 @@ namespace DentalTime.Controllers
     public class AntecedenteController : ControllerBase
     {
         private readonly AntecedenteService _service;
+        private readonly IHubContext<SignalHub> _hubContext;
 
-        public AntecedenteController(DentalTimeContext context)
+        public AntecedenteController(DentalTimeContext context, IHubContext<SignalHub> hubContext)
         {
+            _hubContext = hubContext;
             _service = new AntecedenteService(context);
         }
 
         [HttpPost]
-        public ActionResult<Antecedente> Guardar(AntecedenteInputModel inputModel)
+        public async Task<ActionResult<Antecedente>> GuardarAsync(AntecedenteInputModel antecedetesInput)
         {
-            Antecedente antecedente = mapearAntecedente(inputModel);
+            Antecedente antecedente = mapearAntecedente(antecedetesInput);
             var request = _service.Save(antecedente);
             if (request.Error)
             {
@@ -38,18 +42,19 @@ namespace DentalTime.Controllers
                 };
                 return BadRequest(problemDetails);
             }
+            await _hubContext.Clients.All.SendAsync("SignalMessageReceived", antecedetesInput);
             return Ok(request.Antecedente);
         }
 
-        private Antecedente mapearAntecedente(AntecedenteInputModel inputModel)
+        private Antecedente mapearAntecedente(AntecedenteInputModel antecedentesInput)
         {
             Antecedente antecedente = new Antecedente();
 
-            antecedente.IdAntecedente = inputModel.IdAntecedente;
-            antecedente.Enfermedades = inputModel.Enfermedades;
-            antecedente.Farmaceuticos = inputModel.Farmaceuticos;
-            antecedente.Quimicos = inputModel.Quimicos;
-            antecedente.Complicaciones = inputModel.Complicaciones;
+            antecedente.IdAntecedente = antecedentesInput.IdAntecedente;
+            antecedente.Enfermedades = antecedentesInput.Enfermedades;
+            antecedente.Farmaceuticos = antecedentesInput.Farmaceuticos;
+            antecedente.Quimicos = antecedentesInput.Quimicos;
+            antecedente.Complicaciones = antecedentesInput.Complicaciones;
 
             return antecedente;
         }

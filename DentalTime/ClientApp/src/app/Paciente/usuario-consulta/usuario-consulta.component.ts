@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Paciente } from 'src/app/@elements/models/Paciente';
 import { PacienteService } from 'src/app/@elements/service/paciente.service';
+import { SignalRService } from 'src/app/@elements/service/SignalR.service';
 import Swal from 'sweetalert2';
 
 @Component({
@@ -19,7 +20,10 @@ export class UsuarioConsultaComponent implements OnInit {
   pacientes: Paciente[];
   paciente: Paciente = new Paciente();
 
-  constructor(public service: PacienteService) { }
+  constructor(
+    public service: PacienteService,    
+    private signalRService: SignalRService,
+    ) { }
 
   ngOnInit() {
     this. get();
@@ -55,6 +59,9 @@ export class UsuarioConsultaComponent implements OnInit {
       this.pacientes = this.PACIENTES
       .map((paciente, i) => ({noDocumento: i + 1, ...paciente}))
       .slice((this.page - 1) * this.pageSize, (this.page - 1) * this.pageSize + this.pageSize);
+    });
+    this.signalRService.signalReceived.subscribe((signal: Paciente) => {  
+      this.pacientes.push(signal)
     });
   }
 

@@ -20,6 +20,7 @@ namespace DentalTime.Controllers
     public class ServicioController : ControllerBase
     {
         private ServicioService _service;
+        
         private readonly IHubContext<SignalHub> _hubContext;
         public ServicioController(DentalTimeContext context, IHubContext<SignalHub> hubContext)
         {

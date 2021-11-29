@@ -1,10 +1,12 @@
 ﻿using BLL;
 using DAL;
+using DentalTime.Hubs;
 using DentalTime.Models;
 using Entity;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.SignalR;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,14 +20,17 @@ namespace DentalTime.Controllers
     public class ProductoController : ControllerBase
     {
         private ProductoService _service; 
+        private readonly IHubContext<SignalHub> _hubContext;
 
-        public ProductoController(DentalTimeContext contex)
+        public ProductoController(DentalTimeContext contex, IHubContext<SignalHub> hubContext)
         {
+            _hubContext = hubContext;
             _service = new ProductoService(contex);
+
         }
 
         [HttpPost]
-        public ActionResult<Producto> Guardar (ProductoInputModel productoInput)
+        public async Task<ActionResult<Producto>> GuardarAsync (ProductoInputModel productoInput)
         {
             var producto = mapearProducto(productoInput);
             var request = _service.Save(producto);
@@ -38,6 +43,7 @@ namespace DentalTime.Controllers
                 };
                 return BadRequest(problemDetails);
             }
+            await _hubContext.Clients.All.SendAsync("SignalMessageReceived", productoInput);
             return Ok(request.Producto);
         }
 

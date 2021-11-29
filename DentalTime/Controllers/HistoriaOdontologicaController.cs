@@ -1,10 +1,12 @@
 ﻿using BLL;
 using DAL;
+using DentalTime.Hubs;
 using DentalTime.Models;
 using Entity;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.SignalR;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,14 +20,15 @@ namespace DentalTime.Controllers
     public class HistoriaOdontologicaController : ControllerBase
     {
         private HistorialClinicoService _service;
-        
-        public HistoriaOdontologicaController(DentalTimeContext dentalTimeContext)
+        private readonly IHubContext<SignalHub> _hubContext;
+        public HistoriaOdontologicaController(DentalTimeContext context,  IHubContext<SignalHub> hubContext)
         {
-            _service = new HistorialClinicoService(dentalTimeContext);            
+            _hubContext = hubContext;
+            _service = new HistorialClinicoService(context);            
         }
 
         [HttpPost]
-        public ActionResult<HistoriaOdontologica> Guardar (HistoriaOdontologicaInputModel historiaInput)
+        public async Task<ActionResult<HistoriaOdontologica>> Guardar (HistoriaOdontologicaInputModel historiaInput)
         {
             HistoriaOdontologica historiaClinica = mapearHistoriaOdontologica(historiaInput);
             var request = _service.Save(historiaClinica);
@@ -38,6 +41,7 @@ namespace DentalTime.Controllers
                 };
                 return BadRequest(problemDetails);
             }
+            await _hubContext.Clients.All.SendAsync("SignalMessageReceived", historiaInput);
             return Ok(request.HistoriaClinica);
         }
 

@@ -1,10 +1,12 @@
 ﻿using BLL;
 using DAL;
+using DentalTime.Hubs;
 using DentalTime.Models;
 using Entity;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.SignalR;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,14 +21,16 @@ namespace DentalTime.Controllers
     public class AgendaController : ControllerBase
     {
         private AgendaService _service;
+        private readonly IHubContext<SignalHub> _hubContext;
 
-        public AgendaController(DentalTimeContext context)
+        public AgendaController(DentalTimeContext context, IHubContext<SignalHub> hubContext)
         {
+            _hubContext = hubContext;
             _service = new AgendaService(context);
         }
 
         [HttpPost]
-        public ActionResult<Agenda> Guardar(AgendaInputModel agendaInput)
+        public async Task<ActionResult<Agenda>> GuardarAsync(AgendaInputModel agendaInput)
         {
             Agenda paciente = MapearPaciente(agendaInput);
             var request = _service.Save(paciente);
@@ -39,6 +43,7 @@ namespace DentalTime.Controllers
                 };
                 return BadRequest(problemDetails);
             }
+            await _hubContext.Clients.All.SendAsync("SignalMessageReceived", agendaInput);
             return Ok(request.Agenda);
         }
 

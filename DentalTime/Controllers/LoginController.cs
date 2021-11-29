@@ -31,9 +31,9 @@ namespace DentalTime.Controllers
 
         [AllowAnonymous]
         [HttpPost()]
-        public IActionResult Login([FromBody] LoginInputModel model)
+        public IActionResult Login([FromBody] LoginInputModel loginInput)
         {
-            var user = _userService.Validate(model.UserName, model.Password);
+            var user = _userService.Validate(loginInput.UserName, loginInput.Password);
             if (user == null)
             {
                 ModelState.AddModelError("Acceso Denegado", "Username or password is incorrect");

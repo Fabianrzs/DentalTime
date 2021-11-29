@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import Swal from 'sweetalert2';
 import { SolicitudCita } from '../@elements/models/SolicitudCita';
+import { SignalRService } from '../@elements/service/SignalR.service';
 import { SolicitudCitaService } from '../@elements/service/SolicitudCita.service';
 
 @Component({
@@ -18,7 +19,9 @@ export class SolicitudCitaComponent implements OnInit {
   agendaCitas: SolicitudCita[];
   AGENDACITA: SolicitudCita[];
 
-  constructor(private service: SolicitudCitaService) { }
+  constructor(
+    private service: SolicitudCitaService,
+    private signalRService: SignalRService,) { }
 
   ngOnInit() {
     this.agendaCita = new SolicitudCita();
@@ -33,6 +36,9 @@ export class SolicitudCitaComponent implements OnInit {
       this.agendaCitas = this.AGENDACITA
         .map((servicios, i) => ({ id: i + 1, ...servicios }))
         .slice((this.page - 1) * this.pageSize, (this.page - 1) * this.pageSize + this.pageSize);
+    });
+    this.signalRService.signalReceived.subscribe((signal: SolicitudCita) => {  
+      this.agendaCitas.push(signal)
     });
   }
 

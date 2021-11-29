@@ -1,10 +1,12 @@
 ﻿using BLL;
 using DAL;
+using DentalTime.Hubs;
 using DentalTime.Models;
 using Entity;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.SignalR;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,26 +20,29 @@ namespace DentalTime.Controllers
     public class SolicitudCitaController : ControllerBase
     {
         private SolicitudCitaService _service;
+        private readonly IHubContext<SignalHub> _hubContext;
         
-        public SolicitudCitaController(DentalTimeContext context)
+        public SolicitudCitaController(DentalTimeContext context, IHubContext<SignalHub> hubContext)
         {
+            _hubContext = hubContext;
             _service = new SolicitudCitaService(context);
         }
 
         [HttpPost]
-        public ActionResult<SolicitudCita> Guardar(SolicitudCitaInputModel citaInput)
+        public async Task<ActionResult<SolicitudCita>> GuardarAsync(SolicitudCitaInputModel citaInput)
         {
             SolicitudCita cita = mapearCita(citaInput);
             var request = _service.Save(cita);
             if (request.Error)
             {
-                ModelState.AddModelError("Registar Cita", request.Mensaje);
+                ModelState.AddModelError("Guardar Cita", request.Mensaje);
                 var problemDetails = new ValidationProblemDetails(ModelState)
                 {
                     Status = StatusCodes.Status400BadRequest,
                 };
                 return BadRequest(problemDetails);
             }
+            await _hubContext.Clients.All.SendAsync("SignalMessageReceived", citaInput);
             return Ok(request.Cita);
         }
 

@@ -25,7 +25,6 @@
                 <thead class="text-primary">
                   <tr>
                     <th scope="col">#</th>
-                    <th scope="col">No Agenda</th>
                     <th scope="col">Estado</th>
                     <th scope="col">Hora de inicio</th>
                     <th scope="col">Hora de finalizacion</th>
@@ -34,7 +33,6 @@
                 <tbody>
                   <tr *ngFor="let a of agendasMedicas; index as i ">
                     <th scope="row">{{i + 1}}</th>
-                    <td>{{a.codAgenda}}</td>
                     <td>{{a.estado}}</td>
                     <td>{{a.fechaHoraInicio}}</td>
                     <td>{{a.fechaHoraFin}}</td>

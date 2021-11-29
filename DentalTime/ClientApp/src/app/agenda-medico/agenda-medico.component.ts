@@ -3,6 +3,7 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { AlertModalComponent } from '../@base/alertModal/alertModal.component';
 import { AgendaMedico } from '../@elements/models/agendaMedico';
 import { AgendaMedicoService } from '../@elements/service/agendaMedico.service';
+import { SignalRService } from '../@elements/service/SignalR.service';
 
 @Component({
   selector: 'app-agenda-medico',
@@ -19,7 +20,10 @@ export class AgendaMedicoComponent implements OnInit {
   pageSize = 3;
   collectionSize = 0;
 
-  constructor(private service: AgendaMedicoService,private modal: NgbModal) { }
+  constructor(
+    private service: AgendaMedicoService,
+    private modal: NgbModal,
+    private signalRService: SignalRService,) { }
 
   ngOnInit() {
     this.agendaMedico = new AgendaMedico();
@@ -37,6 +41,9 @@ export class AgendaMedicoComponent implements OnInit {
         (this.page - 1) * this.pageSize,
         (this.page - 1) * this.pageSize + this.pageSize
       );
+    });
+    this.signalRService.signalReceived.subscribe((signal: AgendaMedico) => {  
+      this.agendasMedicas.push(signal)
     });
   }
 
