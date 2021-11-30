@@ -51,13 +51,7 @@ namespace DentalTime.Controllers
             historiaClinica.IdHistoriaOdontologica = historiaInput.IdHistoriaOdontologica;
             historiaClinica.FechaInicio = historiaInput.FechaInicio;
             historiaClinica.NoDocumentoPaciente = historiaInput.NoDocumentoPaciente;
-            Antecedente antecedente = new Antecedente();
-            antecedente.IdAntecedente = historiaInput.IdAntecedente;
-            antecedente.Enfermedades = historiaInput.Enfermedades;
-            antecedente.Farmaceuticos = historiaInput.Farmaceuticos;
-            antecedente.Quimicos = historiaInput.Quimicos;
-            antecedente.Complicaciones = historiaInput.Complicaciones;
-            historiaClinica.Antecedentes = antecedente;
+            historiaClinica.Antecedentes = historiaInput.Antecedente;
             return historiaClinica;
         }
 
@@ -70,7 +64,7 @@ namespace DentalTime.Controllers
         }
 
         [HttpGet("{id}")]
-        public ActionResult<HistoriaOdontologica> Get(string id)
+        public ActionResult<HistoriaClinicaViewModel> Get(string id)
         {
             var request = _service.Find(id);
             if (request.Error) return BadRequest(request.Mensaje);

@@ -18,23 +18,19 @@ namespace DentalTime.Models
         [Required(ErrorMessage = "Id de antecendetes requerido")]
         public string IdAntecedente { get; set; }
         [Required(ErrorMessage = "Enfermedades requerido")]
-        public string Enfermedades { get; set; }
-        [Required(ErrorMessage = "Farmaceuticos requerido")]
-        public string Farmaceuticos { get; set; }
-        [Required(ErrorMessage = "Quimicos requerido")]
-        public string Quimicos { get; set; }
-        [Required(ErrorMessage = "Complicaciones requerido")]
-        public string Complicaciones { get; set; }
+        public Antecedente Antecedente { get; set; }
     }
 
-    //public class HistoriaClinicaViewModel : HistoriaClinicaInputModel
-    //{
-    //    public HistoriaClinicaViewModel(HistoriaOdontologica historiaClinica)
-    //    {
-    //        IdHistoriaOdontologica = historiaClinica.IdHistoriaOdontologica;
-    //        FechaInicio = historiaClinica.FechaInicio;
-    //        NoDocumentoPaciente  = historiaClinica.NoDocumentoPaciente;
-    //        Antecedente = new AntecedenteInputModel();
-    //    }
-    //}
+
+    public class HistoriaClinicaViewModel : HistoriaOdontologicaInputModel
+    {
+
+       public HistoriaClinicaViewModel(HistoriaOdontologica historiaClinica)
+       {
+           IdHistoriaOdontologica = historiaClinica.IdHistoriaOdontologica;
+           FechaInicio = historiaClinica.FechaInicio;
+           NoDocumentoPaciente  = historiaClinica.NoDocumentoPaciente;
+           Antecedente = historiaClinica.Antecedentes;
+       }
+    }
 }

@@ -1,5 +1,6 @@
 ﻿using DAL;
 using Entity;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -45,7 +46,7 @@ namespace BLL
         {
             try
             {
-                List<HistoriaOdontologica> historiasClinicas = _context.HistoriasOdontologicas.ToList();
+                List<HistoriaOdontologica> historiasClinicas = _context.HistoriasOdontologicas.Include(h => h.Antecedentes).ToList();
                 if (historiasClinicas != null)
                 {
                     return new HistorialConsultaResponse(historiasClinicas);
@@ -58,8 +59,10 @@ namespace BLL
 
         public HistorialLogResponse Find(string id){
             try
-            {               
-                return new HistorialLogResponse(_context.HistoriasOdontologicas.Find(id));
+            {    var historia = _context.HistoriasOdontologicas.Where(h => h.IdHistoriaOdontologica == id).Include(h => h.Antecedentes).FirstOrDefault();
+                historia.Antecedentes.HistoriaOdontologica = historia;
+
+                return new HistorialLogResponse(historia);
             }
             catch (Exception e)
             {

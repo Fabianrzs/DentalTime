@@ -86,3 +86,21 @@ I:\Semestre 5\Programacion WEB\Proyectos\DentalTime\DAL\obj\Debug\net5.0\DAL.pdb
 I:\Semestre 5\Programacion WEB\Proyectos\DentalTime\DAL\obj\Debug\net5.0\DAL.genruntimeconfig.cache
 D:\PROYECTOS PROGRAMACION\PWEB\Angular\proyecto\DAL\obj\Debug\net5.0\DAL.csproj.CopyComplete
 I:\Semestre 5\Programacion WEB\Proyectos\DentalTime\DAL\obj\Debug\net5.0\DAL.csproj.CopyComplete
+C:\Users\VIcto\OneDrive\Documentos\Programacion Web\proyectofabian\DentalTime\DAL\bin\Debug\net5.0\DAL.deps.json
+C:\Users\VIcto\OneDrive\Documentos\Programacion Web\proyectofabian\DentalTime\DAL\bin\Debug\net5.0\DAL.runtimeconfig.json
+C:\Users\VIcto\OneDrive\Documentos\Programacion Web\proyectofabian\DentalTime\DAL\bin\Debug\net5.0\DAL.runtimeconfig.dev.json
+C:\Users\VIcto\OneDrive\Documentos\Programacion Web\proyectofabian\DentalTime\DAL\bin\Debug\net5.0\DAL.dll
+C:\Users\VIcto\OneDrive\Documentos\Programacion Web\proyectofabian\DentalTime\DAL\bin\Debug\net5.0\ref\DAL.dll
+C:\Users\VIcto\OneDrive\Documentos\Programacion Web\proyectofabian\DentalTime\DAL\bin\Debug\net5.0\DAL.pdb
+C:\Users\VIcto\OneDrive\Documentos\Programacion Web\proyectofabian\DentalTime\DAL\bin\Debug\net5.0\Entity.dll
+C:\Users\VIcto\OneDrive\Documentos\Programacion Web\proyectofabian\DentalTime\DAL\bin\Debug\net5.0\Entity.pdb
+C:\Users\VIcto\OneDrive\Documentos\Programacion Web\proyectofabian\DentalTime\DAL\obj\Debug\net5.0\DAL.csproj.AssemblyReference.cache
+C:\Users\VIcto\OneDrive\Documentos\Programacion Web\proyectofabian\DentalTime\DAL\obj\Debug\net5.0\DAL.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\VIcto\OneDrive\Documentos\Programacion Web\proyectofabian\DentalTime\DAL\obj\Debug\net5.0\DAL.AssemblyInfoInputs.cache
+C:\Users\VIcto\OneDrive\Documentos\Programacion Web\proyectofabian\DentalTime\DAL\obj\Debug\net5.0\DAL.AssemblyInfo.cs
+C:\Users\VIcto\OneDrive\Documentos\Programacion Web\proyectofabian\DentalTime\DAL\obj\Debug\net5.0\DAL.csproj.CoreCompileInputs.cache
+C:\Users\VIcto\OneDrive\Documentos\Programacion Web\proyectofabian\DentalTime\DAL\obj\Debug\net5.0\DAL.csproj.CopyComplete
+C:\Users\VIcto\OneDrive\Documentos\Programacion Web\proyectofabian\DentalTime\DAL\obj\Debug\net5.0\DAL.dll
+C:\Users\VIcto\OneDrive\Documentos\Programacion Web\proyectofabian\DentalTime\DAL\obj\Debug\net5.0\ref\DAL.dll
+C:\Users\VIcto\OneDrive\Documentos\Programacion Web\proyectofabian\DentalTime\DAL\obj\Debug\net5.0\DAL.pdb
+C:\Users\VIcto\OneDrive\Documentos\Programacion Web\proyectofabian\DentalTime\DAL\obj\Debug\net5.0\DAL.genruntimeconfig.cache

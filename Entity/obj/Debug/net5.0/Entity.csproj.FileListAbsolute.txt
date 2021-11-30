@@ -58,3 +58,15 @@ I:\Semestre 5\Programacion WEB\Proyectos\DentalTime\Entity\obj\Debug\net5.0\Enti
 I:\Semestre 5\Programacion WEB\Proyectos\DentalTime\Entity\obj\Debug\net5.0\Entity.dll
 I:\Semestre 5\Programacion WEB\Proyectos\DentalTime\Entity\obj\Debug\net5.0\ref\Entity.dll
 I:\Semestre 5\Programacion WEB\Proyectos\DentalTime\Entity\obj\Debug\net5.0\Entity.pdb
+C:\Users\VIcto\OneDrive\Documentos\Programacion Web\proyectofabian\DentalTime\Entity\bin\Debug\net5.0\Entity.deps.json
+C:\Users\VIcto\OneDrive\Documentos\Programacion Web\proyectofabian\DentalTime\Entity\bin\Debug\net5.0\Entity.dll
+C:\Users\VIcto\OneDrive\Documentos\Programacion Web\proyectofabian\DentalTime\Entity\bin\Debug\net5.0\ref\Entity.dll
+C:\Users\VIcto\OneDrive\Documentos\Programacion Web\proyectofabian\DentalTime\Entity\bin\Debug\net5.0\Entity.pdb
+C:\Users\VIcto\OneDrive\Documentos\Programacion Web\proyectofabian\DentalTime\Entity\obj\Debug\net5.0\Entity.csproj.AssemblyReference.cache
+C:\Users\VIcto\OneDrive\Documentos\Programacion Web\proyectofabian\DentalTime\Entity\obj\Debug\net5.0\Entity.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\VIcto\OneDrive\Documentos\Programacion Web\proyectofabian\DentalTime\Entity\obj\Debug\net5.0\Entity.AssemblyInfoInputs.cache
+C:\Users\VIcto\OneDrive\Documentos\Programacion Web\proyectofabian\DentalTime\Entity\obj\Debug\net5.0\Entity.AssemblyInfo.cs
+C:\Users\VIcto\OneDrive\Documentos\Programacion Web\proyectofabian\DentalTime\Entity\obj\Debug\net5.0\Entity.csproj.CoreCompileInputs.cache
+C:\Users\VIcto\OneDrive\Documentos\Programacion Web\proyectofabian\DentalTime\Entity\obj\Debug\net5.0\Entity.dll
+C:\Users\VIcto\OneDrive\Documentos\Programacion Web\proyectofabian\DentalTime\Entity\obj\Debug\net5.0\ref\Entity.dll
+C:\Users\VIcto\OneDrive\Documentos\Programacion Web\proyectofabian\DentalTime\Entity\obj\Debug\net5.0\Entity.pdb
