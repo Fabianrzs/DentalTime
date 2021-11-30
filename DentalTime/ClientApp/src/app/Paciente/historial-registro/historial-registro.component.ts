@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
-import { find } from 'rxjs/operators';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { AlertModalComponent } from 'src/app/@base/alertModal/alertModal.component';
 import { HistoriaOdontologica } from 'src/app/@elements/models/HistoriaOdontologica';
 import { Paciente } from 'src/app/@elements/models/Paciente';
 import { HistoriaOdontologicaService } from 'src/app/@elements/service/historiaOdontologica.service';
@@ -18,7 +19,8 @@ export class HistorialRegistroComponent implements OnInit {
   historia: HistoriaOdontologica = new HistoriaOdontologica();
   paciente: Paciente = new  Paciente();
 
-  constructor(private serviceHistoria: HistoriaOdontologicaService,
+  constructor(private modal: NgbModal,
+    private serviceHistoria: HistoriaOdontologicaService,
     private servicePaciente: PacienteService,
     private formBuilder: FormBuilder, 
     private rutaActiva: ActivatedRoute) {}
@@ -43,18 +45,22 @@ export class HistorialRegistroComponent implements OnInit {
         this.buildForm();
         return ;
       }
+      const messageBox = this.modal.open(AlertModalComponent);
+      messageBox.componentInstance.title = "Operacion Interumpida";
+      messageBox.componentInstance.message = "Historia Odontologica ya Registrada anteriormente, \n precione cancelar para volver";
       (document.getElementById('guardar') as HTMLInputElement).disabled = true;
     });
   }
 
   buildForm(){
-    
+
     this.formHistoriaOdontologica = this.formBuilder.group({
       complicaciones: [this.historia.complicaciones, Validators.required],
       enfermedades: [this.historia.enfermedades, Validators.required],
       farmaceuticos: [this.historia.farmaceuticos, Validators.required],
       quimicos: [this.historia.quimicos, Validators.required],
     });
+
   }
 
   get control(){
@@ -75,6 +81,10 @@ export class HistorialRegistroComponent implements OnInit {
 
   add() {
     this.historia = this.formHistoriaOdontologica.value;
+    this.historia.noDocumentoPaciente = this.paciente.noDocumento;
+    this.historia.idHistoriaOdontologica = this.paciente.noDocumento;
+    this.historia.idAntecedente = this.paciente.noDocumento;
+    
     this.serviceHistoria.post(this.historia).subscribe(result => {
       if (result != null) {
         if (result != null) {

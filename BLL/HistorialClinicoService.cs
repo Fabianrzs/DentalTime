@@ -55,19 +55,25 @@ namespace BLL
             catch (Exception e) { return new HistorialConsultaResponse($"Error al Consultar: Se presento lo siguiente {e.Message}"); }
         }
 
-
         public HistorialLogResponse Find(string id){
             try
             {               
-                return new HistorialLogResponse(_context.HistoriasOdontologicas.Find(id));
+                HistoriaOdontologica historia = _context.HistoriasOdontologicas.Find(id);
+                Antecedente antecedente = _context.Antecedentes.Find(id);
+
+                if(historia != null && antecedente != null){
+                    historia.Antecedentes = antecedente;
+                    return new HistorialLogResponse(historia);
+                }
+                return new HistorialLogResponse("Inicializar Historia Odontologia");
             }
             catch (Exception e)
             {
                 return new HistorialLogResponse("Error en la aplicacion" + e.Message);
             }
         }
-
     }
+
     public class HistorialLogResponse
     {
         public HistoriaOdontologica HistoriaClinica { get; set; }

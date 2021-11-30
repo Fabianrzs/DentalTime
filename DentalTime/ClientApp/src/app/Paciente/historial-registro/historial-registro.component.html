@@ -2,22 +2,13 @@
   <h5 class="text-center">Historial Odontologico</h5>
   <div class="col-6" style="min-width: 800px;">
     <hr>
-
-    <form [formGroup]="formHistoriaOdontologica">
-
+    <form>
       <div class="row">
         <div class="col-md">
           <div class="form-floating border border-5">
-            <input type="text" formControlName="noDocumentoPaciente" class="form-control" 
-            [(ngModel)]= "historia.noDocumentoPaciente" readonly>
+            <input type="text" name="noDocumentoPaciente" class="form-control" 
+            [(ngModel)]= "paciente.noDocumento" readonly>
             <label for="floatingInputGrid">No Documento</label>
-          </div>
-        </div>
-        <div class="col-md">
-          <div class="form-floating border border-5">
-            <input type="date" formControlName="fechaInicio" class="form-control" 
-            [ngClass]="{ 'is-invalid':  control.fechaInicio.errors && formHistoriaOdontologica.get('fechaInicio').touched}" >
-            <label for="floatingInputGrid">Fecha de Inicio</label>
           </div>
         </div>
       </div>
@@ -38,9 +29,10 @@
           </div>
         </div>
       </div>
+    </form>
+    <form [formGroup]="formHistoriaOdontologica">
       <br>
       <h6 class="text-center">Antecedentes</h6>
-      
       <div class="row">
         <div class="col-md">
           <div class="form-floating border border-5">

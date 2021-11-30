@@ -27,14 +27,18 @@ namespace DentalTime.Models
         public string Complicaciones { get; set; }
     }
 
-    //public class HistoriaClinicaViewModel : HistoriaClinicaInputModel
-    //{
-    //    public HistoriaClinicaViewModel(HistoriaOdontologica historiaClinica)
-    //    {
-    //        IdHistoriaOdontologica = historiaClinica.IdHistoriaOdontologica;
-    //        FechaInicio = historiaClinica.FechaInicio;
-    //        NoDocumentoPaciente  = historiaClinica.NoDocumentoPaciente;
-    //        Antecedente = new AntecedenteInputModel();
-    //    }
-    //}
+    public class HistoriaClinicaViewModel : HistoriaOdontologicaInputModel
+    {
+        public HistoriaClinicaViewModel(HistoriaOdontologica historiaClinica)
+        {
+            IdHistoriaOdontologica = historiaClinica.IdHistoriaOdontologica;
+            FechaInicio = historiaClinica.FechaInicio;
+            NoDocumentoPaciente  = historiaClinica.NoDocumentoPaciente;
+            historiaClinica.Antecedentes.IdAntecedente = IdAntecedente;
+            historiaClinica.Antecedentes.Enfermedades = Enfermedades;
+            historiaClinica.Antecedentes.Farmaceuticos = Farmaceuticos;
+            historiaClinica.Antecedentes.Quimicos = Quimicos;
+            historiaClinica.Antecedentes.Complicaciones = Complicaciones;
+        }
+    }
 }
