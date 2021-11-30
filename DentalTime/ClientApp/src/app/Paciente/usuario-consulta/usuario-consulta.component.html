@@ -12,8 +12,6 @@
             <th scope="col">Documento</th>
             <th scope="col">Nombres </th>
             <th scope="col">Apellidos </th>
-            <th scope="col">Historia</th>
-            <th scope="col">Consulta</th>
             <th scope="col">Details</th>
 
           </tr>
@@ -24,11 +22,6 @@
             <td>{{p.noDocumento}}</td>
             <td>{{p.nombres}}</td>
             <td>{{p.apellidos}}</td>
-            <td>
-              <a class = "txt-primary" routerLink='/historialRegistro/{{p.noDocumento}}'>Iniciar/</a>
-              <a class = "txt-primary" routerLink='/historialClinico/{{p.noDocumento}}'>Detalles</a>
-            </td>
-            <td><a class = "txt-primary" routerLink='/registrarConsulta/{{p.noDocumento}}'>Agregar</a></td>
             <td><a class = "txt-primary" (click)="onSearch(p.noDocumento)" data-bs-toggle="modal" data-bs-target="#ModalModificar">view</a></td>
           </tr>
         </tbody>

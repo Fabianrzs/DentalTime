@@ -58,5 +58,13 @@ namespace DentalTime.Controllers
 
             return antecedente;
         }
+
+        [HttpGet]
+        public ActionResult<List<Antecedente>> Consulta()
+        {
+            var request = _service.Consult();
+            if (request.Error) return BadRequest(request.Mensaje);
+            return Ok(request.Antecedentes);
+        }
     }
 }

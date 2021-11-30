@@ -57,7 +57,7 @@ namespace DentalTime.Controllers
         }
 
         [HttpGet]
-        public ActionResult<List<Paciente>> Consulta()
+        public ActionResult<List<Agenda>> Consulta()
         {
             var request = _service.Consult();
             if (request.Error) return BadRequest(request.Mensaje);

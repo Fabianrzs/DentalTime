@@ -35,6 +35,20 @@ namespace BLL
             }
         }
 
+        public AntecendetenConsultaResponse Consult()
+        {
+            try
+            {
+                List<Antecedente> antecedentes = _context.Antecedentes.ToList();
+                if (antecedentes != null)
+                {
+                    return new AntecendetenConsultaResponse(antecedentes);
+                }
+                return new AntecendetenConsultaResponse($"No se han agregado registros");
+            }
+            catch (Exception e) { return new AntecendetenConsultaResponse($"Error al Consultar: Se presento lo siguiente {e.Message}"); }
+        }
+
     }
 
     public class AntecedenteLogResponse
@@ -50,6 +64,26 @@ namespace BLL
         }
 
         public AntecedenteLogResponse(string mensaje)
+        {
+            Mensaje = mensaje;
+            Error = true;
+        }
+
+    }
+
+    public class AntecendetenConsultaResponse
+    {
+        public List<Antecedente> Antecedentes { get; set; }
+        public string Mensaje { get; set; }
+        public bool Error { get; set; }
+
+        public AntecendetenConsultaResponse(List<Antecedente> antecedentes)
+        {
+            Antecedentes = antecedentes;
+            Error = false;
+        }
+
+        public AntecendetenConsultaResponse(string mensaje)
         {
             Mensaje = mensaje;
             Error = true;

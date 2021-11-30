@@ -9,20 +9,23 @@ namespace DentalTime.Models
 {
     public class ConsultaClinicaInputModel
     {
-        [Required(ErrorMessage = "Identificacion del Paciente requerido")]
-        public string IdentificacionPaciente { get; set; }
+        [Required(ErrorMessage = "Id Consulta Odontologica requerido")]
+        public int IdConsultaOdontologica { get; set; }
         [Required(ErrorMessage = "Motivo requerido")]
         public string Motivo { get; set; }
-        [Required(ErrorMessage = "Complicaciones requerido")]
-        public string Complicaciones { get; set; }
-        [Required(ErrorMessage = "Antecedentes requerido")]
-        public string Antecedentes { get; set; }
-        [Required(ErrorMessage = "Mendicacion requerido")]
+        [Required(ErrorMessage = "Medicacion requerido")]
         public string Medicacion { get; set; }
-        [Required(ErrorMessage = "Ultima consulta  requerido")]
-        public DateTime UltimaConsulta { get; set; }
-        [Required(ErrorMessage = "Valoracion Medica requerido")]
-        public string ValoracionMedica { get; set; }
+        [Required(ErrorMessage = "Diagnostico requerido")]
+        public string Diagnostico { get; set; }
+        [Required(ErrorMessage = "Valoracion requerido")]
+        public string Valoracion { get; set; }
+        [Required(ErrorMessage = "Receta Medica requerido")]
+        public string RecetaMedica { get; set; }
+        [Required(ErrorMessage = "IdSolicitudCita requerido")]
+        public int IdSolicitudCita { get; set; }
+        [Required(ErrorMessage = "Id Historia Odontologica requerido")]
+        public string IdHistoriaOdontologica { get; set; }
+
     }
 
     public class ConsultaClinicaViewModel : ConsultaClinicaInputModel
