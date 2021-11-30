@@ -1,4 +1,3 @@
 {
-    "appService.defaultWebAppToDeploy": "/subscriptions/50925a9f-3f58-4163-83a2-b49fbd69c01f/resourceGroups/appsvc_windows_centralus/providers/Microsoft.Web/sites/DentalTimeApp",
     "appService.deploySubpath": "publish"
 }
