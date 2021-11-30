@@ -46,7 +46,7 @@ namespace BLL
         {
             try
             {
-                List<HistoriaOdontologica> historiasClinicas = _context.HistoriasOdontologicas.Include(h => h.Antecedentes).ToList();
+                List<HistoriaOdontologica> historiasClinicas = _context.HistoriasOdontologicas.Include(h => h.Antecedentes).Include(h=> h.Paciente).ToList();
                 if (historiasClinicas != null)
                 {
                     return new HistorialConsultaResponse(historiasClinicas);
@@ -59,7 +59,7 @@ namespace BLL
 
         public HistorialLogResponse Find(string id){
             try
-            {    var historia = _context.HistoriasOdontologicas.Where(h => h.IdHistoriaOdontologica == id).Include(h => h.Antecedentes).FirstOrDefault();
+            {    var historia = _context.HistoriasOdontologicas.Where(h => h.IdHistoriaOdontologica == id).Include(h => h.Antecedentes).Include(h=> h.Paciente).FirstOrDefault();
                 historia.Antecedentes.HistoriaOdontologica = historia;
 
                 return new HistorialLogResponse(historia);
