@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
+using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 
 namespace Entity
@@ -17,13 +18,22 @@ namespace Entity
         public string Valoracion { get; set; }
         public string RecetaMedica { get; set; }
 
+        public int IdAntecedentes { get; set; }
+        [JsonIgnore]
+        public Antecedente Antecedente { get; set; }
+
+        public string NoDocumento { get; set; }
+        [JsonIgnore]
+        public Paciente Paciente { get; set; }
 
         public int IdSolicitudCita { get; set; }
+        [JsonIgnore]
         public SolicitudCita SolicitudCita { get; set; }
 
-        public string IdHistoriaOdontologica { get; set; }
-        public HistoriaOdontologica HistoriaOdontologica { get; set; }
+        public int IdServicio { get; set; }
+        [JsonIgnore]
+        public Servicio Servicio { get; set; }
 
-        public ICollection<Procedimiento> Procedimientos { get; set; }
+
     }
 }

@@ -10,12 +10,13 @@ namespace Entity
     public class Antecedente
     {
         [Key]
-        public string IdAntecedente { get; set; }
+        public int IdAntecedente { get; set; }
         public string Enfermedades { get; set; }
         public string Farmaceuticos { get; set; }
         public string Quimicos { get; set; }
         public string Complicaciones { get; set; }
 
-        public HistoriaOdontologica HistoriaOdontologica { get; set; }
+        public ConsultaOdontologica ConsultaOdontologica { get; set; }
+  
     }
 }
