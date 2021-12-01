@@ -69,7 +69,7 @@ namespace DAL
         public DbSet<SolicitudCita> Citas { get; set; }
         public DbSet<ConsultaOdontologica> ConsultasOdontologicas { get; set; }
         public DbSet<HistoriaOdontologica> HistoriasOdontologicas { get; set; }
-        public DbSet<Paciente> Pacientes { get; set; }
+        
         public DbSet<Servicio> Servicios { get; set; }
         public DbSet<Procedimiento> Procedimientos { get; set; }
         public DbSet<Inventario> Inventarios { get; set; }

@@ -9,4 +9,5 @@ export class Paciente {
   lugarNacimiento: string;
   correoElectronico: string;
   numeroTelefonico: string;
+  
 }

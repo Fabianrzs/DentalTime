@@ -3,10 +3,11 @@
     "@aspnet/signalr": "^1.0.27",
     "@ng-bootstrap/ng-bootstrap": "^11.0.0-beta.2",
     "@schematics/angular": "^12.2.7",
+    "@sweetalert2/theme-bootstrap-4": "^5.0.8",
     "@syncfusion/ej2-angular-schedule": "^17.1.42",
     "bootstrap": "^5.1.1",
     "bootstrap-icons": "^1.5.0",
     "bulma": "^0.9.3",
-    "sweetalert2": "^11.2.0"
+    "sweetalert2": "^11.2.1"
   }
 }

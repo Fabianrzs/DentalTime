@@ -5,6 +5,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
+
 
 namespace BLL
 {
@@ -36,7 +38,9 @@ namespace BLL
         {
             try
             {
-                ConsultaOdontologica consulta = null;/* _context.ConsultasOdontologicas.OrderByDescending(c => c.ConsultaOdontologica).FirstOrDefault();*/
+                ConsultaOdontologica consulta = null;
+                
+                /* _context.ConsultasOdontologicas.OrderByDescending(c => c.ConsultaOdontologica).FirstOrDefault();*/
 
                 if (consulta == null)
                 {
@@ -51,11 +55,12 @@ namespace BLL
 
         }
 
-        public ConsultaClinicaConsultaResponse Consult()
+        public ConsultaClinicaConsultaResponse Consult(string id)
         {
             try
             {
-                List<ConsultaOdontologica> consultas = _context.ConsultasOdontologicas.ToList();
+
+                List<ConsultaOdontologica> consultas = _context.ConsultasOdontologicas.Where(c => c.IdHistoriaOdontologica == id).Include(c => c.SolicitudCita).ToList();
                 if (consultas != null)
                 {
                     return new ConsultaClinicaConsultaResponse(consultas);

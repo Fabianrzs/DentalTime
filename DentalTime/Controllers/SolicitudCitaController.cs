@@ -49,6 +49,7 @@ namespace DentalTime.Controllers
         private SolicitudCita mapearCita(SolicitudCitaInputModel citaInput)
         {
             SolicitudCita cita = new SolicitudCita();
+            cita.CodAgenda = citaInput.CodAgenda;
             cita.Fecha = citaInput.Fecha;
             cita.Estado = citaInput.Estado;
             cita.NoDocumentoPaciente = citaInput.NoDocumentoPaciente;

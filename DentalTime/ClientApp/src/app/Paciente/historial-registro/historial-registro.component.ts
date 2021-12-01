@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
-import { AlertModalComponent } from 'src/app/@base/alertModal/alertModal.component';
 import { HistoriaOdontologica } from 'src/app/@elements/models/HistoriaOdontologica';
 import { Paciente } from 'src/app/@elements/models/Paciente';
 import { HistoriaOdontologicaService } from 'src/app/@elements/service/historiaOdontologica.service';
@@ -45,9 +44,10 @@ export class HistorialRegistroComponent implements OnInit {
         this.buildForm();
         return ;
       }
-      const messageBox = this.modal.open(AlertModalComponent);
-      messageBox.componentInstance.title = "Operacion Interumpida";
-      messageBox.componentInstance.message = "Historia Odontologica ya Registrada anteriormente, \n precione cancelar para volver";
+      Swal.fire({
+        icon: 'info',
+        text: 'Historia Odontologica ya Iniciada anteriormente, \n precione cancelar para volver',
+      });
       (document.getElementById('guardar') as HTMLInputElement).disabled = true;
     });
   }

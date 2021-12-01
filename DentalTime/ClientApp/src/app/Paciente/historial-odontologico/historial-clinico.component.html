@@ -1,205 +1,95 @@
-<div class="container"style="width: 700px;">
+<!--<div class="container" style="width: 700px;">
   <div class="row">
     <h5 class="text-center">Historial Odontologico</h5>
     <hr>
   </div>
 
-  <div class="row justify-content-center" >
-    <form >
+  <div class="row justify-content-center">
+    <form>
       <div class="row">
-        <div class="col-9">
+        <div class="col-7">
           <div class="form-floating">
-            <input type="text" class="form-control" [(ngModel)]="historia.noDocumentoPaciente" name="noDocumentoPaciente">
+            <input type="text" class="form-control" name="noDocumentoPaciente"
+            [(ngModel)]="paciente.noDocumento" name="noDocumentoPaciente"
+              readonly>
             <label for="floatingInputGrid">Documento del Paciente</label>
           </div>
-        </div>        
-        <div class="col-3">
-          <button type="button" class="btn btn-primary btn-sm" (click)="onSearch()">Buscar</button>
         </div>
       </div>
       <br>
       <div class="row">
         <div class="col-md">
           <div class="form-floating">
-            <input type="text" class="form-control" [(ngModel)]="paciente.nombres" name="nombres" readonly>
+            <input type="text" class="form-control" name="noDocumentoPaciente"
+            [(ngModel)]="paciente.nombres" name="nombres" readonly>
             <label for="floatingInputGrid">Nombres</label>
           </div>
         </div>
         <div class="col-md">
           <div class="row">
             <div class="form-floating">
-              <input type="text" class="form-control" [(ngModel)]="paciente.apellidos" name="apellidos" readonly>
+              <input type="text" class="form-control" name="noDocumentoPaciente"
+              [(ngModel)]="paciente.apellidos" name="apellidos" readonly>
               <label for="floatingInputGrid">Apellidos</label>
             </div>
+          </div>
         </div>
-      </div>
-      </div>
-      <br>
-      <div class="row">
-      <div class="col-md">
-        <div class="form-floating">
-          <textarea type="text" class="form-control" [(ngModel)]="historia.enfermedades" name="enfermedades" readonly></textarea>
-          <label for="floatingInputGrid">Enfermedades</label>
-        </div>
-      </div>
-      <div class="col-md">
-        <div class="form-floating">
-          <textarea type="text" class="form-control" [(ngModel)]="historia.quimicos" name="quimicos" readonly></textarea>
-          <label for="floatingInputGrid">Quimicos</label>
-        </div>
-      </div>
       </div>
       <br>
       <div class="row">
         <div class="col-md">
           <div class="form-floating">
-            <textarea type="text" class="form-control" [(ngModel)]="historia.farmaceuticos" name="farmaceuticos" readonly></textarea>
+            <textarea type="text" class="form-control" name="noDocumentoPaciente"
+            [(ngModel)]="historia.enfermedades" name="enfermedades"
+              readonly></textarea>
+            <label for="floatingInputGrid">Enfermedades</label>
+          </div>
+        </div>
+        <div class="col-md">
+          <div class="form-floating">
+            <textarea type="text" class="form-control" name="noDocumentoPaciente"
+            [(ngModel)]="historia.quimicos" name="quimicos"
+              readonly></textarea>
+            <label for="floatingInputGrid">Quimicos</label>
+          </div>
+        </div>
+      </div>
+      <br>
+      <div class="row">
+        <div class="col-md">
+          <div class="form-floating">
+            <textarea type="text" class="form-control" name="noDocumentoPaciente"
+            [(ngModel)]="historia.farmaceuticos" name="farmaceuticos"
+              readonly></textarea>
             <label for="floatingInputGrid">Farmaceuticos</label>
           </div>
         </div>
         <div class="col-md">
           <div class="form-floating">
-            <textarea type="text" class="form-control" [(ngModel)]="historia.complicaciones" name="complicaciones" readonly></textarea>
-            <label for="floatingInputGrid">Complicaciones</label>
+            <textarea type="text" class="form-control" name="noDocumentoPaciente"
+            [(ngModel)]="consultaOdontologica.motivo" name="complicaciones"
+              readonly></textarea>
+            <label for="floatingInputGrid">motivo</label>
           </div>
         </div>
-        </div>
-        <br>
+      </div>
+      <br>
     </form>
   </div>
-  <div class="row">
-    <div class="col-md">    
-      <table class="table table-hover table-light" >
-        <thead class="thead-prima text-primary">
-          <tr>
-            <th scope="col">Diagnostigo</th>
-            <th scope="col">Valoracion </th>
-            <th scope="col">Medicacion </th>
-            <th scope="col">Receta Medica</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr *ngFor="let c of consultas; index as i">
-            <th scope="row">{{i + 1}}</th>
-            
-          </tr>
-          <!--(click)="onSearch(p.noDocumento)"-->
-        </tbody>
-      </table>      
-      <div class="d-flex justify-content-between p-2">
-        <ngb-pagination [collectionSize]="collectionSize" [(page)]="page" [pageSize]="pageSize" (pageChange)="get()">
-        </ngb-pagination>
+</div>-->
+
+<table class="table table-hover table-light" >
+  <thead class="thead-prima text-primary">
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Documento</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let p of consultaOdontologica; index as i ">
+      <th scope="row">{{i + 1}}</th>
+      <td>{{p.solicitudCita.estado}}</td>
       
-        <select class="custom-select" style="width: auto" [(ngModel)]="pageSize" ><!--(ngModelChange)="get()"-->
-          <option [ngValue]="2">2 consultas</option>
-          <option [ngValue]="4">4 consultas</option>
-          <option [ngValue]="6">6 consultas</option>
-        </select>
-      </div>
-    </div>
-  </div>
-</div>
-
-
-<!-- <div class="row">
-    <div class="col-4" style="min-width: 120px; max-width: 350px;">
-      <h2 class="text-center">Datos</h2>
-      <hr>
-
-      <div class="form-floating border border-5">
-        <input type="text" class="form-control">
-        <label for="floatingInputGrid">Identificacion</label>
-      </div>
-
-
-      <div class="form-floating border border-5">
-        <input type="text" class="form-control" disabled>
-        <label for="floatingInputGrid">Nombres</label>
-      </div>
-
-      <div class="form-floating border border-5">
-        <input type="text" class="form-control" disabled>
-        <label for="floatingInputGrid">Apellidos</label>
-      </div>
-
-      <div class="form-floating border border-5">
-        <input type="date" class="form-control">
-        <label for="floatingInputGrid">Fecha de Inicio</label>
-      </div>
-
-      <div class="form-floating border border-5">
-        <input type="date" class="form-control">
-        <label for="floatingInputGrid">Fecha de Fin</label>
-      </div>
-
-      <br>
-      <div class="row ">
-        <div class="col">
-          <button type="button"
-            class="btn btn-outline-info btn-sm position-absolute top-0 start-50 translate-middle">Consultar</button>
-        </div>
-      </div>
-    </div>
-
-    <div class="col-8">
-      <div class="row">
-        <h2 class="text-center"> Historias </h2>
-        <hr>
-        <table>
-          <thead>
-            <tr>
-              <th>item</th>
-              <th>item</th>
-              <th>item</th>
-              <th>item</th>
-              <th>item</th>
-              <th>item</th>
-              <th>item</th>
-              <th>item</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>info</td>
-              <td>info</td>
-              <td>info</td>
-              <td>info</td>
-              <td>info</td>
-              <td>info</td>
-              <td>info</td>
-              <td>info</td>
-            </tr>
-            <tr>
-              <td>info</td>
-              <td>info</td>
-              <td>info</td>
-              <td>info</td>
-              <td>info</td>
-              <td>info</td>
-              <td>info</td>
-              <td>info</td>
-            </tr>
-            <tr>
-              <td>info</td>
-              <td>info</td>
-              <td>info</td>
-              <td>info</td>
-              <td>info</td>
-              <td>info</td>
-              <td>info</td>
-              <td>info</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
-  </div>
-  <br>
-  <div class="row">
-    <h2 class="text-center"> Detalles </h2>
-    <hr>
-    <div class="col-12" style="height: 100%;">
-
-
-    </div>  
-  </div>-->
+    </tr>
+  </tbody>
+</table>     

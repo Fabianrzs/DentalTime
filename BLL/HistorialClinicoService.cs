@@ -61,7 +61,7 @@ namespace BLL
                 HistoriaOdontologica historia = _context.HistoriasOdontologicas.Find(id);
                 Antecedente antecedente = _context.Antecedentes.Find(id);
 
-                if(historia != null && antecedente != null){
+                if(historia != null){
                     historia.Antecedentes = antecedente;
                     return new HistorialLogResponse(historia);
                 }
