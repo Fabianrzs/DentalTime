@@ -10,11 +10,13 @@ namespace Entity
     public class Servicio
     {
         [Key]
-        public string  IdServico { get; set; }
+        public int IdServico { get; set; }
         public string Nombre { get; set; }
         public decimal Precio { get; set; }
         public string Duracion { get; set; }
 
-        public Procedimiento Procedimiento { get; set; }
+        public ICollection<DetalleServicio> DetallesServicios { get; set; }
+
+        public ICollection<ConsultaOdontologica> ConsultasOdontologicas { get; set; }
     }
 }

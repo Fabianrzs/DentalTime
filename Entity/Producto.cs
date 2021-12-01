@@ -14,11 +14,20 @@ namespace Entity
         public string Nombre { get; set; }
         public string Laboratorio { get; set; }
         public string Marca { get; set; }
-        public int StockMin { get; set; }
-        public int StockMax { get; set; }
+
         public int StockActual { get; set; }
 
-        public string IdInventario { get; set; }
-        public Inventario Inventario { get; set; }
+        public DetalleServicio DetalleServicio { get; set; }
+        
+        public void DescontarStockActual(int unidadesUsadas){
+            this.StockActual = this.StockActual - unidadesUsadas;
+            if(this.StockActual < 0){
+                this.StockActual = 0;
+            }
+        }
+
+        public void IgresarStockActual (int unidadesCompradas){
+            this.StockActual = this.StockActual + unidadesCompradas;
+        }
     }
 }
