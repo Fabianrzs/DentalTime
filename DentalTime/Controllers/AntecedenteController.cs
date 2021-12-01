@@ -66,5 +66,14 @@ namespace DentalTime.Controllers
             if (request.Error) return BadRequest(request.Mensaje);
             return Ok(request.Antecedentes);
         }
+
+        [HttpGet("{id}")]
+        public ActionResult<Antecedente> Get(string id)
+        {
+            var request = _service.Find(id);
+            if (request.Error) return BadRequest(request.Mensaje);
+            return Ok(request.Antecedente);
+        }
+
     }
 }

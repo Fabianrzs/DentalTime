@@ -9,26 +9,26 @@
       <div class="row">
         <div class="col-9">
           <div class="form-floating">
-            <input type="text" class="form-control" [(ngModel)]="historia.noDocumentoPaciente" name="noDocumentoPaciente">
+            <input type="text" class="form-control" 
+            [(ngModel)]="paciente.noDocumento" name="noDocumentoPaciente">
             <label for="floatingInputGrid">Documento del Paciente</label>
           </div>
         </div>        
-        <div class="col-3">
-          <button type="button" class="btn btn-primary btn-sm" (click)="onSearch()">Buscar</button>
-        </div>
       </div>
       <br>
       <div class="row">
         <div class="col-md">
           <div class="form-floating">
-            <input type="text" class="form-control" [(ngModel)]="paciente.nombres" name="nombres" readonly>
+            <input type="text" class="form-control" 
+            [(ngModel)]="paciente.nombres" name="nombres" readonly>
             <label for="floatingInputGrid">Nombres</label>
           </div>
         </div>
         <div class="col-md">
           <div class="row">
             <div class="form-floating">
-              <input type="text" class="form-control" [(ngModel)]="paciente.apellidos" name="apellidos" readonly>
+              <input type="text" class="form-control" 
+              [(ngModel)]="paciente.apellidos" name="apellidos" readonly>
               <label for="floatingInputGrid">Apellidos</label>
             </div>
         </div>
@@ -38,13 +38,15 @@
       <div class="row">
       <div class="col-md">
         <div class="form-floating">
-          <textarea type="text" class="form-control" [(ngModel)]="historia.enfermedades" name="enfermedades" readonly></textarea>
+          <input type="text" class="form-control" 
+          [(ngModel)]="historia.enfermedades" name="enfermedades" readonly>
           <label for="floatingInputGrid">Enfermedades</label>
         </div>
       </div>
       <div class="col-md">
         <div class="form-floating">
-          <textarea type="text" class="form-control" [(ngModel)]="historia.quimicos" name="quimicos" readonly></textarea>
+          <input type="text" class="form-control" 
+          [(ngModel)]="historia.quimicos" name="quimicos" readonly>
           <label for="floatingInputGrid">Quimicos</label>
         </div>
       </div>
@@ -53,13 +55,15 @@
       <div class="row">
         <div class="col-md">
           <div class="form-floating">
-            <textarea type="text" class="form-control" [(ngModel)]="historia.farmaceuticos" name="farmaceuticos" readonly></textarea>
+            <input type="text" class="form-control" 
+            [(ngModel)]="historia.farmaceuticos" name="farmaceuticos" readonly>
             <label for="floatingInputGrid">Farmaceuticos</label>
           </div>
         </div>
         <div class="col-md">
           <div class="form-floating">
-            <textarea type="text" class="form-control" [(ngModel)]="historia.complicaciones" name="complicaciones" readonly></textarea>
+            <input type="text" class="form-control"
+             [(ngModel)]="historia.complicaciones" name="complicaciones" readonly>
             <label for="floatingInputGrid">Complicaciones</label>
           </div>
         </div>
@@ -80,126 +84,23 @@
         </thead>
         <tbody>
           <tr *ngFor="let c of consultas; index as i">
-            <th scope="row">{{i + 1}}</th>
-            
+            <th scope="row">{{c.diagnostico}}</th>
+            <th scope="row">{{c.valoracion}}</th>
+            <th scope="row">{{c.medicacion}}</th>
+            <th scope="row">{{c.recetaMedica}}</th>
           </tr>
-          <!--(click)="onSearch(p.noDocumento)"-->
         </tbody>
       </table>      
-      <div class="d-flex justify-content-between p-2">
+      <!--<div class="d-flex justify-content-between p-2">
         <ngb-pagination [collectionSize]="collectionSize" [(page)]="page" [pageSize]="pageSize" (pageChange)="get()">
         </ngb-pagination>
       
-        <select class="custom-select" style="width: auto" [(ngModel)]="pageSize" ><!--(ngModelChange)="get()"-->
+        <select class="custom-select" style="width: auto" [(ngModel)]="pageSize" >
           <option [ngValue]="2">2 consultas</option>
           <option [ngValue]="4">4 consultas</option>
           <option [ngValue]="6">6 consultas</option>
         </select>
-      </div>
+      </div>-->
     </div>
   </div>
 </div>
-
-
-<!-- <div class="row">
-    <div class="col-4" style="min-width: 120px; max-width: 350px;">
-      <h2 class="text-center">Datos</h2>
-      <hr>
-
-      <div class="form-floating border border-5">
-        <input type="text" class="form-control">
-        <label for="floatingInputGrid">Identificacion</label>
-      </div>
-
-
-      <div class="form-floating border border-5">
-        <input type="text" class="form-control" disabled>
-        <label for="floatingInputGrid">Nombres</label>
-      </div>
-
-      <div class="form-floating border border-5">
-        <input type="text" class="form-control" disabled>
-        <label for="floatingInputGrid">Apellidos</label>
-      </div>
-
-      <div class="form-floating border border-5">
-        <input type="date" class="form-control">
-        <label for="floatingInputGrid">Fecha de Inicio</label>
-      </div>
-
-      <div class="form-floating border border-5">
-        <input type="date" class="form-control">
-        <label for="floatingInputGrid">Fecha de Fin</label>
-      </div>
-
-      <br>
-      <div class="row ">
-        <div class="col">
-          <button type="button"
-            class="btn btn-outline-info btn-sm position-absolute top-0 start-50 translate-middle">Consultar</button>
-        </div>
-      </div>
-    </div>
-
-    <div class="col-8">
-      <div class="row">
-        <h2 class="text-center"> Historias </h2>
-        <hr>
-        <table>
-          <thead>
-            <tr>
-              <th>item</th>
-              <th>item</th>
-              <th>item</th>
-              <th>item</th>
-              <th>item</th>
-              <th>item</th>
-              <th>item</th>
-              <th>item</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>info</td>
-              <td>info</td>
-              <td>info</td>
-              <td>info</td>
-              <td>info</td>
-              <td>info</td>
-              <td>info</td>
-              <td>info</td>
-            </tr>
-            <tr>
-              <td>info</td>
-              <td>info</td>
-              <td>info</td>
-              <td>info</td>
-              <td>info</td>
-              <td>info</td>
-              <td>info</td>
-              <td>info</td>
-            </tr>
-            <tr>
-              <td>info</td>
-              <td>info</td>
-              <td>info</td>
-              <td>info</td>
-              <td>info</td>
-              <td>info</td>
-              <td>info</td>
-              <td>info</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
-  </div>
-  <br>
-  <div class="row">
-    <h2 class="text-center"> Detalles </h2>
-    <hr>
-    <div class="col-12" style="height: 100%;">
-
-
-    </div>  
-  </div>-->

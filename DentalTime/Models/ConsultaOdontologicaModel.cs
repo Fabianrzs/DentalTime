@@ -9,8 +9,6 @@ namespace DentalTime.Models
 {
     public class ConsultaClinicaInputModel
     {
-        [Required(ErrorMessage = "Id Consulta Odontologica requerido")]
-        public int IdConsultaOdontologica { get; set; }
         [Required(ErrorMessage = "Motivo requerido")]
         public string Motivo { get; set; }
         [Required(ErrorMessage = "Medicacion requerido")]

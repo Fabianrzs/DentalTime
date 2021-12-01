@@ -15,6 +15,8 @@ namespace DentalTime.Models
         public string Estado { get; set; }
         [Required(ErrorMessage = "Numero de Documento del Paciente requerido")]
         public string NoDocumentoPaciente { get; set; }
+        public int CodAgenda { get; set; }
+
     }
 
     public class SolicitudCitaCitaViewModel : SolicitudCitaInputModel

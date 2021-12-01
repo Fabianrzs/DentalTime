@@ -50,7 +50,6 @@ namespace DentalTime.Controllers
         private ConsultaOdontologica MapearConsultaClinica(ConsultaClinicaInputModel consultaInput)
         {
             ConsultaOdontologica consultaClinica = new ConsultaOdontologica();
-            consultaClinica.IdConsultaOdontologica = consultaInput.IdConsultaOdontologica;
             consultaClinica.Motivo = consultaInput.Motivo;
             consultaClinica.Medicacion = consultaInput.Medicacion;
             consultaClinica.Diagnostico = consultaInput.Diagnostico;
@@ -61,12 +60,15 @@ namespace DentalTime.Controllers
             return consultaClinica;
         }
 
-        [HttpGet]
-        public ActionResult<List<ConsultaOdontologica>> Consulta()
+        [HttpGet("{id}")]
+        public ActionResult<List<ConsultaOdontologica>> Consulta(string id)
         {
-            var request = _service.Consult();
+            var request = _service.Consult(id);
             if (request.Error) return BadRequest(request.Mensaje);
             return Ok(request.ConsultaClinicas);
         }
+
+
+
     }
 }

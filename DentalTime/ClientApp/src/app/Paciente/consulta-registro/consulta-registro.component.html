@@ -1,52 +1,67 @@
 <div class="container">
-  <div class="row justify-content-center">
-    <div class="col">
-      <h5 class="text-center">Registro de Consulta</h5>
-      <hr>
-
-      <div class="form-floating border border-5">
-        <input type="text" class="form-control">
-        <label for="floatingInputGrid">Identificacion</label>
+    <div class="row">
+      <div class="col-9">
+        <div class="form-floating">
+          <input type="text" class="form-control" [(ngModel)]="paciente.noDocumento" name="noDocumentoPaciente"
+            readonly>
+          <label for="floatingInputGrid">Documento del Paciente</label>
+        </div>
       </div>
-      <div class="form-floating border border-5">
-        <input type="text" class="form-control" disabled>
-        <label for="floatingInputGrid">Nombres</label>
+    </div>
+    <br>
+    <div class="row">
+      <div class="col-md">
+        <div class="form-floating">
+          <input type="text" class="form-control" [(ngModel)]="paciente.nombres" name="nombres" readonly>
+          <label for="floatingInputGrid">Nombres</label>
+        </div>
       </div>
-      <div class="form-floating border border-5">
-        <input type="text" class="form-control" disabled>
-        <label for="floatingInputGrid">Apellidos</label>
-      </div>
-
-      <div class="form-floating border border-5">
-        <select class="form-select">
-          <option selected>Seleccionar</option>
-          <option value="1">Servicio 1</option>
-          <option value="2">Servicio 2</option>
-          <option value="3">Servicio 3</option>
-        </select>
-        <label>Nombre del Servicio</label>
-      </div>
-
-      <div class="form-floating border border-5">
-        <input type="date" class="form-control">
-        <label for="floatingInputGrid">Fecha</label>
-      </div>
-
-      <div class="form-floating border border-5">
-        <textarea class="form-control" id="floatingTextarea2" style="height: 200px"></textarea>
-        <label for="floatingInputGrid">Descripcion</label>
-      </div>
-      <br>
-      <div class="col-12">
-        <div class="row justify-content-center">
-          <div class="col-6">
-            <button type="button" class="btn btn-outline-danger btn-sm position-absolute top-0 end-0" routerLink='/consultaUsuario'>Cancelar</button>
-          </div>
-          <div class="col col-md">
-              <button type="button" class="btn btn-outline-success btn-sm ">Guardar</button>
+      <div class="col-md">
+        <div class="row">
+          <div class="form-floating">
+            <input type="text" class="form-control" [(ngModel)]="paciente.apellidos" name="apellidos" readonly>
+            <label for="floatingInputGrid">Apellidos</label>
           </div>
         </div>
       </div>
     </div>
-  </div>
+    <br>
+    <div class="row">
+      <div class="col-md">
+        <div class="form-floating">
+          <input type="text" class="form-control" [(ngModel)]="consulta.medicacion" name="enfermedades">
+          <label for="floatingInputGrid">Medicacion</label>
+        </div>
+      </div>
+      <div class="col-md">
+        <div class="form-floating">
+          <input type="text" class="form-control" [(ngModel)]="consulta.diagnostico" name="quimicos">
+          <label for="floatingInputGrid">Diagnostico</label>
+        </div>
+      </div>
+    </div>
+    <br>
+    <div class="row">
+      <div class="col-md">
+        <div class="form-floating">
+          <input type="text" class="form-control" [(ngModel)]="consulta.valoracion" name="farmaceuticos">
+          <label for="floatingInputGrid">Valoracion</label>
+        </div>
+      </div>
+      <div class="col-md">
+        <div class="form-floating">
+          <input type="text" class="form-control" [(ngModel)]="consulta.recetaMedica"  name="complicaciones">
+          <label for="floatingInputGrid">Receta Clinica</label>
+        </div>
+      </div>
+    </div>
+    <br>
+    <div class="row justify-content-center">
+      <div class="col-6">
+        <button type="button" class="btn btn-outline-danger btn-sm position-absolute top-0 end-0" routerLink='/consultaUsuario'>Cancelar</button>
+      </div>
+      <div class="col col-md">
+        <button type="button" class="btn btn-outline-success btn-sm" (click)="add()">Guardar</button>
+      </div>
+    </div>
 </div>

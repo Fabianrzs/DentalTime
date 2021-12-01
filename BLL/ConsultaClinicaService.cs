@@ -51,11 +51,11 @@ namespace BLL
 
         }
 
-        public ConsultaClinicaConsultaResponse Consult()
+        public ConsultaClinicaConsultaResponse Consult(string id)
         {
             try
             {
-                List<ConsultaOdontologica> consultas = _context.ConsultasOdontologicas.ToList();
+                List<ConsultaOdontologica> consultas = _context.ConsultasOdontologicas.Where(c => c.IdHistoriaOdontologica == id).ToList();
                 if (consultas != null)
                 {
                     return new ConsultaClinicaConsultaResponse(consultas);

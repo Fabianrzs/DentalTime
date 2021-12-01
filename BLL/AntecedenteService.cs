@@ -49,6 +49,22 @@ namespace BLL
             catch (Exception e) { return new AntecendetenConsultaResponse($"Error al Consultar: Se presento lo siguiente {e.Message}"); }
         }
 
+        public AntecedenteLogResponse Find(string id){
+            try
+            {
+                Antecedente antecedente = _context.Antecedentes.Find(id);
+
+                if(antecedente != null){
+                    return new AntecedenteLogResponse(antecedente);
+                }
+                return new AntecedenteLogResponse("Inicializar Historia Odontologia");
+            }
+            catch (Exception e)
+            {
+                return new AntecedenteLogResponse("Error en la aplicacion" + e.Message);
+            }
+        }
+
     }
 
     public class AntecedenteLogResponse
