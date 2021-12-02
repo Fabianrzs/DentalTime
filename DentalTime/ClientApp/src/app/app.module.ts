@@ -29,6 +29,7 @@ import { AlertModalComponent } from './@base/alertModal/alertModal.component';
 import { AgendaMedicoComponent } from './agenda-medico/agenda-medico.component';
 import { JwtInterceptor } from './@elements/service/jwt.interceptor';
 import { UserSessionComponent } from './user-session/user-session.component';
+import { RegistrarOdontologoComponent } from './odontologo/registrar-odontologo/registrar-odontologo.component';
 
 //---------------------------------------------------Routers---------------------------------------------------------------
 @NgModule({
@@ -51,7 +52,8 @@ import { UserSessionComponent } from './user-session/user-session.component';
     HistorialRegistroComponent,
       SolicitudCitaComponent,
       AgendaMedicoComponent,
-      UserSessionComponent
+      UserSessionComponent,
+      RegistrarOdontologoComponent
    ],
   imports: [
     ReactiveFormsModule,
