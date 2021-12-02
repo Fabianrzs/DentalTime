@@ -17,7 +17,27 @@ namespace DAL
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
-        { 
+        {
+            modelBuilder.Entity<Odontologo>()
+               .HasOne<Agenda>(o => o.Agenda)
+               .WithOne(a => a.Odontologo)
+               .HasForeignKey<Agenda>(a => a.NoDocumento);
+
+            modelBuilder.Entity<Agenda>()
+                .HasOne<SolicitudCita>(a => a.Cita)
+                .WithOne(s => s.Agenda)
+                .HasForeignKey<SolicitudCita>(s => s.CodAgenda);
+
+            modelBuilder.Entity<ConsultaOdontologica>()
+                .HasOne<Antecedente>(c => c.Antecedente)
+                .WithOne(a => a.ConsultaOdontologica)
+                .HasForeignKey<ConsultaOdontologica>(c => c.IdAntecedentes);
+
+            // modelBuilder.Entity<Producto>()
+            //     .HasOne<Inventario>(p => p.Inventario)
+            //     .WithMany(i => i.Productos)
+            //     .HasForeignKey(p => p.IdInventario);
+
         }
 
         public DbSet<Agenda> Agendas { get; set; }
