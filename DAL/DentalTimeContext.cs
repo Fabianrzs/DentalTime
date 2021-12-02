@@ -38,12 +38,21 @@ namespace DAL
                 .WithOne(d => d.Producto)
                 .HasForeignKey<DetalleServicio>(d => d.ReferenciaProducto);
 
+            modelBuilder.Entity<DetalleServicio>()
+                .HasOne<Servicio>(d => d.Servicio)
+                .WithMany(s => s.DetallesServicios)
+                .HasForeignKey(d => d.IdServicio);
+                
             modelBuilder.Entity<SolicitudCita>()
                 .HasOne<ConsultaOdontologica>(s => s.ConsultaOdontologica)
                 .WithOne(c => c.SolicitudCita)
                 .HasForeignKey<ConsultaOdontologica>(s => s.IdSolicitudCita);
 
-
+            modelBuilder.Entity<ConsultaOdontologica>()
+                .HasOne<Servicio>(c => c.Servicio)
+                .WithMany(s => s.ConsultasOdontologicas)
+                .HasForeignKey(c => c.IdServicio);
+                
         }
 
         public DbSet<Agenda> Agendas { get; set; }

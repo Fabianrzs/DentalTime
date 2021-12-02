@@ -1,27 +1,21 @@
 {
   "format": 1,
   "restore": {
-    "D:\\PROYECTOS PROGRAMACION\\PWEB\\Angular\\proyecto\\DAL\\DAL.csproj": {}
+    "I:\\Semestre 5\\Programacion WEB\\Proyectos\\DentalTime\\DAL\\DAL.csproj": {}
   },
   "projects": {
-    "D:\\PROYECTOS PROGRAMACION\\PWEB\\Angular\\proyecto\\DAL\\DAL.csproj": {
+    "I:\\Semestre 5\\Programacion WEB\\Proyectos\\DentalTime\\DAL\\DAL.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\PROYECTOS PROGRAMACION\\PWEB\\Angular\\proyecto\\DAL\\DAL.csproj",
+        "projectUniqueName": "I:\\Semestre 5\\Programacion WEB\\Proyectos\\DentalTime\\DAL\\DAL.csproj",
         "projectName": "DAL",
-        "projectPath": "D:\\PROYECTOS PROGRAMACION\\PWEB\\Angular\\proyecto\\DAL\\DAL.csproj",
-        "packagesPath": "C:\\Users\\WIN10\\.nuget\\packages\\",
-        "outputPath": "D:\\PROYECTOS PROGRAMACION\\PWEB\\Angular\\proyecto\\DAL\\obj\\",
+        "projectPath": "I:\\Semestre 5\\Programacion WEB\\Proyectos\\DentalTime\\DAL\\DAL.csproj",
+        "packagesPath": "C:\\Users\\andre\\.nuget\\packages\\",
+        "outputPath": "I:\\Semestre 5\\Programacion WEB\\Proyectos\\DentalTime\\DAL\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
-          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
-        ],
         "configFilePaths": [
-          "C:\\Users\\WIN10\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+          "C:\\Users\\andre\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net5.0"
@@ -34,8 +28,8 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "D:\\PROYECTOS PROGRAMACION\\PWEB\\Angular\\proyecto\\Entity\\Entity.csproj": {
-                "projectPath": "D:\\PROYECTOS PROGRAMACION\\PWEB\\Angular\\proyecto\\Entity\\Entity.csproj"
+              "I:\\Semestre 5\\Programacion WEB\\Proyectos\\DentalTime\\Entity\\Entity.csproj": {
+                "projectPath": "I:\\Semestre 5\\Programacion WEB\\Proyectos\\DentalTime\\Entity\\Entity.csproj"
               }
             }
           }
@@ -82,28 +76,22 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.403\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "D:\\Program\\dotnet\\sdk\\5.0.401\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\PROYECTOS PROGRAMACION\\PWEB\\Angular\\proyecto\\Entity\\Entity.csproj": {
+    "I:\\Semestre 5\\Programacion WEB\\Proyectos\\DentalTime\\Entity\\Entity.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\PROYECTOS PROGRAMACION\\PWEB\\Angular\\proyecto\\Entity\\Entity.csproj",
+        "projectUniqueName": "I:\\Semestre 5\\Programacion WEB\\Proyectos\\DentalTime\\Entity\\Entity.csproj",
         "projectName": "Entity",
-        "projectPath": "D:\\PROYECTOS PROGRAMACION\\PWEB\\Angular\\proyecto\\Entity\\Entity.csproj",
-        "packagesPath": "C:\\Users\\WIN10\\.nuget\\packages\\",
-        "outputPath": "D:\\PROYECTOS PROGRAMACION\\PWEB\\Angular\\proyecto\\Entity\\obj\\",
+        "projectPath": "I:\\Semestre 5\\Programacion WEB\\Proyectos\\DentalTime\\Entity\\Entity.csproj",
+        "packagesPath": "C:\\Users\\andre\\.nuget\\packages\\",
+        "outputPath": "I:\\Semestre 5\\Programacion WEB\\Proyectos\\DentalTime\\Entity\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
-          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
-        ],
         "configFilePaths": [
-          "C:\\Users\\WIN10\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+          "C:\\Users\\andre\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net5.0"
@@ -142,7 +130,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.403\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "D:\\Program\\dotnet\\sdk\\5.0.401\\RuntimeIdentifierGraph.json"
         }
       }
     }
