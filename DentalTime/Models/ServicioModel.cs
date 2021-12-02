@@ -18,12 +18,13 @@ namespace DentalTime.Models
 
         public class ServicioViewModel : ServicioInputModel
         {
+            public ICollection<DetalleServicio> DetallesServicios { get; set; }
             public ServicioViewModel(Servicio servicio)
             {
                 Nombre = servicio.Nombre;
                 Precio = servicio.Precio;
                 Duracion = servicio.Duracion;
-                
+                DetallesServicios = servicio.DetallesServicios;
             }
         }
     }

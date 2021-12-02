@@ -24,6 +24,13 @@ namespace BLL
         {
             try
             {
+                
+                if(_context.Pacientes.Find(consultaClinica.NoDocumento) != null )
+                    if (_context.Citas.Find(consultaClinica.IdSolicitudCita) != null){
+                        if(_context.Servicios.Find(consultaClinica.IdServicio) != null){
+                            
+                        }
+                    }
                 _context.ConsultasOdontologicas.Add(consultaClinica);
                 _context.SaveChanges();
                 return new ConsultaClinicaLogResponse(consultaClinica);
