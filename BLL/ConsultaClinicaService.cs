@@ -60,11 +60,11 @@ namespace BLL
             try
             {
 
-                List<ConsultaOdontologica> consultas = _context.ConsultasOdontologicas.Where(c => c.IdHistoriaOdontologica == id).Include(c => c.SolicitudCita).ToList();
-                if (consultas != null)
-                {
-                    return new ConsultaClinicaConsultaResponse(consultas);
-                }
+                //List<ConsultaOdontologica> consultas = _context.ConsultasOdontologicas.Where(c => c.IdHistoriaOdontologica == id).Include(c => c.SolicitudCita).ToList();
+                //if (consultas != null)
+                //{
+                //    return new ConsultaClinicaConsultaResponse(consultas);
+                //}
                 return new ConsultaClinicaConsultaResponse($"No se han agregado registros");
             }
             catch (Exception e) { return new ConsultaClinicaConsultaResponse($"Error al Consultar: Se presento lo siguiente {e.Message}"); }

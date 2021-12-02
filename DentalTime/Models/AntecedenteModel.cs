@@ -25,7 +25,6 @@ namespace DentalTime.Models
     {
         public AntecedenteViewModel(Antecedente antecedente)
         {
-            IdAntecedente = antecedente.IdAntecedente;
             Enfermedades = antecedente.Enfermedades;
             Farmaceuticos = antecedente.Farmaceuticos;
             Quimicos = antecedente.Quimicos;

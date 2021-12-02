@@ -21,7 +21,7 @@ namespace BLL
         {
             try
             {
-                Paciente paciente = _context.Pacientes.Find(cita.NoDocumentoPaciente);
+                Paciente paciente = _context.Pacientes.Find(cita.NoDocumento);
                 if(paciente != null)
                 {
                     cita.Paciente = paciente;
@@ -42,11 +42,11 @@ namespace BLL
                 SolicitudCita cita = _context.Citas.Find(codCita);
                 if (cita != null)
                 {
-                   if (_context.Pacientes.Find(citaNew.NoDocumentoPaciente) != null)
+                   if (_context.Pacientes.Find(citaNew.NoDocumento) != null)
                    {
                         cita.Fecha = citaNew.Fecha;
                         cita.Estado = citaNew.Estado;
-                        cita.NoDocumentoPaciente = citaNew.NoDocumentoPaciente;
+                        cita.NoDocumento = citaNew.NoDocumento;
                         _context.Citas.Update(cita);
                         _context.SaveChanges();
                         return new CitaLogResponse(cita);

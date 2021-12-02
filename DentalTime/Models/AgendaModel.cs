@@ -24,8 +24,8 @@ namespace DentalTime.Models
         {
             CodAgenda = agenda.CodAgenda;
             Estado = agenda.Estado;
-            FechaHoraInicio = agenda.FechaHoraInicio;
-            FechaHoraFin = agenda.FechaHoraFin;
+            FechaHoraInicio = agenda.FechaInicio;
+            FechaHoraFin = agenda.FechaFin;
         }
 
     }

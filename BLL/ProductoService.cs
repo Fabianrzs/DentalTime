@@ -20,8 +20,7 @@ namespace BLL
         {
             try
             {
-                if(_context.Inventarios.Find(producto.IdInventario) != null)
-                {
+               
                     if (_context.Productos.Find(producto.Referencia) == null)
                     {
                         _context.Productos.Add(producto);
@@ -29,8 +28,7 @@ namespace BLL
                         return new ProductoLogResponse(producto);
                     }
                     return new ProductoLogResponse($"El producto ya se encuentra registrado");
-                }
-                return new ProductoLogResponse($"El inventario no se encuentre registrado");
+                
             }
             catch (Exception e) { return new ProductoLogResponse($"Error al Guardar: Se presento lo siguiente {e.Message}"); }
         }
