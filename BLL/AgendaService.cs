@@ -21,7 +21,8 @@ namespace BLL
         {
             try
             {
-                if(_context.Agendas.FirstOrDefault(a => a.FechaFin == agenda.FechaFin || a.FechaInicio == agenda.FechaInicio) == null){
+                if(_context.Odontologos.Find(agenda.NoDocumento) != null){
+                    agenda.Estado = "DISPONIBLE";
                     _context.Agendas.Add(agenda);
                     _context.SaveChanges();
                     return new AgendaLogResponse(agenda);
