@@ -21,7 +21,8 @@ namespace BLL
         {
             try
             {
-                if(_context.Odontologos.Find(agenda.NoDocumento) != null){
+                var odonto = _context.Odontologos.Find(agenda.NoDocumento);
+                if (odonto!= null){
                     agenda.Estado = "DISPONIBLE";
                     _context.Agendas.Add(agenda);
                     _context.SaveChanges();
@@ -33,11 +34,11 @@ namespace BLL
             catch (Exception e) { return new AgendaLogResponse($"Error al Guardar: Se presento lo siguiente {e.Message}"); }
         }
 
-        public AgendaConsultaResponse Consult()
+        public AgendaConsultaResponse Consult(string noDocumento)
         {
             try
             {
-                List<Agenda> agendas = _context.Agendas.ToList();
+                List<Agenda> agendas = _context.Agendas.Where(a => a.Cita == null && a.NoDocumento.Equals(noDocumento)).ToList();
                 if (agendas != null)
                 {
                     return new AgendaConsultaResponse(agendas);
