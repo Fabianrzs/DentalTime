@@ -1,7 +1,15 @@
+import { ConsultaOdontologica } from "./ConsultaOdontologica";
+
 export class Antecendentes {
-  idAntecedente: string;
   enfermedades: string;
   farmaceuticos: string;
   quimicos: string;
   complicaciones: string;
+}
+
+export class AntecendentesView extends Antecendentes {
+
+  idAntecedente:number;
+  consultaOdontologica:ConsultaOdontologica;
+
 }
