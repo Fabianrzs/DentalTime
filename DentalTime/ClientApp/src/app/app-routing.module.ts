@@ -16,6 +16,7 @@ import { ServicioComponent } from './servicio/servicio.component';
 import { ConsultaRegistroComponent } from './Paciente/consulta-registro/consulta-registro.component';
 import { AgendaMedicoComponent } from './agenda-medico/agenda-medico.component';
 import { AuthGuard } from './@elements/service/auth.guard';
+import { RegistrarOdontologoComponent } from './odontologo/registrar-odontologo/registrar-odontologo.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginUserComponent, },
@@ -32,6 +33,7 @@ const routes: Routes = [
   { path: 'registroProducto', component: ProductoRegistroComponent, canActivate: [AuthGuard]},
   { path: 'gestionInventario', component: GestionInventarioComponent, canActivate: [AuthGuard]},
   { path: 'agendaMedico', component: AgendaMedicoComponent, canActivate: [AuthGuard]},
+  { path: 'registrarMedico', component: RegistrarOdontologoComponent, canActivate: [AuthGuard]},
 ];
 
 

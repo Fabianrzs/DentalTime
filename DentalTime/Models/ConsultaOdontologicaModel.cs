@@ -52,6 +52,7 @@ namespace DentalTime.Models
             Servicio = consultaClinica.Servicio;
             IdServicio = consultaClinica.IdServicio;
             SolicitudCita = consultaClinica.SolicitudCita;
+            Paciente = consultaClinica.Paciente;
 
         }
     }
