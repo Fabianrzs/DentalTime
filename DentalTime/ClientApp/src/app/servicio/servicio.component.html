@@ -24,7 +24,6 @@
                 <thead class = "text-primary">
                   <tr>
                     <th scope="col">#</th>
-                    <th scope="col">Identificador</th>
                     <th scope="col">Nombre</th>
                     <th scope="col">Precio</th>
                     <th scope="col">Duracion</th>
@@ -33,7 +32,6 @@
                 <tbody>
                   <tr *ngFor="let s of servicios; index as i ">
                     <th scope="row">{{i + 1}}</th>
-                    <td>{{s.idServico}}</td>
                     <td>{{s.nombre}}</td>
                     <td>{{s.precio}}</td>
                     <td>{{s.duracion}}</td>
@@ -61,11 +59,6 @@
       </div>
       <div class="modal-body">
         <form [formGroup]="formServicio">
-      <div class="form-floating border border-5">
-        <input type="text" formControlName="idServico" class="form-control"
-          [ngClass]="{ 'is-invalid':  control.idServico.errors && formServicio.get('idServico').touched }" >
-        <label for="floatingInputGrid">Identificador</label>
-      </div>
       <div class="form-floating border border-5">
         <input type="text" formControlName="nombre" class="form-control"
         [ngClass]="{ 'is-invalid':  control.nombre.errors && formServicio.get('nombre').touched }" >        
