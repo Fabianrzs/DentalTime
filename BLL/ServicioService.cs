@@ -1,5 +1,6 @@
 ﻿using DAL;
 using Entity;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -81,7 +82,7 @@ namespace BLL
         {
             try
             {
-                List<Servicio> servicios = _context.Servicios.ToList();
+                List<Servicio> servicios = _context.Servicios.Include(s => s.DetallesServicios).ToList();
                 if (servicios != null)
                 {
                     return new ServicioConsultaResponse(servicios);
