@@ -20,25 +20,53 @@ namespace BLL
             _context = context;
         }
 
-        public ConsultaClinicaLogResponse Save(ConsultaOdontologica consultaClinica)
+       public ConsultaClinicaLogResponse Save(ConsultaOdontologica consultaClinica)
         {
             try
             {
-                
-                if(_context.Pacientes.Find(consultaClinica.NoDocumento) != null )
-                    if (_context.Citas.Find(consultaClinica.IdSolicitudCita) != null){
-                        if(_context.Servicios.Find(consultaClinica.IdServicio) != null){
-                            
+                Paciente paciente = _context.Pacientes.Find(consultaClinica.NoDocumento);
+                SolicitudCita solicitudCita = _context.Citas.Find(consultaClinica.IdSolicitudCita);
+                Servicio servicio = _context.Servicios.Where(s => s.IdServico == consultaClinica.IdServicio).Include(s => s.DetallesServicios).FirstOrDefault();
+
+                if (paciente != null) 
+                { 
+                    if (solicitudCita != null)
+                    {
+                        if (servicio != null)
+                        {
+                            DescontarUnidadesProducto(servicio);
+                            solicitudCita.Estado = "ATENDIDO";
+                            _context.Citas.Update(solicitudCita);
+                            _context.Antecedentes.Add(consultaClinica.Antecedente);
+                            _context.ConsultasOdontologicas.Add(consultaClinica);
+                            _context.SaveChanges();
+                            return new ConsultaClinicaLogResponse(consultaClinica);
                         }
+                        return new ConsultaClinicaLogResponse("Servicio no registrado");
                     }
-                _context.ConsultasOdontologicas.Add(consultaClinica);
-                _context.SaveChanges();
-                return new ConsultaClinicaLogResponse(consultaClinica);
+                    return new ConsultaClinicaLogResponse("Solicitud Cita no registrada");
+                }
+                return new ConsultaClinicaLogResponse("Paciente no registrado");
             }
             catch (Exception e)
             {
                 return new ConsultaClinicaLogResponse($"Error al Guardar: Se presento lo siguiente {e.Message}");
             }
+        }
+
+        private void DescontarUnidadesProducto(Servicio servicio)
+        {
+            foreach (var item in servicio.DetallesServicios)
+            {
+                var producto = _context.Productos.Find(item.ReferenciaProducto);
+                if (producto!= null)
+                {
+                producto.DescontarStockActual(item.UnidadesUsadas);
+                _context.Productos.Update(producto);
+                }
+                
+            }
+             
         }
 
         public ConsultaClinicaLogResponse Find()

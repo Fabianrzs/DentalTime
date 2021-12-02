@@ -50,13 +50,15 @@ namespace DentalTime.Controllers
         private ConsultaOdontologica MapearConsultaClinica(ConsultaClinicaInputModel consultaInput)
         {
             ConsultaOdontologica consultaClinica = new ConsultaOdontologica();
-            //consultaClinica.IdConsultaOdontologica = consultaInput.IdConsultaOdontologica;
             consultaClinica.Motivo = consultaInput.Motivo;
             consultaClinica.Medicacion = consultaInput.Medicacion;
             consultaClinica.Diagnostico = consultaInput.Diagnostico;
             consultaClinica.Valoracion = consultaInput.Valoracion;
             consultaClinica.RecetaMedica = consultaInput.RecetaMedica;
-            consultaClinica.IdSolicitudCita = consultaInput.IdSolicitudCita;  
+            consultaClinica.IdSolicitudCita = consultaInput.IdSolicitudCita;
+            consultaClinica.Antecedente = consultaInput.Antecedente;
+            consultaClinica.NoDocumento = consultaInput.NoDocumento;
+            consultaClinica.IdServicio = consultaInput.IdServicio;
             return consultaClinica;
         }
 
