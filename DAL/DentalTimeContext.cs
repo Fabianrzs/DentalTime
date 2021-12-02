@@ -1,4 +1,4 @@
-﻿using DAL.Migrations;
+﻿using DAL;
 using Entity;
 using Microsoft.EntityFrameworkCore;
 using System;

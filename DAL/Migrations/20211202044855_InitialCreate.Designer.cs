@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DAL.Migrations
 {
     [DbContext(typeof(DentalTimeContext))]
-    [Migration("20211112003514_agendas")]
-    partial class agendas
+    [Migration("20211202044855_InitialCreate")]
+    partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -31,21 +31,30 @@ namespace DAL.Migrations
                     b.Property<string>("Estado")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateTime>("FechaHoraFin")
+                    b.Property<DateTime>("FechaFin")
                         .HasColumnType("datetime2");
 
-                    b.Property<DateTime>("FechaHoraInicio")
+                    b.Property<DateTime>("FechaInicio")
                         .HasColumnType("datetime2");
+
+                    b.Property<string>("NoDocumento")
+                        .HasColumnType("nvarchar(450)");
 
                     b.HasKey("CodAgenda");
+
+                    b.HasIndex("NoDocumento")
+                        .IsUnique()
+                        .HasFilter("[NoDocumento] IS NOT NULL");
 
                     b.ToTable("Agendas");
                 });
 
             modelBuilder.Entity("Entity.Antecedente", b =>
                 {
-                    b.Property<string>("IdAntecedente")
-                        .HasColumnType("nvarchar(450)");
+                    b.Property<int>("IdAntecedente")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<string>("Complicaciones")
                         .HasColumnType("nvarchar(max)");
@@ -74,8 +83,11 @@ namespace DAL.Migrations
                     b.Property<string>("Diagnostico")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("IdHistoriaOdontologica")
-                        .HasColumnType("nvarchar(450)");
+                    b.Property<int>("IdAntecedentes")
+                        .HasColumnType("int");
+
+                    b.Property<int>("IdServicio")
+                        .HasColumnType("int");
 
                     b.Property<int>("IdSolicitudCita")
                         .HasColumnType("int");
@@ -86,6 +98,12 @@ namespace DAL.Migrations
                     b.Property<string>("Motivo")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("NoDocumento")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("PacienteNoDocumento")
+                        .HasColumnType("nvarchar(450)");
+
                     b.Property<string>("RecetaMedica")
                         .HasColumnType("nvarchar(max)");
 
@@ -94,49 +112,63 @@ namespace DAL.Migrations
 
                     b.HasKey("IdConsultaOdontologica");
 
-                    b.HasIndex("IdHistoriaOdontologica");
+                    b.HasIndex("IdAntecedentes")
+                        .IsUnique();
+
+                    b.HasIndex("IdServicio");
 
                     b.HasIndex("IdSolicitudCita")
                         .IsUnique();
 
+                    b.HasIndex("PacienteNoDocumento");
+
                     b.ToTable("ConsultasOdontologicas");
                 });
 
-            modelBuilder.Entity("Entity.HistoriaOdontologica", b =>
+            modelBuilder.Entity("Entity.DetalleServicio", b =>
                 {
-                    b.Property<string>("IdHistoriaOdontologica")
+                    b.Property<int>("IdDetalleServicio")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int>("IdServicio")
+                        .HasColumnType("int");
+
+                    b.Property<string>("ReferenciaProducto")
                         .HasColumnType("nvarchar(450)");
 
-                    b.Property<DateTime>("FechaInicio")
-                        .HasColumnType("datetime2");
+                    b.Property<int>("UnidadesUsadas")
+                        .HasColumnType("int");
 
-                    b.Property<string>("IdAntecedentesOfHO")
-                        .HasColumnType("nvarchar(450)");
+                    b.HasKey("IdDetalleServicio");
 
-                    b.Property<string>("NoDocumentoPaciente")
-                        .HasColumnType("nvarchar(450)");
+                    b.HasIndex("IdServicio");
 
-                    b.HasKey("IdHistoriaOdontologica");
-
-                    b.HasIndex("IdAntecedentesOfHO")
+                    b.HasIndex("ReferenciaProducto")
                         .IsUnique()
-                        .HasFilter("[IdAntecedentesOfHO] IS NOT NULL");
+                        .HasFilter("[ReferenciaProducto] IS NOT NULL");
 
-                    b.HasIndex("NoDocumentoPaciente")
-                        .IsUnique()
-                        .HasFilter("[NoDocumentoPaciente] IS NOT NULL");
-
-                    b.ToTable("HistoriasOdontologicas");
+                    b.ToTable("DetallesServicios");
                 });
 
-            modelBuilder.Entity("Entity.Inventario", b =>
+            modelBuilder.Entity("Entity.Odontologo", b =>
                 {
-                    b.Property<string>("IdInventario")
+                    b.Property<string>("NoDocumento")
                         .HasColumnType("nvarchar(450)");
 
-                    b.HasKey("IdInventario");
+                    b.Property<string>("Apellidos")
+                        .HasColumnType("nvarchar(max)");
 
-                    b.ToTable("Inventarios");
+                    b.Property<string>("Nombres")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("TipoDocumento")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("NoDocumento");
+
+                    b.ToTable("Odontologos");
                 });
 
             modelBuilder.Entity("Entity.Paciente", b =>
@@ -176,39 +208,9 @@ namespace DAL.Migrations
                     b.ToTable("Pacientes");
                 });
 
-            modelBuilder.Entity("Entity.Procedimiento", b =>
-                {
-                    b.Property<int>("IdProcedimineto")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("Descripcion")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("IdConsultaOdontologica")
-                        .HasColumnType("int");
-
-                    b.Property<string>("IdServico")
-                        .HasColumnType("nvarchar(450)");
-
-                    b.HasKey("IdProcedimineto");
-
-                    b.HasIndex("IdConsultaOdontologica");
-
-                    b.HasIndex("IdServico")
-                        .IsUnique()
-                        .HasFilter("[IdServico] IS NOT NULL");
-
-                    b.ToTable("Procedimientos");
-                });
-
             modelBuilder.Entity("Entity.Producto", b =>
                 {
                     b.Property<string>("Referencia")
-                        .HasColumnType("nvarchar(450)");
-
-                    b.Property<string>("IdInventario")
                         .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("Laboratorio")
@@ -223,23 +225,17 @@ namespace DAL.Migrations
                     b.Property<int>("StockActual")
                         .HasColumnType("int");
 
-                    b.Property<int>("StockMax")
-                        .HasColumnType("int");
-
-                    b.Property<int>("StockMin")
-                        .HasColumnType("int");
-
                     b.HasKey("Referencia");
-
-                    b.HasIndex("IdInventario");
 
                     b.ToTable("Productos");
                 });
 
             modelBuilder.Entity("Entity.Servicio", b =>
                 {
-                    b.Property<string>("IdServico")
-                        .HasColumnType("nvarchar(450)");
+                    b.Property<int>("IdServico")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<string>("Duracion")
                         .HasColumnType("nvarchar(max)");
@@ -248,7 +244,7 @@ namespace DAL.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<decimal>("Precio")
-                        .HasColumnType("decimal(18,2)");
+                        .HasColumnType("decimal");
 
                     b.HasKey("IdServico");
 
@@ -271,7 +267,10 @@ namespace DAL.Migrations
                     b.Property<DateTime>("Fecha")
                         .HasColumnType("datetime2");
 
-                    b.Property<string>("NoDocumentoPaciente")
+                    b.Property<string>("NoDocumento")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("PacienteNoDocumento")
                         .HasColumnType("nvarchar(450)");
 
                     b.HasKey("IdSolicitudCita");
@@ -279,16 +278,61 @@ namespace DAL.Migrations
                     b.HasIndex("CodAgenda")
                         .IsUnique();
 
-                    b.HasIndex("NoDocumentoPaciente");
+                    b.HasIndex("PacienteNoDocumento");
 
                     b.ToTable("Citas");
                 });
 
+            modelBuilder.Entity("Entity.User", b =>
+                {
+                    b.Property<string>("UserName")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("CorreoElectronico")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Estado")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("FirstName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("LastName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Password")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Rol")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("UserName");
+
+                    b.ToTable("Users");
+                });
+
+            modelBuilder.Entity("Entity.Agenda", b =>
+                {
+                    b.HasOne("Entity.Odontologo", "Odontologo")
+                        .WithOne("Agenda")
+                        .HasForeignKey("Entity.Agenda", "NoDocumento");
+
+                    b.Navigation("Odontologo");
+                });
+
             modelBuilder.Entity("Entity.ConsultaOdontologica", b =>
                 {
-                    b.HasOne("Entity.HistoriaOdontologica", "HistoriaOdontologica")
-                        .WithMany("ConsultasOdontologica")
-                        .HasForeignKey("IdHistoriaOdontologica");
+                    b.HasOne("Entity.Antecedente", "Antecedente")
+                        .WithOne("ConsultaOdontologica")
+                        .HasForeignKey("Entity.ConsultaOdontologica", "IdAntecedentes")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Entity.Servicio", "Servicio")
+                        .WithMany("ConsultasOdontologicas")
+                        .HasForeignKey("IdServicio")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.HasOne("Entity.SolicitudCita", "SolicitudCita")
                         .WithOne("ConsultaOdontologica")
@@ -296,50 +340,34 @@ namespace DAL.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("HistoriaOdontologica");
+                    b.HasOne("Entity.Paciente", "Paciente")
+                        .WithMany("ConsultasOdontologicas")
+                        .HasForeignKey("PacienteNoDocumento");
+
+                    b.Navigation("Antecedente");
+
+                    b.Navigation("Paciente");
+
+                    b.Navigation("Servicio");
 
                     b.Navigation("SolicitudCita");
                 });
 
-            modelBuilder.Entity("Entity.HistoriaOdontologica", b =>
+            modelBuilder.Entity("Entity.DetalleServicio", b =>
                 {
-                    b.HasOne("Entity.Antecedente", "Antecedentes")
-                        .WithOne("HistoriaOdontologica")
-                        .HasForeignKey("Entity.HistoriaOdontologica", "IdAntecedentesOfHO");
-
-                    b.HasOne("Entity.Paciente", "Paciente")
-                        .WithOne("HistorialOdontologico")
-                        .HasForeignKey("Entity.HistoriaOdontologica", "NoDocumentoPaciente");
-
-                    b.Navigation("Antecedentes");
-
-                    b.Navigation("Paciente");
-                });
-
-            modelBuilder.Entity("Entity.Procedimiento", b =>
-                {
-                    b.HasOne("Entity.ConsultaOdontologica", "ConsultaOdontologica")
-                        .WithMany("Procedimientos")
-                        .HasForeignKey("IdConsultaOdontologica")
+                    b.HasOne("Entity.Servicio", "Servicio")
+                        .WithMany("DetallesServicios")
+                        .HasForeignKey("IdServicio")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("Entity.Servicio", "Servicio")
-                        .WithOne("Procedimiento")
-                        .HasForeignKey("Entity.Procedimiento", "IdServico");
+                    b.HasOne("Entity.Producto", "Producto")
+                        .WithOne("DetalleServicio")
+                        .HasForeignKey("Entity.DetalleServicio", "ReferenciaProducto");
 
-                    b.Navigation("ConsultaOdontologica");
+                    b.Navigation("Producto");
 
                     b.Navigation("Servicio");
-                });
-
-            modelBuilder.Entity("Entity.Producto", b =>
-                {
-                    b.HasOne("Entity.Inventario", "Inventario")
-                        .WithMany("Productos")
-                        .HasForeignKey("IdInventario");
-
-                    b.Navigation("Inventario");
                 });
 
             modelBuilder.Entity("Entity.SolicitudCita", b =>
@@ -351,8 +379,8 @@ namespace DAL.Migrations
                         .IsRequired();
 
                     b.HasOne("Entity.Paciente", "Paciente")
-                        .WithMany("HistorialCitas")
-                        .HasForeignKey("NoDocumentoPaciente");
+                        .WithMany("SolicitudesCitas")
+                        .HasForeignKey("PacienteNoDocumento");
 
                     b.Navigation("Agenda");
 
@@ -366,34 +394,31 @@ namespace DAL.Migrations
 
             modelBuilder.Entity("Entity.Antecedente", b =>
                 {
-                    b.Navigation("HistoriaOdontologica");
+                    b.Navigation("ConsultaOdontologica");
                 });
 
-            modelBuilder.Entity("Entity.ConsultaOdontologica", b =>
+            modelBuilder.Entity("Entity.Odontologo", b =>
                 {
-                    b.Navigation("Procedimientos");
-                });
-
-            modelBuilder.Entity("Entity.HistoriaOdontologica", b =>
-                {
-                    b.Navigation("ConsultasOdontologica");
-                });
-
-            modelBuilder.Entity("Entity.Inventario", b =>
-                {
-                    b.Navigation("Productos");
+                    b.Navigation("Agenda");
                 });
 
             modelBuilder.Entity("Entity.Paciente", b =>
                 {
-                    b.Navigation("HistorialCitas");
+                    b.Navigation("ConsultasOdontologicas");
 
-                    b.Navigation("HistorialOdontologico");
+                    b.Navigation("SolicitudesCitas");
+                });
+
+            modelBuilder.Entity("Entity.Producto", b =>
+                {
+                    b.Navigation("DetalleServicio");
                 });
 
             modelBuilder.Entity("Entity.Servicio", b =>
                 {
-                    b.Navigation("Procedimiento");
+                    b.Navigation("ConsultasOdontologicas");
+
+                    b.Navigation("DetallesServicios");
                 });
 
             modelBuilder.Entity("Entity.SolicitudCita", b =>
