@@ -35,7 +35,6 @@ export class HistorialClinicoComponent implements OnInit {
 
   ngOnInit() {
     const noDocumentoPaciente = this.rutaActiva.snapshot.params.noDocumentoPaciente;
-    alert(noDocumentoPaciente);
     this.findPaciente(noDocumentoPaciente);
     this.findConsulta(noDocumentoPaciente);
     this.findHistoria(noDocumentoPaciente);
@@ -50,7 +49,6 @@ export class HistorialClinicoComponent implements OnInit {
   findHistoria(noDocumentoPaciente: string) {
     this.serviceHistoria.getId(noDocumentoPaciente).subscribe(result => {
       this.historia = result;
-      alert(JSON.stringify(this.historia));
       if(this.historia == null) {
         Swal.fire({
           icon: 'info',
@@ -69,7 +67,6 @@ export class HistorialClinicoComponent implements OnInit {
           text: 'El paciente no ha tenido ninguna consulta',
         });
       }
-      alert(JSON.stringify(this.consultas));
     });
   }
 

@@ -1,3 +1,4 @@
 {
-    "appService.deploySubpath": "publish"
+    "appService.deploySubpath": "publish",
+    "appService.defaultWebAppToDeploy": "None"
 }

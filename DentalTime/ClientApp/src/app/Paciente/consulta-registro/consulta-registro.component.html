@@ -2,26 +2,34 @@
     <div class="row">
       <div class="col-9">
         <div class="form-floating">
-          <input type="text" class="form-control" [(ngModel)]="paciente.noDocumento" name="noDocumentoPaciente"
+          <input type="text" class="form-control" 
+          [(ngModel)]="paciente.noDocumento" name="noDocumentoPaciente"
             readonly>
           <label for="floatingInputGrid">Documento del Paciente</label>
         </div>
       </div>
+      <div class="col-md">
+        <div class="form-floating">
+          <input type="number" class="form-control" 
+          [(ngModel)]="consulta.idSolicitudCita" name="idSolicitudCita" >
+          <label for="floatingInputGrid">Codigo de la Cita</label>
+        </div>
+      </div>
     </div>
     <br>
     <div class="row">
       <div class="col-md">
         <div class="form-floating">
-          <input type="text" class="form-control" [(ngModel)]="paciente.nombres" name="nombres" readonly>
+          <input type="text" class="form-control" 
+          [(ngModel)]="paciente.nombres" name="nombres" readonly>
           <label for="floatingInputGrid">Nombres</label>
         </div>
       </div>
       <div class="col-md">
-        <div class="row">
           <div class="form-floating">
-            <input type="text" class="form-control" [(ngModel)]="paciente.apellidos" name="apellidos" readonly>
+            <input type="text" class="form-control" 
+            [(ngModel)]="paciente.apellidos" name="apellidos" readonly>
             <label for="floatingInputGrid">Apellidos</label>
-          </div>
         </div>
       </div>
     </div>
@@ -29,13 +37,15 @@
     <div class="row">
       <div class="col-md">
         <div class="form-floating">
-          <input type="text" class="form-control" [(ngModel)]="consulta.medicacion" name="enfermedades">
+          <input type="text" class="form-control" 
+          [(ngModel)]="consulta.medicacion" name="medicacion">
           <label for="floatingInputGrid">Medicacion</label>
         </div>
       </div>
       <div class="col-md">
         <div class="form-floating">
-          <input type="text" class="form-control" [(ngModel)]="consulta.diagnostico" name="quimicos">
+          <input type="text" class="form-control" 
+          [(ngModel)]="consulta.diagnostico" name="diagnostico">
           <label for="floatingInputGrid">Diagnostico</label>
         </div>
       </div>
@@ -44,13 +54,15 @@
     <div class="row">
       <div class="col-md">
         <div class="form-floating">
-          <input type="text" class="form-control" [(ngModel)]="consulta.valoracion" name="farmaceuticos">
+          <input type="text" class="form-control" 
+          [(ngModel)]="consulta.valoracion" name="valoracion">
           <label for="floatingInputGrid">Valoracion</label>
         </div>
       </div>
       <div class="col-md">
         <div class="form-floating">
-          <input type="text" class="form-control" [(ngModel)]="consulta.recetaMedica"  name="complicaciones">
+          <input type="text" class="form-control" 
+          [(ngModel)]="consulta.recetaMedica"  name="recetaMedica">
           <label for="floatingInputGrid">Receta Clinica</label>
         </div>
       </div>

@@ -40,18 +40,25 @@
               <ul class="text-center dropdown-menu" aria-labelledby="navbarDropdown">
                 <li><a class="dropdown-item btn btn-primary btn-outline-primary "
                     [routerLink]="['/registroProducto']">Registrar Producto</a></li>
-                <li><a class="dropdown-item btn btn-primary btn-outline-primary "
-                    [routerLink]="['/gestionInventario']">Gestionar Inventario</a></li>
               </ul>
             </li>-->
             
             <li class="nav-item" [routerLinkActive]="['link-active']" [routerLinkActiveOptions]="{ exact: true }">
+              <a class="nav-link text-dark " [routerLink]="['/solicitudCita']">Citas</a>
+            </li>
+
+            <li class="nav-item" [routerLinkActive]="['link-active']" [routerLinkActiveOptions]="{ exact: true }">
               <a class="nav-link text-dark " [routerLink]="['/agendaMedico']">Agenda Medica</a>
             </li>
 
-            <!--<li class="nav-item" [routerLinkActive]="['link-active']" [routerLinkActiveOptions]="{ exact: true }">
+           <!-- <li class="nav-item" [routerLinkActive]="['link-active']" [routerLinkActiveOptions]="{ exact: true }">
+              <a class="nav-link text-dark " [routerLink]="['/gestionInventario']">Inventario</a>
+            </li>
+
+            <li class="nav-item" [routerLinkActive]="['link-active']" [routerLinkActiveOptions]="{ exact: true }">
               <a class="nav-link text-dark " [routerLink]="['/informe']">Informe</a>
             </li>-->
+
             <li class="nav-item" [routerLinkActive]="['link-active']">
               <a class="nav-link text-dark hover-light" (click)="logout()"><img src="../../../assets/logout.png" alt=""></a>
             </li>

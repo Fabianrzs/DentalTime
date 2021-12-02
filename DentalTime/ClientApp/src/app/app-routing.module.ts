@@ -25,7 +25,7 @@ const routes: Routes = [
   { path: 'consultaUsuario', component: UsuarioConsultaComponent, canActivate: [AuthGuard]},
   { path: 'historialClinico/:noDocumentoPaciente', component: HistorialClinicoComponent, canActivate: [AuthGuard]},
   { path: 'historialRegistro/:noDocumentoPaciente', component: HistorialRegistroComponent, canActivate: [AuthGuard]},
-  { path: 'registrarAgenda', component: SolicitudCitaComponent, canActivate: [AuthGuard]},
+  { path: 'solicitudCita', component: SolicitudCitaComponent, canActivate: [AuthGuard]},
   { path: 'registrarServicio', component:ServicioComponent, canActivate: [AuthGuard]},
   { path: 'informe', component:InformeComponent, canActivate: [AuthGuard]},
   { path: 'registrarConsulta/:noDocumentoPaciente', component: ConsultaRegistroComponent, canActivate: [AuthGuard]},

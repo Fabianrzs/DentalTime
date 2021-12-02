@@ -27,7 +27,9 @@ namespace BLL
                     if(_context.HistoriasOdontologicas.Find(historia.IdHistoriaOdontologica) == null)
                     {
                         historia.Paciente = paciente;
-                        _context.Antecedentes.Add(historia.Antecedentes);
+                        if(_context.Antecedentes.Find(historia.NoDocumentoPaciente)==null){
+                            _context.Antecedentes.Add(historia.Antecedentes);
+                        }
                         _context.HistoriasOdontologicas.Add(historia);
                         _context.SaveChanges();
 

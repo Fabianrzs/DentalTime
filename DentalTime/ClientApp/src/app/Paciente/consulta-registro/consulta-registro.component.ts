@@ -4,6 +4,7 @@ import { ConsultaOdontologica } from 'src/app/@elements/models/ConsultaOdontolog
 import { Paciente } from 'src/app/@elements/models/Paciente';
 import { ConsultaOdontologicaService } from 'src/app/@elements/service/ConsultaOdontologica.service';
 import { PacienteService } from 'src/app/@elements/service/paciente.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-consulta-registro',
@@ -31,9 +32,19 @@ export class ConsultaRegistroComponent implements OnInit {
   }
 
   add(){
+    alert('add');
     this.consulta.idHistoriaOdontologica = this.paciente.noDocumento;
     this.consultaService.post(this.consulta).subscribe(result => {
       this.consulta = result;
+      alert(JSON.stringify(result));
+      if(this.consulta != null) {
+        Swal.fire(
+          '',
+          'Registro Exitoso',
+          'success'
+        );
+        this.consulta = new ConsultaOdontologica();
+      }
     });
   }
 

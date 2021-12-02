@@ -81,6 +81,7 @@ export class HistorialRegistroComponent implements OnInit {
   }
 
   add() {
+    
     this.historia = this.formHistoriaOdontologica.value;
     this.historia.noDocumentoPaciente = this.paciente.noDocumento;
     this.historia.idHistoriaOdontologica = this.paciente.noDocumento;
