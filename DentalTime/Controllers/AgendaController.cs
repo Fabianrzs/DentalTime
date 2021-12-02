@@ -50,9 +50,10 @@ namespace DentalTime.Controllers
         private Agenda MapearPaciente(AgendaInputModel agendaInput)
         {
             var agenda = new Agenda();
-            agenda.Estado = agendaInput.Estado;
             agenda.FechaInicio = agendaInput.FechaHoraInicio;
             agenda.FechaFin = agendaInput.FechaHoraFin;
+            agenda.NoDocumento = agendaInput.NoDocumento;
+
             return agenda;
         }
 

@@ -22,15 +22,27 @@ namespace BLL
             try
             {
                 Paciente paciente = _context.Pacientes.Find(cita.NoDocumento);
-                if(paciente != null)
-                {
-                    cita.Paciente = paciente;
-                    _context.Citas.Add(cita);
-                    _context.SaveChanges();
-                    return new CitaLogResponse(cita);
+                Agenda agenda = _context.Agendas.Find(cita.CodAgenda);
 
+                if (agenda != null)
+                {
+                    if (paciente != null)
+                    {
+                        if (agenda.Estado.Equals("DISPONIBLE"))
+                        {
+                            cita.Fecha = agenda.FechaInicio;
+                            cita.Estado = "PENDIENTE";
+                            agenda.Estado = "OCUPADO";
+                            _context.Agendas.Update(agenda);
+                            _context.Citas.Add(cita);
+                            _context.SaveChanges();
+                            return new CitaLogResponse(cita);
+                        }
+                        return new CitaLogResponse($"Agenda no diponible");
+                    }
+                    return new CitaLogResponse($"Paciente no encontrado");
                 }
-                return new CitaLogResponse($"El paciente no se encuentra registrado");
+                return new CitaLogResponse($"Agenda no encontrada");
             }
             catch (Exception e) { return new CitaLogResponse($"Error al Guardar: Se presento lo siguiente {e.Message}"); }
         }

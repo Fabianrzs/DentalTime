@@ -9,8 +9,6 @@ namespace DentalTime.Models
 {
     public class ServicioInputModel
     {
-        [Required(ErrorMessage = "IdServicion requerido")]
-        public string IdServico { get; set; }
         [Required(ErrorMessage = "Nombre requerido")]
         public string Nombre { get; set; }
         [Required(ErrorMessage = "Precio requerido")]
@@ -25,6 +23,7 @@ namespace DentalTime.Models
                 Nombre = servicio.Nombre;
                 Precio = servicio.Precio;
                 Duracion = servicio.Duracion;
+                
             }
         }
     }

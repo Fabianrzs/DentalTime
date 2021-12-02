@@ -4,14 +4,16 @@ using DAL;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace DAL.Migrations
 {
     [DbContext(typeof(DentalTimeContext))]
-    partial class DentalTimeContextModelSnapshot : ModelSnapshot
+    [Migration("20211202053452_segundaMigration")]
+    partial class segundaMigration
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -264,6 +266,9 @@ namespace DAL.Migrations
                         .HasColumnType("datetime2");
 
                     b.Property<string>("NoDocumento")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("PacienteNoDocumento")
                         .HasColumnType("nvarchar(450)");
 
                     b.HasKey("IdSolicitudCita");
@@ -271,7 +276,7 @@ namespace DAL.Migrations
                     b.HasIndex("CodAgenda")
                         .IsUnique();
 
-                    b.HasIndex("NoDocumento");
+                    b.HasIndex("PacienteNoDocumento");
 
                     b.ToTable("Citas");
                 });
@@ -373,7 +378,7 @@ namespace DAL.Migrations
 
                     b.HasOne("Entity.Paciente", "Paciente")
                         .WithMany("SolicitudesCitas")
-                        .HasForeignKey("NoDocumento");
+                        .HasForeignKey("PacienteNoDocumento");
 
                     b.Navigation("Agenda");
 

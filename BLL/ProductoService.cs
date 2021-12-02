@@ -20,27 +20,25 @@ namespace BLL
         {
             try
             {
-               
-                    if (_context.Productos.Find(producto.Referencia) == null)
-                    {
-                        _context.Productos.Add(producto);
-                        _context.SaveChanges();
-                        return new ProductoLogResponse(producto);
-                    }
-                    return new ProductoLogResponse($"El producto ya se encuentra registrado");
-                
+                if (_context.Productos.Find(producto.Referencia) == null)
+                {
+                    _context.Productos.Add(producto);
+                    _context.SaveChanges();
+                    return new ProductoLogResponse(producto);
+                }
+                return new ProductoLogResponse($"El producto ya se encuentra registrado"); 
             }
             catch (Exception e) { return new ProductoLogResponse($"Error al Guardar: Se presento lo siguiente {e.Message}"); }
         }
 
-        public ProductoLogResponse Update (Producto productoNew, string referencia)
+        public ProductoLogResponse Update (int unidades, string referencia)
         {
             try
             {
                 Producto producto = _context.Productos.Find(referencia);
                 if (producto != null)
                 {
-                    producto = productoNew;
+                    producto.IgresarStockActual(unidades);
                     _context.Productos.Update(producto);
                     _context.SaveChanges();
                     return new ProductoLogResponse(producto);
