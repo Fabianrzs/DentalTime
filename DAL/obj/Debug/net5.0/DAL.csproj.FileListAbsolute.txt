@@ -85,4 +85,3 @@ I:\Semestre 5\Programacion WEB\Proyectos\DentalTime\DAL\obj\Debug\net5.0\ref\DAL
 I:\Semestre 5\Programacion WEB\Proyectos\DentalTime\DAL\obj\Debug\net5.0\DAL.pdb
 I:\Semestre 5\Programacion WEB\Proyectos\DentalTime\DAL\obj\Debug\net5.0\DAL.genruntimeconfig.cache
 D:\PROYECTOS PROGRAMACION\PWEB\Angular\proyecto\DAL\obj\Debug\net5.0\DAL.csproj.CopyComplete
-I:\Semestre 5\Programacion WEB\Proyectos\DentalTime\DAL\obj\Debug\net5.0\DAL.csproj.CopyComplete
