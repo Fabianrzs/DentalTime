@@ -143,9 +143,7 @@ namespace DAL.Migrations
 
                     b.HasIndex("IdServicio");
 
-                    b.HasIndex("ReferenciaProducto")
-                        .IsUnique()
-                        .HasFilter("[ReferenciaProducto] IS NOT NULL");
+                    b.HasIndex("ReferenciaProducto");
 
                     b.ToTable("DetallesServicios");
                 });
@@ -360,8 +358,8 @@ namespace DAL.Migrations
                         .IsRequired();
 
                     b.HasOne("Entity.Producto", "Producto")
-                        .WithOne("DetalleServicio")
-                        .HasForeignKey("Entity.DetalleServicio", "ReferenciaProducto");
+                        .WithMany("DetalleServicios")
+                        .HasForeignKey("ReferenciaProducto");
 
                     b.Navigation("Producto");
 
@@ -409,7 +407,7 @@ namespace DAL.Migrations
 
             modelBuilder.Entity("Entity.Producto", b =>
                 {
-                    b.Navigation("DetalleServicio");
+                    b.Navigation("DetalleServicios");
                 });
 
             modelBuilder.Entity("Entity.Servicio", b =>

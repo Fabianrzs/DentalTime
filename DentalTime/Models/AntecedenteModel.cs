@@ -9,8 +9,7 @@ namespace DentalTime.Models
 {
     public class AntecedenteInputModel
     {
-        [Required(ErrorMessage = "Id Antecedente requerido")]
-        public string IdAntecedente { get; set; }
+
         [Required(ErrorMessage = "Enfermedades requerido")]
         public string Enfermedades { get; set; }
         [Required(ErrorMessage = "Farmaceuticos requerido")]
@@ -23,12 +22,16 @@ namespace DentalTime.Models
 
     public class AntecedenteViewModel : AntecedenteInputModel
     {
+        public int IdAntecedente { get; set; }
+        public ConsultaOdontologica ConsultaOdontologica { get; set; }
         public AntecedenteViewModel(Antecedente antecedente)
         {
+            IdAntecedente = antecedente.IdAntecedente;
             Enfermedades = antecedente.Enfermedades;
             Farmaceuticos = antecedente.Farmaceuticos;
             Quimicos = antecedente.Quimicos;
             Complicaciones = antecedente.Complicaciones;
+            ConsultaOdontologica = antecedente.ConsultaOdontologica;
         }
     }
 }

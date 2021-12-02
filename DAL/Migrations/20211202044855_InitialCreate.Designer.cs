@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DAL.Migrations
 {
     [DbContext(typeof(DentalTimeContext))]
-    [Migration("20211202031014_initial")]
-    partial class initial
+    [Migration("20211202044855_InitialCreate")]
+    partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -107,9 +107,6 @@ namespace DAL.Migrations
                     b.Property<string>("RecetaMedica")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int?>("ServicioIdServico")
-                        .HasColumnType("int");
-
                     b.Property<string>("Valoracion")
                         .HasColumnType("nvarchar(max)");
 
@@ -118,12 +115,12 @@ namespace DAL.Migrations
                     b.HasIndex("IdAntecedentes")
                         .IsUnique();
 
+                    b.HasIndex("IdServicio");
+
                     b.HasIndex("IdSolicitudCita")
                         .IsUnique();
 
                     b.HasIndex("PacienteNoDocumento");
-
-                    b.HasIndex("ServicioIdServico");
 
                     b.ToTable("ConsultasOdontologicas");
                 });
@@ -141,19 +138,16 @@ namespace DAL.Migrations
                     b.Property<string>("ReferenciaProducto")
                         .HasColumnType("nvarchar(450)");
 
-                    b.Property<int?>("ServicioIdServico")
-                        .HasColumnType("int");
-
                     b.Property<int>("UnidadesUsadas")
                         .HasColumnType("int");
 
                     b.HasKey("IdDetalleServicio");
 
+                    b.HasIndex("IdServicio");
+
                     b.HasIndex("ReferenciaProducto")
                         .IsUnique()
                         .HasFilter("[ReferenciaProducto] IS NOT NULL");
-
-                    b.HasIndex("ServicioIdServico");
 
                     b.ToTable("DetallesServicios");
                 });
@@ -250,7 +244,7 @@ namespace DAL.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<decimal>("Precio")
-                        .HasColumnType("decimal(18,2)");
+                        .HasColumnType("decimal");
 
                     b.HasKey("IdServico");
 
@@ -334,6 +328,12 @@ namespace DAL.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
+                    b.HasOne("Entity.Servicio", "Servicio")
+                        .WithMany("ConsultasOdontologicas")
+                        .HasForeignKey("IdServicio")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.HasOne("Entity.SolicitudCita", "SolicitudCita")
                         .WithOne("ConsultaOdontologica")
                         .HasForeignKey("Entity.ConsultaOdontologica", "IdSolicitudCita")
@@ -343,10 +343,6 @@ namespace DAL.Migrations
                     b.HasOne("Entity.Paciente", "Paciente")
                         .WithMany("ConsultasOdontologicas")
                         .HasForeignKey("PacienteNoDocumento");
-
-                    b.HasOne("Entity.Servicio", "Servicio")
-                        .WithMany("ConsultasOdontologicas")
-                        .HasForeignKey("ServicioIdServico");
 
                     b.Navigation("Antecedente");
 
@@ -359,13 +355,15 @@ namespace DAL.Migrations
 
             modelBuilder.Entity("Entity.DetalleServicio", b =>
                 {
+                    b.HasOne("Entity.Servicio", "Servicio")
+                        .WithMany("DetallesServicios")
+                        .HasForeignKey("IdServicio")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.HasOne("Entity.Producto", "Producto")
                         .WithOne("DetalleServicio")
                         .HasForeignKey("Entity.DetalleServicio", "ReferenciaProducto");
-
-                    b.HasOne("Entity.Servicio", "Servicio")
-                        .WithMany("DetallesServicios")
-                        .HasForeignKey("ServicioIdServico");
 
                     b.Navigation("Producto");
 
