@@ -51,8 +51,8 @@ namespace DentalTime.Controllers
         {
             var agenda = new Agenda();
             agenda.Estado = agendaInput.Estado;
-            agenda.FechaHoraInicio = agendaInput.FechaHoraInicio;
-            agenda.FechaHoraFin = agendaInput.FechaHoraFin;
+            agenda.FechaInicio = agendaInput.FechaHoraInicio;
+            agenda.FechaFin = agendaInput.FechaHoraFin;
             return agenda;
         }
 

@@ -48,7 +48,6 @@ namespace DentalTime.Controllers
         private Servicio mapearServicio(ServicioInputModel servicioInput)
         {
             Servicio servicio = new Servicio();
-            servicio.IdServico = servicioInput.IdServico;
             servicio.Nombre = servicioInput.Nombre;
             servicio.Precio = servicioInput.Precio;
             servicio.Duracion = servicioInput.Duracion;

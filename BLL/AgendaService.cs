@@ -21,7 +21,7 @@ namespace BLL
         {
             try
             {
-                if(_context.Agendas.FirstOrDefault(a => a.FechaHoraFin == agenda.FechaHoraFin || a.FechaHoraFin == agenda.FechaHoraFin) == null){
+                if(_context.Agendas.FirstOrDefault(a => a.FechaFin == agenda.FechaFin || a.FechaInicio == agenda.FechaInicio) == null){
                     _context.Agendas.Add(agenda);
                     _context.SaveChanges();
                     return new AgendaLogResponse(agenda);

@@ -57,7 +57,6 @@ namespace DentalTime.Controllers
             consultaClinica.Valoracion = consultaInput.Valoracion;
             consultaClinica.RecetaMedica = consultaInput.RecetaMedica;
             consultaClinica.IdSolicitudCita = consultaInput.IdSolicitudCita;  
-            consultaClinica.IdHistoriaOdontologica = consultaInput.IdHistoriaOdontologica;          
             return consultaClinica;
         }
 

@@ -49,8 +49,6 @@ namespace DentalTime.Controllers
         private Antecedente mapearAntecedente(AntecedenteInputModel antecedentesInput)
         {
             Antecedente antecedente = new Antecedente();
-
-            antecedente.IdAntecedente = antecedentesInput.IdAntecedente;
             antecedente.Enfermedades = antecedentesInput.Enfermedades;
             antecedente.Farmaceuticos = antecedentesInput.Farmaceuticos;
             antecedente.Quimicos = antecedentesInput.Quimicos;
