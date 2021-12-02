@@ -5736,20 +5736,28 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\andre\\.nuget\\packages\\": {}
+    "C:\\Users\\WIN10\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {},
+    "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "I:\\Semestre 5\\Programacion WEB\\Proyectos\\DentalTime\\BLL\\BLL.csproj",
+      "projectUniqueName": "D:\\PROYECTOS PROGRAMACION\\PWEB\\Angular\\proyecto\\BLL\\BLL.csproj",
       "projectName": "BLL",
-      "projectPath": "I:\\Semestre 5\\Programacion WEB\\Proyectos\\DentalTime\\BLL\\BLL.csproj",
-      "packagesPath": "C:\\Users\\andre\\.nuget\\packages\\",
-      "outputPath": "I:\\Semestre 5\\Programacion WEB\\Proyectos\\DentalTime\\BLL\\obj\\",
+      "projectPath": "D:\\PROYECTOS PROGRAMACION\\PWEB\\Angular\\proyecto\\BLL\\BLL.csproj",
+      "packagesPath": "C:\\Users\\WIN10\\.nuget\\packages\\",
+      "outputPath": "D:\\PROYECTOS PROGRAMACION\\PWEB\\Angular\\proyecto\\BLL\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+        "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
+      ],
       "configFilePaths": [
-        "C:\\Users\\andre\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "C:\\Users\\WIN10\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net5.0"
@@ -5762,11 +5770,11 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "I:\\Semestre 5\\Programacion WEB\\Proyectos\\DentalTime\\DAL\\DAL.csproj": {
-              "projectPath": "I:\\Semestre 5\\Programacion WEB\\Proyectos\\DentalTime\\DAL\\DAL.csproj"
+            "D:\\PROYECTOS PROGRAMACION\\PWEB\\Angular\\proyecto\\DAL\\DAL.csproj": {
+              "projectPath": "D:\\PROYECTOS PROGRAMACION\\PWEB\\Angular\\proyecto\\DAL\\DAL.csproj"
             },
-            "I:\\Semestre 5\\Programacion WEB\\Proyectos\\DentalTime\\Entity\\Entity.csproj": {
-              "projectPath": "I:\\Semestre 5\\Programacion WEB\\Proyectos\\DentalTime\\Entity\\Entity.csproj"
+            "D:\\PROYECTOS PROGRAMACION\\PWEB\\Angular\\proyecto\\Entity\\Entity.csproj": {
+              "projectPath": "D:\\PROYECTOS PROGRAMACION\\PWEB\\Angular\\proyecto\\Entity\\Entity.csproj"
             }
           }
         }
@@ -5795,7 +5803,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "D:\\Program\\dotnet\\sdk\\5.0.401\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.403\\RuntimeIdentifierGraph.json"
       }
     }
   }

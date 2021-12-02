@@ -9,8 +9,7 @@ namespace DentalTime.Models
 {
     public class AgendaInputModel
     {
-        [Required(ErrorMessage = "Estado requerido")]
-        public string Estado { get; set; }
+        
         [Required(ErrorMessage = "Fecha de inicio requerido")]
         public DateTime FechaHoraInicio { get; set; }
         [Required(ErrorMessage = "Fecha de fin requerido")]
@@ -21,6 +20,7 @@ namespace DentalTime.Models
     public class AgendaViewModel : AgendaInputModel
     {
         public int CodAgenda { get; set; }
+        public string Estado { get; set; }
         public Odontologo Odontologo { get; set; }
 
         public AgendaViewModel(Agenda agenda)

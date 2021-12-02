@@ -28,6 +28,11 @@ namespace DAL
                 .WithOne(s => s.Agenda)
                 .HasForeignKey<SolicitudCita>(s => s.CodAgenda);
 
+            modelBuilder.Entity<SolicitudCita>()
+                .HasOne<Paciente>(a => a.Paciente)
+                .WithMany(p => p.SolicitudesCitas)
+                .HasForeignKey(a => a.NoDocumento);
+
             modelBuilder.Entity<ConsultaOdontologica>()
                 .HasOne<Antecedente>(c => c.Antecedente)
                 .WithOne(a => a.ConsultaOdontologica)
