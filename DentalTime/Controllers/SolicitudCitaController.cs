@@ -52,7 +52,6 @@ namespace DentalTime.Controllers
             cita.CodAgenda = citaInput.CodAgenda;
             cita.Fecha = citaInput.Fecha;
             cita.Estado = citaInput.Estado;
-            cita.NoDocumentoPaciente = citaInput.NoDocumentoPaciente;
             return cita;
         }
 

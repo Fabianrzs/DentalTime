@@ -22,7 +22,6 @@ namespace DentalTime.Models
         {
             public ServicioViewModel(Servicio servicio)
             {
-                IdServico = servicio.IdServico;
                 Nombre = servicio.Nombre;
                 Precio = servicio.Precio;
                 Duracion = servicio.Duracion;

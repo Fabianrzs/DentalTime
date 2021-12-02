@@ -56,9 +56,7 @@ namespace DentalTime.Controllers
             producto.Laboratorio = productoInput.Laboratorio;
             producto.Marca = productoInput.Marca;
             producto.StockActual = productoInput.StockActual;
-            producto.StockMax = productoInput.StockMax;
-            producto.StockMin = productoInput.StockMin;
-            producto.IdInventario = productoInput.IdInventario;
+           
 
             return producto;
         }

@@ -15,12 +15,10 @@ namespace DAL
         {
 
         }
-        protected override void OnModelCreating(ModelBuilder modelBuilder)
-        {
-            
-            
-        }
 
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        { 
+        }
 
         public DbSet<Agenda> Agendas { get; set; }
         public DbSet<Antecedente> Antecedentes { get; set; }
@@ -30,7 +28,7 @@ namespace DAL
         public DbSet<Paciente> Pacientes { get; set; }
         public DbSet<Producto> Productos { get; set; }
         public DbSet<Servicio> Servicios { get; set; }
-        public DbSet<SolicitudCita> SolicitudesCitas { get; set; }
+        public DbSet<SolicitudCita> Citas { get; set; }
         public DbSet<User> Users { get; set; }
 
     }

@@ -14,7 +14,7 @@ namespace DentalTime.Models
         [Required(ErrorMessage = "Estado requerido")]
         public string Estado { get; set; }
         [Required(ErrorMessage = "Numero de Documento del Paciente requerido")]
-        public string NoDocumentoPaciente { get; set; }
+        public string NoDocumento { get; set; }
         public int CodAgenda { get; set; }
 
     }
@@ -27,7 +27,6 @@ namespace DentalTime.Models
             IdSolicitudCita = cita.IdSolicitudCita;
             Fecha = cita.Fecha;
             Estado = cita.Estado;
-            NoDocumentoPaciente = cita.NoDocumentoPaciente;
         }
     }
 }

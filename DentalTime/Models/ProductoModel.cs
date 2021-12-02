@@ -36,8 +36,6 @@ namespace DentalTime.Models
             Nombre = producto.Nombre;
             Laboratorio = producto.Laboratorio;
             Marca = producto.Marca;
-            StockMin = producto.StockMin;
-            StockMax = producto.StockMax;
             StockActual = producto.StockActual;
             
         }
