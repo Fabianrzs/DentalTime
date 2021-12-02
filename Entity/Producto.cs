@@ -14,10 +14,9 @@ namespace Entity
         public string Nombre { get; set; }
         public string Laboratorio { get; set; }
         public string Marca { get; set; }
-
         public int StockActual { get; set; }
 
-        public DetalleServicio DetalleServicio { get; set; }
+        public ICollection<DetalleServicio> DetalleServicios { get; set; }
         
         public void DescontarStockActual(int unidadesUsadas){
             this.StockActual = this.StockActual - unidadesUsadas;
