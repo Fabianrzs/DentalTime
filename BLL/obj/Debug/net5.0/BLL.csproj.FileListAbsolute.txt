@@ -80,7 +80,6 @@ I:\Semestre 5\Programacion WEB\Proyectos\DentalTime\BLL\obj\Debug\net5.0\BLL.dll
 I:\Semestre 5\Programacion WEB\Proyectos\DentalTime\BLL\obj\Debug\net5.0\ref\BLL.dll
 I:\Semestre 5\Programacion WEB\Proyectos\DentalTime\BLL\obj\Debug\net5.0\BLL.pdb
 D:\PROYECTOS PROGRAMACION\PWEB\Angular\proyecto\BLL\obj\Debug\net5.0\BLL.csproj.CopyComplete
-I:\Semestre 5\Programacion WEB\Proyectos\DentalTime\BLL\obj\Debug\net5.0\BLL.csproj.CopyComplete
 C:\Users\VIcto\OneDrive\Documentos\Programacion Web\proyectofabian\DentalTime\BLL\bin\Debug\net5.0\BLL.deps.json
 C:\Users\VIcto\OneDrive\Documentos\Programacion Web\proyectofabian\DentalTime\BLL\bin\Debug\net5.0\BLL.dll
 C:\Users\VIcto\OneDrive\Documentos\Programacion Web\proyectofabian\DentalTime\BLL\bin\Debug\net5.0\ref\BLL.dll

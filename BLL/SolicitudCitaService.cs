@@ -22,7 +22,8 @@ namespace BLL
             try
             {
                 Paciente paciente = _context.Pacientes.Find(cita.NoDocumento);
-                if(paciente != null)
+                Agenda agenda = _context.Agendas.Find(cita.CodAgenda);
+                if(paciente != null & agenda.Estado.Equals("DISPONIBLE"))
                 {
                     cita.Paciente = paciente;
                     _context.Citas.Add(cita);
