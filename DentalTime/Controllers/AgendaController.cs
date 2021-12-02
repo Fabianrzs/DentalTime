@@ -57,10 +57,10 @@ namespace DentalTime.Controllers
             return agenda;
         }
 
-        [HttpGet]
-        public ActionResult<List<Agenda>> Consulta()
+        [HttpGet("{identificacion}")]
+        public ActionResult<List<Agenda>> Consulta(string identificacion)
         {
-            var request = _service.Consult();
+            var request = _service.Consult(identificacion);
             if (request.Error) return BadRequest(request.Mensaje);
             return Ok(request.Agendas);
         }
