@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
-import { AlertModalComponent } from '../@base/alertModal/alertModal.component';
-import { AgendaMedico } from '../@elements/models/agendaMedico';
-import { AgendaMedicoService } from '../@elements/service/agendaMedico.service';
-import { SignalRService } from '../@elements/service/SignalR.service';
+import { AlertModalComponent } from '../../@base/alertModal/alertModal.component';
+import { AgendaMedico } from '../../@elements/models/agendaMedico';
+import { AgendaMedicoService } from '../../@elements/service/agendaMedico.service';
+import { SignalRService } from '../../@elements/service/SignalR.service';
 
 @Component({
   selector: 'app-agenda-medico',
