@@ -53,7 +53,7 @@ namespace DentalTime.Controllers
             antecedente.Farmaceuticos = antecedentesInput.Farmaceuticos;
             antecedente.Quimicos = antecedentesInput.Quimicos;
             antecedente.Complicaciones = antecedentesInput.Complicaciones;
-
+            
             return antecedente;
         }
 

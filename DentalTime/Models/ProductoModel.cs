@@ -19,13 +19,8 @@ namespace DentalTime.Models
         [Required(ErrorMessage = "Marca requerido")]
         public string Marca { get; set; }
         [Required(ErrorMessage = "StockMin requerido")]
-        public int StockMin { get; set; }
-        [Required(ErrorMessage = "StockMax requerido")]
-        public int StockMax { get; set; }
-        [Required(ErrorMessage = "StockActual requerido")]
         public int StockActual { get; set; }
-        [Required(ErrorMessage = "IdInventario requerido")]
-        public string IdInventario { get; set; }
+
     }
 
     public class ProductoViewModel : ProductoInputModel

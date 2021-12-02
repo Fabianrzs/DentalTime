@@ -9,8 +9,7 @@ namespace DentalTime.Models
 {
     public class ConsultaClinicaInputModel
     {
-        [Required(ErrorMessage = "Id Consulta Odontologica requerido")]
-        public int IdConsultaOdontologica { get; set; }
+
         [Required(ErrorMessage = "Motivo requerido")]
         public string Motivo { get; set; }
         [Required(ErrorMessage = "Medicacion requerido")]
@@ -21,25 +20,39 @@ namespace DentalTime.Models
         public string Valoracion { get; set; }
         [Required(ErrorMessage = "Receta Medica requerido")]
         public string RecetaMedica { get; set; }
+        public Antecedente Antecedente { get; set; }
+        [Required(ErrorMessage = "NoDocumento es requerido")]
+        public string NoDocumento { get; set; }
+
         [Required(ErrorMessage = "IdSolicitudCita requerido")]
         public int IdSolicitudCita { get; set; }
-        [Required(ErrorMessage = "Id Historia Odontologica requerido")]
-        public string IdHistoriaOdontologica { get; set; }
+        [Required(ErrorMessage = "IdServicio es requerido")]
+        public int IdServicio { get; set; }
 
     }
 
     public class ConsultaClinicaViewModel : ConsultaClinicaInputModel
     {
         public int CodConsultaClinica { get; set; }
+        public Servicio Servicio { get; set; }
+        public SolicitudCita SolicitudCita { get; set; }
+        public Paciente Paciente { get; set; }
+        
         public ConsultaClinicaViewModel(ConsultaOdontologica consultaClinica)
         {
-            /*CodConsultaClinica = consultaClinica.IConsultaOdontologica;
-            Complicaciones = consultaClinica.Complicaciones;
+            CodConsultaClinica = consultaClinica.IdConsultaOdontologica;
             Motivo = consultaClinica.Motivo;
-            Antecedentes = consultaClinica.Antecedentes;
-            Medicacion = consultaClinica.RecetaClinica;
-            UltimaConsulta = consultaClinica.UltimaConsulta;
-            ValoracionMedica = consultaClinica.ValoracionMedica;*/
+            Medicacion = consultaClinica.Medicacion;
+            Diagnostico = consultaClinica.Diagnostico;
+            Valoracion = consultaClinica.Valoracion;
+            RecetaMedica = consultaClinica.RecetaMedica;
+            NoDocumento = consultaClinica.NoDocumento;
+            Paciente = consultaClinica.Paciente;
+            IdSolicitudCita = consultaClinica.IdAntecedentes;
+            Servicio = consultaClinica.Servicio;
+            IdServicio = consultaClinica.IdServicio;
+            SolicitudCita = consultaClinica.SolicitudCita;
+
         }
     }
 }

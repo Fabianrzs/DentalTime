@@ -33,10 +33,10 @@ namespace DAL
                 .WithOne(a => a.ConsultaOdontologica)
                 .HasForeignKey<ConsultaOdontologica>(c => c.IdAntecedentes);
 
-            modelBuilder.Entity<Producto>()
-                .HasOne<DetalleServicio>(p => p.DetalleServicio)
-                .WithOne(d => d.Producto)
-                .HasForeignKey<DetalleServicio>(d => d.ReferenciaProducto);
+            modelBuilder.Entity<DetalleServicio>()
+                .HasOne<Producto>(d => d.Producto)
+                .WithMany(p => p.DetalleServicios)
+                .HasForeignKey(d => d.ReferenciaProducto);
 
             modelBuilder.Entity<DetalleServicio>()
                 .HasOne<Servicio>(d => d.Servicio)
