@@ -10,6 +10,7 @@ import { AgendaMedicoComponent } from './odontologo/agenda-medico/agenda-medico.
 import { AuthGuard } from './@elements/service/auth.guard';
 import { RegistrarOdontologoComponent } from './odontologo/registrar-odontologo/registrar-odontologo.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { UserSessionComponent } from './user-session/user-session.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent, },
@@ -20,6 +21,7 @@ const routes: Routes = [
   { path: 'registrarConsulta/:noDocumentoPaciente', component: UsuarioRegistroComponent, canActivate: [AuthGuard]},
   { path: 'agendaMedico', component: AgendaMedicoComponent, canActivate: [AuthGuard]},
   { path: 'registrarMedico', component: RegistrarOdontologoComponent, canActivate: [AuthGuard]},
+  {path: 'login', component: UserSessionComponent,}
 ];
 
 

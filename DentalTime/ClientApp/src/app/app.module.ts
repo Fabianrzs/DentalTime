@@ -6,7 +6,7 @@ import { AppComponent } from "./app.component";
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 //-------------------------------------------------------Angular CLI--------------------------------------------------
-
+import { DashboardComponent } from "./@pag/dashboard/dashboard.component";
 import { RouterModule } from "@angular/router";
 import { AppRoutingModule } from "./app-routing.module";
 import { NavMenuComponent } from "./@pag/nav-menu/nav-menu.component";
@@ -43,7 +43,7 @@ import {MatButtonModule} from '@angular/material/button';
     AgendaMedicoComponent,
     UserSessionComponent,
     RegistrarOdontologoComponent,
-
+    DashboardComponent
   ],
   imports: [
     ReactiveFormsModule,

@@ -6,7 +6,7 @@
     "@sweetalert2/theme-bootstrap-4": "^5.0.8",
     "@syncfusion/ej2-angular-schedule": "^17.1.42",
     "bootstrap": "^5.1.1",
-    "bootstrap-icons": "^1.5.0",
+    "bootstrap-icons": "^1.7.1",
     "bulma": "^0.9.3",
     "sweetalert2": "^11.2.1"
   }
