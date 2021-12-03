@@ -10,16 +10,20 @@ import { AgendaMedicoComponent } from './odontologo/agenda-medico/agenda-medico.
 import { AuthGuard } from './@elements/service/auth.guard';
 import { RegistrarOdontologoComponent } from './odontologo/registrar-odontologo/registrar-odontologo.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { SolicitarCitaComponent } from './paciente/solicitar-cita/solicitar-cita.component';
+import { UserSessionComponent } from './user-session/user-session.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent, },
-  { path: 'registroUsuario', component: UsuarioRegistroComponent, canActivate: [AuthGuard]},
+  { path: 'registroUsuario', component: UsuarioRegistroComponent},
   { path: 'consultaUsuario', component: UsuarioConsultaComponent, canActivate: [AuthGuard]},
   { path: 'historialClinico/:noDocumentoPaciente', component: HistorialClinicoComponent, canActivate: [AuthGuard]},
   { path: 'registrarServicio', component:ServicioComponent, canActivate: [AuthGuard]},
   { path: 'registrarConsulta/:noDocumentoPaciente', component: UsuarioRegistroComponent, canActivate: [AuthGuard]},
   { path: 'agendaMedico', component: AgendaMedicoComponent, canActivate: [AuthGuard]},
   { path: 'registrarMedico', component: RegistrarOdontologoComponent, canActivate: [AuthGuard]},
+  { path: 'solicitarCita', component: SolicitarCitaComponent},
+  { path: 'login', component: UserSessionComponent},
 ];
 
 

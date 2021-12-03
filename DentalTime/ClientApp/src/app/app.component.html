@@ -1,17 +1,20 @@
 <body>
-  <!-- <app-user-session *ngIf="!currentUser"></app-user-session>
- <div *ngIf="currentUser">
-  <nav>
-<app-agenda-medico></app-agenda-medico>
- 
 
-<div class = "row" style="height: 100%;" >
-    <div class = "col-md">
+  <div *ngIf="!currentUser">
+    <app-nav-menu></app-nav-menu> 
+    <br>
+    <router-outlet></router-outlet>
+  </div>
+
+
+  <div *ngIf="currentUser">
+    <div class="row" style="height: 100%;">
+      <div class="col-2" >
         <app-dashboard></app-dashboard>
+      </div>
+      <div class="col-10 ps">
+        <router-outlet></router-outlet>
+      </div>
     </div>
-    <div class = "col-10" >
-       <router-outlet></router-outlet>
-    </div> 
-    
-</div>--><app-solicitar-cita></app-solicitar-cita>
+  </div>
 </body>
