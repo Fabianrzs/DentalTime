@@ -69,4 +69,9 @@ export class AgendaMedicoComponent implements OnInit {
     });
   }
 
+  applyFilter(event: Event) {
+    const filterValue = (event.target as HTMLInputElement).value;
+    this.agendaMedico.filter = filterValue.trim().toLowerCase();
+  }
+
 }

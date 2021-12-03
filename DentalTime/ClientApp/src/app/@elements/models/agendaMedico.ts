@@ -13,3 +13,8 @@ export class AgendaView extends AgendaMedico {
     odontologo:Odontologo;
 
 }
+
+export class FiltroInputModel {
+    fecha:Date;
+    documento:String;
+}

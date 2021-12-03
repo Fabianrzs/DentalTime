@@ -15,7 +15,7 @@ using System.Threading.Tasks;
 namespace DentalTime.Controllers
 {
    
-    [Authorize]
+    // [Authorize]
     [Route("api/[controller]")]
     [ApiController]
     public class AgendaController : ControllerBase
@@ -62,6 +62,21 @@ namespace DentalTime.Controllers
         {
             var request = _service.Consult(identificacion);
             if (request.Error) return BadRequest(request.Mensaje);
+            return Ok(request.Agendas.Select(a => new AgendaViewModel(a)));
+        }
+        [HttpPost("Filtro")]
+        public ActionResult<List<Agenda>> ConsultaFiltro(FiltroInputModel filtroInput)
+        {
+            var request = _service.FiltroAgenda(filtroInput.Fecha, filtroInput.Documento);
+            if (request.Error)
+            {
+                  ModelState.AddModelError("Consultar Agenda", request.Mensaje);
+                var problemDetails = new ValidationProblemDetails(ModelState)
+                {
+                    Status = StatusCodes.Status400BadRequest,
+                };
+                return BadRequest(problemDetails);
+            } 
             return Ok(request.Agendas.Select(a => new AgendaViewModel(a)));
         }
 

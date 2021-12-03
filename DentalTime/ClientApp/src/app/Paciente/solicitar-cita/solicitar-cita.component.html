@@ -18,10 +18,20 @@
   </div>
   <br>
 
-  <div class = "row justify-content-center">
+  <div *ngIf="agendaMedico" class = "row justify-content-center">
 
     <div >
-          
+      <mat-form-field appearance="fill">
+        <mat-label>Input & change events</mat-label>
+        <input matInput [matDatepicker]="picker" name="date" [(ngModel)]="date"
+               (dateInput)="addEvent()">
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+          <!-- <mat-form-field appearance="standard">
+            <mat-label>Filter</mat-label>
+            <input matInput (keyup)="applyFilter($event)" placeholder="Ex. ium" #input>
+          </mat-form-field>    -->
       <table mat-table [dataSource]="agendaMedico"  class="mat-elevation-z8 demo-table">
   
         <ng-container matColumnDef="codAgenda">
@@ -59,7 +69,7 @@
     </div>
     
 </div>
-<mat-paginator [pageSizeOptions]="[3, 6]"
+<mat-paginator *ngIf="agendaMedico" [pageSizeOptions]="[3, 6]"
     showFirstLastButtons 
     aria-label="Select page of periodic elements">
     </mat-paginator>
