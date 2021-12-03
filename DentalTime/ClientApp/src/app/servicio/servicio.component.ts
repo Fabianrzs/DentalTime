@@ -1,5 +1,7 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, ViewChild } from "@angular/core";
 import { FormBuilder, FormGroup, Validators } from "@angular/forms";
+import { MatPaginator } from "@angular/material/paginator";
+import { MatTableDataSource } from "@angular/material/table";
 import { NgbModal } from "@ng-bootstrap/ng-bootstrap";
 import { Servicio } from "src/app/@elements/models/Servicio";
 import { ServicioService } from "src/app/@elements/service/servicio.service";
@@ -15,8 +17,9 @@ export class ServicioComponent implements OnInit {
   searchText: string;
   formServicio: FormGroup;
   servicio: Servicio;
+  
   servicios: Servicio[];
-  SERVICIOS: Servicio[];
+  SERVICIOS: MatTableDataSource<Servicio>;
   page = 1;
   pageSize = 3;
   collectionSize = 0;
@@ -25,26 +28,32 @@ export class ServicioComponent implements OnInit {
     private service: ServicioService,
     private formBuilder: FormBuilder,
     private signalRService: SignalRService,
-    private modal: NgbModal
+    private modal: NgbModal,
+    private _formBuilder: FormBuilder
   ) {}
+  displayedColumns: string[] = ['nombre', 'precio', 'duracion'];
+  @ViewChild(MatPaginator) paginator: MatPaginator;
+  isLinear = false;
+  firstFormGroup: FormGroup;
+  secondFormGroup: FormGroup;
 
   ngOnInit() {
     this.get();
     this.buildForm();
+    this.firstFormGroup = this._formBuilder.group({
+      firstCtrl: ['', Validators.required],
+    });
+    this.secondFormGroup = this._formBuilder.group({
+      secondCtrl: ['', Validators.required],
+    });
   }
+
+
 
   get() {
     this.service.get().subscribe((result) => {
-      this.SERVICIOS = result;
-      this.collectionSize = this.SERVICIOS.length;
-
-      this.servicios = this.SERVICIOS.map((servicios, i) => ({
-        id: i + 1,
-        ...servicios,
-      })).slice(
-        (this.page - 1) * this.pageSize,
-        (this.page - 1) * this.pageSize + this.pageSize
-      );
+      this.SERVICIOS = new MatTableDataSource<Servicio>(result);
+      this.SERVICIOS.paginator = this.paginator;
     });
     this.signalRService.signalReceived.subscribe((signal: Servicio) => {  
       this.servicios.push(signal)
