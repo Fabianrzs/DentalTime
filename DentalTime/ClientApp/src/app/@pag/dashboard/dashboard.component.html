@@ -1,0 +1,51 @@
+<div class="d-flex flex-column flex-shrink-0 p-3 bg-light shadow-lg p-3 mb-5 bg-body rounded" style="width: 250px; height: 100%">
+  
+  <!--Logo-->
+  <h5 href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none bg">
+    <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"/></svg>
+    <span class="fs-4">Consultorio</span>
+  </h5>
+
+  <hr>
+
+  <ul class="nav nav-pills flex-column mb-auto text-dark p-4">
+    <li class="nav-item ">
+      <a href="#" class="nav-link link-dark " aria-current="page">
+        Registrar Agenda
+      </a>
+    </li>
+    <li>
+      <a href="#" class="nav-link link-dark">
+        Solicitudes
+      </a>
+    </li>
+    <li>
+      <a href="#" class="nav-link link-dark">
+        Servicios
+      </a>
+    </li>
+    <li>
+      <a href="#" class="nav-link link-dark">
+        Productos
+      </a>
+    </li>
+    <li>
+      <a href="#" class="nav-link link-dark">
+        Pacientes
+      </a>
+    </li>
+  </ul>
+  <hr>
+
+  <div class="container">
+    <div class="dropdown container">
+      <a style = "color: #0099ff" (click)="logout()"></a>
+  </div>
+  <ul class="nav nav-pills flex-column mb-auto text-dark p-4">
+    <li class="nav-item" [routerLinkActive]="['link-active']">
+    <a class="nav-link text-dark hover-light" (click)="logout()"><strong>Cerrar Sesion</strong></a>
+  </li>
+  </ul>
+  
+  </div>
+</div>

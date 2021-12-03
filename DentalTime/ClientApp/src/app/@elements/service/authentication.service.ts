@@ -13,6 +13,7 @@ export class AuthenticationService {
   private currentUserSubject: BehaviorSubject<User>;
   public currentUser: Observable<User>;
   baseUrl: string;
+  currentLogin: any;
 
   constructor(
     private http: HttpClient,

@@ -27,11 +27,6 @@ export class NavMenuComponent {
 
   toggle() {
     this.isExpanded = !this.isExpanded;
-  }
-
-  logout() {
-    this.authenticationService.logout();
-    this.router.navigate(['/login']);
-  }    
+  }   
 
 }
