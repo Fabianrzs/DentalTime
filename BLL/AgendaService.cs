@@ -22,14 +22,15 @@ namespace BLL
             try
             {
                 var odonto = _context.Odontologos.Find(agenda.NoDocumento);
-                if (odonto!= null){
+                if (odonto != null)
+                {
                     agenda.Estado = "DISPONIBLE";
                     _context.Agendas.Add(agenda);
                     _context.SaveChanges();
                     return new AgendaLogResponse(agenda);
                 }
 
-                return new AgendaLogResponse($"Error al Guardar: Fecha Ocupada"); 
+                return new AgendaLogResponse($"Error al Guardar: Fecha Ocupada");
             }
             catch (Exception e) { return new AgendaLogResponse($"Error al Guardar: Se presento lo siguiente {e.Message}"); }
         }
@@ -47,7 +48,48 @@ namespace BLL
             }
             catch (Exception e) { return new AgendaConsultaResponse($"Error al Consultar: Se presento lo siguiente {e.Message}"); }
         }
+
+        public AgendaConsultaResponse FiltroAgenda(DateTime fecha, string noDocumento)
+        {
+            try
+            {
+                List<Agenda> agendas = _context.Agendas.Where(a => a.Cita == null && a.NoDocumento.Equals(noDocumento)).ToList();
+                var response = AgendasDelMes(agendas, fecha);
+                if (!response.Error)
+                {
+                    return new AgendaConsultaResponse(response.Agendas);
+                }
+                return new AgendaConsultaResponse(response.Mensaje);
+            }
+            catch (Exception e) { return new AgendaConsultaResponse($"Error al Consultar: Se presento lo siguiente {e.Message}"); }
+        }
+        private AgendaConsultaResponse AgendasDelMes(ICollection<Agenda> agendas, DateTime fecha)
+        {
+            try
+            {
+                var lista = new List<Agenda>();
+                foreach (var item in agendas)
+                {
+                    if (fecha.ToString("MM/dd/yyyy") == item.FechaInicio.ToString("MM/dd/yyyy"))
+                    {
+                        lista.Add(item);
+                    }
+                }
+                if (lista.Count()>0)
+                {
+                    return new AgendaConsultaResponse(lista);
+                }
+                return new AgendaConsultaResponse("No se encontro ninguna agenda en la fehca establecida");
+            }
+            catch (Exception e)
+            {
+
+                return new AgendaConsultaResponse("Ocurrio el siguiente error: "+e.Message);
+            }
+        }
     }
+
+
 
     public class AgendaLogResponse
     {

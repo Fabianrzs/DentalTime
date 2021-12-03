@@ -34,4 +34,9 @@ namespace DentalTime.Models
         }
 
     }
+
+    public class FiltroInputModel {
+        public DateTime Fecha { get; set; }
+        public String Documento { get; set; }
+    }
 }

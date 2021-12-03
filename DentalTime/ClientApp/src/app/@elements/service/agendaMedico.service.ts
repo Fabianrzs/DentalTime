@@ -4,7 +4,7 @@ import { Observable } from "rxjs";
 import { Paciente } from "../models/Paciente";
 import { tap, catchError } from "rxjs/operators";
 import { HandleHttpErrorService } from "src/app/@base/handle-http-error.service";
-import { AgendaMedico, AgendaView } from "../models/agendaMedico";
+import { AgendaMedico, AgendaView, FiltroInputModel } from "../models/agendaMedico";
 
 const httpOptionsPut = {
   headers: new HttpHeaders({ "Content-Type": "application/json" }),
@@ -43,6 +43,20 @@ export class AgendaMedicoService {
         tap(() => this.handleErrorService.log("Se envio a guardar")),
         catchError(
           this.handleErrorService.handleError<AgendaView>(
+            "Registrar agenda",
+            null
+          )
+        )
+      );
+  }
+
+  postFiltro(filtroInputMolde: FiltroInputModel): Observable<AgendaView[]> {
+    return this.http
+      .post<AgendaView[]>(this.baseUrl + "api/Agenda/Filtro", filtroInputMolde)
+      .pipe(
+        tap(() => this.handleErrorService.log("Se envio a guardar")),
+        catchError(
+          this.handleErrorService.handleError<AgendaView[]>(
             "Registrar agenda",
             null
           )
