@@ -18,11 +18,6 @@ namespace DAL
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Odontologo>()
-               .HasOne<Agenda>(o => o.Agenda)
-               .WithOne(a => a.Odontologo)
-               .HasForeignKey<Agenda>(a => a.NoDocumento);
-
             modelBuilder.Entity<Agenda>()
                 .HasOne<SolicitudCita>(a => a.Cita)
                 .WithOne(s => s.Agenda)

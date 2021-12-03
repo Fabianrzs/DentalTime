@@ -53,13 +53,11 @@ export class ServicioComponent implements OnInit {
 
   buildForm() {
     this.servicio = new Servicio();
-    this.servicio.idServico = "";
     this.servicio.nombre = "";
     this.servicio.precio = 0;
     this.servicio.duracion = "";
 
     this.formServicio = this.formBuilder.group({
-      idServico: [this.servicio.idServico, Validators.required],
       nombre: [this.servicio.nombre, Validators.required],
       precio: [this.servicio.precio, Validators.required],
       duracion: [this.servicio.duracion, Validators.required],
@@ -89,23 +87,8 @@ export class ServicioComponent implements OnInit {
         messageBox.componentInstance.title = "Resultado";
         messageBox.componentInstance.message =
           "Registro Guardado Satisfactoriamente";
-        this.clearCampos();
         this.get();
       }
-    });
-  }
-
-  clearCampos() {
-    this.servicio.idServico = "";
-    this.servicio.nombre = "";
-    this.servicio.precio = 0;
-    this.servicio.duracion = "";
-
-    this.formServicio = this.formBuilder.group({
-      idServico: [this.servicio.idServico, Validators.required],
-      nombre: [this.servicio.nombre, Validators.required],
-      precio: [this.servicio.precio, Validators.required],
-      duracion: [this.servicio.duracion, Validators.required],
     });
   }
 }

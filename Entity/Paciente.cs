@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
+using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 
 namespace Entity
@@ -24,6 +25,7 @@ namespace Entity
         
 
         public ICollection<SolicitudCita> SolicitudesCitas { get; set; }
+        
         public ICollection<ConsultaOdontologica> ConsultasOdontologicas { get; set; }
     }
 }

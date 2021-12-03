@@ -15,7 +15,7 @@ namespace Entity
         public string Nombres { get; set; }
         public string Apellidos { get; set; }
 
-        public Agenda Agenda { get; set; }
+        public ICollection<Odontologo> Agenda { get; set; }
 
 
     }

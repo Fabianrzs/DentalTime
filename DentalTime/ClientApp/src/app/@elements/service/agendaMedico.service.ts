@@ -26,7 +26,7 @@ export class AgendaMedicoService {
   ) {
     this.baseUrl = baseUrl;
   }
-
+  
   get(): Observable<AgendaMedico[]> {
     return this.http.get<AgendaMedico[]>(this.baseUrl + "api/Agenda").pipe(
       tap((_) => this.handleErrorService.log("Consulta Realizada")),
