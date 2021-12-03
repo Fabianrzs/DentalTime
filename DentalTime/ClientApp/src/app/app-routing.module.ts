@@ -9,6 +9,7 @@ import { ServicioComponent } from './servicio/servicio.component';
 import { AgendaMedicoComponent } from './odontologo/agenda-medico/agenda-medico.component';
 import { AuthGuard } from './@elements/service/auth.guard';
 import { RegistrarOdontologoComponent } from './odontologo/registrar-odontologo/registrar-odontologo.component';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent, },
@@ -26,6 +27,7 @@ const routes: Routes = [
   declarations: [],
   imports: [
     CommonModule,
+    BrowserAnimationsModule,
     RouterModule.forRoot(routes, { relativeLinkResolution: 'legacy' })
   ]
 })
