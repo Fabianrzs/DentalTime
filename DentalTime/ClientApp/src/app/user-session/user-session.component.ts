@@ -13,14 +13,6 @@ import { AuthenticationService } from "../@elements/service/authentication.servi
   styleUrls: ["./user-session.component.css"],
 })
 export class UserSessionComponent implements OnInit {
-  formulario_login = document.getElementById(".formulario__login");
-  formulario_register = document.getElementById(".formulario__register");
-  contenedor_login_register = document.getElementById(
-    ".contenedor__login-register"
-  );
-  caja_trasera_login = document.getElementById(".caja__trasera-login");
-  caja_trasera_register = document.getElementById(".caja__trasera-register");
-
   loginForm: FormGroup;
   returnUrl: String;
   submitted: boolean;
@@ -42,18 +34,6 @@ export class UserSessionComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    const sign_in_btn = document.querySelector("#sign-in-btn");
-    const sign_up_btn = document.querySelector("#sign-up-btn");
-    const container = document.querySelector(".container");
-
-    sign_up_btn.addEventListener("click", () => {
-      container.classList.add("sign-up-mode");
-    });
-
-    sign_in_btn.addEventListener("click", () => {
-      container.classList.remove("sign-up-mode");
-    });
-
     this.loginForm = this.formBuilder.group({
       username: ['', Validators.required],
       password: ['', Validators.required]
