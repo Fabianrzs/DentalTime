@@ -1,0 +1,66 @@
+<div class="container">
+
+    <div class = "row justify-content-center">
+      <div class="col-4 align-self-center">
+        <mat-form-field appearance="fill">
+          <mat-label>Medico Solicitado</mat-label>
+          <mat-select [formControl]="control" required>
+            <mat-option>--</mat-option>
+            <mat-option *ngFor="let o of odontologos" [value]="o">
+              {{o.nombres}}
+            </mat-option>
+          </mat-select>
+          <mat-error *ngIf="control.hasError('required')">Elija el medico</mat-error>
+          <mat-hint>{{control.value?.sound}}</mat-hint>
+        </mat-form-field>
+      </div>
+    </div>
+    <br>
+  
+    <div class = "row justify-content-center">
+  
+        <!-- <div >
+
+            <table mat-table [dataSource]="agendaMedico"  class="mat-elevation-z8 demo-table">
+  
+              <ng-container matColumnDef="codAgenda">
+                <th mat-header-cell *matHeaderCellDef>Codigo Agenda.</th>
+                <td mat-cell *matCellDef="let element">{{element.codAgenda}}</td>
+              </ng-container>
+  
+  
+              <ng-container matColumnDef="estado">
+                <th mat-header-cell *matHeaderCellDef>Estado</th>
+                <td mat-cell *matCellDef="let element">{{element.estado}}</td>
+              </ng-container>
+  
+  
+              <ng-container matColumnDef="fechaFinal">
+                <th mat-header-cell *matHeaderCellDef>Fecha Final</th>
+                <td mat-cell *matCellDef="let element">{{element.fechaFinal}}</td>
+              </ng-container>
+  
+  
+              <ng-container matColumnDef="fechaInicio">
+                <th mat-header-cell *matHeaderCellDef>Fecha Inicio</th>
+                <td mat-cell *matCellDef="let element">{{element.fechaInicio}}</td>
+              </ng-container>
+  
+              <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+              <tr
+                  mat-row
+                  (click)="clickedRows.add(row)"
+                  [class.demo-row-is-clicked]="clickedRows.has(row)"
+                  *matRowDef="let row; columns: displayedColumns;"
+              ></tr>
+            </table>
+            <mat-paginator [pageSizeOptions]="[6, 12, 20]"
+            showFirstLastButtons 
+            aria-label="Select page of periodic elements">
+            </mat-paginator>
+          </div> -->
+  
+    </div>
+
+  </div>
+  

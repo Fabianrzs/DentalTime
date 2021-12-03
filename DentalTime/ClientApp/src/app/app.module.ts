@@ -6,6 +6,7 @@ import { AppComponent } from "./app.component";
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 //-------------------------------------------------------Angular CLI--------------------------------------------------
+import { SolicitarCitaComponent } from "./paciente/solicitar-cita/solicitar-cita.component";
 import { DashboardComponent } from "./@pag/dashboard/dashboard.component";
 import { RouterModule } from "@angular/router";
 import { AppRoutingModule } from "./app-routing.module";
@@ -28,6 +29,11 @@ import {MatPaginatorModule} from '@angular/material/paginator';
 import {MatStepperModule} from '@angular/material/stepper';
 import {MatInputModule} from '@angular/material/input';
 import {MatButtonModule} from '@angular/material/button';
+import {MatSelectModule} from '@angular/material/select';
+import { MatNativeDateModule } from "@angular/material/core";
+import {MatDatepickerModule} from '@angular/material/datepicker';
+
+
 //---------------------------------------------------Routers---------------------------------------------------------------
 @NgModule({
   declarations: [
@@ -43,7 +49,8 @@ import {MatButtonModule} from '@angular/material/button';
     AgendaMedicoComponent,
     UserSessionComponent,
     RegistrarOdontologoComponent,
-    DashboardComponent
+    DashboardComponent,
+    SolicitarCitaComponent
   ],
   imports: [
     ReactiveFormsModule,
@@ -58,6 +65,9 @@ import {MatButtonModule} from '@angular/material/button';
     MatStepperModule,
     NgbModule,
     MatTableModule,
+    MatSelectModule,
+    MatNativeDateModule,
+    MatDatepickerModule,
     RouterModule.forRoot(
       [{ path: "", component: HomeComponent, pathMatch: "full" }],
       { relativeLinkResolution: "legacy" }
