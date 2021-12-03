@@ -2,17 +2,16 @@
   <!-- <app-user-session *ngIf="!currentUser"></app-user-session>
  <div *ngIf="currentUser">
   <nav>
-    <app-nav-menu></app-nav-menu>
-  </nav>
-  <br>
-  <section class="container">
-    <router-outlet></router-outlet>
-  </section>
-  <footer>
-    <app-footer></app-footer>
-  </footer>
- </div> -->
+<app-agenda-medico></app-agenda-medico>
+ 
 
-  <!-- <app-agenda-medico></app-agenda-medico>
-<app-usuario-registro></app-usuario-registro>--> <app-solicitar-cita></app-solicitar-cita>
+<div class = "row" style="height: 100%;" >
+    <div class = "col-md">
+        <app-dashboard></app-dashboard>
+    </div>
+    <div class = "col-10" >
+       <router-outlet></router-outlet>
+    </div> 
+    
+</div>--><app-solicitar-cita></app-solicitar-cita>
 </body>

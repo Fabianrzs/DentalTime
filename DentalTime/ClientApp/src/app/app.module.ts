@@ -34,6 +34,7 @@ import {MatDatepickerModule} from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { SolicitarCitaComponent } from "./paciente/solicitar-cita/solicitar-cita.component";
 import { DashboardComponent } from "./@pag/dashboard/dashboard.component";
+import {MatDialogModule} from '@angular/material/dialog';
 //---------------------------------------------------Routers---------------------------------------------------------------
 @NgModule({
   declarations: [
@@ -69,6 +70,7 @@ import { DashboardComponent } from "./@pag/dashboard/dashboard.component";
     MatNativeDateModule,
     NgbModule,
     MatTableModule,
+    MatDialogModule,
     RouterModule.forRoot(
       [{ path: "", component: HomeComponent, pathMatch: "full" }],
       { relativeLinkResolution: "legacy" }
