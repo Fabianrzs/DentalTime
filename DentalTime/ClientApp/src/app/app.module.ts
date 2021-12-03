@@ -32,6 +32,8 @@ import {MatDividerModule} from '@angular/material/divider';
 import {MatSelectModule} from '@angular/material/select';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
+import { SolicitarCitaComponent } from "./paciente/solicitar-cita/solicitar-cita.component";
+import { DashboardComponent } from "./@pag/dashboard/dashboard.component";
 //---------------------------------------------------Routers---------------------------------------------------------------
 @NgModule({
   declarations: [
@@ -47,7 +49,8 @@ import { MatNativeDateModule } from '@angular/material/core';
     AgendaMedicoComponent,
     UserSessionComponent,
     RegistrarOdontologoComponent,
-
+    SolicitarCitaComponent,
+    DashboardComponent
   ],
   imports: [
     ReactiveFormsModule,

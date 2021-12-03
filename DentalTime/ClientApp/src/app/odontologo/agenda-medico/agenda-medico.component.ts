@@ -3,7 +3,6 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
-import { AlertModalComponent } from '../../@base/alertModal/alertModal.component';
 import { AgendaMedico, AgendaView } from '../../@elements/models/agendaMedico';
 import { AgendaMedicoService } from '../../@elements/service/agendaMedico.service';
 import { SignalRService } from '../../@elements/service/SignalR.service';
@@ -14,6 +13,7 @@ import { SignalRService } from '../../@elements/service/SignalR.service';
   styleUrls: ['./agenda-medico.component.css']
 })
 export class AgendaMedicoComponent implements OnInit {
+  
   agendaMedico: MatTableDataSource<AgendaView>;
   displayedColumns: string[] = ['codAgenda', 'estado', 'fechaFinal', 'fechaInicio'];
   agenda: AgendaMedico;
