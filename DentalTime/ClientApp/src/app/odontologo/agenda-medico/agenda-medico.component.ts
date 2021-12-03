@@ -1,7 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { MatPaginator } from '@angular/material/paginator';
+import { MatTableDataSource } from '@angular/material/table';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { AlertModalComponent } from '../../@base/alertModal/alertModal.component';
-import { AgendaMedico } from '../../@elements/models/agendaMedico';
+import { AgendaMedico, AgendaView } from '../../@elements/models/agendaMedico';
 import { AgendaMedicoService } from '../../@elements/service/agendaMedico.service';
 import { SignalRService } from '../../@elements/service/SignalR.service';
 
@@ -11,49 +14,57 @@ import { SignalRService } from '../../@elements/service/SignalR.service';
   styleUrls: ['./agenda-medico.component.css']
 })
 export class AgendaMedicoComponent implements OnInit {
-
-  searchText: string;
-  agendaMedico: AgendaMedico;
-  agendasMedicas: AgendaMedico[];
-  AGENDASMMEDICAS: AgendaMedico[];
-  page = 1;
-  pageSize = 3;
-  collectionSize = 0;
-
+  agendaMedico: MatTableDataSource<AgendaView>;
+  displayedColumns: string[] = ['codAgenda', 'estado', 'fechaFinal', 'fechaInicio'];
+  agenda: AgendaMedico;
+  formGroup: FormGroup;
+  agendaView:AgendaView;
   constructor(
     private service: AgendaMedicoService,
-    private modal: NgbModal,
-    private signalRService: SignalRService,) { }
-
+    private modal: NgbModal,private formBuilder: FormBuilder,
+    private signalRService: SignalRService,) { 
+    }
+    clickedRows = new Set<AgendaView>();
+    @ViewChild(MatPaginator) paginator: MatPaginator;
   ngOnInit() {
-    this.agendaMedico = new AgendaMedico();
-    this.get();
+    this.consultarAgendas();
+    this.buildForm() 
   }
 
-  get() {
-    this.service.get().subscribe((result) => {
-      this.AGENDASMMEDICAS = result;
-      this.collectionSize = this.AGENDASMMEDICAS.length;
-      this.agendasMedicas = this.AGENDASMMEDICAS.map((servicios, i) => ({
-        id: i + 1,
-        ...servicios,
-      })).slice(
-        (this.page - 1) * this.pageSize,
-        (this.page - 1) * this.pageSize + this.pageSize
-      );
+  consultarAgendas()
+  {
+    this.service.get('1111').subscribe((result)=>{
+      this.agendaMedico = new MatTableDataSource<AgendaView>(result);
+      this.agendaMedico.paginator =  this.paginator;
+    })
+  }
+
+  private buildForm() {
+    
+    this.formGroup = this.formBuilder.group({
+      fechaInicio: ['', Validators.required],
+      fechaFinal: ['', Validators.required,],
     });
-    this.signalRService.signalReceived.subscribe((signal: AgendaMedico) => {  
-      this.agendasMedicas.push(signal)
-    });
+  }
+  get control() { return this.formGroup.controls; }
+
+  onSubmit() {
+    if (this.formGroup.invalid) {
+      return;
+    }
+    this.add();
   }
 
   add() {
-    this.service.post(this.agendaMedico).subscribe((result) => {
-      if (result != null) {
-        const messageBox = this.modal.open(AlertModalComponent);
-        messageBox.componentInstance.title = "Resultado";
-        messageBox.componentInstance.message = "Registro Guardado Satisfactoriamente";
-        this.get();
+    this.agenda = new AgendaMedico();
+    this.agenda.fechaHoraInicio = this.formGroup.value.fechaInicio
+    this.agenda.fechaHoraFin = this.formGroup.value.fechaFinal
+    this.agenda.noDocumento = '1111';
+   
+    this.service.post(this.agenda).subscribe(x => {
+      if (x != null) {
+        this.buildForm();
+        this.agendaView = x;
       }
     });
   }

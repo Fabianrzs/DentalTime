@@ -1,8 +1,8 @@
 import { Odontologo } from "./Odontologo";
 
 export class AgendaMedico {
-    fechaInicio: Date;
-    fechaFinal: Date;
+    fechaHoraInicio: Date;
+    fechaHoraFin: Date;
     noDocumento: string;
 }
 

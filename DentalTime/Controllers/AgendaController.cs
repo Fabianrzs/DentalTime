@@ -30,7 +30,7 @@ namespace DentalTime.Controllers
         }
 
         [HttpPost]
-        public async Task<ActionResult<Agenda>> GuardarAsync(AgendaInputModel agendaInput)
+        public async Task<ActionResult<AgendaViewModel>> GuardarAsync(AgendaInputModel agendaInput)
         {
             Agenda paciente = MapearPaciente(agendaInput);
             var request = _service.Save(paciente);
@@ -44,7 +44,7 @@ namespace DentalTime.Controllers
                 return BadRequest(problemDetails);
             }
             await _hubContext.Clients.All.SendAsync("SignalMessageReceived", agendaInput);
-            return Ok(request.Agenda);
+            return Ok(new AgendaViewModel(request.Agenda));
         }
 
         private Agenda MapearPaciente(AgendaInputModel agendaInput)
@@ -62,7 +62,7 @@ namespace DentalTime.Controllers
         {
             var request = _service.Consult(identificacion);
             if (request.Error) return BadRequest(request.Mensaje);
-            return Ok(request.Agendas);
+            return Ok(request.Agendas.Select(a => new AgendaViewModel(a)));
         }
 
     }

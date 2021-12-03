@@ -4,7 +4,7 @@ import { Observable } from "rxjs";
 import { Paciente } from "../models/Paciente";
 import { tap, catchError } from "rxjs/operators";
 import { HandleHttpErrorService } from "src/app/@base/handle-http-error.service";
-import { AgendaMedico } from "../models/agendaMedico";
+import { AgendaMedico, AgendaView } from "../models/agendaMedico";
 
 const httpOptionsPut = {
   headers: new HttpHeaders({ "Content-Type": "application/json" }),
@@ -27,25 +27,22 @@ export class AgendaMedicoService {
     this.baseUrl = baseUrl;
   }
   
-  get(): Observable<AgendaMedico[]> {
-    return this.http.get<AgendaMedico[]>(this.baseUrl + "api/Agenda").pipe(
-      tap((_) => this.handleErrorService.log("Consulta Realizada")),
-      catchError(
-        this.handleErrorService.handleError<AgendaMedico[]>(
-          "Consulta Paciente",
-          null
-        )
-      )
-    );
+  get(id: string): Observable<AgendaView[]> {
+    const url = `${this.baseUrl + 'api/Agenda'}/${id}`;
+    return this.http.get<AgendaView[]>(url, httpOptions)
+      .pipe(
+        tap(_ => this.handleErrorService.log('datos Buscados')),
+        catchError(this.handleErrorService.handleError<AgendaView[]>('Buscar Paciente', null))
+      );
   }
 
-  post(agendaMedico: AgendaMedico): Observable<AgendaMedico> {
+  post(agendaMedico: AgendaMedico): Observable<AgendaView> {
     return this.http
-      .post<AgendaMedico>(this.baseUrl + "api/Agenda", agendaMedico)
+      .post<AgendaView>(this.baseUrl + "api/Agenda", agendaMedico)
       .pipe(
         tap(() => this.handleErrorService.log("Se envio a guardar")),
         catchError(
-          this.handleErrorService.handleError<AgendaMedico>(
+          this.handleErrorService.handleError<AgendaView>(
             "Registrar agenda",
             null
           )

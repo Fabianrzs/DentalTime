@@ -1,89 +1,91 @@
-<!--<div class="container" style="width: 700px;">
-  <div class="row" style="height: 500px;">
-    <div class="col-8 col-sm">
-      <div class="row">
-        <div class="col-12">
-          <h5 class="text-center">Agenda Medica</h5>
-          <hr>
-        </div>
-      </div>
-      <div class="row justify-content-right">
-        <div class="col-10">
-          <label for="filter">Filtro: <input onChange="get()" [(ngModel)]="searchText" type="text"
-              class="formcontrol"></label>
-        </div>
-        <div class="col align-self-end">
-          <button type="button" class="btn btn-primary btn-sm" data-bs-toggle="modal"
-            data-bs-target="#ModalRegistrarAgenda">Agregar</button>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-md">
-          <div class="column">
-            <div class="table-container">
-              <table class="table table-light table-hover" *ngIf='agendasMedicas && agendasMedicas.length'>
-                <thead class="text-primary">
-                  <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">Estado</th>
-                    <th scope="col">Hora de inicio</th>
-                    <th scope="col">Hora de finalizacion</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr *ngFor="let a of agendasMedicas; index as i ">
-                    <th scope="row">{{i + 1}}</th>
-                    <td>{{a.estado}}</td>
-                    <td>{{a.fechaHoraInicio}}</td>
-                    <td>{{a.fechaHoraFin}}</td>
-                  </tr>
-                </tbody>
-              </table>
-              <div class="d-flex justify-content-right p-2">
-                <ngb-pagination [collectionSize]="collectionSize" [(page)]="page" [pageSize]="pageSize"
-                  (pageChange)="get()">
-                </ngb-pagination>
+<header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom ">
+<h1 class="center text-light" style="font-size:2vw;">Registrar agenda</h1>
+</header>
+<br>
+<br>
+<br>
+<br>
+<div class="container" style="width: 700px;">
+
+  <div class=" row justify-content-center">
+    
+    <div class="row align-items-center">
+      
+      <div class="" >
+        <div class="row">
+            <div class=" col-5">
+              <form action="" [formGroup]="formGroup">
+              <div class="form-floating date-size">
+                  <input type="datetime-local" class="form-control" [ngClass]="{ 'is-invalid':  control.fechaInicio.errors && formGroup.get('fechaInicio').touched}"
+                  name="fechaInicio" formControlName="fechaInicio">
+                <label for="floatingInputGrid">Fecha de Inicio</label>
               </div>
+            </form>
             </div>
-          </div>
+            <div class="col-5">
+              <form action="" [formGroup]="formGroup">
+                <div class="form-floating date-size date-finally">
+                  <input type="datetime-local" class="form-control"  [ngClass]="{ 'is-invalid':  control.fechaFinal.errors && formGroup.get('fechaFinal').touched}"
+                  name="fechaFinal" formControlName="fechaFinal" >
+                  <label for="floatingInputGrid">Fecha de Inicio</label>
+                </div>
+              </form>
+            </div>
+            <div class="col-2">
+              <button class="positi-button-1 btn btn-outline-primary" mat-raised-button color="primary" (click)="onSubmit()"  
+              [disabled]="formGroup.invalid">Registrar</button>
+            </div>
         </div>
-      </div>
+        <br>
+        <br>
+        <mat-divider></mat-divider>
+      
+        <div >
+          
+          <table mat-table [dataSource]="agendaMedico"  class="mat-elevation-z8 demo-table">
+      
+            <ng-container matColumnDef="codAgenda">
+              <th mat-header-cell *matHeaderCellDef>Codigo Agenda.</th>
+              <td mat-cell *matCellDef="let element">{{element.codAgenda}}</td>
+            </ng-container>
+          
+      
+            <ng-container matColumnDef="estado">
+              <th mat-header-cell *matHeaderCellDef>Estado</th>
+              <td mat-cell *matCellDef="let element">{{element.estado}}</td>
+            </ng-container>
+          
+      
+            <ng-container matColumnDef="fechaFinal">
+              <th mat-header-cell *matHeaderCellDef>Fecha Final</th>
+              <td mat-cell *matCellDef="let element">{{element.fechaHoraFin}}</td>
+            </ng-container>
+          
+      
+            <ng-container matColumnDef="fechaInicio">
+              <th mat-header-cell *matHeaderCellDef>Fecha Inicio</th>
+              <td mat-cell *matCellDef="let element">{{element.fechaHoraInicio}}</td>
+            </ng-container>
+          
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr
+                mat-row
+                (click)="clickedRows.add(row)"
+                [class.demo-row-is-clicked]="clickedRows.has(row)"
+                *matRowDef="let row; columns: displayedColumns;"
+            ></tr>
+          </table>
+          
+        </div>
     </div>
+    
+   
+    
   </div>
 
-  <div class="modal fade" id="ModalRegistrarAgenda" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
-    aria-labelledby="staticBackdropLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title text-center" id="staticBackdropLabel">Registrar Fecha</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-          <form>
-            <div class="form-floating border border-5">
-              <input type="text" class="form-control" name="estado" 
-                [(ngModel)]="agendaMedico.estado">
-              <label for="floatingInputGrid">Estado</label>
-            </div>
-            <div class="form-floating border border-5">
-              <input type="datetime-local" class="form-control" name="fechaHoraInicio" 
-                [(ngModel)]="agendaMedico.fechaHoraInicio">
-              <label for="floatingInputGrid">Fecha Inicio</label>
-            </div>
-            <div class="form-floating border border-5">
-              <input type="datetime-local" class="form-control" name="fechaHoraFin" 
-                [(ngModel)]="agendaMedico.fechaHoraFin">
-              <label for="floatingInputGrid">Fecha de Finalizacion</label>
-            </div>
-            <br>
-          </form>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-outline-danger btn-sm" data-bs-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-outline-success btn-sm" (click)="add()">Guardar</button>
-        </div>
-      </div>
-    </div>
-  </div>
--->
+</div>
+<mat-paginator [pageSizeOptions]="[3, 6]"
+    showFirstLastButtons 
+    aria-label="Select page of periodic elements">
+    </mat-paginator>
+</div>
