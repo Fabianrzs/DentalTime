@@ -1,33 +1,35 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\VIcto\\OneDrive\\Documentos\\Programacion Web\\proyectofabian\\DentalTime\\DAL\\DAL.csproj": {}
+    "I:\\Semestre 5\\Programacion WEB\\Proyectos\\DentalTime\\DAL\\DAL.csproj": {}
   },
   "projects": {
-    "C:\\Users\\VIcto\\OneDrive\\Documentos\\Programacion Web\\proyectofabian\\DentalTime\\DAL\\DAL.csproj": {
+    "I:\\Semestre 5\\Programacion WEB\\Proyectos\\DentalTime\\DAL\\DAL.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\VIcto\\OneDrive\\Documentos\\Programacion Web\\proyectofabian\\DentalTime\\DAL\\DAL.csproj",
+        "projectUniqueName": "I:\\Semestre 5\\Programacion WEB\\Proyectos\\DentalTime\\DAL\\DAL.csproj",
         "projectName": "DAL",
-        "projectPath": "C:\\Users\\VIcto\\OneDrive\\Documentos\\Programacion Web\\proyectofabian\\DentalTime\\DAL\\DAL.csproj",
-        "packagesPath": "C:\\Users\\VIcto\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\VIcto\\OneDrive\\Documentos\\Programacion Web\\proyectofabian\\DentalTime\\DAL\\obj\\",
+        "projectPath": "I:\\Semestre 5\\Programacion WEB\\Proyectos\\DentalTime\\DAL\\DAL.csproj",
+        "packagesPath": "C:\\Users\\andre\\.nuget\\packages\\",
+        "outputPath": "I:\\Semestre 5\\Programacion WEB\\Proyectos\\DentalTime\\DAL\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\VIcto\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\andre\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net5.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "C:\\Users\\VIcto\\OneDrive\\Documentos\\Programacion Web\\proyectofabian\\DentalTime\\Entity\\Entity.csproj": {
-                "projectPath": "C:\\Users\\VIcto\\OneDrive\\Documentos\\Programacion Web\\proyectofabian\\DentalTime\\Entity\\Entity.csproj"
+              "I:\\Semestre 5\\Programacion WEB\\Proyectos\\DentalTime\\Entity\\Entity.csproj": {
+                "projectPath": "I:\\Semestre 5\\Programacion WEB\\Proyectos\\DentalTime\\Entity\\Entity.csproj"
               }
             }
           }
@@ -69,31 +71,47 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[5.0.0, 5.0.0]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[5.0.0, 5.0.0]"
+            },
+            {
+              "name": "Microsoft.WindowsDesktop.App.Ref",
+              "version": "[5.0.0, 5.0.0]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.400\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.403\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\VIcto\\OneDrive\\Documentos\\Programacion Web\\proyectofabian\\DentalTime\\Entity\\Entity.csproj": {
+    "I:\\Semestre 5\\Programacion WEB\\Proyectos\\DentalTime\\Entity\\Entity.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\VIcto\\OneDrive\\Documentos\\Programacion Web\\proyectofabian\\DentalTime\\Entity\\Entity.csproj",
+        "projectUniqueName": "I:\\Semestre 5\\Programacion WEB\\Proyectos\\DentalTime\\Entity\\Entity.csproj",
         "projectName": "Entity",
-        "projectPath": "C:\\Users\\VIcto\\OneDrive\\Documentos\\Programacion Web\\proyectofabian\\DentalTime\\Entity\\Entity.csproj",
-        "packagesPath": "C:\\Users\\VIcto\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\VIcto\\OneDrive\\Documentos\\Programacion Web\\proyectofabian\\DentalTime\\Entity\\obj\\",
+        "projectPath": "I:\\Semestre 5\\Programacion WEB\\Proyectos\\DentalTime\\Entity\\Entity.csproj",
+        "packagesPath": "C:\\Users\\andre\\.nuget\\packages\\",
+        "outputPath": "I:\\Semestre 5\\Programacion WEB\\Proyectos\\DentalTime\\Entity\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\VIcto\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\andre\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net5.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -121,12 +139,26 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[5.0.0, 5.0.0]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[5.0.0, 5.0.0]"
+            },
+            {
+              "name": "Microsoft.WindowsDesktop.App.Ref",
+              "version": "[5.0.0, 5.0.0]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.400\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.403\\RuntimeIdentifierGraph.json"
         }
       }
     }

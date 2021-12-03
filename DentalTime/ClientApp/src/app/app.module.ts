@@ -23,11 +23,15 @@ import { AgendaMedicoComponent } from "./odontologo/agenda-medico/agenda-medico.
 import { JwtInterceptor } from "./@elements/service/jwt.interceptor";
 import { UserSessionComponent } from "./user-session/user-session.component";
 import { RegistrarOdontologoComponent } from "./odontologo/registrar-odontologo/registrar-odontologo.component";
+// ------------------------------------------ Modulos Angula Material -----------------------------------------------------
 import {MatTableModule} from '@angular/material/table';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import {MatStepperModule} from '@angular/material/stepper';
 import {MatInputModule} from '@angular/material/input';
 import {MatButtonModule} from '@angular/material/button';
+import {MatSelectModule} from '@angular/material/select';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
 //---------------------------------------------------Routers---------------------------------------------------------------
 @NgModule({
   declarations: [
@@ -56,6 +60,9 @@ import {MatButtonModule} from '@angular/material/button';
     MatInputModule,
     MatButtonModule,
     MatStepperModule,
+    MatSelectModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
     NgbModule,
     MatTableModule,
     RouterModule.forRoot(

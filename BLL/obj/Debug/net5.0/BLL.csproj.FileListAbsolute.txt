@@ -97,3 +97,4 @@ C:\Users\VIcto\OneDrive\Documentos\Programacion Web\proyectofabian\DentalTime\BL
 C:\Users\VIcto\OneDrive\Documentos\Programacion Web\proyectofabian\DentalTime\BLL\obj\Debug\net5.0\BLL.dll
 C:\Users\VIcto\OneDrive\Documentos\Programacion Web\proyectofabian\DentalTime\BLL\obj\Debug\net5.0\ref\BLL.dll
 C:\Users\VIcto\OneDrive\Documentos\Programacion Web\proyectofabian\DentalTime\BLL\obj\Debug\net5.0\BLL.pdb
+I:\Semestre 5\Programacion WEB\Proyectos\DentalTime\BLL\obj\Debug\net5.0\BLL.csproj.CopyComplete
