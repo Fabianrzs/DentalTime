@@ -3,6 +3,7 @@ import { NgModule } from "@angular/core";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { HttpClientModule, HTTP_INTERCEPTORS } from "@angular/common/http";
 import { AppComponent } from "./app.component";
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 //-------------------------------------------------------Angular CLI--------------------------------------------------
 
@@ -22,7 +23,11 @@ import { AgendaMedicoComponent } from "./odontologo/agenda-medico/agenda-medico.
 import { JwtInterceptor } from "./@elements/service/jwt.interceptor";
 import { UserSessionComponent } from "./user-session/user-session.component";
 import { RegistrarOdontologoComponent } from "./odontologo/registrar-odontologo/registrar-odontologo.component";
-
+import {MatTableModule} from '@angular/material/table';
+import {MatPaginatorModule} from '@angular/material/paginator';
+import {MatStepperModule} from '@angular/material/stepper';
+import {MatInputModule} from '@angular/material/input';
+import {MatButtonModule} from '@angular/material/button';
 //---------------------------------------------------Routers---------------------------------------------------------------
 @NgModule({
   declarations: [
@@ -38,13 +43,21 @@ import { RegistrarOdontologoComponent } from "./odontologo/registrar-odontologo/
     AgendaMedicoComponent,
     UserSessionComponent,
     RegistrarOdontologoComponent,
+
   ],
   imports: [
     ReactiveFormsModule,
     BrowserModule.withServerTransition({ appId: "ng-cli-universal" }),
     HttpClientModule,
+    BrowserAnimationsModule,
     FormsModule,
+    MatButtonModule,
+    MatPaginatorModule,
+    MatInputModule,
+    MatButtonModule,
+    MatStepperModule,
     NgbModule,
+    MatTableModule,
     RouterModule.forRoot(
       [{ path: "", component: HomeComponent, pathMatch: "full" }],
       { relativeLinkResolution: "legacy" }
@@ -55,6 +68,6 @@ import { RegistrarOdontologoComponent } from "./odontologo/registrar-odontologo/
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
   ],
-  bootstrap: [AppComponent],
+  bootstrap: [AppComponent,],
 })
 export class AppModule {}
