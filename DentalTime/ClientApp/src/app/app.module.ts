@@ -60,6 +60,7 @@ import { ConsultarConsultasComponent } from "./historia/consultar-consultas/cons
     DialogSolicitarCitaComponent,
     DialogRegistrarConsultaComponent,
     DialogSolicitarCitaComponent,
+    ConsultarConsultasComponent,
   ],
   imports: [
     ReactiveFormsModule,
