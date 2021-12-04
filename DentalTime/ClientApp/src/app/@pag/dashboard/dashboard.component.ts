@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
 import { User } from 'src/app/@elements/models/user';
 import { AuthenticationService } from 'src/app/@elements/service/authentication.service';
 
@@ -24,8 +23,9 @@ export class DashboardComponent implements OnInit {
   ngOnInit() {
   }
   logout() {
-        this.authenticationService.logout();
-        this.router.navigate(['/login']);
-      } 
+    window.location.reload();
+    this.authenticationService.logout();
+    this.router.navigate(['/login']);
+  } 
 
 }

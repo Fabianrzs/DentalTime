@@ -15,11 +15,12 @@ import { ServicioComponent } from './servicios/servicio/servicio.component';
 import { UserSessionComponent } from './user-session/user-session.component';
 
 const routes: Routes = [
-  { path: 'home', component: HomeComponent},
+
   { path: 'registroUsuario', component: UsuarioRegistroComponent},
   { path: 'solicitarCita', component: SolicitarCitaComponent},
   { path: 'login', component: UserSessionComponent},
-  
+
+    { path: 'home', component: HomeComponent, canActivate: [AuthGuard]}, 
   { path: 'agendaMedico', component: AgendaMedicoComponent, canActivate: [AuthGuard]},
   { path: 'registrarConsulta', component: RegistrarConsultaComponent, canActivate: [AuthGuard]},
   { path: 'servicios', component: ServicioComponent, canActivate: [AuthGuard]},

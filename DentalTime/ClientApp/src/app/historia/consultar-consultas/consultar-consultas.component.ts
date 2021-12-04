@@ -16,7 +16,7 @@ export class ConsultarConsultasComponent implements OnInit {
 
   paciente: MatTableDataSource<PacienteView>;
   displayedColumns: string[] = ['noDocumento', 'nombres', 'apellidos', 'sexo','numeroTelefonico', ];
-  pacienteView:PacienteView;
+
   constructor(
     private service: PacienteService,
     private modal: NgbModal,private formBuilder: FormBuilder,

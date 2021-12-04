@@ -4,11 +4,13 @@ justify-content-center justify-content-md-between b-5 p-1 border-bottom">
 <h1 class="center text-light" style="font-size:1vw;">Registrar consulta</h1>
 </header>
 <br>
-<br>
-
 <div class="container">
-
+<mat-form-field appearance="standard">
+      <mat-label>Filter</mat-label>
+      <input matInput (keyup)="applyFilter($event)" placeholder="Ex. ium" #input>
+    </mat-form-field>
   <div class="mat-elevation-z8">
+
     <table mat-table [dataSource]="dataSource">
 
       <!-- Position Column -->

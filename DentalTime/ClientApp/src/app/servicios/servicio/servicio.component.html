@@ -4,13 +4,13 @@ justify-content-center justify-content-md-between b-5 p-1 border-bottom">
 <h1 class="center text-light" style="font-size:1vw;">Registrar consulta</h1>
 </header>
 <br>
-<br>
 
-
-<div class="container demo-button-container" >
-  <table mat-table [dataSource]="SERVICIOS" class="mat-elevation-z8">
-
-  
+<div class="container " >
+  <mat-form-field appearance="standard">
+    <mat-label>Filter</mat-label>
+    <input matInput (keyup)="applyFilter($event)" placeholder="Ex. ium" #input>
+  </mat-form-field>
+  <table mat-table [dataSource]="servicios" class="mat-elevation-z8">
     <ng-container matColumnDef="nombre">
       <th mat-header-cell *matHeaderCellDef> nombre </th>
       <td mat-cell *matCellDef="let element"> {{element.nombre}} </td>

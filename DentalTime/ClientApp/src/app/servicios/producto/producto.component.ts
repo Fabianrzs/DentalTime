@@ -13,16 +13,14 @@ export class ProductoComponent implements OnInit {
 
   displayedColumns: string[] = ["referencia", "nombre", "laboratorio", "marca", "stockActual"];
   dataSource: MatTableDataSource<Producto>;
-  productos: Producto[];
 
   constructor(private service: ProductoService) {}
-
-  @ViewChild(MatPaginator) paginator: MatPaginator;
 
   ngOnInit() {
     this.consultarProducto();
   }
-
+  clickedRows = new Set<Producto>();
+  @ViewChild(MatPaginator) paginator: MatPaginator;
 
   consultarProducto() {
 
@@ -32,6 +30,9 @@ export class ProductoComponent implements OnInit {
     })
   }
 
-  
+  applyFilter(event: Event) {
+    const filterValue = (event.target as HTMLInputElement).value;
+    this.dataSource.filter = filterValue.trim().toLowerCase();
+  }
 
 }
