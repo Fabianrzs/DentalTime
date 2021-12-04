@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { DialogRegistrarConsultaComponent } from 'src/app/@base/dialog-registrar-consulta/dialog-registrar-consulta.component';
 import { SolicitudCita, SolicitudView } from 'src/app/@elements/models/SolicitudCita';
-import { OdontologoService } from 'src/app/@elements/service/Odontologo.service';
+import { OdontologoService } from 'src/app/@elements/service/odontologo.service';
 
 @Component({
   selector: 'app-registrar-consulta',

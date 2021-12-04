@@ -15,8 +15,8 @@ import { SignalRService } from '../../@elements/service/SignalR.service';
 export class ConsultarConsultasComponent implements OnInit {
 
   paciente: MatTableDataSource<PacienteView>;
-  displayedColumns: string[] = ['identificacion', 'nombre', 'apellido', 'sexo', 'telefono', ];
-  pacienteView:PacienteView;
+  displayedColumns: string[] = ['noDocumento', 'nombres', 'apellidos', 'sexo','numeroTelefonico', ];
+
   constructor(
     private service: PacienteService,
     private modal: NgbModal,private formBuilder: FormBuilder,
@@ -24,6 +24,7 @@ export class ConsultarConsultasComponent implements OnInit {
     }
     clickedRows = new Set<PacienteView>();
     @ViewChild(MatPaginator) paginator: MatPaginator;
+
   ngOnInit() {
     this.consultarPacientes();
   }
