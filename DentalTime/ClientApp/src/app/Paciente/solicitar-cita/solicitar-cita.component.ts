@@ -8,7 +8,7 @@ import { DialogSolicitarCitaComponent } from 'src/app/@base/dialog-solicitar-cit
 import { AgendaView, FiltroInputModel } from 'src/app/@elements/models/agendaMedico';
 import { Odontologo } from 'src/app/@elements/models/Odontologo';
 import { AgendaMedicoService } from 'src/app/@elements/service/agendaMedico.service';
-import { OdontologoService } from 'src/app/@elements/service/Odontologo.service';
+import { OdontologoService } from 'src/app/@elements/service/odontologo.service';
 
 @Component({
   selector: 'app-solicitar-cita',
