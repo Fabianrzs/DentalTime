@@ -19,7 +19,6 @@ export class DialogSolicitarCitaComponent implements OnInit {
     this.dialogRef.close();
   }
   ngOnInit() {
-    alert(this.data.codAgenda)
   }
 
 }

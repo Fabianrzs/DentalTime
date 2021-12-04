@@ -35,6 +35,10 @@ import { MatNativeDateModule } from '@angular/material/core';
 import { SolicitarCitaComponent } from "./paciente/solicitar-cita/solicitar-cita.component";
 import { DashboardComponent } from "./@pag/dashboard/dashboard.component";
 import {MatDialogModule} from '@angular/material/dialog';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import { DialogSolicitarCitaComponent } from "./@base/dialog-solicitar-cita/dialog-solicitar-cita.component";
+
+
 //---------------------------------------------------Routers---------------------------------------------------------------
 @NgModule({
   declarations: [
@@ -51,7 +55,8 @@ import {MatDialogModule} from '@angular/material/dialog';
     UserSessionComponent,
     RegistrarOdontologoComponent,
     SolicitarCitaComponent,
-    DashboardComponent
+    DashboardComponent,
+    DialogSolicitarCitaComponent
   ],
   imports: [
     ReactiveFormsModule,
@@ -64,6 +69,7 @@ import {MatDialogModule} from '@angular/material/dialog';
     MatInputModule,
     MatButtonModule,
     MatStepperModule,
+    MatFormFieldModule,
     MatDividerModule,
     MatSelectModule,
     MatDatepickerModule,

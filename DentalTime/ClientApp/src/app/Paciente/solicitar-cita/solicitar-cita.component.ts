@@ -49,8 +49,8 @@ export class SolicitarCitaComponent implements OnInit {
 
   openDialog(agenda: AgendaView): void {
     const dialogRef = this.dialog.open(DialogSolicitarCitaComponent, {
-      width: '250px',
-      height: '150px',
+      width: '930px',
+      height: '408px',
       data : agenda,    
     });
 

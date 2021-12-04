@@ -9,3 +9,15 @@ nav{
     margin: 0 auto;
     background: #000;
 }
+
+#contain-juts{
+    display: flex;
+    border-radius: 10px;
+    width: 100%;
+}
+
+#contenedor{
+  display: flex;
+  justify-content: center;
+   
+}
