@@ -1,7 +1,7 @@
 import { Antecendentes } from "./Antecendentes";
-import { Paciente } from "./Paciente";
-import { Servicio } from "./Servicio";
-import { SolicitudCita } from "./SolicitudCita";
+import { Paciente, PacienteView } from "./Paciente";
+import { Servicio, ServicioView } from "./Servicio";
+import { SolicitudCita, SolicitudView } from "./SolicitudCita";
 
 export class ConsultaOdontologica {
 
@@ -20,8 +20,8 @@ export class ConsultaOdontologica {
 export class ConsultaOdontologicaView extends ConsultaOdontologica{
 
     codConsultaClinica:number;
-    servicio:Servicio;
-    solicitudCita:SolicitudCita;
-    paciente: Paciente;
+    servicio:ServicioView;
+    solicitudCita:SolicitudView;
+    paciente: PacienteView;
 
 }
