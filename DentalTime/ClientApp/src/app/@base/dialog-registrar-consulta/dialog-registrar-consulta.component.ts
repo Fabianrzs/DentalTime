@@ -71,7 +71,6 @@ export class DialogRegistrarConsultaComponent implements OnInit {
     this.add();
   }
   add() {
-    
     this.consulta = new ConsultaOdontologica;
     this.Antecendentes = new Antecendentes;
     this.Antecendentes.enfermedades = this.secondFormGroup.value.enfermedades;
@@ -87,7 +86,6 @@ export class DialogRegistrarConsultaComponent implements OnInit {
     this.consulta.noDocumento = this.paciente.noDocumento;
     this.consulta.idSolicitudCita = this.data.idSolicitudCita;
     this.consulta.IdServicio = this.servi.idServico;
-    alert(JSON.stringify(this.Antecendentes))
     this.consultaService.post(this.consulta).subscribe(item=>{
       if (item) {
         Swal.fire(

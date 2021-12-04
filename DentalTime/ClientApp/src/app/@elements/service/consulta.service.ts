@@ -4,7 +4,16 @@ import { Observable } from 'rxjs';
 import { Paciente, PacienteView } from '../models/Paciente';
 import { tap, catchError } from 'rxjs/operators';
 import { HandleHttpErrorService } from 'src/app/@base/handle-http-error.service';
-import { ConsultaOdontologica } from '../models/ConsultaOdontologica';
+import { ConsultaOdontologica, ConsultaOdontologicaView } from '../models/ConsultaOdontologica';
+
+const httpOptionsPut = {
+  headers: new HttpHeaders({ 'Content-Type': 'application/json' }),
+  responseType: 'text'
+};
+
+const httpOptions = {
+  headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+};
 
 @Injectable({
   providedIn: 'root'
@@ -18,6 +27,20 @@ export class ConsultaService {
     private handleErrorService: HandleHttpErrorService) {
     this.baseUrl = baseUrl;
   }
+
+  getId(idPaciente:string): Observable<ConsultaOdontologicaView[]> {
+    const url = `${this.baseUrl + 'api/ConsultaOdontologica'}/${idPaciente}`;
+    return this.http.get<ConsultaOdontologicaView[]>(url, httpOptions).pipe(
+      tap((_) => this.handleErrorService.log("Consulta realizada")),
+      catchError(
+        this.handleErrorService.handleError<ConsultaOdontologicaView[]>(
+          "Consulta Servicio",
+          null
+        )
+      )
+    );
+  }
+
   get(): Observable<ConsultaOdontologica[]> {
     return this.http.get<ConsultaOdontologica[]>(this.baseUrl + "api/ConsultaOdontologica").pipe(
       tap((_) => this.handleErrorService.log("Consulta realizada")),
