@@ -6,7 +6,7 @@ export class SolicitudCita {
     codAgenda:number;
 }
 
-export class SolicitudView{
+export class SolicitudView extends SolicitudCita{
     idSolicitudCita:number;
     estado:string;
     fecha:Date;

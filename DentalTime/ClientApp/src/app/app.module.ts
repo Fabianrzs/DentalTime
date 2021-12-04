@@ -35,7 +35,10 @@ import { DashboardComponent } from "./@pag/dashboard/dashboard.component";
 import {MatDialogModule} from '@angular/material/dialog';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import { DialogSolicitarCitaComponent } from "./@base/dialog-solicitar-cita/dialog-solicitar-cita.component";
+import { RegistrarConsultaComponent } from "./historia/registrar-consulta/registrar-consulta.component";
+import { DialogRegistrarConsultaComponent } from './@base/dialog-registrar-consulta/dialog-registrar-consulta.component';
 import { ConsultarConsultasComponent } from "./historia/consultar-consultas/consultar-consultas.component";
+
 
 
 //---------------------------------------------------Routers---------------------------------------------------------------
@@ -53,8 +56,10 @@ import { ConsultarConsultasComponent } from "./historia/consultar-consultas/cons
     RegistrarOdontologoComponent,
     SolicitarCitaComponent,
     DashboardComponent,
+    RegistrarConsultaComponent,
     DialogSolicitarCitaComponent,
-    ConsultarConsultasComponent
+    DialogRegistrarConsultaComponent,
+    DialogSolicitarCitaComponent,
   ],
   imports: [
     ReactiveFormsModule,
