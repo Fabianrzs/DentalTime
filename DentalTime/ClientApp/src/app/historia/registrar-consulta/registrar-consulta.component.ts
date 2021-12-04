@@ -29,8 +29,8 @@ export class RegistrarConsultaComponent implements OnInit {
 
   openDialog(solicitudCita:SolicitudView){
   const dialogRef = this.dialog.open(DialogRegistrarConsultaComponent, {
-    width: '1221px',
-    height: '551px',
+    width: '1000px',
+    height: '600px',
     data : solicitudCita,    
   });
 

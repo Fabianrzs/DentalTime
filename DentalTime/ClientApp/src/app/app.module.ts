@@ -39,6 +39,7 @@ import { RegistrarConsultaComponent } from "./historia/registrar-consulta/regist
 import { DialogRegistrarConsultaComponent } from './@base/dialog-registrar-consulta/dialog-registrar-consulta.component';
 import { ConsultarConsultasComponent } from "./historia/consultar-consultas/consultar-consultas.component";
 import { ProductoComponent } from "./servicios/producto/producto.component";
+import { DialogConsultaPacienteComponent } from "./@base/dialog-consulta-paciente/dialog-consulta-paciente.component";
 
 
 
@@ -63,6 +64,7 @@ import { ProductoComponent } from "./servicios/producto/producto.component";
     DialogSolicitarCitaComponent,
     ConsultarConsultasComponent,
     ProductoComponent,
+    DialogConsultaPacienteComponent
   ],
   imports: [
     ReactiveFormsModule,
