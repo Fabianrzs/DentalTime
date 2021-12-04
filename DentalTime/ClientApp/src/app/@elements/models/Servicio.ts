@@ -7,7 +7,7 @@ export class Servicio {
 }
 
 export class ServicioView extends Servicio {
-
+    idServico:number;
     detalleServicio: DetalleServicio[];
 
 }

@@ -10,7 +10,7 @@ export class ConsultaOdontologica {
     diagnostico : string;
     valoracion: string;
     recetaMedica: string;
-    antecedentes: Antecendentes;
+    antecedente: Antecendentes;
     noDocumento:String;
     idSolicitudCita: Number;
     IdServicio: Number;
