@@ -37,6 +37,8 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import { DialogSolicitarCitaComponent } from "./@base/dialog-solicitar-cita/dialog-solicitar-cita.component";
 import { RegistrarConsultaComponent } from "./historia/registrar-consulta/registrar-consulta.component";
 import { DialogRegistrarConsultaComponent } from './@base/dialog-registrar-consulta/dialog-registrar-consulta.component';
+import { ConsultarConsultasComponent } from "./historia/consultar-consultas/consultar-consultas.component";
+
 
 
 //---------------------------------------------------Routers---------------------------------------------------------------
@@ -56,7 +58,8 @@ import { DialogRegistrarConsultaComponent } from './@base/dialog-registrar-consu
     DashboardComponent,
     RegistrarConsultaComponent,
     DialogSolicitarCitaComponent,
-    DialogRegistrarConsultaComponent
+    DialogRegistrarConsultaComponent,
+    DialogSolicitarCitaComponent,
   ],
   imports: [
     ReactiveFormsModule,

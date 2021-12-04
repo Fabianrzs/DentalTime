@@ -33,6 +33,7 @@ namespace DentalTime.Models
 
     public class PacienteViewModel : PacienteInputModel
     {
+        public ICollection<ConsultaOdontologica> ConsultasOdontologicas { get; set; }
         public PacienteViewModel(Paciente paciente)
         {
             TipoDocumento = paciente.TipoDocumento;
@@ -45,6 +46,7 @@ namespace DentalTime.Models
             LugarNacimiento = paciente.LugarNacimiento;
             CorreoElectronico = paciente.CorreoElectronico;
             NumeroTelefonico = paciente.NumeroTelefonico;
+            ConsultasOdontologicas = paciente.ConsultasOdontologicas;
         }
     }
 }
