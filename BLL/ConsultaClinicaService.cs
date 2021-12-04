@@ -37,7 +37,7 @@ namespace BLL
                             DescontarUnidadesProducto(servicio);
                             solicitudCita.Estado = "ATENDIDO";
                             _context.Citas.Update(solicitudCita);
-                            _context.Antecedentes.Add(consultaClinica.Antecedente);
+                            // _context.Antecedentes.Add(consultaClinica.Antecedente);
                             _context.ConsultasOdontologicas.Add(consultaClinica);
                             _context.SaveChanges();
                             return new ConsultaClinicaLogResponse(consultaClinica);

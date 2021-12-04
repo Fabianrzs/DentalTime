@@ -4,7 +4,7 @@ import * as signalR from "@aspnet/signalr";
 import { Observable } from "rxjs";
 import { catchError, tap } from "rxjs/operators";
 import { HandleHttpErrorService } from "src/app/@base/handle-http-error.service";
-import { Servicio } from "../models/Servicio";
+import { Servicio, ServicioView } from "../models/Servicio";
 
 const httpOptionsPut = {
   headers: new HttpHeaders({ "Content-Type": "application/json" }),
@@ -32,11 +32,11 @@ export class ServicioService {
 
   
 
-  get(): Observable<Servicio[]> {
-    return this.http.get<Servicio[]>(this.baseUrl + "api/Servicio").pipe(
+  get(): Observable<ServicioView[]> {
+    return this.http.get<ServicioView[]>(this.baseUrl + "api/Servicio").pipe(
       tap((_) => this.handleErrorService.log("Consulta realizada")),
       catchError(
-        this.handleErrorService.handleError<Servicio[]>(
+        this.handleErrorService.handleError<ServicioView[]>(
           "Consulta Servicio",
           null
         )
