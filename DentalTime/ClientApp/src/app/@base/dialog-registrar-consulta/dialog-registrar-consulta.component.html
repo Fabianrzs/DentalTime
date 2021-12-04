@@ -1,41 +1,70 @@
 <h2 mat-dialog-title>Install Angular</h2>
 <mat-dialog-content class="mat-typography">
   <mat-stepper linear #stepper>
-    <!-- <mat-step [stepControl]="firstFormGroup" [editable]="isEditable">
-      <form [formGroup]="firstFormGroup">
-        <ng-template matStepLabel>Motivos</ng-template>
-        <div class="container">
-          <div class=" row  ">
-            <mat-form-field class="example-full-width" appearance="fill">
-              <mat-label>Motivo</mat-label>
-              <textarea matInput formControlName="motivo" placeholder="Ex. It makes me feel..."></textarea>
+    <mat-step >
+      <form >
+        <ng-template matStepLabel>Datos del paciente</ng-template>
+        <div class="container" style="height: 100%;">
+          <div class="row justify-content-center">
+            <div class="col-3">
+              <mat-form-field class="example-form-field" appearance="fill">
+                <mat-label>Tipo Documento</mat-label>
+                <input matInput type="text"  name="paciente.tipoDocumento" [(ngModel)]="paciente.tipoDocumento">
+              </mat-form-field>
+            </div>
+            <div class="col-3">
+              <mat-form-field class="example-form-field" appearance="fill">
+                <mat-label>Nº Documento</mat-label>
+                <input matInput type="text"  name="paciente.noDocumento" [(ngModel)]="paciente.noDocumento">
+              </mat-form-field>
+            </div>
+            <div class="col-3">
+              <mat-form-field class="example-form-field" appearance="fill">
+                <mat-label>Nombre</mat-label>
+                <input matInput type="text"  name="paciente.nombres" [(ngModel)]="paciente.nombres">
+              </mat-form-field>
+            </div>
+            <div class="col-3">
+              <mat-form-field class="example-form-field" appearance="fill">
+                <mat-label>Apellido</mat-label>
+                <input matInput type="text"  name="paciente.apellidos" [(ngModel)]="paciente.apellidos">
+              </mat-form-field>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+          <div class="col-3">
+            <mat-form-field class="example-form-field" appearance="fill">
+              <mat-label>Sexo</mat-label>
+              <input matInput type="text"  name="paciente.sexo" [(ngModel)]="paciente.sexo">
             </mat-form-field>
           </div>
-          <div class=" row  ">
-            <mat-form-field class="example-full-width" appearance="fill">
-              <mat-label>Medicacion</mat-label>
-              <textarea matInput formControlName="medicacion" placeholder="Ex. It makes me feel..."></textarea>
+          <div class="col-3">
+            <mat-form-field class="example-form-field" appearance="fill">
+              <mat-label>Tipo Sanguineo</mat-label>
+              <input matInput type="text"  name="paciente.tipoSanguineo" [(ngModel)]="paciente.tipoSanguineo">
             </mat-form-field>
           </div>
-          <div class=" row  ">
-            <mat-form-field class="example-full-width" appearance="fill">
-              <mat-label>Diagnostico</mat-label>
-              <textarea matInput formControlName="diagnostico" placeholder="Ex. It makes me feel..."></textarea>
+          <div class="col-3">
+            <mat-form-field class="example-form-field" appearance="fill">
+              <mat-label>Fecha Nacimiento</mat-label>
+              <input matInput type="text"  name="paciente.fechaNacimiento" [(ngModel)]="paciente.fechaNacimiento">
             </mat-form-field>
           </div>
-          <div class=" row  ">
-            <mat-form-field class="example-full-width" style="width:100%" appearance="fill">
-              <mat-label>Valoracion</mat-label>
-              <textarea matInput formControlName="valoracion" placeholder="Ex. It makes me feel..."></textarea>
+          <div class="col-3">
+            <mat-form-field class="example-form-field" appearance="fill">
+              <mat-label>Correo</mat-label>
+              <input matInput type="text"  name="paciente.correoElectronico" [(ngModel)]="paciente.correoElectronico">
             </mat-form-field>
           </div>
+      </div>
         </div>
         <div>
+          <button mat-button matStepperPrevious>Back</button>
           <button mat-button matStepperNext>Next</button>
         </div>
       </form>
-    </mat-step> -->
-    <!-- <mat-step [stepControl]="secondFormGroup" [editable]="isEditable">
+    </mat-step>
+    <mat-step [stepControl]="secondFormGroup" [editable]="isEditable">
       <form [formGroup]="secondFormGroup">
         <ng-template matStepLabel>Antecedentes</ng-template>
         <div class="container">
@@ -68,23 +97,85 @@
           <button mat-button matStepperNext>Next</button>
         </div>
       </form>
-    </mat-step> -->
-    <mat-step >
-      <form >
-        <ng-template matStepLabel>Datos del paciente</ng-template>
-        <mat-form-field appearance="fill">
-          <mat-label>Address</mat-label>
-          <input matInput formControlName="secondCtrl" placeholder="Ex. 1 Main St, New York, NY" required>
-        </mat-form-field>
+    </mat-step>
+    <mat-step [stepControl]="firstFormGroup" [editable]="isEditable">
+      <form [formGroup]="firstFormGroup">
+        <ng-template matStepLabel>Motivos</ng-template>
+        <div class="container">
+          <div class=" row  ">
+            <mat-form-field class="example-full-width" appearance="fill">
+              <mat-label>Motivo</mat-label>
+              <textarea matInput formControlName="motivo" placeholder="Ex. It makes me feel..."></textarea>
+            </mat-form-field>
+          </div>
+          <div class=" row  ">
+            <mat-form-field class="example-full-width" appearance="fill">
+              <mat-label>Medicacion</mat-label>
+              <textarea matInput formControlName="medicacion" placeholder="Ex. It makes me feel..."></textarea>
+            </mat-form-field>
+          </div>
+          <div class=" row  ">
+            <mat-form-field class="example-full-width" appearance="fill">
+              <mat-label>Diagnostico</mat-label>
+              <textarea matInput formControlName="diagnostico" placeholder="Ex. It makes me feel..."></textarea>
+            </mat-form-field>
+          </div>
+          <div class=" row  ">
+            <mat-form-field class="example-full-width" style="width:100%" appearance="fill">
+              <mat-label>Valoracion</mat-label>
+              <textarea matInput formControlName="valoracion" placeholder="Ex. It makes me feel..."></textarea>
+            </mat-form-field>
+          </div>
+          <div class=" row  ">
+            <mat-form-field class="example-full-width" appearance="fill">
+              <mat-label>Receta Medica</mat-label>
+              <textarea matInput formControlName="recetaMedica" placeholder="Ex. It makes me feel..."></textarea>
+            </mat-form-field>
+          </div>
+        </div>
         <div>
-          <button mat-button matStepperPrevious>Back</button>
           <button mat-button matStepperNext>Next</button>
         </div>
       </form>
-    </mat-step>
+    </mat-step> 
     <mat-step>
       <ng-template matStepLabel>Servicio</ng-template>
-      <p>You are now done.</p>
+      <div class="container" style="height: 100%;">
+        <div  class=" row justify-content-center" id="center">
+          <div class="col-4 align-self-center">
+            <mat-form-field appearance="fill">
+              <mat-label>Servicios</mat-label>
+              <mat-select>
+                <mat-option *ngFor="let food of servicios" (click)="escogerServicio(food)" value ="food">
+                  {{food.nombre}}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+        </div>
+        <div  >
+          <div class="row justify-content-center">
+            <div class="col-3">
+              <mat-form-field class="example-form-field" appearance="fill">
+                <mat-label>Precio</mat-label>
+                <input matInput type="text"  name="servi.precio" [(ngModel)]="servi.precio">
+              </mat-form-field>
+            </div>
+            <div class="col-3">
+              <mat-form-field class="example-form-field" appearance="fill">
+                <mat-label>Duracion</mat-label>
+                <input matInput type="text"  name="servi.duracion" [(ngModel)]="servi.duracion">
+              </mat-form-field>
+            </div>
+        </div>
+      <div  class="row justify-content-center">
+        <div class="col-2">
+          <button mat-raised-button class="btn btn-outline-primary" (click)="onSubmit()" 
+          [disabled]="firstFormGroup.invalid && this.secondFormGroup.invalid">Guardar</button>
+        </div>    
+    </div>
+      </div>
+        </div>
       <div>
         <button mat-button matStepperPrevious>Back</button>
         <button mat-button (click)="stepper.reset()">Reset</button>
@@ -93,6 +184,6 @@
   </mat-stepper>
 </mat-dialog-content>
 <mat-dialog-actions align="end">
-  <!-- <button mat-button mat-dialog-close>Cancel</button>
-  <button mat-button [mat-dialog-close]="true" cdkFocusInitial>Install</button> -->
+<button mat-button mat-dialog-close>Cancel</button>
+  <button mat-button [mat-dialog-close]="true" cdkFocusInitial>Install</button>
 </mat-dialog-actions>
