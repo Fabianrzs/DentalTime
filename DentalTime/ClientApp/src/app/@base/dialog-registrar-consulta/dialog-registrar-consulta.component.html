@@ -1,0 +1,98 @@
+<h2 mat-dialog-title>Install Angular</h2>
+<mat-dialog-content class="mat-typography">
+  <mat-stepper linear #stepper>
+    <!-- <mat-step [stepControl]="firstFormGroup" [editable]="isEditable">
+      <form [formGroup]="firstFormGroup">
+        <ng-template matStepLabel>Motivos</ng-template>
+        <div class="container">
+          <div class=" row  ">
+            <mat-form-field class="example-full-width" appearance="fill">
+              <mat-label>Motivo</mat-label>
+              <textarea matInput formControlName="motivo" placeholder="Ex. It makes me feel..."></textarea>
+            </mat-form-field>
+          </div>
+          <div class=" row  ">
+            <mat-form-field class="example-full-width" appearance="fill">
+              <mat-label>Medicacion</mat-label>
+              <textarea matInput formControlName="medicacion" placeholder="Ex. It makes me feel..."></textarea>
+            </mat-form-field>
+          </div>
+          <div class=" row  ">
+            <mat-form-field class="example-full-width" appearance="fill">
+              <mat-label>Diagnostico</mat-label>
+              <textarea matInput formControlName="diagnostico" placeholder="Ex. It makes me feel..."></textarea>
+            </mat-form-field>
+          </div>
+          <div class=" row  ">
+            <mat-form-field class="example-full-width" style="width:100%" appearance="fill">
+              <mat-label>Valoracion</mat-label>
+              <textarea matInput formControlName="valoracion" placeholder="Ex. It makes me feel..."></textarea>
+            </mat-form-field>
+          </div>
+        </div>
+        <div>
+          <button mat-button matStepperNext>Next</button>
+        </div>
+      </form>
+    </mat-step> -->
+    <!-- <mat-step [stepControl]="secondFormGroup" [editable]="isEditable">
+      <form [formGroup]="secondFormGroup">
+        <ng-template matStepLabel>Antecedentes</ng-template>
+        <div class="container">
+          <div class=" row  ">
+            <mat-form-field class="example-full-width" appearance="fill">
+              <mat-label>Enfermedades</mat-label>
+              <textarea matInput formControlName="enfermedades" placeholder="Ex. It makes me feel..."></textarea>
+            </mat-form-field>
+          </div>
+          <div class=" row  ">
+            <mat-form-field class="example-full-width" appearance="fill">
+              <mat-label>Farmaceuticos</mat-label>
+              <textarea matInput formControlName="farmaceuticos" placeholder="Ex. It makes me feel..."></textarea>
+            </mat-form-field>
+          </div>
+          <div class=" row  ">
+            <mat-form-field class="example-full-width" appearance="fill">
+              <mat-label>Quimicos</mat-label>
+              <textarea matInput formControlName="quimicos" placeholder="Ex. It makes me feel..."></textarea>
+            </mat-form-field>
+          </div>
+          <div class=" row  ">
+            <mat-form-field class="example-full-width" style="width:100%" appearance="fill">
+              <mat-label>Complicaciones</mat-label>
+              <textarea matInput formControlName="complicaciones" placeholder="Ex. It makes me feel..."></textarea>
+            </mat-form-field>
+          </div>
+        </div>
+        <div>
+          <button mat-button matStepperNext>Next</button>
+        </div>
+      </form>
+    </mat-step> -->
+    <mat-step >
+      <form >
+        <ng-template matStepLabel>Datos del paciente</ng-template>
+        <mat-form-field appearance="fill">
+          <mat-label>Address</mat-label>
+          <input matInput formControlName="secondCtrl" placeholder="Ex. 1 Main St, New York, NY" required>
+        </mat-form-field>
+        <div>
+          <button mat-button matStepperPrevious>Back</button>
+          <button mat-button matStepperNext>Next</button>
+        </div>
+      </form>
+    </mat-step>
+    <mat-step>
+      <ng-template matStepLabel>Servicio</ng-template>
+      <p>You are now done.</p>
+      <div>
+        <button mat-button matStepperPrevious>Back</button>
+        <button mat-button (click)="stepper.reset()">Reset</button>
+      </div>
+    </mat-step>
+  </mat-stepper>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <!-- <button mat-button mat-dialog-close>Cancel</button>
+  <button mat-button [mat-dialog-close]="true" cdkFocusInitial>Install</button> -->
+</mat-dialog-actions>

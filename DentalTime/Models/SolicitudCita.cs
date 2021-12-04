@@ -32,6 +32,8 @@ namespace DentalTime.Models
             Estado = cita.Estado;
             Paciente = cita.Paciente;
             Agenda = cita.Agenda;
+            CodAgenda = cita.CodAgenda;
+            NoDocumento = cita.NoDocumento;
         }
     }
 }

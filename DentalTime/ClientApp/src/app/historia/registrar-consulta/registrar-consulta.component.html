@@ -1,7 +1,54 @@
 <br>
 <header class="d-flex flex-wrap align-items-center 
 justify-content-center justify-content-md-between b-5 p-1 border-bottom">
-<h1 class="center text-light" style="font-size:1vw;">Registrar consulta</h1>
+  <h1 class="center text-light" style="font-size:1vw;">Registrar consulta</h1>
 </header>
 <br>
 <br>
+<div class="container">
+
+  <div class=" row justify-content-center">
+
+    <div class="row align-items-center">
+
+      <table mat-table [dataSource]="solicitudCita" class="mat-elevation-z8">
+
+        <!--- Note that these columns can be defined in any order.
+              The actual rendered columns are set as a property on the row definition" -->
+      
+        <!-- Position Column -->
+        <ng-container matColumnDef="documento">
+          <th mat-header-cell *matHeaderCellDef> documento </th>
+          <td mat-cell *matCellDef="let element"> {{element.noDocumento}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="idSolicitudCita">
+          <th mat-header-cell *matHeaderCellDef> Id </th>
+          <td mat-cell *matCellDef="let element"> {{element.idSolicitudCita}} </td>
+        </ng-container>
+      
+        <!-- Name Column -->
+        <ng-container matColumnDef="estado">
+          <th mat-header-cell *matHeaderCellDef> estado </th>
+          <td mat-cell *matCellDef="let element"> {{element.estado}} </td>
+        </ng-container>
+      
+        <!-- Weight Column -->
+        <ng-container matColumnDef="fecha">
+          <th mat-header-cell *matHeaderCellDef> fecha </th>
+          <td mat-cell *matCellDef="let element"> {{element.fecha}} </td>
+        </ng-container>
+      
+        <!-- Symbol Column -->
+       
+      
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr
+        mat-row
+        (click)="openDialog(row)"
+        *matRowDef="let row; columns: displayedColumns;"
+    ></tr>
+      </table>
+    </div>
+  </div>
+</div>

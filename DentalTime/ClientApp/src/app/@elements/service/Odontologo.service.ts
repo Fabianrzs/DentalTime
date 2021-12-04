@@ -4,7 +4,11 @@ import { Observable } from 'rxjs';
 import { Odontologo } from '../models/Odontologo';
 import { tap, catchError } from 'rxjs/operators';
 import { HandleHttpErrorService } from 'src/app/@base/handle-http-error.service';
+import { SolicitudView } from '../models/SolicitudCita';
 
+const httpOptions = {
+  headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+};
 @Injectable({
   providedIn: 'root'
 })
@@ -30,6 +34,15 @@ export class OdontologoService {
       .pipe(
         tap(() => this.handleErrorService.log('Se envio a guardar')),
         catchError(this.handleErrorService.handleError<Odontologo>('Registrar Odontologo', null))
+      );
+  }
+
+  getId(id: string): Observable<SolicitudView[]> {
+    const url = `${this.baseUrl + 'api/SolicitudCita/odontologo'}/${id}`;
+    return this.http.get<SolicitudView[]>(url, httpOptions)
+      .pipe(
+        tap(_ => this.handleErrorService.log('datos Buscados')),
+        catchError(this.handleErrorService.handleError<SolicitudView[]>('Buscar Paciente', null))
       );
   }
 
