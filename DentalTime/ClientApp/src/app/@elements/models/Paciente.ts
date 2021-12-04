@@ -1,3 +1,5 @@
+import { ConsultaOdontologica } from "./ConsultaOdontologica";
+
 export class Paciente {
   tipoDocumento: string;
   noDocumento: string;
@@ -10,4 +12,10 @@ export class Paciente {
   correoElectronico: string;
   numeroTelefonico: string;
   
+}
+
+export class PacienteView extends Paciente   {
+  
+  consultasOdontologicas: ConsultaOdontologica[];
+
 }

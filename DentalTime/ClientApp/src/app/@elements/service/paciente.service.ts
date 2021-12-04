@@ -1,7 +1,7 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Inject, Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Paciente } from '../models/Paciente';
+import { Paciente, PacienteView } from '../models/Paciente';
 import { tap, catchError } from 'rxjs/operators';
 import { HandleHttpErrorService } from 'src/app/@base/handle-http-error.service';
 
@@ -28,11 +28,11 @@ export class PacienteService {
     this.baseUrl = baseUrl;
   }
 
-  get(): Observable<Paciente[]> {
-    return this.http.get<Paciente[]>(this.baseUrl + 'api/Paciente')
+  get(): Observable<PacienteView[]> {
+    return this.http.get<PacienteView[]>(this.baseUrl + 'api/Paciente')
       .pipe(
         tap(_ => this.handleErrorService.log('Consulta Realizada')),
-        catchError(this.handleErrorService.handleError<Paciente[]>('Consulta Paciente', null))
+        catchError(this.handleErrorService.handleError<PacienteView[]>('Consulta Paciente', null))
       );
   }
 

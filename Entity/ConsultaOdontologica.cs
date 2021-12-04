@@ -19,7 +19,6 @@ namespace Entity
         public string RecetaMedica { get; set; }
 
         public int IdAntecedentes { get; set; }
-        [JsonIgnore]
         public Antecedente Antecedente { get; set; }
 
         public string NoDocumento { get; set; }
