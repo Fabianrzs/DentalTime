@@ -70,6 +70,14 @@ namespace DentalTime.Controllers
             return Ok(request.Cita);
         }
 
+        [HttpGet("Odontologo/{id}")]
+        public ActionResult<SolicitudCitaCitaViewModel> GetCitas(String id)
+        {
+            var request = _service.ConsultraCitasOdontogolo(id);
+            if (request.Error) return BadRequest(request.Mensaje);
+            return Ok(request.Citas.Select(cita => new SolicitudCitaCitaViewModel(cita)));
+        }
+
         [HttpPut("{id}")]
         public ActionResult<Paciente> Put(int id, SolicitudCita cita)
         {

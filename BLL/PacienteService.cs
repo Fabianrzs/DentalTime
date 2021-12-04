@@ -1,5 +1,6 @@
 ﻿using DAL;
 using Entity;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -58,7 +59,7 @@ namespace BLL
         {
             try
             {
-                List<Paciente> pacientes = _context.Pacientes.ToList();
+                List<Paciente> pacientes = _context.Pacientes.Include(x => x.ConsultasOdontologicas).ToList();
                 if (pacientes != null)
                 {
                     return new PacienteConsultaResponse(pacientes);
@@ -67,6 +68,9 @@ namespace BLL
             }
             catch (Exception e) { return new PacienteConsultaResponse($"Error al Consultar: Se presento lo siguiente {e.Message}"); }
         }
+
+
+
 
         public PacienteLogResponse Update(Paciente paciente, string identificacion){
             
