@@ -1,4 +1,4 @@
-<h2 mat-dialog-title>Install Angular</h2>
+<h2 mat-dialog-title>Registrar Consulta</h2>
 <mat-dialog-content class="mat-typography">
   <mat-stepper linear #stepper>
     <mat-step >
@@ -176,14 +176,10 @@
     </div>
       </div>
         </div>
-      <div>
-        <button mat-button matStepperPrevious>Back</button>
-        <button mat-button (click)="stepper.reset()">Reset</button>
-      </div>
+        <mat-dialog-actions align="end">
+          <button mat-button matStepperPrevious>Back</button>
+          <button mat-button (click)="stepper.reset()">Reset</button>
+        </mat-dialog-actions>
     </mat-step>
   </mat-stepper>
 </mat-dialog-content>
-<mat-dialog-actions align="end">
-<button mat-button mat-dialog-close>Cancel</button>
-  <button mat-button [mat-dialog-close]="true" cdkFocusInitial>Install</button>
-</mat-dialog-actions>
