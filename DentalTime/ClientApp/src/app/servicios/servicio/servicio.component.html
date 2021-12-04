@@ -1,17 +1,18 @@
-<br>
-<header class="d-flex flex-wrap align-items-center 
-justify-content-center justify-content-md-between b-5 p-1 border-bottom">
-<h1 class="center text-light" style="font-size:1vw;">Registrar consulta</h1>
-</header>
-<br>
-
-<div class="container " >
+<div>
+  <h2 class="shadow-lg p-3 mb-5 bg-body rounded rounded-3" style="background-color:#0099ff;;">
+  Servicios
+  </h2>
+</div>
+<div class="container">
   <mat-form-field appearance="standard">
     <mat-label>Filter</mat-label>
     <input matInput (keyup)="applyFilter($event)" placeholder="Ex. ium" #input>
   </mat-form-field>
-  <table mat-table [dataSource]="servicios" class="mat-elevation-z8">
-    <ng-container matColumnDef="nombre">
+  <div class="mat-elevation-z8">
+    <table mat-table [dataSource]="servicios">
+    
+    
+      <ng-container matColumnDef="nombre">
       <th mat-header-cell *matHeaderCellDef> nombre </th>
       <td mat-cell *matCellDef="let element"> {{element.nombre}} </td>
     </ng-container>
@@ -30,10 +31,12 @@ justify-content-center justify-content-md-between b-5 p-1 border-bottom">
   
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
     <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-  </table>
-
+  </table> 
+      <mat-paginator [pageSizeOptions]="[3, 6]"
+    showFirstLastButtons 
+    aria-label="Select page of periodic elements">
+    </mat-paginator>
+  </div>
+ 
 </div>
-<mat-paginator [pageSizeOptions]="[5, 10, 20]"
-showFirstLastButtons 
-aria-label="Select page of periodic elements">
-</mat-paginator>
+

@@ -35,4 +35,9 @@ export class RegistrarConsultaComponent implements OnInit {
   });
 
 }
+
+/*applyFilter(event: Event) {
+    const filterValue = (event.target as HTMLInputElement).value;
+    this.filter = filterValue.trim().toLowerCase();
+  }*/
 }

@@ -1,17 +1,19 @@
-<br>
-<header class="d-flex flex-wrap align-items-center 
-justify-content-center justify-content-md-between b-5 p-1 border-bottom">
-  <h1 class="center text-light" style="font-size:1vw;">Registrar consulta</h1>
-</header>
-<br>
-<br>
+<div>
+  <h2 class="shadow-lg p-3 mb-5 bg-body rounded rounded-3" style="background-color:#0099ff;;">
+  Solicitudes
+  </h2>
+</div>
 <div class="container">
 
   <div class=" row justify-content-center">
+    <mat-form-field appearance="standard">
+    <mat-label>Filter</mat-label>
+    <input matInput (keyup)="applyFilter($event)" placeholder="Ex. ium" #input>
+  </mat-form-field>
+  
+    <div class="row align-items-center mat-elevation-z8">
 
-    <div class="row align-items-center">
-
-      <table mat-table [dataSource]="solicitudCita" class="mat-elevation-z8">
+      <table mat-table [dataSource]="solicitudCita">
 
         <!--- Note that these columns can be defined in any order.
               The actual rendered columns are set as a property on the row definition" -->
@@ -50,5 +52,7 @@ justify-content-center justify-content-md-between b-5 p-1 border-bottom">
     ></tr>
       </table>
     </div>
+    <mat-paginator [pageSizeOptions]="[3, 6]" showFirstLastButtons aria-label="Select page of periodic elements">
+    </mat-paginator>
   </div>
 </div>
