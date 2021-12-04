@@ -6,8 +6,8 @@ import { NgbModal } from "@ng-bootstrap/ng-bootstrap";
 import { Servicio } from "src/app/@elements/models/Servicio";
 import { ServicioService } from "src/app/@elements/service/servicio.service";
 import Swal from "sweetalert2";
-import { AlertModalComponent } from "../@base/alertModal/alertModal.component";
-import { SignalRService } from "../@elements/service/SignalR.service";
+import { AlertModalComponent } from "../../@base/alertModal/alertModal.component";
+import { SignalRService } from "../../@elements/service/SignalR.service";
 @Component({
   selector: "app-servicio",
   templateUrl: "./servicio.component.html",

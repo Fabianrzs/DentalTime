@@ -13,10 +13,8 @@ import { NavMenuComponent } from "./@pag/nav-menu/nav-menu.component";
 import { HomeComponent } from "./@pag/home/home.component";
 import { FooterComponent } from "./@pag/footer/footer.component";
 import { UsuarioRegistroComponent } from "./Paciente/usuario-registro/usuario-registro.component";
-import { UsuarioConsultaComponent } from "./Paciente/usuario-consulta/usuario-consulta.component";
-import { HistorialClinicoComponent } from "./Paciente/historial-odontologico/historial-clinico.component";
 import { FiltroPacientePipe } from "./@elements/pipe/filtro-paciente.pipe";
-import { ServicioComponent } from "./servicio/servicio.component";
+import { ServicioComponent } from "./servicios/servicio/servicio.component";
 import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
 import { AlertModalComponent } from "./@base/alertModal/alertModal.component";
 import { AgendaMedicoComponent } from "./odontologo/agenda-medico/agenda-medico.component";
@@ -47,8 +45,6 @@ import { DialogSolicitarCitaComponent } from "./@base/dialog-solicitar-cita/dial
     HomeComponent,
     FooterComponent,
     UsuarioRegistroComponent,
-    UsuarioConsultaComponent,
-    HistorialClinicoComponent,
     ServicioComponent,
     FiltroPacientePipe,
     AgendaMedicoComponent,

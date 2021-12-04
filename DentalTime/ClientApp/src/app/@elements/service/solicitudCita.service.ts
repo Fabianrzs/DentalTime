@@ -23,7 +23,6 @@ export class SolicitudCitaService {
   }
 
   post(solicitudCita:SolicitudCita): Observable<SolicitudView> {
-    alert(JSON.stringify(solicitudCita))
     return this.http.post<SolicitudView>(this.baseUrl + "api/SolicitudCita", solicitudCita)
       .pipe(
         tap(() => this.handleErrorService.log("Se envio a guardar")),
