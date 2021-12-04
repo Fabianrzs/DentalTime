@@ -1,45 +1,45 @@
 <h2>Consultas Realizadas</h2>
 
 <mat-dialog-content class="mat-typography">
-  <mat-divider></mat-divider>     
-  <div >
-    <mat-form-field appearance="standard">
-      <mat-label>Filter</mat-label>
-      <input matInput (keyup)="applyFilter($event)" placeholder="Ex. ium" #input>
-    </mat-form-field>      
-    <table mat-table [dataSource]="consultas"  class="mat-elevation-z8 demo-table">
+  <div class="container" style="height: 100%;">
+    <div  class=" row justify-content-center" id="center">
+      <mat-divider></mat-divider>     
+      <div >
+        <mat-form-field appearance="standard">
+          <mat-label>Filter</mat-label>
+          <input matInput (keyup)="applyFilter($event)" placeholder="Ex. ium" #input>
+        </mat-form-field> 
+       </div>
 
-      <ng-container matColumnDef="codAgenda">
-        <th mat-header-cell *matHeaderCellDef>Codigo Agenda.</th>
-        <td mat-cell *matCellDef="let element">{{element.codAgenda}}</td>
-      </ng-container>
-    
+       <table mat-table [dataSource]="consultas" class="mat-elevation-z8">
 
-      <ng-container matColumnDef="estado">
-        <th mat-header-cell *matHeaderCellDef>Estado</th>
-        <td mat-cell *matCellDef="let element">{{element.estado}}</td>
-      </ng-container>
-    
-
-      <ng-container matColumnDef="fechaFinal">
-        <th mat-header-cell *matHeaderCellDef>Fecha Final</th>
-        <td mat-cell *matCellDef="let element">{{element.fechaHoraFin}}</td>
-      </ng-container>
-    
-
-      <ng-container matColumnDef="fechaInicio">
-        <th mat-header-cell *matHeaderCellDef>Fecha Inicio</th>
-        <td mat-cell *matCellDef="let element">{{element.fechaHoraInicio}}</td>
-      </ng-container>
-    
-      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-      <tr
-          mat-row
-          (click)="clickedRows.add(row)"
-          [class.demo-row-is-clicked]="clickedRows.has(row)"
-          *matRowDef="let row; columns: displayedColumns;"
-      ></tr>
-    </table>
+      
+        <ng-container matColumnDef="motivo">
+          <th mat-header-cell *matHeaderCellDef> motivo </th>
+          <td mat-cell *matCellDef="let element"> {{element.motivo}} </td>
+        </ng-container>
+      
+     
+        <ng-container matColumnDef="medicacion">
+          <th mat-header-cell *matHeaderCellDef> medicacion </th>
+          <td mat-cell *matCellDef="let element"> {{element.medicacion}} </td>
+        </ng-container>
+        <ng-container matColumnDef="valoracion">
+          <th mat-header-cell *matHeaderCellDef> valoracion </th>
+          <td mat-cell *matCellDef="let element"> {{element.valoracion}} </td>
+        </ng-container>
+        <ng-container matColumnDef="receta">
+          <th mat-header-cell *matHeaderCellDef> receta </th>
+          <td mat-cell *matCellDef="let element"> {{element.diagnostico}} </td>
+        </ng-container>
+      
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      </table>
+    </div>
+    <mat-paginator [pageSizeOptions]="[3, 6]"
+    showFirstLastButtons 
+    aria-label="Select page of periodic elements">
+    </mat-paginator>
   </div>
-
 </mat-dialog-content>
