@@ -14,84 +14,53 @@ import Swal from 'sweetalert2';
 })
 export class UsuarioRegistroComponent implements OnInit {
 
-  selectTipoDocumento = new FormControl('', Validators.required);
-  selectTipoSanguineo = new FormControl('', Validators.required);
-  noDocumento = new FormControl('', Validators.pattern('[0-9 ]*'));
-  nombres = new FormControl('', Validators.pattern('[a-zA-Z ]*'));
-  apellidos = new FormControl('', Validators.pattern('[a-zA-Z ]*'));
-  fechaNacimiento = new FormControl(new Date());
-  selectSexo = new FormControl('', Validators.required);
-  lugarNacimiento = new FormControl('', Validators.pattern('[a-zA-Z ]*'));
-  email = new FormControl('', [Validators.required, Validators.email]);
-  numeroCelular = new FormControl('', Validators.pattern('[0-9 ]*'));
-
   paciente: Paciente;
   formPaciente: FormGroup;
 
   constructor(private service: PacienteService, private formBuilder: FormBuilder) { }
 
   ngOnInit() {
-
+    this.buildForm() 
   }
-
-
-  getErrorDocumento() {
-    if (this.noDocumento.hasError('required')) {
-      return 'Este campo es obligatorio‎';
-    } else {
-      if (this.noDocumento.hasValidator) {
-        return 'Solo se aceptan numeros';
-      }
-    }
+  private buildForm() {
+    
+    this.formPaciente = this.formBuilder.group({
+      selectTipoDocumento: ['', Validators.required],
+      selectTipoSanguineo: ['', Validators.required,],
+      noDocumento:['', Validators.pattern('[0-9 ]*')],
+      nombres:['', Validators.pattern('[a-zA-Z ]*')],
+      apellidos:['', Validators.pattern('[a-zA-Z ]*')],
+      fechaNacimiento:['', Validators.required],
+      selectSexo:['', Validators.required],
+      lugarNacimiento:['', Validators.pattern('[a-zA-Z ]*')],
+      email:['', [Validators.required, Validators.email]],
+      numeroCelular:['', Validators.pattern('[0-9 ]*')]
+    });
   }
-  getErrorNombres() {
-    if (this.nombres.hasError('required')) {
-      return 'Este campo es obligatorio‎';
-    } else {
-      if (this.nombres.hasValidator) {
-        return 'Solo se aceptan letras';
-      }
+  get control() { return this.formPaciente.controls; }
+  onSubmit() {
+    if (this.formPaciente.invalid) {
+      alert(JSON.stringify(this.paciente))
+      // (document.getElementById('guardar') as HTMLInputElement).disabled = true;
+      return;
     }
-  }
-  getErrorApellidos() {
-    if (this.apellidos.hasError('required')) {
-      return 'Este campo es obligatorio‎';
-    } else {
-      if (this.apellidos.hasValidator) {
-        return 'Solo se aceptan letras';
-      }
-    }
-  }
-
-  getErrorLugarNacimiento() {
-    if (this.lugarNacimiento.hasError('required')) {
-      return 'Este campo es obligatorio‎';
-    } else {
-      if (this.lugarNacimiento.hasValidator) {
-        return 'Solo se aceptan letras';
-      }
-    }
-  }
-
-  getErrorEmail() {
-    if (this.email.hasError('required')) {
-      return 'Este campo es obligatorio';
-    }
-    return this.email.hasError('email') ? 'No es un correo electronico valido' : '';
-  }
-
-  getErrorNumeroCelular() {
-    if (this.noDocumento.hasError('required')) {
-      return 'Este campo es obligatorio‎';
-    } else {
-      if (this.noDocumento.hasValidator) {
-        return 'Solo se aceptan numeros';
-      }
-    }
+    // (document.getElementById('guardar') as HTMLInputElement).disabled = false;
+    this.add();
   }
 
   add() {
-    this.paciente = this.formPaciente.value;
+    this.paciente = new Paciente();
+    this.paciente.sexo = this.formPaciente.value.selectSexo;
+    this.paciente.tipoDocumento = this.formPaciente.value.selectTipoDocumento;
+    this.paciente.tipoSanguineo = this.formPaciente.value.selectTipoSanguineo;
+    this.paciente.numeroTelefonico = this.formPaciente.value.numeroCelular;
+    this.paciente.correoElectronico = this.formPaciente.value.email;
+    this.paciente.nombres = this.formPaciente.value.nombres;
+    this.paciente.noDocumento = this.formPaciente.value.noDocumento;
+    this.paciente.fechaNacimiento = this.formPaciente.value.fechaNacimiento;
+    this.paciente.lugarNacimiento = this.formPaciente.value.lugarNacimiento;
+    this.paciente.apellidos = this.formPaciente.value.apellidos;
+    
     this.service.post(this.paciente).subscribe(result => {
       if (result != null) {
         Swal.fire(

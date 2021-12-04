@@ -1,5 +1,6 @@
 ﻿using DAL;
 using Entity;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -39,7 +40,7 @@ namespace BLL
         {
             try
             {
-                List<Agenda> agendas = _context.Agendas.Where(a => a.Cita == null && a.NoDocumento.Equals(noDocumento)).ToList();
+                List<Agenda> agendas = _context.Agendas.Where(a => a.Cita == null && a.NoDocumento.Equals(noDocumento)).Include(a => a.Odontologo).ToList();
                 if (agendas != null)
                 {
                     return new AgendaConsultaResponse(agendas);
@@ -53,7 +54,7 @@ namespace BLL
         {
             try
             {
-                List<Agenda> agendas = _context.Agendas.Where(a => a.Cita == null && a.NoDocumento.Equals(noDocumento)).ToList();
+                List<Agenda> agendas = _context.Agendas.Where(a => a.Cita == null && a.NoDocumento.Equals(noDocumento)).Include(a => a.Odontologo).ToList();
                 var response = AgendasDelMes(agendas, fecha);
                 if (!response.Error)
                 {

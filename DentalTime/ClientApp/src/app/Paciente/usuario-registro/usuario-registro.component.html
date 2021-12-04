@@ -11,7 +11,7 @@
           <div>
             <mat-form-field appearance="fill">
               <mat-label>Tipo de Identificación</mat-label>
-              <select matNativeControl required [formControl]="selectTipoDocumento">
+              <select formControlName="selectTipoDocumento" matNativeControl required >
                 <option value="" selected>Seleccionar</option>
                 <option value="Cedula de Ciudadania">Cedula de Ciudadania</option>
                 <option value="Cedula de Extranjera">Cedula de Extranjera</option>
@@ -19,9 +19,7 @@
                 <option value="Registro Civil">Registro Civil</option>
                 <option value="Tarjeta de Identidad">Tarjeta de Identidad</option>
               </select>
-              <mat-error *ngIf="selectTipoDocumento.hasError('required')">
-                ‎Este campo es obligatorio ‎
-              </mat-error>
+              <mat-error *ngIf="formPaciente.controls.selectTipoDocumento.hasError('matStartDateInvalid')">Seleccione un tipo de documento</mat-error>
               <mat-hint>Puede seleccionar su tipo de documento aquí</mat-hint>
             </mat-form-field>
           </div>
@@ -29,29 +27,30 @@
           <div>
             <mat-form-field appearance="fill">
               <mat-label>Nombres</mat-label>
-              <input matInput placeholder="ej: Juan Carlos" [formControl]="nombres" required>
-              <mat-error *ngIf="nombres.invalid">{{getErrorNombres()}}</mat-error>
+              <input matInput placeholder="ej: Juan Carlos" formControlName="nombres" required>
               <mat-hint>Puede escribir sus nombres aquí</mat-hint>
             </mat-form-field>
+            <mat-error *ngIf="formPaciente.controls.nombres.hasError('matStartDateInvalid')">Seleccione un tipo de documento</mat-error>
           </div>
           <br>
           <div>
             <mat-form-field appearance="fill" style="width: 86%;">
               <mat-label>Fecha de Nacimiento</mat-label>
-              <input matInput [matDatepicker]="picker1" [formControl]="fechaNacimiento">
+              <input matInput formControlName="fechaNacimiento" [matDatepicker]="picker1" >
               <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
               <mat-datepicker #picker1></mat-datepicker>
               <mat-hint>Puede seleccionar su fecha de nacimiento aquí</mat-hint>
             </mat-form-field>
+            <mat-error *ngIf="formPaciente.controls.fechaNacimiento.hasError('matStartDateInvalid')">Seleccione un tipo de documento</mat-error>
           </div>
           <br>
           <div>
             <mat-form-field appearance="fill">
               <mat-label>Numero Celular</mat-label>
-              <input matInput placeholder="ej: 3235285469" [formControl]="noDocumento" required>
-              <mat-error *ngIf="numeroCelular.invalid">{{getErrorNumeroCelular()}}</mat-error>
+              <input matInput placeholder="ej: 3235285469" formControlName="numeroCelular"  required>
               <mat-hint>Puede escribir su numero de celular aquí</mat-hint>
             </mat-form-field>
+            <mat-error *ngIf="formPaciente.controls.numeroCelular.hasError('matStartDateInvalid')">Seleccione un tipo de documento</mat-error>
           </div>
         </div>
 
@@ -60,28 +59,28 @@
           <div>
             <mat-form-field appearance="fill">
               <mat-label>No Documento</mat-label>
-              <input matInput placeholder="ej: 1004125051" [formControl]="noDocumento" required>
-              <mat-error *ngIf="noDocumento.invalid">{{getErrorDocumento()}}</mat-error>
+              <input matInput placeholder="ej: 1004125051" formControlName="noDocumento"   required>
               <mat-hint>Puede escribir su numero de documento aquí</mat-hint>
             </mat-form-field>
+            <mat-error *ngIf="formPaciente.controls.noDocumento.hasError('matStartDateInvalid')">Seleccione un tipo de documento</mat-error>
           </div>
           <br>
           <div>
             <mat-form-field appearance="fill">
               <mat-label>Apellidos</mat-label>
-              <input matInput placeholder="ej: Peña Ramirez" [formControl]="apellidos" required>
-              <mat-error *ngIf="apellidos.invalid">{{getErrorApellidos()}}</mat-error>
+              <input matInput placeholder="ej: Peña Ramirez" formControlName="apellidos"  required>
               <mat-hint>Puede escribir sus apellidos aquí</mat-hint>
             </mat-form-field>
+            <mat-error *ngIf="formPaciente.controls.apellidos.hasError('matStartDateInvalid')">Seleccione un tipo de documento</mat-error>
           </div>
           <br>
           <div>
             <mat-form-field appearance="fill">
               <mat-label>Lugar de Nacimiento</mat-label>
-              <input matInput placeholder="ej: Pivijay/Mag" [formControl]="lugarNacimiento" required>
-              <mat-error *ngIf="lugarNacimiento.invalid">{{getErrorLugarNacimiento()}}</mat-error>
+              <input matInput placeholder="ej: Pivijay/Mag" formControlName="lugarNacimiento"  required>
               <mat-hint>Puede escribir su lugar de nacimiento aquí</mat-hint>
             </mat-form-field>
+            <mat-error *ngIf="formPaciente.controls.lugarNacimiento.hasError('matStartDateInvalid')">Seleccione un tipo de documento</mat-error>
           </div>
 
         </div>
@@ -91,33 +90,32 @@
           <div>
             <mat-form-field appearance="fill">
               <mat-label>Tipo Sanguineo</mat-label>
-              <select matNativeControl required [formControl]="selectTipoSanguineo">
+              <select formControlName="selectTipoSanguineo"  matNativeControl required >
                 <option value="" selected>Seleccionar</option>
-                <option value="Masculino">Masculino</option>
-                <option value="Famenino">Femenino</option>
-                <option value="Indefinido">Indefinido</option>
+                <option value="A+">A+</option>
+                <option value="A-">A-</option>
+                <option value="AB+">AB+</option>
+                <option value="AB-">AB-</option>
+                <option value="O+">O+</option>
+                <option value="O-">O-</option>
               </select>
-              <mat-error *ngIf="selectTipoSanguineo.hasError('required')">
-                ‎Este campo es obligatorio ‎
-              </mat-error>
               <mat-hint>Puede seleccionar su Tipo Sanguineo aquí</mat-hint>
             </mat-form-field>
+            <mat-error *ngIf="formPaciente.controls.selectTipoSanguineo.hasError('matStartDateInvalid')">Seleccione un tipo de documento</mat-error>
           </div>
           <br>
           <div>
             <mat-form-field appearance="fill">
               <mat-label>Sexo</mat-label>
-              <select matNativeControl required [formControl]="selectSexo">
+              <select formControlName="selectSexo" matNativeControl required>
                 <option value="" selected>Seleccionar</option>
                 <option value="Masculino">Masculino</option>
                 <option value="Famenino">Femenino</option>
                 <option value="Indefinido">Indefinido</option>
               </select>
-              <mat-error *ngIf="selectSexo.hasError('required')">
-                ‎Este campo es obligatorio ‎
-              </mat-error>
               <mat-hint>Puede seleccionar su sexo aquí</mat-hint>
             </mat-form-field>
+            <mat-error *ngIf="formPaciente.controls.selectSexo.hasError('matStartDateInvalid')">Seleccione un tipo de documento</mat-error>
           </div>
           <br>
           
@@ -125,10 +123,10 @@
             <div class="example-container">
               <mat-form-field appearance="fill">
                 <mat-label>Correr Electronico</mat-label>
-                <input matInput placeholder="pat@example.com" [formControl]="email" required>
-                <mat-error *ngIf="email.invalid">{{getErrorEmail()}}</mat-error>
+                <input matInput placeholder="pat@example.com" formControlName="email"  required>
                 <mat-hint>Puede ingresar su Correo Electronico</mat-hint>
               </mat-form-field>
+              <mat-error *ngIf="formPaciente.controls.email.hasError('matStartDateInvalid')">Seleccione un tipo de documento</mat-error>
             </div>
           </div>
         </div>
@@ -139,7 +137,8 @@
           <button mat-raised-button class="btn btn-outline-danger">Cancelar</button>
         </div>
         <div class="col col-6">
-          <button mat-raised-button class="btn btn-outline-success">Guardar</button>
+          <button mat-raised-button class="btn btn-outline-success" (click)="onSubmit()" 
+          [disabled]="formPaciente.invalid" name="guardar" >Guardar</button>
         </div>
       </div>
     </div>

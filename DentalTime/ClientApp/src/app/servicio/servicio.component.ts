@@ -31,6 +31,7 @@ export class ServicioComponent implements OnInit {
     private modal: NgbModal,
     private _formBuilder: FormBuilder
   ) {}
+  
   displayedColumns: string[] = ['nombre', 'precio', 'duracion'];
   @ViewChild(MatPaginator) paginator: MatPaginator;
   isLinear = false;

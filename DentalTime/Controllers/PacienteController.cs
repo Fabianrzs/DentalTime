@@ -14,7 +14,7 @@ using System.Threading.Tasks;
 
 namespace DentalTime.Controllers
 {
-    [Authorize]
+    // [Authorize]
     [Route("api/[controller]")]
     [ApiController]
     public class PacienteController : ControllerBase
