@@ -1,9 +1,17 @@
-<div>
-  <h2 class="text-center p-3 mb-2 bg-primary text-white shadow-lg p-3 mb-5 bg-body rounded rounded-3 " style="background-color:#0099ff;;">
-  Registrar Agenda
-  </h2>
-</div>
+<app-dashboard></app-dashboard>
+<div class="personal-tabla">
+  <div>
+    <h2 class="p-3 mb-2  text-dark  shadow-lg p-3 mb-5 bg-body rounded rounded-3 header-tabla" style="background-color:#0099ff;;">
+      Registrar agenda
+    </h2>
+  </div>
+  <br>
+  <br>
+  <br>
+
 <div class="container">
+  <br>
+  <br>
   <div class=" row justify-content-center">
     <div class="row align-items-center">
       <div class="" >
@@ -27,13 +35,11 @@
               </form>
             </div>
             <div class="col-2">
-              <button mat-raised-button class="positi-button-1 btn btn-outline-primary" (click)="onSubmit()"  
-              [disabled]="formGroup.invalid">Registrar</button>
+              <button mat-raised-button class="positi-button-1" (click)="onSubmit()"  
+              >Registrar</button>
             </div>
         </div>
         <br>
-        <br>
-        <mat-divider></mat-divider>     
         <div >
           <mat-form-field appearance="standard">
             <mat-label>Filter</mat-label>
@@ -85,4 +91,5 @@
     showFirstLastButtons 
     aria-label="Select page of periodic elements">
     </mat-paginator>
+</div>
 </div>

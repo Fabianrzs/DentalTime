@@ -1,22 +1,10 @@
  <body>
 
-  <div *ngIf="!currentUser">
-    <app-nav-menu></app-nav-menu> 
-    <br>
+  <div >
+    <div *ngIf="!currentUser">
+      <app-nav-menu></app-nav-menu> 
+    </div>
     <router-outlet></router-outlet>
   </div>
 
-  <div *ngIf="currentUser">
-    <div class="row" >
-      <div class="col-2" style="height: 100%;">
-        <app-dashboard></app-dashboard>
-      </div>
-      <div class="col-md">
-        <div class = "container">
-          <router-outlet></router-outlet>
-        </div>
-      </div>
-    </div>
-  </div>
-</body> 
-<!-- <app-dialog-consulta-paciente></app-dialog-consulta-paciente> -->
+ </body>

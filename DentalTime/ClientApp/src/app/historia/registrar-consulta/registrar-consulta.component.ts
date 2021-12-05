@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { DialogRegistrarConsultaComponent } from 'src/app/@base/dialog-registrar-consulta/dialog-registrar-consulta.component';
+import { ConsultaOdontologicaView } from 'src/app/@elements/models/ConsultaOdontologica';
 import { SolicitudCita, SolicitudView } from 'src/app/@elements/models/SolicitudCita';
 import { OdontologoService } from 'src/app/@elements/service/odontologo.service';
+import { SignalRService } from 'src/app/@elements/service/SignalR.service';
 
 @Component({
   selector: 'app-registrar-consulta',
@@ -11,13 +13,18 @@ import { OdontologoService } from 'src/app/@elements/service/odontologo.service'
 })
 export class RegistrarConsultaComponent implements OnInit {
 
-  constructor(private service: OdontologoService,public dialog: MatDialog) { }
+  constructor(private service: OdontologoService,public dialog: MatDialog, private signalR:SignalRService) {
+    
+   }
   displayedColumns: string[] = ['documento','idSolicitudCita', 'estado', 'fecha'];
   solicitudCita : SolicitudView[];
   clickedRows = new Set<SolicitudView>();
 
   ngOnInit() {
     this.consultarCitaOdontologo();
+    this.signalR.signalReceived.subscribe((signal: ConsultaOdontologicaView) => {
+    this. consultarCitaOdontologo();
+    });
   }
 
   consultarCitaOdontologo()

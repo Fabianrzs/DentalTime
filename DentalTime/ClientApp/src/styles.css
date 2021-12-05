@@ -4,3 +4,19 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.personal-tabla {
+    position: absolute;
+    padding: 0px;
+    /* left: 290px; */
+    width: 70%;
+    top: 0px;
+    margin: 0px 254px;
+}
+
+.header-tabla{
+    width: 116%;
+    position: absolute;
+    margin: 8px -46px;
+    left: -12px;
+}

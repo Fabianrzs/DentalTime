@@ -4,6 +4,11 @@ header{
 .demo-table {
     width: 50%;
   }
+
+  .color-1
+  {
+    background-color: #0099ff;
+  }
   
   .mat-row .mat-cell {
     border-bottom: 1px solid transparent;

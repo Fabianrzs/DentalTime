@@ -93,6 +93,7 @@ export class DialogRegistrarConsultaComponent implements OnInit {
           'Registro Exitoso',
           'success'
         )
+        this.dialogRef.close();
       }
     })
 
