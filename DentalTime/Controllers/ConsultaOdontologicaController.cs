@@ -30,7 +30,7 @@ namespace DentalTime.Controllers
         }
 
         [HttpPost]
-        public async Task<ActionResult<ConsultaOdontologica>> GuardarAsync(ConsultaClinicaInputModel consultaInput)
+        public async Task<ActionResult<ConsultaClinicaViewModel>> GuardarAsync(ConsultaClinicaInputModel consultaInput)
         {
             var consultaClinica = MapearConsultaClinica(consultaInput);
             var request = _service.Save(consultaClinica);
@@ -44,7 +44,7 @@ namespace DentalTime.Controllers
                 return BadRequest(problemDetails);
             }
             await _hubContext.Clients.All.SendAsync("SignalMessageReceived", consultaInput);
-            return Ok(request.ConsultaClinica);
+            return Ok(consultaInput);
         }
 
         private ConsultaOdontologica MapearConsultaClinica(ConsultaClinicaInputModel consultaInput)

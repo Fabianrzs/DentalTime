@@ -1,15 +1,22 @@
-<div>
-  <h2 class="text-center p-3 mb-2 bg-primary text-white shadow-lg p-3 mb-5 bg-body rounded rounded-3" style="background-color:#0099ff;;">
-  Solicitudes
-  </h2>
-</div>
+<app-dashboard></app-dashboard>
+<div class="personal-tabla">
+  <div>
+    <h2 class="p-3 mb-2  text-dark  shadow-lg p-3 mb-5 bg-body rounded rounded-3 header-tabla" style="background-color:#0099ff;;">
+      Solicitudes
+    </h2>
+  </div>
+  <br>
+  <br>
+  <br>
 <div class="container">
-
+  <br>
+  <br>
+  <br>
   <div class=" row justify-content-center">
   
     <div class="row align-items-center mat-elevation-z8">
 
-      <table mat-table [dataSource]="solicitudCita">
+      <table mat-table  [dataSource]="solicitudCita">
 
         <!--- Note that these columns can be defined in any order.
               The actual rendered columns are set as a property on the row definition" -->
@@ -41,14 +48,18 @@
        
       
         <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-        <tr
+        <tr 
         mat-row
         (click)="openDialog(row)"
         *matRowDef="let row; columns: displayedColumns;"
     ></tr>
       </table>
     </div>
-    <mat-paginator [pageSizeOptions]="[3, 6]" showFirstLastButtons aria-label="Select page of periodic elements">
-    </mat-paginator>
   </div>
+  <mat-paginator [pageSizeOptions]="[3, 6]" showFirstLastButtons aria-label="Select page of periodic elements">
+  </mat-paginator>
+</div>
+<!-- <p class="placeholder-glow">
+  <span class="placeholder col-12"></span>
+</p> -->
 </div>

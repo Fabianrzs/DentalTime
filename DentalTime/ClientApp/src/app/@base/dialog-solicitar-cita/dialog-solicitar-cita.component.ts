@@ -53,6 +53,7 @@ export class DialogSolicitarCitaComponent implements OnInit {
         'Registro Exitoso',
         'success'
       )
+      this.dialogRef.close();
     })
   }
 }
