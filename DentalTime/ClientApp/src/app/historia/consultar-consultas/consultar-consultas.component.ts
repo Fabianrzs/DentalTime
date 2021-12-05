@@ -47,8 +47,8 @@ export class ConsultarConsultasComponent implements OnInit {
 
   openDialog(paciente: PacienteView): void {
     const dialogRef = this.dialog.open(DialogConsultaPacienteComponent, {
-      width: '900px',
-      height: '420px',
+      width: '1040px',
+      height: '580px',
       data : paciente,    
     });
     dialogRef.afterClosed().subscribe(result => {

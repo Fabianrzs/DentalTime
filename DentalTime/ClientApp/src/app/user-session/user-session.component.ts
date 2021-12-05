@@ -58,7 +58,7 @@ export class UserSessionComponent implements OnInit {
       .pipe(first())
       .subscribe(
         (data) => {
-          this.router.navigate([this.returnUrl]);
+          this.router.navigate(["/home"]);
         },
         (error) => {
           const modalRef = this.modalService.open(AlertModalComponent);

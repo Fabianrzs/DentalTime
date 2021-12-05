@@ -87,7 +87,7 @@ import {MatIconModule} from '@angular/material/icon';
     MatTableModule,
     MatDialogModule,
     RouterModule.forRoot(
-      [{ path: "", component: HomeComponent, pathMatch: "full" }],
+      [{ path: "", component: UserSessionComponent, pathMatch: "full" }],
       { relativeLinkResolution: "legacy" }
     ),
     AppRoutingModule,

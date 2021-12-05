@@ -1,5 +1,6 @@
 import { HttpClient } from "@angular/common/http";
 import { Inject, Injectable } from "@angular/core";
+import { Router } from "@angular/router";
 import { BehaviorSubject, Observable } from "rxjs";
 import { map } from "rxjs/operators";
 import { HandleHttpErrorService } from "../../@base/handle-http-error.service";
@@ -17,7 +18,8 @@ export class AuthenticationService {
   constructor(
     private http: HttpClient,
     @Inject('BASE_URL') baseUrl: string,
-    private handleErrorService: HandleHttpErrorService) {
+    private handleErrorService: HandleHttpErrorService,
+    private router: Router) {
     this.currentUserSubject = new BehaviorSubject<User>(JSON.parse(localStorage.getItem('currentUser')));
     this.currentUser = this.currentUserSubject.asObservable();
     this.baseUrl = baseUrl;
@@ -38,7 +40,10 @@ export class AuthenticationService {
   }
 
   logout() {
+    // location.reload();
     localStorage.removeItem("currentUser");
     this.currentUserSubject.next(null);
+   
+    this.router.navigate(["/"]);
   }
 }

@@ -6,6 +6,15 @@ body {
   html {
     height: -webkit-fill-available;
   }
+
+  .chevere{
+   
+    position: absolute;
+    margin: -578px 228px;
+    width: 81.2%;
+    height: 35%;
+  
+  }
   
   
   a:hover{
