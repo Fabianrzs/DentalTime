@@ -41,7 +41,7 @@ import { ConsultarConsultasComponent } from "./historia/consultar-consultas/cons
 import { ProductoComponent } from "./servicios/producto/producto.component";
 import { DialogConsultaPacienteComponent } from "./@base/dialog-consulta-paciente/dialog-consulta-paciente.component";
 
-
+import {MatIconModule} from '@angular/material/icon';
 
 //---------------------------------------------------Routers---------------------------------------------------------------
 @NgModule({
@@ -82,6 +82,7 @@ import { DialogConsultaPacienteComponent } from "./@base/dialog-consulta-pacient
     MatSelectModule,
     MatDatepickerModule,
     MatNativeDateModule,
+    MatIconModule,
     NgbModule,
     MatTableModule,
     MatDialogModule,

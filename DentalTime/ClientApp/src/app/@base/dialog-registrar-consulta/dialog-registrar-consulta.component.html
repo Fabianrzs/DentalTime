@@ -1,62 +1,62 @@
 <h2 mat-dialog-title>Registrar Consulta</h2>
 <mat-dialog-content class="mat-typography">
   <mat-stepper linear #stepper>
-    <mat-step >
-      <form >
+    <mat-step>
+      <form>
         <ng-template matStepLabel>Datos del paciente</ng-template>
         <div class="container" style="height: 100%;">
           <div class="row justify-content-center">
             <div class="col-3">
               <mat-form-field class="example-form-field" appearance="fill">
                 <mat-label>Tipo Documento</mat-label>
-                <input matInput type="text"  name="paciente.tipoDocumento" [(ngModel)]="paciente.tipoDocumento">
+                <input matInput type="text" name="paciente.tipoDocumento" [(ngModel)]="paciente.tipoDocumento">
               </mat-form-field>
             </div>
             <div class="col-3">
               <mat-form-field class="example-form-field" appearance="fill">
                 <mat-label>Nº Documento</mat-label>
-                <input matInput type="text"  name="paciente.noDocumento" [(ngModel)]="paciente.noDocumento">
+                <input matInput type="text" name="paciente.noDocumento" [(ngModel)]="paciente.noDocumento">
               </mat-form-field>
             </div>
             <div class="col-3">
               <mat-form-field class="example-form-field" appearance="fill">
                 <mat-label>Nombre</mat-label>
-                <input matInput type="text"  name="paciente.nombres" [(ngModel)]="paciente.nombres">
+                <input matInput type="text" name="paciente.nombres" [(ngModel)]="paciente.nombres">
               </mat-form-field>
             </div>
             <div class="col-3">
               <mat-form-field class="example-form-field" appearance="fill">
                 <mat-label>Apellido</mat-label>
-                <input matInput type="text"  name="paciente.apellidos" [(ngModel)]="paciente.apellidos">
+                <input matInput type="text" name="paciente.apellidos" [(ngModel)]="paciente.apellidos">
               </mat-form-field>
             </div>
-        </div>
-        <div class="row justify-content-center">
-          <div class="col-3">
-            <mat-form-field class="example-form-field" appearance="fill">
-              <mat-label>Sexo</mat-label>
-              <input matInput type="text"  name="paciente.sexo" [(ngModel)]="paciente.sexo">
-            </mat-form-field>
           </div>
-          <div class="col-3">
-            <mat-form-field class="example-form-field" appearance="fill">
-              <mat-label>Tipo Sanguineo</mat-label>
-              <input matInput type="text"  name="paciente.tipoSanguineo" [(ngModel)]="paciente.tipoSanguineo">
-            </mat-form-field>
+          <div class="row justify-content-center">
+            <div class="col-3">
+              <mat-form-field class="example-form-field" appearance="fill">
+                <mat-label>Sexo</mat-label>
+                <input matInput type="text" name="paciente.sexo" [(ngModel)]="paciente.sexo">
+              </mat-form-field>
+            </div>
+            <div class="col-3">
+              <mat-form-field class="example-form-field" appearance="fill">
+                <mat-label>Tipo Sanguineo</mat-label>
+                <input matInput type="text" name="paciente.tipoSanguineo" [(ngModel)]="paciente.tipoSanguineo">
+              </mat-form-field>
+            </div>
+            <div class="col-3">
+              <mat-form-field class="example-form-field" appearance="fill">
+                <mat-label>Fecha Nacimiento</mat-label>
+                <input matInput type="text" name="paciente.fechaNacimiento" [(ngModel)]="paciente.fechaNacimiento">
+              </mat-form-field>
+            </div>
+            <div class="col-3">
+              <mat-form-field class="example-form-field" appearance="fill">
+                <mat-label>Correo</mat-label>
+                <input matInput type="text" name="paciente.correoElectronico" [(ngModel)]="paciente.correoElectronico">
+              </mat-form-field>
+            </div>
           </div>
-          <div class="col-3">
-            <mat-form-field class="example-form-field" appearance="fill">
-              <mat-label>Fecha Nacimiento</mat-label>
-              <input matInput type="text"  name="paciente.fechaNacimiento" [(ngModel)]="paciente.fechaNacimiento">
-            </mat-form-field>
-          </div>
-          <div class="col-3">
-            <mat-form-field class="example-form-field" appearance="fill">
-              <mat-label>Correo</mat-label>
-              <input matInput type="text"  name="paciente.correoElectronico" [(ngModel)]="paciente.correoElectronico">
-            </mat-form-field>
-          </div>
-      </div>
         </div>
         <div>
           <button mat-button matStepperNext>Next</button>
@@ -138,45 +138,43 @@
           <button mat-button matStepperNext>Next</button>
         </div>
       </form>
-    </mat-step> 
+    </mat-step>
     <mat-step>
       <ng-template matStepLabel>Servicio</ng-template>
       <div class="container" style="height: 100%;">
-        <div  class=" row justify-content-center" id="center">
-          <div class="col-4 align-self-center">
+        <div class=" row " id="center">
+          <div class="col-4">
             <mat-form-field appearance="fill">
               <mat-label>Servicios</mat-label>
               <mat-select>
-                <mat-option *ngFor="let food of servicios" (click)="escogerServicio(food)" value ="food">
+                <mat-option *ngFor="let food of servicios" (click)="escogerServicio(food)" value="food">
                   {{food.nombre}}
                 </mat-option>
               </mat-select>
             </mat-form-field>
           </div>
+          <div class="col-4">
+            <mat-form-field class="example-form-field" appearance="fill">
+              <mat-label>Precio</mat-label>
+              <input matInput type="text" name="servi.precio" [(ngModel)]="servi.precio">
+            </mat-form-field>
+          </div>
+          <div class="col-4">
+            <mat-form-field class="example-form-field" appearance="fill">
+              <mat-label>Duracion</mat-label>
+              <input matInput type="text" name="servi.duracion" [(ngModel)]="servi.duracion">
+            </mat-form-field>
+          </div>
         </div>
-        <div  >
+        <div>
           <div class="row justify-content-center">
-            <div class="col-3">
-              <mat-form-field class="example-form-field" appearance="fill">
-                <mat-label>Precio</mat-label>
-                <input matInput type="text"  name="servi.precio" [(ngModel)]="servi.precio">
-              </mat-form-field>
+            <div class="col-2">
+              <button mat-raised-button class="btn btn-outline-primary" (click)="onSubmit()"
+                [disabled]="firstFormGroup.invalid && this.secondFormGroup.invalid">Guardar</button>
             </div>
-            <div class="col-3">
-              <mat-form-field class="example-form-field" appearance="fill">
-                <mat-label>Duracion</mat-label>
-                <input matInput type="text"  name="servi.duracion" [(ngModel)]="servi.duracion">
-              </mat-form-field>
-            </div>
+          </div>
         </div>
-      <div  class="row justify-content-center">
-        <div class="col-2">
-          <button mat-raised-button class="btn btn-outline-primary" (click)="onSubmit()" 
-          [disabled]="firstFormGroup.invalid && this.secondFormGroup.invalid">Guardar</button>
-        </div>    
-    </div>
       </div>
-        </div>
     </mat-step>
   </mat-stepper>
 </mat-dialog-content>
