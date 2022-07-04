@@ -1,5 +1,6 @@
 using BLL;
 using DAL;
+using Microsoft.EntityFrameworkCore;
 using NUnit.Framework;
 
 namespace TestBLL
@@ -11,13 +12,30 @@ namespace TestBLL
         [SetUp]
         public void Setup()
         {
+            var options = new DbContextOptionsBuilder<DentalTimeContext>().UseSqlServer("Server=DKP-FABIAN\\SQLEXPRESS;Database=DBDental;Trusted_Connection = True; MultipleActiveResultSets = true");
             service = new PacienteService(new DentalTimeContext());
         }
 
         [Test]
         public void SavePaciente()
         {
-            var request = service.Save(new Entity.Paciente());
+
+            var paciente = new Entity.Paciente()
+            {
+                TipoDocumento = "CC",
+                NoDocumento = "1004121505",
+                Nombres = "Andres alfonso",
+                Apellidos = "Pertuz Perez",
+                FechaNacimiento = new System.DateTime(),
+                LugarNacimiento = "Pivijay",
+                CorreoElectronico = "aalfonsopertuz@unicesar.edu.co",
+                NumeroTelefonico = " 321987456",
+                Sexo = "M",
+                TipoSanguineo = "O-"
+            };
+
+            var request = service.Save(paciente);
+            Assert.AreEqual("", (request.Mensaje));
             Assert.IsFalse(request.Error); //Sin error 
             Assert.IsNotNull(request.Paciente); //Datos Enviados a guardar
         }

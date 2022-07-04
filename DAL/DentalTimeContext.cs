@@ -16,9 +16,15 @@ namespace DAL
         {
                 
         }
+
         public DentalTimeContext(DbContextOptions contextOptions): base(contextOptions)
         {
 
+        }
+
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            optionsBuilder.UseSqlServer(@"Server=DKP-FABIAN\\SQLEXPRESS;Database=DBDental;Trusted_Connection = True; MultipleActiveResultSets = true");
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
