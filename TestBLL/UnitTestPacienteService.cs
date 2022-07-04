@@ -9,11 +9,14 @@ namespace TestBLL
     {
         private PacienteService service;
 
+        string stringConnections = "Server=DKP-FABIAN\\SQLEXPRESS;Database=DBDental;Trusted_Connection = True; MultipleActiveResultSets = true";
+
         [SetUp]
         public void Setup()
         {
-            var options = new DbContextOptionsBuilder<DentalTimeContext>().UseSqlServer("Server=DKP-FABIAN\\SQLEXPRESS;Database=DBDental;Trusted_Connection = True; MultipleActiveResultSets = true");
-            service = new PacienteService(new DentalTimeContext());
+            var contextOptions = new DbContextOptionsBuilder<DentalTimeContext>().UseSqlServer(stringConnections).Options;
+            DentalTimeContext Db = new DentalTimeContext(contextOptions);
+            service = new PacienteService(Db);
         }
 
         [Test]
@@ -23,21 +26,39 @@ namespace TestBLL
             var paciente = new Entity.Paciente()
             {
                 TipoDocumento = "CC",
-                NoDocumento = "1004121505",
-                Nombres = "Andres alfonso",
-                Apellidos = "Pertuz Perez",
-                FechaNacimiento = new System.DateTime(),
-                LugarNacimiento = "Pivijay",
-                CorreoElectronico = "aalfonsopertuz@unicesar.edu.co",
+                NoDocumento = "1004121505431",
+                Nombres = "Fabian",
+                Apellidos = "This",
+                LugarNacimiento = "Valledupar",
+                CorreoElectronico = "RR@unicesar.edu.co",
                 NumeroTelefonico = " 321987456",
                 Sexo = "M",
-                TipoSanguineo = "O-"
+                TipoSanguineo = "A-"
             };
 
             var request = service.Save(paciente);
-            Assert.AreEqual("", (request.Mensaje));
-            Assert.IsFalse(request.Error); //Sin error 
             Assert.IsNotNull(request.Paciente); //Datos Enviados a guardar
+        }
+
+        [Test]
+        public void SavePacienteDuplicate()
+        {
+
+            var paciente = new Entity.Paciente()
+            {
+                TipoDocumento = "CC",
+                NoDocumento = "1004121505431",
+                Nombres = "Fabian",
+                Apellidos = "This",
+                LugarNacimiento = "Valledupar",
+                CorreoElectronico = "RR@unicesar.edu.co",
+                NumeroTelefonico = " 321987456",
+                Sexo = "M",
+                TipoSanguineo = "A-"
+            };
+
+            var request = service.Save(paciente);
+            Assert.AreEqual("Error el paciente ya se encuentra registrado", (request.Mensaje));
         }
 
         [Test]
