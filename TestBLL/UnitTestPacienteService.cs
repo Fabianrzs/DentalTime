@@ -26,12 +26,12 @@ namespace TestBLL
             var paciente = new Entity.Paciente()
             {
                 TipoDocumento = "CC",
-                NoDocumento = "1004121505431",
+                NoDocumento = "1001505431",
                 Nombres = "Fabian",
                 Apellidos = "This",
                 LugarNacimiento = "Valledupar",
                 CorreoElectronico = "RR@unicesar.edu.co",
-                NumeroTelefonico = " 321987456",
+                NumeroTelefonico = " 3219874560",
                 Sexo = "M",
                 TipoSanguineo = "A-"
             };
@@ -41,24 +41,24 @@ namespace TestBLL
         }
 
         [Test]
-        public void SavePacienteDuplicate()
+        public void SavePacienteFallo()
         {
 
             var paciente = new Entity.Paciente()
             {
-                TipoDocumento = "CC",
-                NoDocumento = "1004121505431",
+                TipoDocumento = null, //Campo que falla 
+                NoDocumento = "1001505431",
                 Nombres = "Fabian",
                 Apellidos = "This",
                 LugarNacimiento = "Valledupar",
                 CorreoElectronico = "RR@unicesar.edu.co",
-                NumeroTelefonico = " 321987456",
+                NumeroTelefonico = " 3219874560",
                 Sexo = "M",
                 TipoSanguineo = "A-"
             };
 
             var request = service.Save(paciente);
-            Assert.AreEqual("Error el paciente ya se encuentra registrado", (request.Mensaje));
+            Assert.IsNotNull(request.Paciente.TipoDocumento);
         }
 
         [Test]

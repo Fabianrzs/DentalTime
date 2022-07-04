@@ -24,7 +24,7 @@ namespace TestBLL
         {
             var agenda = new Entity.Agenda()
             {
-                NoDocumento = "1234",
+                NoDocumento = "100231234",
                 FechaInicio = new System.DateTime(06/16/2022),
                 FechaFin = new System.DateTime(07 / 16 / 2022),
                 Estado = "Disponible"
@@ -39,13 +39,13 @@ namespace TestBLL
         {
             var agenda = new Entity.Agenda()
             {
-                NoDocumento = "1234",
+                NoDocumento = "100231234",
                 FechaInicio = new System.DateTime(06/16/2022),
-                FechaFin = new System.DateTime(07/16/ 2022),
+                // Fecha De fin Faltante 
                 Estado = "Disponible"
             };
             var request = service.Save(agenda);
-            Assert.AreEqual("Error al Guardar: Fecha Ocupada",request.Mensaje); //Datos Enviados a guardar
+            Assert.IsFalse(request.Error); //Datos Enviados a guardar
         }
 
         [Test]
