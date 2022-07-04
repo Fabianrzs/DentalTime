@@ -5813,20 +5813,28 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\andre\\.nuget\\packages\\": {}
+    "C:\\Users\\WIN10\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {},
+    "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "I:\\Semestre 5\\Programacion WEB\\Proyectos\\Nueva carpeta\\DentalTime\\DAL\\DAL.csproj",
+      "projectUniqueName": "C:\\Users\\WIN10\\Source\\Repos\\DentalTime\\DAL\\DAL.csproj",
       "projectName": "DAL",
-      "projectPath": "I:\\Semestre 5\\Programacion WEB\\Proyectos\\Nueva carpeta\\DentalTime\\DAL\\DAL.csproj",
-      "packagesPath": "C:\\Users\\andre\\.nuget\\packages\\",
-      "outputPath": "I:\\Semestre 5\\Programacion WEB\\Proyectos\\Nueva carpeta\\DentalTime\\DAL\\obj\\",
+      "projectPath": "C:\\Users\\WIN10\\Source\\Repos\\DentalTime\\DAL\\DAL.csproj",
+      "packagesPath": "C:\\Users\\WIN10\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\WIN10\\Source\\Repos\\DentalTime\\DAL\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+        "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
+      ],
       "configFilePaths": [
-        "C:\\Users\\andre\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "C:\\Users\\WIN10\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net5.0"
@@ -5839,8 +5847,8 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "I:\\Semestre 5\\Programacion WEB\\Proyectos\\Nueva carpeta\\DentalTime\\Entity\\Entity.csproj": {
-              "projectPath": "I:\\Semestre 5\\Programacion WEB\\Proyectos\\Nueva carpeta\\DentalTime\\Entity\\Entity.csproj"
+            "C:\\Users\\WIN10\\Source\\Repos\\DentalTime\\Entity\\Entity.csproj": {
+              "projectPath": "C:\\Users\\WIN10\\Source\\Repos\\DentalTime\\Entity\\Entity.csproj"
             }
           }
         }
@@ -5882,26 +5890,12 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
-        "downloadDependencies": [
-          {
-            "name": "Microsoft.AspNetCore.App.Ref",
-            "version": "[5.0.0, 5.0.0]"
-          },
-          {
-            "name": "Microsoft.NETCore.App.Ref",
-            "version": "[5.0.0, 5.0.0]"
-          },
-          {
-            "name": "Microsoft.WindowsDesktop.App.Ref",
-            "version": "[5.0.0, 5.0.0]"
-          }
-        ],
         "frameworkReferences": {
           "Microsoft.NETCore.App": {
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.403\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.101\\RuntimeIdentifierGraph.json"
       }
     }
   }

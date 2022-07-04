@@ -1,7 +1,8 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\BLL",
+    "\\TestBLL"
   ],
-  "SelectedNode": "\\Proyecto.sln",
   "PreviewInSolutionExplorer": false
 }

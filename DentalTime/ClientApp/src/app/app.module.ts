@@ -19,7 +19,6 @@ import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
 import { AlertModalComponent } from "./@base/alertModal/alertModal.component";
 import { AgendaMedicoComponent } from "./odontologo/agenda-medico/agenda-medico.component";
 import { JwtInterceptor } from "./@elements/service/jwt.interceptor";
-import { UserSessionComponent } from "./user-session/user-session.component";
 import { RegistrarOdontologoComponent } from "./odontologo/registrar-odontologo/registrar-odontologo.component";
 import {MatTableModule} from '@angular/material/table';
 import {MatPaginatorModule} from '@angular/material/paginator';
@@ -42,6 +41,7 @@ import { ProductoComponent } from "./servicios/producto/producto.component";
 import { DialogConsultaPacienteComponent } from "./@base/dialog-consulta-paciente/dialog-consulta-paciente.component";
 
 import {MatIconModule} from '@angular/material/icon';
+import { UserSessionComponent } from "./servicios/user-session/user-session.component";
 
 //---------------------------------------------------Routers---------------------------------------------------------------
 @NgModule({

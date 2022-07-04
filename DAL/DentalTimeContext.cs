@@ -11,6 +11,11 @@ namespace DAL
 {
     public class DentalTimeContext:DbContext
     {
+
+        public DentalTimeContext()
+        {
+                
+        }
         public DentalTimeContext(DbContextOptions contextOptions): base(contextOptions)
         {
 

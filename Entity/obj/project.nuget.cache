@@ -1,12 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Rui75fITQmeVUhuYG8dhSkZTa3j6FnBvArTOwMg3PbFOgPnf5lX1RQalez0v1qZl+YkTSLDUqDLB2DZEk9JrxA==",
+  "dgSpecHash": "GyAzHkYXBdDPHPHu5HBY8sp4O4zDjoDgDAjJzFKI/7KzpE43aeU4up8ya0KCMEnZWlBUlk5kNg4rEh0P3bL/dQ==",
   "success": true,
-  "projectFilePath": "I:\\Semestre 5\\Programacion WEB\\Proyectos\\Nueva carpeta\\DentalTime\\Entity\\Entity.csproj",
-  "expectedPackageFiles": [
-    "C:\\Users\\andre\\.nuget\\packages\\microsoft.netcore.app.ref\\5.0.0\\microsoft.netcore.app.ref.5.0.0.nupkg.sha512",
-    "C:\\Users\\andre\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\5.0.0\\microsoft.windowsdesktop.app.ref.5.0.0.nupkg.sha512",
-    "C:\\Users\\andre\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\5.0.0\\microsoft.aspnetcore.app.ref.5.0.0.nupkg.sha512"
-  ],
+  "projectFilePath": "C:\\Users\\WIN10\\Source\\Repos\\DentalTime\\Entity\\Entity.csproj",
+  "expectedPackageFiles": [],
   "logs": []
 }

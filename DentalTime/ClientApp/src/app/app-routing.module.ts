@@ -12,7 +12,7 @@ import { SolicitarCitaComponent } from './paciente/solicitar-cita/solicitar-cita
 import { UsuarioRegistroComponent } from './Paciente/usuario-registro/usuario-registro.component';
 import { ProductoComponent } from './servicios/producto/producto.component';
 import { ServicioComponent } from './servicios/servicio/servicio.component';
-import { UserSessionComponent } from './user-session/user-session.component';
+import { UserSessionComponent } from './servicios/user-session/user-session.component';
 
 const routes: Routes = [
 

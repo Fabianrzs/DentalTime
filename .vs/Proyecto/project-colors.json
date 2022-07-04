@@ -1,0 +1,16 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3": {
+      "ProjectGuid": "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3",
+      "DisplayName": "Archivos varios",
+      "ColorIndex": -1
+    },
+    "62844772-cf27-4fdd-aa7f-45dd9538a34d": {
+      "ProjectGuid": "62844772-cf27-4fdd-aa7f-45dd9538a34d",
+      "DisplayName": "DentalTime",
+      "ColorIndex": 0
+    }
+  },
+  "NextColorIndex": 1
+}

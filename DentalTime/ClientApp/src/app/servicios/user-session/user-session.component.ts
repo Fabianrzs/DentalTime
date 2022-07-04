@@ -3,9 +3,9 @@ import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 import { ActivatedRoute, Router } from "@angular/router";
 import { NgbModal } from "@ng-bootstrap/ng-bootstrap";
 import { first } from "rxjs/operators";
-import { AlertModalComponent } from "../@base/alertModal/alertModal.component";
-import { User } from "../@elements/models/user";
-import { AuthenticationService } from "../@elements/service/authentication.service";
+import { AlertModalComponent } from "src/app/@base/alertModal/alertModal.component";
+import { User } from "src/app/@elements/models/user";
+import { AuthenticationService } from "src/app/@elements/service/authentication.service";
 
 @Component({
   selector: "app-user-session",
