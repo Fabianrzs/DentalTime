@@ -10,7 +10,17 @@
       "ProjectGuid": "62844772-cf27-4fdd-aa7f-45dd9538a34d",
       "DisplayName": "DentalTime",
       "ColorIndex": 0
+    },
+    "3c2dfe14-0ec7-4c9b-8c3c-9429170fe3a3": {
+      "ProjectGuid": "3c2dfe14-0ec7-4c9b-8c3c-9429170fe3a3",
+      "DisplayName": "BLL",
+      "ColorIndex": 1
+    },
+    "17b98f6f-aa37-4afe-9ac3-1b8fad1467ce": {
+      "ProjectGuid": "17b98f6f-aa37-4afe-9ac3-1b8fad1467ce",
+      "DisplayName": "TestBLL",
+      "ColorIndex": 2
     }
   },
-  "NextColorIndex": 1
+  "NextColorIndex": 3
 }

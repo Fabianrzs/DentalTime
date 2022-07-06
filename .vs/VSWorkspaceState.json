@@ -2,7 +2,9 @@
   "ExpandedNodes": [
     "",
     "\\BLL",
-    "\\TestBLL"
+    "\\DentalTime",
+    "\\DentalTime\\Models"
   ],
+  "SelectedNode": "\\DentalTime\\Models\\PacienteModel.cs",
   "PreviewInSolutionExplorer": false
 }

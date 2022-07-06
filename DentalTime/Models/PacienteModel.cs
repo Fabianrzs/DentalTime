@@ -12,10 +12,14 @@ namespace DentalTime.Models
         [Required(ErrorMessage = "Tipo de documento requerido")]
         public string TipoDocumento { get; set; }
         [Required(ErrorMessage = "Numero de documento requerido")]
+
+        [StringLength(12, ErrorMessage = "Numero de documeto Menor o igual a 12"), MinLength(7, ErrorMessage = "Numero de documeto Mayor o igual a 7")]
         public string NoDocumento { get; set; }
         [Required(ErrorMessage = "Nombres requerido")]
+        [StringLength(12, ErrorMessage = "Nombre Menor o igual a 50"), MinLength(7, ErrorMessage = "Nombre Mayor o igual a 2")]
         public string Nombres { get; set; }
-        [Required(ErrorMessage = "Apellidos requerido")]     
+        [Required(ErrorMessage = "Apellidos requerido")]
+        [StringLength(12, ErrorMessage = "Apellido Menor o igual a 70"), MinLength(7, ErrorMessage = "Apellido Mayor o igual a 2")]
         public string Apellidos { get; set; }
         [Required(ErrorMessage = "Sexo requerido")]
         public string Sexo { get; set; }
@@ -28,6 +32,7 @@ namespace DentalTime.Models
         [Required(ErrorMessage = "Correo elctronico requerido")]
         public string CorreoElectronico { get; set; }
         [Required(ErrorMessage = "Numero telefonico requerido")]
+        [StringLength(10,ErrorMessage = "Numero de telefono debe tener 10 digitos"), MinLength(10, ErrorMessage = "Numero de telefono debe tener 10 digitos")]
         public string NumeroTelefonico { get; set; }
     }
 
